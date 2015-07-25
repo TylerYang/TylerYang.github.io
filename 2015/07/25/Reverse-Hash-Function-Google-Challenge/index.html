@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Reverse Hash Function - Google Challenge | Promise Land</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Recently I’ve been doing the Google Challenge, and I found a very interesting algorithm problem. Here is the problem.
+Reverse a Hash Function (Level 3)The function takes a 16 byte input and gives a 16">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reverse Hash Function - Google Challenge">
+<meta property="og:url" content="http://ppoffice.github.io/hexo-theme-icarus/2015/07/25/Reverse-Hash-Function-Google-Challenge/index.html">
+<meta property="og:site_name" content="Promise Land">
+<meta property="og:description" content="Recently I’ve been doing the Google Challenge, and I found a very interesting algorithm problem. Here is the problem.
+Reverse a Hash Function (Level 3)The function takes a 16 byte input and gives a 16">
+<meta property="og:updated_time" content="2015-07-25T08:03:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Reverse Hash Function - Google Challenge">
+<meta name="twitter:description" content="Recently I’ve been doing the Google Challenge, and I found a very interesting algorithm problem. Here is the problem.
+Reverse a Hash Function (Level 3)The function takes a 16 byte input and gives a 16">
+  
+  
+    <link rel="icon" href="favicon.png">
+  
+  <link href='//fonts.useso.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+  
+
+  
+</head>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="/" id="logo"><i class="logo" style="background-image: url(/css/images/logo.png)"></i><span class="site-title">Promise Land</span></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/.">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://avatars2.githubusercontent.com/u/5443053?                v=3&amp;u=be0550961d4346b67d803ea9902fd8beb4ca519f&amp;s=140"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+      
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://ppoffice.github.io/hexo-theme-icarus"></form>
+      </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tr>
+        
+          <td><a class="main-nav-link" href="/.">Home</a></td>
+        
+          <td><a class="main-nav-link" href="/archives">Archives</a></td>
+        
+          <td><a class="main-nav-link" href="/categories">Categories</a></td>
+        
+          <td><a class="main-nav-link" href="/tags">Tags</a></td>
+        
+          <td><a class="main-nav-link" href="/about">About</a></td>
+        
+        <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="hidden" name="sitesearch" value="http://ppoffice.github.io/hexo-theme-icarus"></form>
+        </td>
+      </tr>
+    </table>
+  </div>
+</header>
+
+    <div class="outer">
+      
+        <aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      <img id="avatar" src="https://avatars2.githubusercontent.com/u/5443053?                v=3&amp;u=be0550961d4346b67d803ea9902fd8beb4ca519f&amp;s=140">
+      <h2 id="name">Tyler Yang</h2>
+      <h3 id="title">Web Developer</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>ShenZhen, GuangDong, China</span>
+      <a id="follow" href="https://github.com/TylerYang/">FOLLOW</a>
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        2
+        <span>posts</span>
+      </div>
+      <div class="article-info-block">
+        3
+        <span>tags</span>
+      </div>
+    </div>
+    
+    <div class="contact-info profile-block">
+      <table class="contact-list">
+        <tr>
+          
+          <td><a href="http://github.com/TylerYang" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
+          
+          <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+          
+        </tr>
+      </table>
+    </div>
+    
+    
+  </div>
+</aside>
+
+      
+      <section id="main"><article id="post-Reverse-Hash-Function-Google-Challenge" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Reverse Hash Function - Google Challenge
+    </h1>
+  
+
+        <div class="article-meta">
+          
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2015/07/25/Reverse-Hash-Function-Google-Challenge/">
+      <time datetime="2015-07-25T08:01:42.000Z" itemprop="datePublished">2015-07-25</time>
+    </a>
+  </div>
+
+
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Algorithm/Google-Chanllenge/">Google Chanllenge</a>
+  </div>
+
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Recently I’ve been doing the Google Challenge, and I found a very interesting algorithm problem. Here is the problem.</p>
+<h3 id="Reverse_a_Hash_Function_(Level_3)">Reverse a Hash Function (Level 3)</h3><p>The function takes a 16 byte input and gives a 16 byte output. It uses multiplication (*), bit-wise exclusive OR (XOR) and modulo (%) to calculate an element of the digest based on elements of the input message: </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">digest [i] = ( (<span class="number">129</span> * message[i]) XOR message[i-<span class="number">1</span>]) % <span class="number">256</span></span><br></pre></td></tr></table></figure>
+<p>For the first element, the value of <code>message[-1]</code> is 0.<br>For example, if <code>message[0] = 1</code> and <code>message[1] = 129</code>, then:<br>For <code>digest[0]</code>:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">129</span> * message[<span class="number">0</span>] = <span class="number">129</span></span><br><span class="line"><span class="number">129</span> XOR message[-<span class="number">1</span>] = <span class="number">129</span></span><br><span class="line"><span class="number">129</span> % <span class="number">256</span> = <span class="number">129</span></span><br></pre></td></tr></table></figure></p>
+<p>Thus <code>digest[0] = 129</code>.<br>For digest[1]:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">129</span>*message[<span class="number">1</span>] = <span class="number">16641</span></span><br><span class="line"><span class="number">16641</span> XOR message[<span class="number">0</span>] = <span class="number">16640</span></span><br><span class="line"><span class="number">16640</span> % <span class="number">256</span> = <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
+<p>Thus <code>digest[1] = 0</code>.<br>Write a function answer(digest) that takes <strong>an array of 16 integers</strong> and returns another array of 16 that correspond to the unique message that created this digest. Since each value is a single byte, the values are <strong>0 to 255</strong> for both message and digest.</p>
+<h3 id="Test_cases">Test cases</h3><p>Inputs:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span> list) digest = [<span class="number">0</span>, <span class="number">129</span>, <span class="number">3</span>, <span class="number">129</span>, <span class="number">7</span>, <span class="number">129</span>, <span class="number">3</span>, <span class="number">129</span>, <span class="number">15</span>, <span class="number">129</span>, <span class="number">3</span>, <span class="number">129</span>, <span class="number">7</span>, <span class="number">129</span>, <span class="number">3</span>, <span class="number">129</span>]</span><br></pre></td></tr></table></figure></p>
+<p>Output:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span> list) [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>]</span><br></pre></td></tr></table></figure></p>
+<p>Inputs:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span> list) digest = [<span class="number">0</span>, <span class="number">129</span>, <span class="number">5</span>, <span class="number">141</span>, <span class="number">25</span>, <span class="number">137</span>, <span class="number">61</span>, <span class="number">149</span>, <span class="number">113</span>, <span class="number">145</span>, <span class="number">53</span>, <span class="number">157</span>, <span class="number">233</span>, <span class="number">185</span>, <span class="number">109</span>, <span class="number">165</span>]</span><br></pre></td></tr></table></figure></p>
+<p>Output:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span> list) [<span class="number">0</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>, <span class="number">100</span>, <span class="number">121</span>, <span class="number">144</span>, <span class="number">169</span>, <span class="number">196</span>, <span class="number">225</span>]</span><br></pre></td></tr></table></figure></p>
+<h3 id="Analysis">Analysis</h3><p>Basically this problem is about how to reverse this expression,<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">digest [i] = ( (<span class="number">129</span> * message[i]) XOR message[i-<span class="number">1</span>]) % <span class="number">256</span></span><br></pre></td></tr></table></figure></p>
+<p>The first moment I saw this problem, I was wondering maybe I can just simply move the modulo operator(%) to the right side, and then the <code>XOR</code> operator. For <code>129 * message[i]</code>, maybe I can use the forloop to find out the right one.</p>
+<p>For <code>% 256</code> we know it is only set a upperbound to our hash result, XOR <code>message[i - 1]</code> will not affect the result of modulo(message[i - 1] is in the interleaving [0, 255]). which means<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">digest[i] = ((129 * message[i]) XOR message[i - 1]) % 256&#10;          = ((129 * message[i]) % 256) XOR message[i - 1]</span><br></pre></td></tr></table></figure></p>
+<p>Considering the expression below,<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a ^ b = c;</span><br><span class="line">c ^ b = a;</span><br><span class="line">c ^ a = b;</span><br></pre></td></tr></table></figure></p>
+<p>Appearently we know this will happen, if you want the approvement, <a href="/2015/07/25/About-XOR-operator/">here is another post about this.</a></p>
+<p>We know the value of <code>digest[i]</code> and <code>message[i - 1]</code>, so we get the expression below,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">digest[i] = ((129 * message[i]) % 256) XOR message[i - 1]&#10;digest[i] XOR message[i - 1] = (129 * message[i]) % 256</span><br></pre></td></tr></table></figure></p>
+<p>Now the question become for x in [0, 255], y in [0, 255]</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(129 * x) % 256 = y //we know what is y (digest[i] ^ message[i - 1])</span><br></pre></td></tr></table></figure>
+<p><strong><strong> What is x ? </strong></strong><br>We don’t know it yet. Let us clear our mind and run these code in your chrome web developer tool.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> x = <span class="number">0</span>; x &lt;= <span class="number">255</span>; x++) &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"x:"</span> + x + <span class="string">", result: "</span> + (<span class="number">129</span> * x % <span class="number">256</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>From the result, we will see in some number when we run this expression,<br><code>129 * x % 256</code> it will equals to x. To be more clearly, let us run the javascript code into chrome dvp tool one more time.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> x = <span class="number">0</span>; x &lt;= <span class="number">255</span>; x += <span class="number">2</span>) &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"x:"</span> + x + <span class="string">", result: "</span> + <span class="number">129</span> * x % <span class="number">256</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> x = <span class="number">1</span>; x &lt;= <span class="number">255</span>; x += <span class="number">2</span>) &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"x:"</span> + x + <span class="string">", result: "</span> + <span class="number">129</span> * x % <span class="number">256</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Now we know that when the <code>x</code> is <strong><strong>EVEN</strong></strong>, <code>129 * x % 256</code> will equals to <code>x</code>. When <code>x</code> is <strong><strong>ODD</strong></strong> the result start from 129 until it reach 255, then it start from 1.</p>
+<p>A very interesting fact about this express is, <code>129</code> and <code>256</code> are very insteresting numbers, <code>129 == 256 / 2 + 1</code>, Which means per two 129 we will get 258 and after mod 256 we only get <code>2</code>. when x is <strong><strong>EVEN</strong></strong>, let’s say x is <code>4</code>,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">129 * 4 % 256 = (129 * 2 + 129 * 2) % 256&#10;              = (256 + 2 + 256 + 2) % 256&#10;              = 4</span><br></pre></td></tr></table></figure></p>
+<p>This is why when <code>x</code> is <strong><strong>EVEN</strong></strong> the result is equals to itself.</p>
+<p>Then how about <code>x</code> is <strong><strong>ODD</strong></strong>? Assumming <code>x</code> is 5, we can get the result below,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">129 * 5 % 256 = (129 * 2 + 129 * 2 + 129) % 256&#10;              = (256 + 2 + 256 + 2 + 129) % 256&#10;              = 4 + 129 &#10;              = 5 + 128</span><br></pre></td></tr></table></figure></p>
+<p>For <strong><strong>ODD</strong></strong> <code>x</code>, one thing we need to consider is, if <code>x</code> is larger than 128, this expression will smaller than 128, let’s say <code>x</code> is 131<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">129 * 131 % 256 = (129 * 128 + 129 * 3) % 256&#10;                = (128 * 128 + 128 + 256 + 2 + 129) % 256&#10;                = (128 + 129 + 2) % 256&#10;                = (256 + 3) % 256&#10;                = 3</span><br></pre></td></tr></table></figure></p>
+<p>For now we can write down our pseudo code blow,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if(digest[i] XOR message[i - 1] is EVEN) &#123;&#10;&#9;//message[i] is EVEN&#10;&#9;message[i] = digest[i] ^ message[i - 1]&#10;&#125; else &#123;&#10;&#9;//message[i] is ODD&#10;&#9;if(digest[i] &#62; 128) &#123;&#10;&#9;&#9;if(message[i - 1] &#62; 128) &#123;&#10;&#9;&#9;&#9;// 129 * message[i] % 256 &#60; 128&#10;&#9;&#9;&#9;// message[i] &#62; 128&#10;&#9;&#9;&#9;message[i] += 128;&#10;&#9;&#9;&#125; else &#123;&#10;&#9;&#9;&#9;// 129 * message[i] % 256 &#62; 128&#10;&#9;&#9;&#9;// message[i] &#60; 128&#10;&#9;&#9;&#9;message[i] -= 128;&#10;&#9;&#9;&#125;&#10;&#9;&#125; else &#123;&#10;&#9;&#9;if(message[i - 1] &#62; 128) &#123;&#10;&#9;&#9;&#9;// 129 * message[i] % 256 &#62; 128&#10;&#9;&#9;&#9;// message[i] &#60; 128&#10;&#9;&#9;&#9;message[i] += 128;&#10;&#9;&#9;&#125; else &#123;&#10;&#9;&#9;&#9;// 129 * message[i] % 256 &#60; 128&#10;&#9;&#9;&#9;// message[i] &#62; 128&#10;&#9;&#9;&#9;message[i] -= 128;&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Here is Java Code,<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] reverseHash(<span class="keyword">int</span>[] digest) &#123;</span><br><span class="line">        <span class="keyword">int</span> prevM = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span>[] message = <span class="keyword">new</span> <span class="keyword">int</span>[digest.length];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; digest.length; i++) &#123;</span><br><span class="line">            message[i] = tmp;</span><br><span class="line">            <span class="keyword">if</span>(tmp % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span>(digest[i] &gt; <span class="number">128</span>) &#123;</span><br><span class="line">                    message[i] += message[i - <span class="number">1</span>] &gt; <span class="number">128</span> ? <span class="number">128</span> : -<span class="number">128</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    message[i] += message[i - <span class="number">1</span>] &gt; <span class="number">128</span> ? <span class="number">128</span> : -<span class="number">128</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">//corner case  e.g[1,1,1,1,1,1,1,1,1,1,1...];</span></span><br><span class="line">                message[i] = (message[i] + <span class="number">256</span>) % <span class="number">256</span>; </span><br><span class="line">            &#125; </span><br><span class="line">            prevM = message[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> message;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Conclusion">Conclusion</h3><p>Personally, I think this problem really worth a try. It’s about some specify algorithm(e.g Dynamic Programming, Greedy Algorithm). This problem is only about the basic bit manipulation and some math stuff. At least, this problem tell me, it’s time to read the csapp one more time. : )</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ppoffice.github.io/hexo-theme-icarus/2015/07/25/Reverse-Hash-Function-Google-Challenge/" data-id="cicis3o7n0005ow422hziqf5l" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google-Challenge/">Google Challenge</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/07/25/About-XOR-operator/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">About XOR operator</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+      
+        <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">recents</h3>
+    <div class="widget">
+      <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/07/25/Reverse-Hash-Function-Google-Challenge/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Algorithm/Google-Chanllenge/">Google Chanllenge</a></p>
+              <p class="item-title"><a href="/2015/07/25/Reverse-Hash-Function-Google-Challenge/" class="title">Reverse Hash Function - Google Challenge</a></p>
+              <p class="item-date"><time datetime="2015-07-25T08:01:42.000Z" itemprop="datePublished">2015-07-25</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/07/25/About-XOR-operator/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/07/25/About-XOR-operator/" class="title">About XOR operator</a></p>
+              <p class="item-date"><time datetime="2015-07-25T06:15:16.000Z" itemprop="datePublished">2015-07-25</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Google-Chanllenge/">Google Chanllenge</a><span class="category-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSAPP/">CSAPP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Challenge/">Google Challenge</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">tag cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/CSAPP/" style="font-size: 10px;">CSAPP</a> <a href="/tags/Google-Challenge/" style="font-size: 10px;">Google Challenge</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+  <div id="toTop" class="fa fa-chevron-up"></div>
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Tyler Yang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+
+<script src="//ajax.useso.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
