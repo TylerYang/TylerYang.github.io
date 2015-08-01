@@ -5,7 +5,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="tyleryang.github.io//"/>
-  <updated>2015-08-01T11:34:19.000Z</updated>
+  <updated>2015-08-01T13:04:05.000Z</updated>
   <id>tyleryang.github.io//</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/"/>
     <id>tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/</id>
     <published>2015-08-01T08:32:43.000Z</published>
-    <updated>2015-08-01T11:34:19.000Z</updated>
+    <updated>2015-08-01T13:04:05.000Z</updated>
     <content type="html"><![CDATA[<p>The hardest problem in leetcode, and it force me to read something new, maybe this is why we solve the problem in the online judge system.</p>
 <h3 id="Valid_Number">Valid Number</h3><blockquote>
 <p>Valid if a given string is numeric.</p>
@@ -31,8 +31,7 @@
 <blockquote>
 <p>Finite State Automata<br>A finite-state machine or finite-state automatata, or simply a state machine, is a mathematial model of computation used to design both computer programs and sequential logic circuits. It is conceived as an abstract machine that can be in one of a finite number of states. <strong>The machine is in only one state at a time;</strong>  — from Wikipedia <a href="https://en.wikipedia.org/wiki/Finite-state_machine" target="_blank" rel="external">Finite-state machine</a>.</p>
 </blockquote>
-<p>For more detail about FSA, <a href="">here is another post about it.</a></p>
-<p>In a word, to satisfy the basic requirement of numeric. We need to know all the states and the possible transition. And after spend some time we can get the list below,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1   + or -&#10;2   number (0 - 9)&#10;3   . (dot)&#10;4   e or E (exponent)&#10;5   others (includ space)</span><br></pre></td></tr></table></figure></p>
+<p>In a word, to know whether a string is numeric we need to know all the states and the possible transition. And after spend some time we can get the list below,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1   + or -&#10;2   number (0 - 9)&#10;3   . (dot)&#10;4   e or E (exponent)&#10;5   others (includ space)</span><br></pre></td></tr></table></figure></p>
 <p>With all this possible inputs, we can use the <a href="https://en.wikipedia.org/wiki/State_diagram" target="_blank" rel="external">State Diagram</a> to describe all the valid and the transitions.<br>For example, from <code>state1</code> it can be only transformed into <code>state2</code> or <code>state3</code>, which means <code>+3</code>, <code>-.4</code> are all valid numeric but <code>+e10</code>, <code>+ 4</code> are not.<br>To give a most complicated valid numeric expression should contains all states, <code>+0.42e-10</code> should be the one.<br>So we can draw down the State Diagram below,<br><img src="https://raw.githubusercontent.com/TylerYang/leetcode/master/65.ValidNumber/validNumber.png" alt="State Diagram"></p>
 <p>From this diagram, we can write down the pseudo code blow,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int state = 0;&#10;boolean hasNumber = false;&#10;for(each char in String s)&#123;&#10;    if(char is plus or minus) &#123;&#10;        if(state == 0 or 5) &#123;&#10;            state++;&#10;        &#125; else &#123;&#10;            return false;&#10;        &#125;&#10;    &#125; else if(char is number) &#123;&#10;        if(state == 0 or 1 or 2) &#123;&#10;            state = 2; &#10;            hasNumber = true;&#10;        &#125; else if(state == 3 or 4) &#123;&#10;            state = 4; &#10;            hasNumber = true;&#10;        &#125; else if(state == 5 or 6 or 7) &#123;&#10;            state = 7;&#10;        &#125;&#10;    &#125; else if(char is dot) &#123;&#10;        if(state == 0 or 1 or 2) &#123;&#10;            state = 3&#10;        &#125; else &#123;&#10;            return false;&#10;        &#125;&#10;    &#125; else if(char is exponent) &#123;&#10;        if(state == 2 or 3 or 4) &#123;&#10;            state = 5;&#10;        &#125; else &#123;&#10;            return false;&#10;        &#125;&#10;    &#125; else &#123;&#10;        return false;&#10;    &#125;&#10;&#125;&#10;return hashNumber &#38;&#38; (state == 2 or 3 or 4 or 7);</span><br></pre></td></tr></table></figure></p>
 <p><a href="https://leetcode.com/problems/valid-number/" target="_blank" rel="external">Here is the Valid Number in leetcode oj.</a><br><a href="https://github.com/TylerYang/leetcode/blob/master/65.ValidNumber/Solution.java" target="_blank" rel="external">Here is the full version of java implementation.</a></p>
