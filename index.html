@@ -92,11 +92,11 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        4
+        5
         <span>posts</span>
       </div>
       <div class="article-info-block">
-        7
+        9
         <span>tags</span>
       </div>
     </div>
@@ -119,6 +119,68 @@
 
       
       <section id="main">
+      <article id="post-Dependency-Injection-implementation-in-javascript" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/01/Dependency-Injection-implementation-in-javascript/">Dependency Injection in JavaScript</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2015/08/01/Dependency-Injection-implementation-in-javascript/">
+      <time datetime="2015-08-01T14:55:47.000Z" itemprop="datePublished">2015-08-01</time>
+    </a>
+  </div>
+
+
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/Language/">Language</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Language/Javascript/">Javascript</a>
+  </div>
+
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Dependency Injection is kind of design pattern. Well, although it is not in the GOF’s design pattern list, but I think it is getting more and more important.</p>
+<h3 id="Why_we_need_Dependency_Injection?">Why we need Dependency Injection?</h3><p>Firstly let us think about why we need dependency injection. Imagine we have function below,<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CoffeeMaker</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> grinder = <span class="keyword">new</span> Grinder();</span><br><span class="line">    <span class="keyword">var</span> pump = Pump.getInstance();</span><br><span class="line">    <span class="keyword">var</span> heater = app.get(<span class="string">"Heater"</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">this</span>.brew = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        grinder().grind();</span><br><span class="line">        heater.on();</span><br><span class="line">        pump.pump();</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>This is not a good example, because the <code>CoffeeMaker</code> is tightly couple to this particular environment, which means to use <code>CoffeeMaker</code> we need to make sure we can get the <code>Grinder</code>, <code>Pump</code> and <code>Heater</code> in our environment.</p>
+<p>If we just write down our code in one function, it’s not that kind of bad thing. How about in our project? Let’s me give u one more function. </p>
+<p>Well, definitely we get a main function looks like the code below,<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> coffeeMaker = <span class="keyword">new</span> CoffeeMaker();</span><br><span class="line">    coffeeMaker.brew();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>For now, if we want to test <code>main</code> function, <strong>we need to make sure we have <code>CoffeeMaker</code> in our environment.</strong> Further more, we need to check <code>CoffeeMaker</code>‘s code and <strong>we need to make sure all the things <code>CoffeeMaker</code> depends on are exist.</strong> In our example, they are <code>Grinder</code>, <code>Pump</code> and <code>Heater</code>.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">main =&#62; CoffeeMaker =&#62; Grinder, Pump, Heater</span><br></pre></td></tr></table></figure></p>
+<p><strong>In a word, to test <code>main</code> function, we need to create <code>CoffeeMaker</code>, <code>Grinder</code>, <code>Pump</code> and <code>Heater</code> in our test environment.</strong></p>
+<p>Think about it, when our project getting bigger and bigger, we get a chance to have a controller or service which have more than 1000 lines. Are we still be able to maintain all these code?</p>
+<p>To do it in a better way, let’s change our code into this.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CoffeeMaker</span>(<span class="params">grinder, heater, pump</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.blew = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        grinder.grind();</span><br><span class="line">        heater.on();</span><br><span class="line">        pump.pump();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params">coffeeMaker</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> injector = <span class="keyword">new</span> Injector();</span><br><span class="line">    <span class="keyword">var</span> coffeeMaker = injector.get(CoffeeMaker);</span><br><span class="line">    </span><br><span class="line">    coffeeMaker.blew();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Now, if we want to test main function, we just simply mock coffeMaker and make sure our <code>mockCoffeeMaker</code> have the function <code>blew</code>, that’s all!</p>
+<h3 id="Create_Our_Own_Dependency_Injection_Component">Create Our Own Dependency Injection Component</h3><p>To be continued.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="tyleryang.github.io/2015/08/01/Dependency-Injection-implementation-in-javascript/" data-id="cict6lmbr0025dp42n4bdbnub" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/design-pattern/">design pattern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+    
       <article id="post-Valid-Number-Leetcode" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -172,7 +234,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/" data-id="cict2mev20002rp42ju4gmt3v" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/" data-id="cicsswzw1002zx242adttpu0f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Finite-State-Automata/">Finite State Automata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/State-Machine/">State Machine</a></li></ul>
@@ -238,7 +300,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/08/01/Palindrome-PartionningII-Leetcode/" data-id="cict2mevf000lrp42ah0lmsw6" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/08/01/Palindrome-PartionningII-Leetcode/" data-id="cicrubjfn000bx242uyb4e2b9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -320,7 +382,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/07/25/Reverse-Hash-Function-Google-Challenge/" data-id="cict2mevb000drp42o5xenvmj" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/07/25/Reverse-Hash-Function-Google-Challenge/" data-id="cicrubjff0002x2425kg3ar2p" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google-Challenge/">Google Challenge</a></li></ul>
@@ -372,7 +434,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/07/25/About-XOR-operator/" data-id="cict2mevi000rrp42l7lurim0" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/07/25/About-XOR-operator/" data-id="cicrubjfs000kx24260mvhh13" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSAPP/">CSAPP</a></li></ul>
@@ -393,6 +455,23 @@
     <h3 class="widget-title">recents</h3>
     <div class="widget">
       <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/08/01/Dependency-Injection-implementation-in-javascript/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Language/">Language</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Language/Javascript/">Javascript</a></p>
+              <p class="item-title"><a href="/2015/08/01/Dependency-Injection-implementation-in-javascript/" class="title">Dependency Injection in JavaScript</a></p>
+              <p class="item-date"><time datetime="2015-08-01T14:55:47.000Z" itemprop="datePublished">2015-08-01</time></p>
+            </div>
+          </li>
         
           <li>
             
@@ -472,7 +551,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Google-Chanllenge/">Google Chanllenge</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Leetcode/">Leetcode</a><span class="category-list-count">2</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Google-Chanllenge/">Google Chanllenge</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Leetcode/">Leetcode</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Javascript/">Javascript</a><span class="category-list-count">1</span></li></ul></li></ul>
     </div>
   </div>
 
@@ -481,7 +560,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSAPP/">CSAPP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Finite-State-Automata/">Finite State Automata</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Challenge/">Google Challenge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/State-Machine/">State Machine</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSAPP/">CSAPP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Finite-State-Automata/">Finite State Automata</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Challenge/">Google Challenge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/State-Machine/">State Machine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/design-pattern/">design pattern</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -490,7 +569,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">tag cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/CSAPP/" style="font-size: 10px;">CSAPP</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Finite-State-Automata/" style="font-size: 10px;">Finite State Automata</a> <a href="/tags/Google-Challenge/" style="font-size: 10px;">Google Challenge</a> <a href="/tags/Leetcode/" style="font-size: 20px;">Leetcode</a> <a href="/tags/State-Machine/" style="font-size: 10px;">State Machine</a>
+      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/CSAPP/" style="font-size: 10px;">CSAPP</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Finite-State-Automata/" style="font-size: 10px;">Finite State Automata</a> <a href="/tags/Google-Challenge/" style="font-size: 10px;">Google Challenge</a> <a href="/tags/Leetcode/" style="font-size: 20px;">Leetcode</a> <a href="/tags/State-Machine/" style="font-size: 10px;">State Machine</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design pattern</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a>
     </div>
   </div>
 
@@ -499,7 +578,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 

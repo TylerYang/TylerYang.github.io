@@ -5,7 +5,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="tyleryang.github.io//"/>
-  <updated>2015-08-01T13:04:05.000Z</updated>
+  <updated>2015-08-01T16:05:37.000Z</updated>
   <id>tyleryang.github.io//</id>
   
   <author>
@@ -16,11 +16,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Dependency Injection in JavaScript]]></title>
+    <link href="tyleryang.github.io/2015/08/01/Dependency-Injection-implementation-in-javascript/"/>
+    <id>tyleryang.github.io/2015/08/01/Dependency-Injection-implementation-in-javascript/</id>
+    <published>2015-08-01T14:55:47.000Z</published>
+    <updated>2015-08-01T16:05:37.000Z</updated>
+    <content type="html"><![CDATA[<p>Dependency Injection is kind of design pattern. Well, although it is not in the GOF’s design pattern list, but I think it is getting more and more important.</p>
+<h3 id="Why_we_need_Dependency_Injection?">Why we need Dependency Injection?</h3><p>Firstly let us think about why we need dependency injection. Imagine we have function below,<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CoffeeMaker</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> grinder = <span class="keyword">new</span> Grinder();</span><br><span class="line">    <span class="keyword">var</span> pump = Pump.getInstance();</span><br><span class="line">    <span class="keyword">var</span> heater = app.get(<span class="string">"Heater"</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">this</span>.brew = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        grinder().grind();</span><br><span class="line">        heater.on();</span><br><span class="line">        pump.pump();</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>This is not a good example, because the <code>CoffeeMaker</code> is tightly couple to this particular environment, which means to use <code>CoffeeMaker</code> we need to make sure we can get the <code>Grinder</code>, <code>Pump</code> and <code>Heater</code> in our environment.</p>
+<p>If we just write down our code in one function, it’s not that kind of bad thing. How about in our project? Let’s me give u one more function. </p>
+<p>Well, definitely we get a main function looks like the code below,<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> coffeeMaker = <span class="keyword">new</span> CoffeeMaker();</span><br><span class="line">    coffeeMaker.brew();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>For now, if we want to test <code>main</code> function, <strong>we need to make sure we have <code>CoffeeMaker</code> in our environment.</strong> Further more, we need to check <code>CoffeeMaker</code>‘s code and <strong>we need to make sure all the things <code>CoffeeMaker</code> depends on are exist.</strong> In our example, they are <code>Grinder</code>, <code>Pump</code> and <code>Heater</code>.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">main =&#62; CoffeeMaker =&#62; Grinder, Pump, Heater</span><br></pre></td></tr></table></figure></p>
+<p><strong>In a word, to test <code>main</code> function, we need to create <code>CoffeeMaker</code>, <code>Grinder</code>, <code>Pump</code> and <code>Heater</code> in our test environment.</strong></p>
+<p>Think about it, when our project getting bigger and bigger, we get a chance to have a controller or service which have more than 1000 lines. Are we still be able to maintain all these code?</p>
+<p>To do it in a better way, let’s change our code into this.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CoffeeMaker</span>(<span class="params">grinder, heater, pump</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.blew = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        grinder.grind();</span><br><span class="line">        heater.on();</span><br><span class="line">        pump.pump();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params">coffeeMaker</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> injector = <span class="keyword">new</span> Injector();</span><br><span class="line">    <span class="keyword">var</span> coffeeMaker = injector.get(CoffeeMaker);</span><br><span class="line">    </span><br><span class="line">    coffeeMaker.blew();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Now, if we want to test main function, we just simply mock coffeMaker and make sure our <code>mockCoffeeMaker</code> have the function <code>blew</code>, that’s all!</p>
+<h3 id="Create_Our_Own_Dependency_Injection_Component">Create Our Own Dependency Injection Component</h3><p>To be continued.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Dependency Injection is kind of design pattern. Well, although it is not in the GOF’s design pattern list, but I think it is getting more]]>
+    </summary>
+    
+      <category term="design pattern" scheme="tyleryang.github.io/tags/design-pattern/"/>
+    
+      <category term="javascript" scheme="tyleryang.github.io/tags/javascript/"/>
+    
+      <category term="Language" scheme="tyleryang.github.io/categories/Language/"/>
+    
+      <category term="Javascript" scheme="tyleryang.github.io/categories/Language/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Valid Number - Leetcode]]></title>
     <link href="tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/"/>
     <id>tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/</id>
     <published>2015-08-01T08:32:43.000Z</published>
-    <updated>2015-08-01T13:04:05.000Z</updated>
+    <updated>2015-08-01T13:03:58.000Z</updated>
     <content type="html"><![CDATA[<p>The hardest problem in leetcode, and it force me to read something new, maybe this is why we solve the problem in the online judge system.</p>
 <h3 id="Valid_Number">Valid Number</h3><blockquote>
 <p>Valid if a given string is numeric.</p>
@@ -58,7 +90,7 @@
     <link href="tyleryang.github.io/2015/08/01/Palindrome-PartionningII-Leetcode/"/>
     <id>tyleryang.github.io/2015/08/01/Palindrome-PartionningII-Leetcode/</id>
     <published>2015-07-31T16:09:13.000Z</published>
-    <updated>2015-08-01T08:22:57.000Z</updated>
+    <updated>2015-08-01T08:22:40.000Z</updated>
     <content type="html"><![CDATA[<p>This should be one of the most insteresting algorithm problem I try to solve within this month.</p>
 <p>Here is the question,</p>
 <h3 id="Palindrome_PartitioningII">Palindrome PartitioningII</h3><blockquote>
@@ -96,7 +128,7 @@
     <link href="tyleryang.github.io/2015/07/25/Reverse-Hash-Function-Google-Challenge/"/>
     <id>tyleryang.github.io/2015/07/25/Reverse-Hash-Function-Google-Challenge/</id>
     <published>2015-07-25T08:01:42.000Z</published>
-    <updated>2015-08-01T12:50:19.000Z</updated>
+    <updated>2015-08-01T12:50:10.000Z</updated>
     <content type="html"><![CDATA[<p>Recently I’ve been doing the Google Challenge, and I found a very interesting algorithm problem. Here is the problem.</p>
 <h3 id="Reverse_a_Hash_Function_(Level_3)">Reverse a Hash Function (Level 3)</h3><p>The function takes a 16 byte input and gives a 16 byte output. It uses multiplication (*), bit-wise exclusive OR (XOR) and modulo (%) to calculate an element of the digest based on elements of the input message: </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">digest [i] = ( (<span class="number">129</span> * message[i]) XOR message[i-<span class="number">1</span>]) % <span class="number">256</span></span><br></pre></td></tr></table></figure>

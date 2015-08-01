@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Dynamic Programming | Promise Land</title>
+  <title>Dependency Injection in JavaScript | Promise Land</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Tyler&apos;s Zend Garden">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Promise Land">
-<meta property="og:url" content="tyleryang.github.io/tags/Dynamic-Programming/index.html">
+  <meta name="description" content="Dependency Injection is kind of design pattern. Well, although it is not in the GOF’s design pattern list, but I think it is getting more and more important.
+Why we need Dependency Injection?Firstly l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dependency Injection in JavaScript">
+<meta property="og:url" content="tyleryang.github.io/2015/08/01/Dependency-Injection-implementation-in-javascript/index.html">
 <meta property="og:site_name" content="Promise Land">
-<meta property="og:description" content="Tyler&apos;s Zend Garden">
+<meta property="og:description" content="Dependency Injection is kind of design pattern. Well, although it is not in the GOF’s design pattern list, but I think it is getting more and more important.
+Why we need Dependency Injection?Firstly l">
+<meta property="og:updated_time" content="2015-08-01T16:05:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Promise Land">
-<meta name="twitter:description" content="Tyler&apos;s Zend Garden">
+<meta name="twitter:title" content="Dependency Injection in JavaScript">
+<meta name="twitter:description" content="Dependency Injection is kind of design pattern. Well, although it is not in the GOF’s design pattern list, but I think it is getting more and more important.
+Why we need Dependency Injection?Firstly l">
   
   
     <link rel="icon" href="favicon.png">
@@ -118,49 +122,79 @@
 </aside>
 
       
-      <section id="main">
-    <section class="archives-wrap">
-    <div class="archive-tag-wrap">
-      <span class="archive-tag">#Dynamic Programming</span>
-    </div>
-    <div class="archives">
+      <section id="main"><article id="post-Dependency-Injection-implementation-in-javascript" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
     
-    <div class="archive-article-thumbnail">
-      <a href="/2015/08/01/Palindrome-PartionningII-Leetcode/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-</a>
-    </div>
     
-    <header class="archive-article-header">
-      
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/08/01/Palindrome-PartionningII-Leetcode/">Palindrome PartitioningII - Leetcode</a>
+    <h1 class="article-title" itemprop="name">
+      Dependency Injection in JavaScript
     </h1>
   
 
-      
-        
-  <div class="archive-article-date">
+        <div class="article-meta">
+          
+  <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2015/08/01/Palindrome-PartionningII-Leetcode/">
-      <time datetime="2015-07-31T16:09:13.000Z" itemprop="datePublished">2015 Aug 1</time>
+    <a href="/2015/08/01/Dependency-Injection-implementation-in-javascript/">
+      <time datetime="2015-08-01T14:55:47.000Z" itemprop="datePublished">2015-08-01</time>
     </a>
   </div>
 
 
-      
-    </header>
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/Language/">Language</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Language/Javascript/">Javascript</a>
   </div>
-</article>
+
+        </div>
+      </header>
     
-    </div></section>
-    </section>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Dependency Injection is kind of design pattern. Well, although it is not in the GOF’s design pattern list, but I think it is getting more and more important.</p>
+<h3 id="Why_we_need_Dependency_Injection?">Why we need Dependency Injection?</h3><p>Firstly let us think about why we need dependency injection. Imagine we have function below,<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CoffeeMaker</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> grinder = <span class="keyword">new</span> Grinder();</span><br><span class="line">    <span class="keyword">var</span> pump = Pump.getInstance();</span><br><span class="line">    <span class="keyword">var</span> heater = app.get(<span class="string">"Heater"</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">this</span>.brew = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        grinder().grind();</span><br><span class="line">        heater.on();</span><br><span class="line">        pump.pump();</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>This is not a good example, because the <code>CoffeeMaker</code> is tightly couple to this particular environment, which means to use <code>CoffeeMaker</code> we need to make sure we can get the <code>Grinder</code>, <code>Pump</code> and <code>Heater</code> in our environment.</p>
+<p>If we just write down our code in one function, it’s not that kind of bad thing. How about in our project? Let’s me give u one more function. </p>
+<p>Well, definitely we get a main function looks like the code below,<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> coffeeMaker = <span class="keyword">new</span> CoffeeMaker();</span><br><span class="line">    coffeeMaker.brew();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>For now, if we want to test <code>main</code> function, <strong>we need to make sure we have <code>CoffeeMaker</code> in our environment.</strong> Further more, we need to check <code>CoffeeMaker</code>‘s code and <strong>we need to make sure all the things <code>CoffeeMaker</code> depends on are exist.</strong> In our example, they are <code>Grinder</code>, <code>Pump</code> and <code>Heater</code>.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">main =&#62; CoffeeMaker =&#62; Grinder, Pump, Heater</span><br></pre></td></tr></table></figure></p>
+<p><strong>In a word, to test <code>main</code> function, we need to create <code>CoffeeMaker</code>, <code>Grinder</code>, <code>Pump</code> and <code>Heater</code> in our test environment.</strong></p>
+<p>Think about it, when our project getting bigger and bigger, we get a chance to have a controller or service which have more than 1000 lines. Are we still be able to maintain all these code?</p>
+<p>To do it in a better way, let’s change our code into this.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CoffeeMaker</span>(<span class="params">grinder, heater, pump</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.blew = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        grinder.grind();</span><br><span class="line">        heater.on();</span><br><span class="line">        pump.pump();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params">coffeeMaker</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> injector = <span class="keyword">new</span> Injector();</span><br><span class="line">    <span class="keyword">var</span> coffeeMaker = injector.get(CoffeeMaker);</span><br><span class="line">    </span><br><span class="line">    coffeeMaker.blew();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Now, if we want to test main function, we just simply mock coffeMaker and make sure our <code>mockCoffeeMaker</code> have the function <code>blew</code>, that’s all!</p>
+<h3 id="Create_Our_Own_Dependency_Injection_Component">Create Our Own Dependency Injection Component</h3><p>To be continued.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="tyleryang.github.io/2015/08/01/Dependency-Injection-implementation-in-javascript/" data-id="cict6lmbr0025dp42n4bdbnub" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/design-pattern/">design pattern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/08/01/Valid-Number-Leetcode/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Valid Number - Leetcode</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
       
         <aside id="sidebar">
   
