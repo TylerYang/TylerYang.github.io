@@ -97,7 +97,7 @@
     <link href="tyleryang.github.io/2015/07/25/Reverse-Hash-Function-Google-Challenge/"/>
     <id>tyleryang.github.io/2015/07/25/Reverse-Hash-Function-Google-Challenge/</id>
     <published>2015-07-25T08:01:42.000Z</published>
-    <updated>2015-07-25T08:03:42.000Z</updated>
+    <updated>2015-08-01T12:50:19.000Z</updated>
     <content type="html"><![CDATA[<p>Recently I’ve been doing the Google Challenge, and I found a very interesting algorithm problem. Here is the problem.</p>
 <h3 id="Reverse_a_Hash_Function_(Level_3)">Reverse a Hash Function (Level 3)</h3><p>The function takes a 16 byte input and gives a 16 byte output. It uses multiplication (*), bit-wise exclusive OR (XOR) and modulo (%) to calculate an element of the digest based on elements of the input message: </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">digest [i] = ( (<span class="number">129</span> * message[i]) XOR message[i-<span class="number">1</span>]) % <span class="number">256</span></span><br></pre></td></tr></table></figure>
@@ -139,9 +139,9 @@
     
       <category term="Google Challenge" scheme="tyleryang.github.io/tags/Google-Challenge/"/>
     
-      <category term="Algorithm" scheme="tyleryang.github.io/categories/Algorithm/"/>
+      <category term="Interview" scheme="tyleryang.github.io/categories/Interview/"/>
     
-      <category term="Google Chanllenge" scheme="tyleryang.github.io/categories/Algorithm/Google-Chanllenge/"/>
+      <category term="Google Chanllenge" scheme="tyleryang.github.io/categories/Interview/Google-Chanllenge/"/>
     
   </entry>
   
