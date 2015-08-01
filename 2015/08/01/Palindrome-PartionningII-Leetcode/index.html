@@ -3,17 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: Algorithm | Promise Land</title>
+  <title>Palindrome PartitioningII - Leetcode | Promise Land</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Tyler&apos;s Zend Garden">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Promise Land">
-<meta property="og:url" content="tyleryang.github.io/categories/Algorithm/index.html">
+  <meta name="description" content="This should be one of the most insteresting algorithm problem I try to solve within this month.
+Here is the question,
+Palindrome PartitioningII
+Given a string s, partition s such that every substring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Palindrome PartitioningII - Leetcode">
+<meta property="og:url" content="tyleryang.github.io/2015/08/01/Palindrome-PartionningII-Leetcode/index.html">
 <meta property="og:site_name" content="Promise Land">
-<meta property="og:description" content="Tyler&apos;s Zend Garden">
+<meta property="og:description" content="This should be one of the most insteresting algorithm problem I try to solve within this month.
+Here is the question,
+Palindrome PartitioningII
+Given a string s, partition s such that every substring">
+<meta property="og:updated_time" content="2015-08-01T08:22:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Promise Land">
-<meta name="twitter:description" content="Tyler&apos;s Zend Garden">
+<meta name="twitter:title" content="Palindrome PartitioningII - Leetcode">
+<meta name="twitter:description" content="This should be one of the most insteresting algorithm problem I try to solve within this month.
+Here is the question,
+Palindrome PartitioningII
+Given a string s, partition s such that every substring">
   
   
     <link rel="icon" href="favicon.png">
@@ -118,49 +128,83 @@
 </aside>
 
       
-      <section id="main">
-    <section class="archives-wrap">
-    <div class="archive-category-wrap">
-      <span class="archive-category">Algorithm</span>
-    </div>
-    <div class="archives">
+      <section id="main"><article id="post-Palindrome-PartionningII-Leetcode" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
     
-    <div class="archive-article-thumbnail">
-      <a href="/2015/07/25/Reverse-Hash-Function-Google-Challenge/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-</a>
-    </div>
     
-    <header class="archive-article-header">
-      
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/25/Reverse-Hash-Function-Google-Challenge/">Reverse Hash Function - Google Challenge</a>
+    <h1 class="article-title" itemprop="name">
+      Palindrome PartitioningII - Leetcode
     </h1>
   
 
-      
-        
-  <div class="archive-article-date">
+        <div class="article-meta">
+          
+  <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2015/07/25/Reverse-Hash-Function-Google-Challenge/">
-      <time datetime="2015-07-25T08:01:42.000Z" itemprop="datePublished">2015 Jul 25</time>
+    <a href="/2015/08/01/Palindrome-PartionningII-Leetcode/">
+      <time datetime="2015-07-31T16:09:13.000Z" itemprop="datePublished">2015-08-01</time>
     </a>
   </div>
 
 
-      
-    </header>
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/Interview/">Interview</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Interview/Leetcode/">Leetcode</a>
   </div>
-</article>
+
+        </div>
+      </header>
     
-    </div></section>
-    </section>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This should be one of the most insteresting algorithm problem I try to solve within this month.</p>
+<p>Here is the question,</p>
+<h3 id="Palindrome_PartitioningII">Palindrome PartitioningII</h3><blockquote>
+<p>Given a string s, partition s such that every substring of the partition is a palindrome.<br>Return the minimum cuts needs for a palindrome partitioning of s.</p>
+<p>For example, given s = “aab”,<br>Return <code>1</code> since the palindrome partitioning <code>[&quot;aa&quot;, &quot;b&quot;]</code> could be produced using 1 cut.</p>
+</blockquote>
+<h3 id="Analysis">Analysis</h3><p>To get the minimum cut, of course backtracking can get an answer. To do it in a better way, <strong>Dynamic Programming</strong> will be suit for us.</p>
+<p>Let’s say, we want to know the minimum cut for string <code>s = &quot;aabaabcb&quot;</code>,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1 2 3 4 5 6 7&#10;a a b a a c b c</span><br></pre></td></tr></table></figure></p>
+<p>Apparently, we need to find out all the palindrome substring in it so that we can get the minimum cut. But we can reuse some part of the substring. For example, if we know <code>aba</code> is a palindrome, to valid <code>aabaa</code> we only need to make sure the first character equals to the last one.<br>So the first step is to find out all the substring which is palindrome.<br>We use 2 dimension array to store all the result. For String <code>s = &quot;aabaabcb&quot;</code>, substring s.substring(1, 3) is a palindrome, so we set <code>dp[1][3] = true</code>, here is the java code.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span>[][] dp = <span class="keyword">new</span> <span class="keyword">boolean</span>[s.length()][s.length()];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = s.length() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; s.length(); j++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(s.charAt(j) == s.charAt(i) &amp;&amp; (j - i &lt; <span class="number">2</span> || dp[i + <span class="number">1</span>][j - <span class="number">1</span>] == <span class="keyword">true</span>)) dp[i][j] = <span class="keyword">true</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>after run this code, we get a two dimension array below,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 1 0 0 1 0 0 0&#10;0 1 0 1 0 0 0 0&#10;0 0 1 0 0 0 0 0&#10;0 0 0 1 1 0 0 0&#10;0 0 0 0 1 0 0 0&#10;0 0 0 0 0 1 0 1&#10;0 0 0 0 0 0 1 0&#10;0 0 0 0 0 0 0 1</span><br></pre></td></tr></table></figure></p>
+<p>Actually it is easy to get this 2d array, the trick is in the next step.<br>To get the minimum cut from it, we need to compare different combinations, e.g for string <code>abaacbc</code> the minimun cut should be one of the combinations below,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subStr.length() - 1&#10;1 + minCut(&#34;baacbc&#34;) //a is palindrome&#10;1 + minCut(&#34;acbc&#34;)   //aba is palindrome</span><br></pre></td></tr></table></figure></p>
+<p>A navie idea is code it up with simply recursive call. Can we do it better? To get the min cut of <code>abaacbc</code>, we need to know the min cut of <code>baacbc</code> and <code>acbc</code>. Then we know this is another <strong>Dynamic Programming</strong> solution. In another word, to solve this problem, we need to use <strong>Dynamic Programming</strong> two times.</p>
+<p>Let’s create an one-dimension array, <code>minCut</code>, each element stands for min cut of s.substring(i)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] minCut = <span class="keyword">new</span> <span class="keyword">int</span>[s.length() + <span class="number">1</span>]; <span class="comment">//last should be ""</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; minCut.length; i++) &#123;</span><br><span class="line">    minCut[i] = minCut.length - i - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//[7 6 5 4 3 2 1 0 -1]</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = s.length() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; s.length(); j++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(dp[i][j] == <span class="keyword">true</span>) &#123;</span><br><span class="line">            minCut[i] = Math.min(minCut[i], <span class="number">1</span> + minCut[j + <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> minCut[<span class="number">0</span>];</span><br></pre></td></tr></table></figure></p>
+<h3 id="Conclusion">Conclusion</h3><p>The interesting part of this problem is we need to use DP two times. During our processes, we should know which part we can improve. <a href="https://github.com/TylerYang/leetcode/blob/master/132.PalindromePartitioningII/Solution.java" target="_blank" rel="external">Here is the java code.</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="tyleryang.github.io/2015/08/01/Palindrome-PartionningII-Leetcode/" data-id="cicrubjfn000bx242uyb4e2b9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/07/25/Reverse-Hash-Function-Google-Challenge/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Reverse Hash Function - Google Challenge</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
       
         <aside id="sidebar">
   
