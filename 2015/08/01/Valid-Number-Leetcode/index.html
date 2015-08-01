@@ -3,17 +3,28 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: Algorithm | Promise Land</title>
+  <title>Valid Number - Leetcode | Promise Land</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Tyler&apos;s Zend Garden">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Promise Land">
-<meta property="og:url" content="tyleryang.github.io/categories/Algorithm/index.html">
+  <meta name="description" content="The hardest problem in leetcode, and it force me to read something new, maybe this is why we solve the problem in the online judge system.
+Valid Number
+Valid if a given string is numeric.
+Some example">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Valid Number - Leetcode">
+<meta property="og:url" content="tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/index.html">
 <meta property="og:site_name" content="Promise Land">
-<meta property="og:description" content="Tyler&apos;s Zend Garden">
+<meta property="og:description" content="The hardest problem in leetcode, and it force me to read something new, maybe this is why we solve the problem in the online judge system.
+Valid Number
+Valid if a given string is numeric.
+Some example">
+<meta property="og:image" content="https://raw.githubusercontent.com/TylerYang/leetcode/master/65.ValidNumber/validNumber.png">
+<meta property="og:updated_time" content="2015-08-01T11:30:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Promise Land">
-<meta name="twitter:description" content="Tyler&apos;s Zend Garden">
+<meta name="twitter:title" content="Valid Number - Leetcode">
+<meta name="twitter:description" content="The hardest problem in leetcode, and it force me to read something new, maybe this is why we solve the problem in the online judge system.
+Valid Number
+Valid if a given string is numeric.
+Some example">
   
   
     <link rel="icon" href="favicon.png">
@@ -118,49 +129,84 @@
 </aside>
 
       
-      <section id="main">
-    <section class="archives-wrap">
-    <div class="archive-category-wrap">
-      <span class="archive-category">Algorithm</span>
-    </div>
-    <div class="archives">
+      <section id="main"><article id="post-Valid-Number-Leetcode" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
     
-    <div class="archive-article-thumbnail">
-      <a href="/2015/07/25/Reverse-Hash-Function-Google-Challenge/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-</a>
-    </div>
     
-    <header class="archive-article-header">
-      
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/25/Reverse-Hash-Function-Google-Challenge/">Reverse Hash Function - Google Challenge</a>
+    <h1 class="article-title" itemprop="name">
+      Valid Number - Leetcode
     </h1>
   
 
-      
-        
-  <div class="archive-article-date">
+        <div class="article-meta">
+          
+  <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2015/07/25/Reverse-Hash-Function-Google-Challenge/">
-      <time datetime="2015-07-25T08:01:42.000Z" itemprop="datePublished">2015 Jul 25</time>
+    <a href="/2015/08/01/Valid-Number-Leetcode/">
+      <time datetime="2015-08-01T08:32:43.000Z" itemprop="datePublished">2015-08-01</time>
     </a>
   </div>
 
 
-      
-    </header>
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/Interview/">Interview</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Interview/Leetcode/">Leetcode</a>
   </div>
-</article>
+
+        </div>
+      </header>
     
-    </div></section>
-    </section>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>The hardest problem in leetcode, and it force me to read something new, maybe this is why we solve the problem in the online judge system.</p>
+<h3 id="Valid_Number">Valid Number</h3><blockquote>
+<p>Valid if a given string is numeric.</p>
+<p>Some examples:<br><code>&quot;0&quot;</code> =&gt; <code>true</code><br><code>&quot; 0.1&quot;</code> =&gt; <code>true</code><br><code>&quot;abc&quot;</code> =&gt; <code>true</code><br><code>&quot;1 a&quot;</code> =&gt; <code>true</code><br><code>&quot;2e10&quot;</code> =&gt; <code>true</code></p>
+</blockquote>
+<h3 id="Analysis">Analysis</h3><p>Well, regular expression must be a way to solve this problem. But I don’t think the recuiter would accept regex solution. </p>
+<p>This problem is all about state and the transition which is how regular expression worked. </p>
+<blockquote>
+<p>Finite State Automata<br>A finite-state machine or finite-state automatata, or simply a state machine, is a mathematial model of computation used to design both computer programs and sequential logic circuits. It is conceived as an abstract machine that can be in one of a finite number of states. <strong>The machine is in only one state at a time;</strong>  — from Wikipedia <a href="https://en.wikipedia.org/wiki/Finite-state_machine" target="_blank" rel="external">Finite-state machine</a>.</p>
+</blockquote>
+<p>For more detail about FSA, <a href="">here is another post about it.</a></p>
+<p>In a word, to satisfy the basic requirement of numeric. We need to know all the states and the possible transition. And after spend some time we can get the list below,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1   + or -&#10;2   number (0 - 9)&#10;3   . (dot)&#10;4   e or E (exponent)&#10;5   others (includ space)</span><br></pre></td></tr></table></figure></p>
+<p>With all this possible inputs, we can use the <a href="https://en.wikipedia.org/wiki/State_diagram" target="_blank" rel="external">State Diagram</a> to describe all the valid and the transitions.<br>For example, from <code>state1</code> it can be only transformed into <code>state2</code> or <code>state3</code>, which means <code>+3</code>, <code>-.4</code> are all valid numeric but <code>+e10</code>, <code>+ 4</code> are not.<br>To give a most complicated valid numeric expression should contains all states, <code>+0.42e-10</code> should be the one.<br>So we can draw down the State Diagram below,<br><img src="https://raw.githubusercontent.com/TylerYang/leetcode/master/65.ValidNumber/validNumber.png" alt="State Diagram"></p>
+<p>From this diagram, we can write down the pseudo code blow,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int state = 0;&#10;boolean hasNumber = false;&#10;for(each char in String s)&#123;&#10;    if(char is plus or minus) &#123;&#10;        if(state == 0 or 5) &#123;&#10;            state++;&#10;        &#125; else &#123;&#10;            return false;&#10;        &#125;&#10;    &#125; else if(char is number) &#123;&#10;        if(state == 0 or 1 or 2) &#123;&#10;            state = 2; &#10;            hasNumber = true;&#10;        &#125; else if(state == 3 or 4) &#123;&#10;            state = 4; &#10;            hasNumber = true;&#10;        &#125; else if(state == 5 or 6 or 7) &#123;&#10;            state = 7;&#10;        &#125;&#10;    &#125; else if(char is dot) &#123;&#10;        if(state == 0 or 1 or 2) &#123;&#10;            state = 3&#10;        &#125; else &#123;&#10;            return false;&#10;        &#125;&#10;    &#125; else if(char is exponent) &#123;&#10;        if(state == 2 or 3 or 4) &#123;&#10;            state = 5;&#10;        &#125; else &#123;&#10;            return false;&#10;        &#125;&#10;    &#125; else &#123;&#10;        return false;&#10;    &#125;&#10;&#125;&#10;return hashNumber &#38;&#38; (state == 2 or 3 or 4 or 7);</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://github.com/TylerYang/leetcode/blob/master/65.ValidNumber/Solution.java" target="_blank" rel="external">Here is the full version of java implementation.</a></p>
+<h3 id="Conclusion">Conclusion</h3><p>As for my understanding, this problem has a very similar concept with Knuth-Morris-Pratt algorithm which is known as KMP algorithm. They are all base on <strong>Finite State Automata</strong>, which is really worth a try. Here I recommend <a href="http://www.amazon.com/Algorithms-4th-Robert-Sedgewick/dp/032157351X/ref=sr_1_1?ie=UTF8&amp;qid=1438428554&amp;sr=8-1&amp;keywords=algorithm" target="_blank" rel="external"><strong>Algorithm (the 4th Edition)</strong></a>, in this book, the author give a very detail introduction of <strong>StateMachine</strong> in chapter 5.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/" data-id="cicsswzw1002zx242adttpu0f" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Finite-State-Automata/">Finite State Automata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/08/01/Palindrome-PartionningII-Leetcode/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Palindrome PartitioningII - Leetcode</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
       
         <aside id="sidebar">
   

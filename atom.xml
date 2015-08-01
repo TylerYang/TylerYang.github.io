@@ -5,7 +5,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="tyleryang.github.io//"/>
-  <updated>2015-08-01T08:22:57.000Z</updated>
+  <updated>2015-08-01T11:30:18.000Z</updated>
   <id>tyleryang.github.io//</id>
   
   <author>
@@ -16,11 +16,48 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Valid Number - Leetcode]]></title>
+    <link href="tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/"/>
+    <id>tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/</id>
+    <published>2015-08-01T08:32:43.000Z</published>
+    <updated>2015-08-01T11:30:18.000Z</updated>
+    <content type="html"><![CDATA[<p>The hardest problem in leetcode, and it force me to read something new, maybe this is why we solve the problem in the online judge system.</p>
+<h3 id="Valid_Number">Valid Number</h3><blockquote>
+<p>Valid if a given string is numeric.</p>
+<p>Some examples:<br><code>&quot;0&quot;</code> =&gt; <code>true</code><br><code>&quot; 0.1&quot;</code> =&gt; <code>true</code><br><code>&quot;abc&quot;</code> =&gt; <code>true</code><br><code>&quot;1 a&quot;</code> =&gt; <code>true</code><br><code>&quot;2e10&quot;</code> =&gt; <code>true</code></p>
+</blockquote>
+<h3 id="Analysis">Analysis</h3><p>Well, regular expression must be a way to solve this problem. But I don’t think the recuiter would accept regex solution. </p>
+<p>This problem is all about state and the transition which is how regular expression worked. </p>
+<blockquote>
+<p>Finite State Automata<br>A finite-state machine or finite-state automatata, or simply a state machine, is a mathematial model of computation used to design both computer programs and sequential logic circuits. It is conceived as an abstract machine that can be in one of a finite number of states. <strong>The machine is in only one state at a time;</strong>  — from Wikipedia <a href="https://en.wikipedia.org/wiki/Finite-state_machine" target="_blank" rel="external">Finite-state machine</a>.</p>
+</blockquote>
+<p>For more detail about FSA, <a href="">here is another post about it.</a></p>
+<p>In a word, to satisfy the basic requirement of numeric. We need to know all the states and the possible transition. And after spend some time we can get the list below,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1   + or -&#10;2   number (0 - 9)&#10;3   . (dot)&#10;4   e or E (exponent)&#10;5   others (includ space)</span><br></pre></td></tr></table></figure></p>
+<p>With all this possible inputs, we can use the <a href="https://en.wikipedia.org/wiki/State_diagram" target="_blank" rel="external">State Diagram</a> to describe all the valid and the transitions.<br>For example, from <code>state1</code> it can be only transformed into <code>state2</code> or <code>state3</code>, which means <code>+3</code>, <code>-.4</code> are all valid numeric but <code>+e10</code>, <code>+ 4</code> are not.<br>To give a most complicated valid numeric expression should contains all states, <code>+0.42e-10</code> should be the one.<br>So we can draw down the State Diagram below,<br><img src="https://raw.githubusercontent.com/TylerYang/leetcode/master/65.ValidNumber/validNumber.png" alt="State Diagram"></p>
+<p>From this diagram, we can write down the pseudo code blow,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int state = 0;&#10;boolean hasNumber = false;&#10;for(each char in String s)&#123;&#10;    if(char is plus or minus) &#123;&#10;        if(state == 0 or 5) &#123;&#10;            state++;&#10;        &#125; else &#123;&#10;            return false;&#10;        &#125;&#10;    &#125; else if(char is number) &#123;&#10;        if(state == 0 or 1 or 2) &#123;&#10;            state = 2; &#10;            hasNumber = true;&#10;        &#125; else if(state == 3 or 4) &#123;&#10;            state = 4; &#10;            hasNumber = true;&#10;        &#125; else if(state == 5 or 6 or 7) &#123;&#10;            state = 7;&#10;        &#125;&#10;    &#125; else if(char is dot) &#123;&#10;        if(state == 0 or 1 or 2) &#123;&#10;            state = 3&#10;        &#125; else &#123;&#10;            return false;&#10;        &#125;&#10;    &#125; else if(char is exponent) &#123;&#10;        if(state == 2 or 3 or 4) &#123;&#10;            state = 5;&#10;        &#125; else &#123;&#10;            return false;&#10;        &#125;&#10;    &#125; else &#123;&#10;        return false;&#10;    &#125;&#10;&#125;&#10;return hashNumber &#38;&#38; (state == 2 or 3 or 4 or 7);</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://github.com/TylerYang/leetcode/blob/master/65.ValidNumber/Solution.java" target="_blank" rel="external">Here is the full version of java implementation.</a></p>
+<h3 id="Conclusion">Conclusion</h3><p>As for my understanding, this problem has a very similar concept with Knuth-Morris-Pratt algorithm which is known as KMP algorithm. They are all base on <strong>Finite State Automata</strong>, which is really worth a try. Here I recommend <a href="http://www.amazon.com/Algorithms-4th-Robert-Sedgewick/dp/032157351X/ref=sr_1_1?ie=UTF8&amp;qid=1438428554&amp;sr=8-1&amp;keywords=algorithm" target="_blank" rel="external"><strong>Algorithm (the 4th Edition)</strong></a>, in this book, the author give a very detail introduction of <strong>StateMachine</strong> in chapter 5.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>The hardest problem in leetcode, and it force me to read something new, maybe this is why we solve the problem in the online judge system]]>
+    </summary>
+    
+      <category term="Finite State Automata" scheme="tyleryang.github.io/tags/Finite-State-Automata/"/>
+    
+      <category term="Leetcode" scheme="tyleryang.github.io/tags/Leetcode/"/>
+    
+      <category term="Interview" scheme="tyleryang.github.io/categories/Interview/"/>
+    
+      <category term="Leetcode" scheme="tyleryang.github.io/categories/Interview/Leetcode/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Palindrome PartitioningII - Leetcode]]></title>
     <link href="tyleryang.github.io/2015/08/01/Palindrome-PartionningII-Leetcode/"/>
     <id>tyleryang.github.io/2015/08/01/Palindrome-PartionningII-Leetcode/</id>
     <published>2015-07-31T16:09:13.000Z</published>
-    <updated>2015-08-01T08:22:57.000Z</updated>
+    <updated>2015-08-01T08:22:40.000Z</updated>
     <content type="html"><![CDATA[<p>This should be one of the most insteresting algorithm problem I try to solve within this month.</p>
 <p>Here is the question,</p>
 <h3 id="Palindrome_PartitioningII">Palindrome PartitioningII</h3><blockquote>
