@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>tyleryang.github.io/2015/08/11/Candy-Leetcode/</loc>
+    <lastmod>2015-08-11T14:47:21.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>tyleryang.github.io/2015/08/01/Dependency-Injection-in-JavaScript/</loc>
     <lastmod>2015-08-02T08:23:56.000Z</lastmod>
   </url>
