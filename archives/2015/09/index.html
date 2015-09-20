@@ -3,21 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>About XOR operator | Promise Land</title>
+  <title>Archives: 2015/9 | Promise Land</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="I think the chrome web developer tool is very useful, I perfer to use it to validate some expression or some api instead of using java compiler or c compiler. Considering the expression below.
-12345va">
-<meta property="og:type" content="article">
-<meta property="og:title" content="About XOR operator">
-<meta property="og:url" content="tyleryang.github.io/2015/07/25/About-XOR-operator/index.html">
+  <meta name="description" content="Tyler&apos;s Zend Garden">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Promise Land">
+<meta property="og:url" content="tyleryang.github.io/archives/2015/09/index.html">
 <meta property="og:site_name" content="Promise Land">
-<meta property="og:description" content="I think the chrome web developer tool is very useful, I perfer to use it to validate some expression or some api instead of using java compiler or c compiler. Considering the expression below.
-12345va">
-<meta property="og:updated_time" content="2015-07-25T06:17:17.000Z">
+<meta property="og:description" content="Tyler&apos;s Zend Garden">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="About XOR operator">
-<meta name="twitter:description" content="I think the chrome web developer tool is very useful, I perfer to use it to validate some expression or some api instead of using java compiler or c compiler. Considering the expression below.
-12345va">
+<meta name="twitter:title" content="Promise Land">
+<meta name="twitter:description" content="Tyler&apos;s Zend Garden">
   
   
     <link rel="icon" href="favicon.png">
@@ -124,73 +120,49 @@
 </aside>
 
       
-      <section id="main"><article id="post-About-XOR-operator" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
+      <section id="main">
+      <div class="archive-year-wrap">
+        <a href="/archives/2015" class="archive-year">2015</a>
+      </div>
+      <section class="archives-wrap">
+        <div class="archives">
     
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
     
-    
-      <header class="article-header">
-        
+    <div class="archive-article-thumbnail">
+      <a href="/2015/09/20/最近的生活/" class="thumbnail">
   
-    <h1 class="article-title" itemprop="name">
-      About XOR operator
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+    </div>
+    
+    <header class="archive-article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2015/09/20/最近的生活/">最近的生活 - 生活</a>
     </h1>
   
 
-        <div class="article-meta">
-          
-  <div class="article-date">
+      
+        
+  <div class="archive-article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2015/07/25/About-XOR-operator/">
-      <time datetime="2015-07-25T06:15:16.000Z" itemprop="datePublished">2015-07-25</time>
+    <a href="/2015/09/20/最近的生活/">
+      <time datetime="2015-09-20T15:23:45.000Z" itemprop="datePublished">Sep 20</time>
     </a>
   </div>
 
 
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <p>I think the chrome web developer tool is very useful, I perfer to use it to validate some expression or some api instead of using java compiler or c compiler. Considering the expression below.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">129</span>;</span><br><span class="line"><span class="keyword">var</span> c = a ^ b;</span><br><span class="line">a ^ b;  <span class="comment">// 132</span></span><br><span class="line">b ^ c;  <span class="comment">// 5 equals to a</span></span><br></pre></td></tr></table></figure>
-<p>Let me prove this is right. The binary expression of integer 5 is, <code>101</code><br>for 129 is, <code>100000001</code></p>
-<p>XOR means with the same bit value you will get <code>0</code>, and vise versa.<br>So when we do <code>a ^ b</code> means we will get the bit which only exist in <code>a</code> or <code>b</code>.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">8</span> <span class="number">7</span> <span class="number">6</span> <span class="number">5</span> <span class="number">4</span> <span class="number">3</span> <span class="number">2</span> <span class="number">1</span> <span class="number">0</span></span><br><span class="line"><span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span>  <span class="comment">//a</span></span><br><span class="line">              XOR</span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span>  <span class="comment">//b</span></span><br><span class="line">-----------------</span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span>  <span class="comment">//c  bits only exist in a or b</span></span><br></pre></td></tr></table></figure></p>
-<p>So <code>b ^ c</code> means you will get the bit only exist in b or c.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">8</span> <span class="number">7</span> <span class="number">6</span> <span class="number">5</span> <span class="number">4</span> <span class="number">3</span> <span class="number">2</span> <span class="number">1</span> <span class="number">0</span></span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="comment">//b</span></span><br><span class="line">              XOR</span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="comment">//c</span></span><br><span class="line">-----------------</span><br></pre></td></tr></table></figure></p>
-<p>Appearently when we  <code>a ^ b</code>, their public bits are all set to <code>0</code>(The 0th) and the bits only exist in b or a is already save into the c(The 2th from a and the 8th from b). So At this moment <code>b ^ c</code> will equal to ‘bits only exist in a and bits exist in both <code>a</code> and <code>b</code> which is <code>a</code>‘(The 0th from <code>a</code> and the 2th from <code>b</code>). </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/07/25/About-XOR-operator/" data-id="ciesp80bo001i3u420vdkdvaw" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSAPP/">CSAPP</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2015/07/25/Reverse-Hash-Function-Google-Challenge/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Reverse Hash Function - Google Challenge
-        
-      </div>
-    </a>
-  
-  
-</nav>
-
-  
 </article>
-
-
-</section>
+  
+    </div></section>
+  </section>
       
         <aside id="sidebar">
   

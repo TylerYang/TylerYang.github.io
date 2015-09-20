@@ -5,7 +5,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="tyleryang.github.io//"/>
-  <updated>2015-08-11T14:47:21.000Z</updated>
+  <updated>2015-09-20T16:04:40.000Z</updated>
   <id>tyleryang.github.io//</id>
   
   <author>
@@ -14,6 +14,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[最近的生活 - 生活]]></title>
+    <link href="tyleryang.github.io/2015/09/20/%E6%9C%80%E8%BF%91%E7%9A%84%E7%94%9F%E6%B4%BB/"/>
+    <id>tyleryang.github.io/2015/09/20/最近的生活/</id>
+    <published>2015-09-20T15:23:45.000Z</published>
+    <updated>2015-09-20T16:04:40.000Z</updated>
+    <content type="html"><![CDATA[<p>前些日子把个人博客从github 上搬到了树莓派里，给树莓派装了nodejs， git等东东。同时把家里的两级路由变成了一个网络桥接以及一个以及路由。当时弄到了晚上三点，印象颇为深刻。 </p>
+<p>原先有个路由是电信那边租过来的，刚开始就被设好，后来自己买多了一个华为的荣耀路由。想着这样可以用ddns把自己的树莓派曝露到英特网下，从而可以自己setup 自己的server，将来还可以加蓝牙dangle把家里搞成小型物联网。 于是就注册了花生壳，却发现无论如何都无法从外网访问到自己的树莓派。后来发现是因为华为绑定花生壳账号的时候是把自己被电信光猫（一级路由）分配的ip<br>绑定给了花生壳，于是果断把一级路由刷掉取消拨号转为桥接，再把华为的拨号加上，搞定。</p>
+<p>再之后就是开发了一个小小的angular keyboard，花了几个小时吧，写着玩。具体见github。 </p>
+<p>leetcode 刷题的进度最近都下来了，工作确实很忙，晚上回来基本都是头疼，躺一会就起来健身，俯卧撑仰卧起坐啥的还是要做的。星期六日基本都会去咖啡厅刷题写代码。</p>
+<p>react native 果然会慢慢活起来，还记得四月刚出的时候马上跑过去写了几个页面，写着跟twitter一样的界面，写起来毫无压力。之后上youtube 上看了react conference里面fb 的一个家伙写的animation demo，被震惊了很久。 现在react native又可以编译成android，就像发布会时说的那样，“我们相信web 的未来非常美好，但现在还是有不足之处，至少在我们等到html5 完美之前，react native 会成为我们目前最好的解决方案。” </p>
+<p>前些日子上youtube 上看了不来梅大学的 suffix tree 的视频，实现起来确实蛮累的。trie tree 实现起来这么简单，但适用范围却很窄。尤记得当时面试的时候被北大哥问suffix tree跟优先队列的实现问的面红耳赤的自己,当时回来跟steven 聊了好久，steven 说了几个重要的数据结构一定要掌握，于是默默记在心中。感觉人生就是不断的遇到秒杀你的人，但人生的意义却是一次次被秒杀，一次次爬起来继续练。</p>
+<p>这两天早上练了一上午球，下午跑去写了知乎的小爬虫，准备封装好基本API。顺便尝试了下koa 的东东，ECMAScript 的yield 真是蛮有意思的，刚开始以为yield 是可以解决异步问题，后来发现是koa 利用generator 解决了异步回调，google 了一下，貌似很多人都有这个误会。 另外 generator 里面的peak 运行语句的方式会是一个蛮有意思的考点吧。 koa 封装的middleware 只能赞一个。具体代码见github。 </p>
+<p>好几个月没认真去stackoverflow 刷答案，昨天跑去看了一下，发现有个人提了一个问题，说是内嵌的document.write 跟用script src 引入的js脚本里面的document.write 运行结果不一致，一个只是append 文字进去，后者则是删除文档原有的markup，然后append text。 当时看到的时候也觉得很奇怪，后来第一反应是去mdn 查文档，看了一下发现是内嵌的document.write 是不会自动先调用 document.open，而document.open<br>的作用恰恰是清空整个文档。给问这个问题的人点了赞，答了题，拿了几十分。</p>
+<p>早上公交时间有点长，就在车上看《编程珠玑》，一本书看了这么久，也是怪不好意思的。有些地方觉得没必要太着重，比如空间的优化，举的例子还是很久之前的。但对于马戏团的跳法觉得蛮有意思的。</p>
+<p>接下来的日子，网上订了蓝牙灯泡跟蓝牙usb 接口，一方面要写知乎爬虫，之后setup 到树莓派下，然后再写一个react native 的ios app做一个知乎大百科。接着是弄好基本的物联网简易平台，从手机端用ios app 通过3g连接到树莓派，再由树莓派通过蓝牙连接到蓝牙灯泡。至少刚工作的时候做过类似的东西，做起来应该难度不大。</p>
+<p>国庆节就快到了，连续七天的假期简直是一种奢侈，好好安排下自己国庆时候要刷的题目，写的项目还有就是许久未见的朋友，估计会一块约打球。不要浪费时间在不必要的时候，秉承着这个原则，几乎去哪都是最快去。有时候也会想是否错过了很多，有时候你承担的多了，你就过的不会这么轻松吧。</p>
+<p>还记得那个草帽，我会去还给你的！</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>前些日子把个人博客从github 上搬到了树莓派里，给树莓派装了nodejs， git等东东。同时把家里的两级路由变成了一个网络桥接以及一个以及路由。当时弄到了晚上三点，印象颇为深刻。 </p>
+<p>原先有个路由是电信那边租过来的，刚开始就被设好，后来自己买多了一个华为的]]>
+    </summary>
+    
+      <category term="生活" scheme="tyleryang.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="生活" scheme="tyleryang.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Dependency Injection in JavaScriptII]]></title>
+    <link href="tyleryang.github.io/2015/08/21/Dependency-Injection-in-JavaScriptII/"/>
+    <id>tyleryang.github.io/2015/08/21/Dependency-Injection-in-JavaScriptII/</id>
+    <published>2015-08-21T10:51:35.000Z</published>
+    <updated>2015-08-21T10:52:16.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="algorithm" scheme="tyleryang.github.io/tags/algorithm/"/>
+    
+      <category term="design pattern" scheme="tyleryang.github.io/tags/design-pattern/"/>
+    
+      <category term="javascript" scheme="tyleryang.github.io/tags/javascript/"/>
+    
+      <category term="Language" scheme="tyleryang.github.io/categories/Language/"/>
+    
+      <category term="Javascript" scheme="tyleryang.github.io/categories/Language/Javascript/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Candy - Leetcode]]></title>
