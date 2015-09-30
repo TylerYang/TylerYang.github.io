@@ -92,11 +92,11 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        8
+        9
         <span>posts</span>
       </div>
       <div class="article-info-block">
-        12
+        14
         <span>tags</span>
       </div>
     </div>
@@ -121,6 +121,74 @@
 
       
       <section id="main">
+      <article id="post-移动webapp工程思考" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/30/移动webapp工程思考/">移动webapp 优化思考 - web</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2015/09/30/移动webapp工程思考/">
+      <time datetime="2015-09-30T13:57:48.000Z" itemprop="datePublished">2015-09-30</time>
+    </a>
+  </div>
+
+
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/web/">web</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/web/架构/">架构</a>
+  </div>
+
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="起因">起因</h2><p>最近在帮助重写一个移动端h5 架构。说起来这是后话，主要起因是有个基于RequireJS 跟 AngularJS 开发的移动端HTML5 网站。 本身定义为Web Application。接到优化加载时间的需求，本着先解决主要问题的原则，做了下列事情。</p>
+<ol>
+<li>打开Chrome 查看打开url时候的加载时序图。</li>
+<li>尝试看加载分为哪几个步骤，并调整加载时候的网络状况（Chrome自带)观察在不同网络情况下的加载速度，例如2G 与3G, 3G下又有(Good, Regular, Bad) 三个等级。</li>
+</ol>
+<p>发觉这个移动端站点在3G Bad 的情况下加载时间竟然约为10s。 到所有完成是12s。 也就是说，光加载资源就10s。时序图如下，</p>
+<p><img src="https://raw.githubusercontent.com/TylerYang/images/master/blog/lx.png" alt="State Diagram"></p>
+<h2 id="分析">分析</h2><p>从图中可以看出，整个过程大致分为三个阶段，<br>第一阶段, 加载RequireJS, 等RequireJS 加载完运行代码<br>第二阶段, 通过RequireJS 加载 main.js, main.js加载完 开始Angular 的Bootstrap, (初始化应用模块，初始化路由以及动态加载模块）<br>第三阶段, 根据当前url 动态加载对应模块的controller 以及 html，之后对页面进行渲染。</p>
+<p>很明显原来的架构意图在于通过RequireJS 管理模块之间的依赖关系，并且随着页面的跳转逐渐加载新的Controller 与模版。典型的渐进加载思路，应该说是一个很美好的想法，但并不适用于当前。主要原因我认为在于当前移动网络并没有想象中这么乐观，2g 3g(regular, bad)还是比比皆是。这种通过RequireJS 来管理模块依赖，让移动端项目强依赖于RequireJS<br>的方式无论从任何页面进入项目，总会有两段不必要的时间花费（无论以何种方式优化）。</p>
+<ol>
+<li>加载并运行RequireJS</li>
+<li>动态加载Controller 与 模版</li>
+</ol>
+<p>回去看项目代码，发现项目完全通过RequireJS 进行管理模块，甚至连动态加载controller 都通过RequireJS 来做，要去掉以上两点，我的看法是在开发过程中仅通过RequireJS 管理库之间的依赖，而在构建过程中把RequireJS 相关部分从项目中剥离出去。 </p>
+<p>换言之，在Development 环境中仍存在RequireJS, 与动态加载部分。在Production 环境中去除 RequireJS, 把所有的第三方库合成一个文件，把所有的app 合成一个文件，html<br>编译成js。在构建过程中去除动态加载部分。</p>
+<p>此时项目还不是很大，整个项目页面主要也就三十来个。我认为这时候应该优先对项目架构进行修正以减少技术债。随着时间增长，这种由于架构导致的加载性能问题只会越来越严重。并且修正起来难度会越来越大（耦合度会随着时间逐渐增加）</p>
+<p>分析完主要问题，开始着手从项目中去除RequireJS 的模块管理部分以及编写构建过程。计划时间花费应该在2天左右。明天国庆回老家，后天完成。到时候不上简单示意图。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="tyleryang.github.io/2015/09/30/移动webapp工程思考/" data-id="cif6v5mk90002pify9o63wsnz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工程/">工程</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+    
       <article id="post-最近的生活" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -171,7 +239,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/09/20/最近的生活/" data-id="ciesp80av00023u42zgda0we8" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/09/20/最近的生活/" data-id="cif6v5mkg0003pifyblww9y5i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
@@ -222,7 +290,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/08/21/Dependency-Injection-in-JavaScriptII/" data-id="ciesp80be000w3u42p8snz53t" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/08/21/Dependency-Injection-in-JavaScriptII/" data-id="cif6v5mky000xpifysoy7ir1x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/design-pattern/">design pattern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -292,7 +360,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/08/11/Candy-Leetcode/" data-id="ciesp80bk001c3u42xyzxahow" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/08/11/Candy-Leetcode/" data-id="cif6v5ml6001dpifydwqndgx4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Greedy-Algorithm/">Greedy Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -359,7 +427,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/08/01/Dependency-Injection-in-JavaScript/" data-id="ciesp80bh00173u42r5bgev6i" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/08/01/Dependency-Injection-in-JavaScript/" data-id="cif6v5ml40018pifyuingipdl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/design-pattern/">design pattern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -425,76 +493,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/" data-id="ciesp80b200073u42oo1kdcha" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/" data-id="cif6v5mkm0008pify9g5l99mo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Finite-State-Automata/">Finite State Automata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/State-Machine/">State Machine</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-    
-      <article id="post-Palindrome-PartionningII-Leetcode" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/01/Palindrome-PartionningII-Leetcode/">Palindrome PartitioningII - Leetcode</a>
-    </h1>
-  
-
-        <div class="article-meta">
-          
-  <div class="article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2015/08/01/Palindrome-PartionningII-Leetcode/">
-      <time datetime="2015-07-31T16:09:13.000Z" itemprop="datePublished">2015-08-01</time>
-    </a>
-  </div>
-
-
-          
-  <div class="article-category">
-  	<i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/Interview/">Interview</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Interview/Leetcode/">Leetcode</a>
-  </div>
-
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>This should be one of the most insteresting algorithm problem I try to solve within this month.</p>
-<p>Here is the question,</p>
-<h3 id="Palindrome_PartitioningII">Palindrome PartitioningII</h3><blockquote>
-<p>Given a string s, partition s such that every substring of the partition is a palindrome.<br>Return the minimum cuts needs for a palindrome partitioning of s.</p>
-<p>For example, given s = “aab”,<br>Return <code>1</code> since the palindrome partitioning <code>[&quot;aa&quot;, &quot;b&quot;]</code> could be produced using 1 cut.</p>
-</blockquote>
-<h3 id="Analysis">Analysis</h3><p>To get the minimum cut, of course backtracking can get an answer. To do it in a better way, <strong>Dynamic Programming</strong> will be suit for us.</p>
-<p>Let’s say, we want to know the minimum cut for string <code>s = &quot;aabaabcb&quot;</code>,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1 2 3 4 5 6 7&#10;a a b a a c b c</span><br></pre></td></tr></table></figure></p>
-<p>Apparently, we need to find out all the palindrome substring in it so that we can get the minimum cut. But we can reuse some part of the substring. For example, if we know <code>aba</code> is a palindrome, to valid <code>aabaa</code> we only need to make sure the first character equals to the last one.<br>So the first step is to find out all the substring which is palindrome.<br>We use 2 dimension array to store all the result. For String <code>s = &quot;aabaabcb&quot;</code>, substring s.substring(1, 3) is a palindrome, so we set <code>dp[1][3] = true</code>, here is the java code.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span>[][] dp = <span class="keyword">new</span> <span class="keyword">boolean</span>[s.length()][s.length()];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = s.length() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; s.length(); j++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(s.charAt(j) == s.charAt(i) &amp;&amp; (j - i &lt; <span class="number">2</span> || dp[i + <span class="number">1</span>][j - <span class="number">1</span>] == <span class="keyword">true</span>)) dp[i][j] = <span class="keyword">true</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>after run this code, we get a two dimension array below,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 1 0 0 1 0 0 0&#10;0 1 0 1 0 0 0 0&#10;0 0 1 0 0 0 0 0&#10;0 0 0 1 1 0 0 0&#10;0 0 0 0 1 0 0 0&#10;0 0 0 0 0 1 0 1&#10;0 0 0 0 0 0 1 0&#10;0 0 0 0 0 0 0 1</span><br></pre></td></tr></table></figure></p>
-<p>Actually it is easy to get this 2d array, the trick is in the next step.<br>To get the minimum cut from it, we need to compare different combinations, e.g for string <code>abaacbc</code> the minimun cut should be one of the combinations below,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subStr.length() - 1&#10;1 + minCut(&#34;baacbc&#34;) //a is palindrome&#10;1 + minCut(&#34;acbc&#34;)   //aba is palindrome</span><br></pre></td></tr></table></figure></p>
-<p>A navie idea is code it up with simply recursive call. Can we do it better? To get the min cut of <code>abaacbc</code>, we need to know the min cut of <code>baacbc</code> and <code>acbc</code>. Then we know this is another <strong>Dynamic Programming</strong> solution. In another word, to solve this problem, we need to use <strong>Dynamic Programming</strong> two times.</p>
-<p>Let’s create an one-dimension array, <code>minCut</code>, each element stands for min cut of s.substring(i)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] minCut = <span class="keyword">new</span> <span class="keyword">int</span>[s.length() + <span class="number">1</span>]; <span class="comment">//last should be ""</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; minCut.length; i++) &#123;</span><br><span class="line">    minCut[i] = minCut.length - i - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//[7 6 5 4 3 2 1 0 -1]</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = s.length() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; s.length(); j++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(dp[i][j] == <span class="keyword">true</span>) &#123;</span><br><span class="line">            minCut[i] = Math.min(minCut[i], <span class="number">1</span> + minCut[j + <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> minCut[<span class="number">0</span>];</span><br></pre></td></tr></table></figure></p>
-<h3 id="Conclusion">Conclusion</h3><p>The interesting part of this problem is we need to use DP two times. During our processes, we should know which part we can improve. <a href="https://github.com/TylerYang/leetcode/blob/master/132.PalindromePartitioningII/Solution.java" target="_blank" rel="external">Here is the java code.</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/08/01/Palindrome-PartionningII-Leetcode/" data-id="ciesp80ba000q3u42es6lv2o1" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
 
     </footer>
   </div>
@@ -516,6 +518,24 @@
     <h3 class="widget-title">recents</h3>
     <div class="widget">
       <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/09/30/移动webapp工程思考/" class="thumbnail">
+  
+    <span style="background-image:url(https://raw.githubusercontent.com/TylerYang/images/master/blog/lx.png
+)" alt="移动webapp 优化思考 - web" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/web/">web</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/web/架构/">架构</a></p>
+              <p class="item-title"><a href="/2015/09/30/移动webapp工程思考/" class="title">移动webapp 优化思考 - web</a></p>
+              <p class="item-date"><time datetime="2015-09-30T13:57:48.000Z" itemprop="datePublished">2015-09-30</time></p>
+            </div>
+          </li>
         
           <li>
             
@@ -585,24 +605,6 @@
             </div>
           </li>
         
-          <li>
-            
-            <div class="item-thumbnail">
-              <a href="/2015/08/01/Valid-Number-Leetcode/" class="thumbnail">
-  
-    <span style="background-image:url(https://raw.githubusercontent.com/TylerYang/leetcode/master/65.ValidNumber/validNumber.png
-)" alt="Valid Number - Leetcode" class="thumbnail-image"></span>
-  
-</a>
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/Interview/">Interview</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Interview/Leetcode/">Leetcode</a></p>
-              <p class="item-title"><a href="/2015/08/01/Valid-Number-Leetcode/" class="title">Valid Number - Leetcode</a></p>
-              <p class="item-date"><time datetime="2015-08-01T08:32:43.000Z" itemprop="datePublished">2015-08-01</time></p>
-            </div>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -612,7 +614,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Google-Chanllenge/">Google Chanllenge</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Leetcode/">Leetcode</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Javascript/">Javascript</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Google-Chanllenge/">Google Chanllenge</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Leetcode/">Leetcode</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Javascript/">Javascript</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web/架构/">架构</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -621,7 +623,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSAPP/">CSAPP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Finite-State-Automata/">Finite State Automata</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Challenge/">Google Challenge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Greedy-Algorithm/">Greedy Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/State-Machine/">State Machine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/design-pattern/">design pattern</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSAPP/">CSAPP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Finite-State-Automata/">Finite State Automata</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Challenge/">Google Challenge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Greedy-Algorithm/">Greedy Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/State-Machine/">State Machine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/design-pattern/">design pattern</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工程/">工程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -630,7 +632,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">tag cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/CSAPP/" style="font-size: 10px;">CSAPP</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Finite-State-Automata/" style="font-size: 10px;">Finite State Automata</a> <a href="/tags/Google-Challenge/" style="font-size: 10px;">Google Challenge</a> <a href="/tags/Greedy-Algorithm/" style="font-size: 10px;">Greedy Algorithm</a> <a href="/tags/Leetcode/" style="font-size: 20px;">Leetcode</a> <a href="/tags/State-Machine/" style="font-size: 10px;">State Machine</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/design-pattern/" style="font-size: 15px;">design pattern</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a>
+      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/CSAPP/" style="font-size: 10px;">CSAPP</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Finite-State-Automata/" style="font-size: 10px;">Finite State Automata</a> <a href="/tags/Google-Challenge/" style="font-size: 10px;">Google Challenge</a> <a href="/tags/Greedy-Algorithm/" style="font-size: 10px;">Greedy Algorithm</a> <a href="/tags/Leetcode/" style="font-size: 20px;">Leetcode</a> <a href="/tags/State-Machine/" style="font-size: 10px;">State Machine</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/design-pattern/" style="font-size: 15px;">design pattern</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/工程/" style="font-size: 10px;">工程</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a>
     </div>
   </div>
 
@@ -639,7 +641,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
