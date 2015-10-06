@@ -92,11 +92,11 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        8
+        9
         <span>posts</span>
       </div>
       <div class="article-info-block">
-        13
+        14
         <span>tags</span>
       </div>
     </div>
@@ -121,6 +121,75 @@
 
       
       <section id="main">
+      <article id="post-Shortest-Palindrome-Leetcode" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/06/Shortest-Palindrome-Leetcode/">Shortest Palindrome - Leetcode</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2015/10/06/Shortest-Palindrome-Leetcode/">
+      <time datetime="2015-10-06T08:43:00.000Z" itemprop="datePublished">2015-10-06</time>
+    </a>
+  </div>
+
+
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/Interview/">Interview</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Interview/Leetcode/">Leetcode</a>
+  </div>
+
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>已经很久没刷题了，国庆期间重新刷了几题，复习了下 DFA, kmp algorithm, 有向图的环检测, 拓扑排序等。</p>
+<p>最近对算法一个感受就是，算法跟英文很像，学的时候总是不知道有什么用，偏偏就会有时候需要用上。 比如有向环的检测跟拓扑排序，学图数据结构跟算法的时候总是觉得这些东西可能在一些比较高大上的东西上才会用到。直到半自己想写一个依赖注入的js 版本实现的时候突然就懵了。 </p>
+<p>写个依赖注入在简单的利用function to String 之后利用正则表达式获得各个变量时候的难度都还好，直到检测依赖是否成环的时候，需要用到的便是图里面的有向图的环检测，也就是dfs。</p>
+<p>这题<a href="https://leetcode.com/problems/shortest-palindrome/" target="_blank" rel="external">Shortest Palindrome</a> 在leetcode 的通过率为17%，难度为Hard. 个人认为还是比较有意思的题目.</p>
+<blockquote>
+<p>Given a string S, you are allowed to convert it to a palindrome by adding characters in front of it. Find and return the shortest palindrome you can find by performing this transformation.</p>
+<p>For example:<br>Given “aacecaaa”, return “aaacecaaa”.</p>
+<p>Given “abcd”, return “dcbabcd”.</p>
+</blockquote>
+<h3 id="分析">分析</h3><p>刚开始看到这题想法是很简单，以为跟找最长子串匹配应该是同一个解法，也就是动态规划的方法。后面发现跑起来在大数据集的时候还比暴力匹配更慢. </p>
+<p>仔细思考了一下后发现最短的回文其实是从头上开始找到后面能匹配的尽可能长的回文子串，举个例子<code>aabcbaaa</code> 能找到从头部开始尽可能长的回文子串为<code>aabcbaa</code>。思路上还是动态规划，却发现无论如何都有很多无用的操作。最后 google 了下，发现最佳的做法（时间复杂度为线性）是kmp 算法。</p>
+<p>具体做法为 <code>aabcbaaa</code> + <code>aaabcbaa</code>(前者的逆子串）之后用kmp 的prefix 处理生成next 跳转数组后，找到能match 的最长回文逆子串。比如 对于字符串s(<code>aabcbaaa</code>)先reverse 再concat 之后生成的字符串为str(<code>aabcbaaaaaabcbaa</code>)。 这时候的next 跳转数组应该为</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a  a   b  c  b  a  a  a  a  a  a  b  c  b  a  a&#10;-1  0  -1 -1 -1  0  1  0  1  0  1  2  3  4  5  6</span><br></pre></td></tr></table></figure>
+<p>这时候会发现能找到的最长逆子串长度应该为6 + 1 =&gt; 7. 这是只需要new StringBuffer(s.substring(7)).reverse() + s 便为最终解答。</p>
+<p>以下为具体的java 实现，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">shortestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s == <span class="keyword">null</span> || s.length() == <span class="number">0</span>) <span class="keyword">return</span> s;</span><br><span class="line">        StringBuffer sBuff = <span class="keyword">new</span> StringBuffer(s);</span><br><span class="line"></span><br><span class="line">        String str = s + sBuff.reverse().toString();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] next = genNext(str);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> l = next[next.length - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(l == str.length() - <span class="number">1</span> || l == s.length()) &#123;</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(l &gt; s.length()) &#123;</span><br><span class="line">            l++;</span><br><span class="line">        &#125;</span><br><span class="line">        l %= s.length();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> StringBuffer(s.substring(l)).reverse().toString() + s; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] genNext(String pattern) &#123;</span><br><span class="line">        <span class="keyword">int</span>[] next = <span class="keyword">new</span> <span class="keyword">int</span>[pattern.length()];</span><br><span class="line">        next[<span class="number">0</span>] = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; pattern.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> index = next[i - <span class="number">1</span>];</span><br><span class="line">            <span class="keyword">while</span>(index &gt;= <span class="number">0</span> &amp;&amp; pattern.charAt(index + <span class="number">1</span>) != pattern.charAt(i)) &#123;</span><br><span class="line">                index = next[index];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(pattern.charAt(index + <span class="number">1</span>) == pattern.charAt(i)) &#123;</span><br><span class="line">                next[i] = index + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                next[i] = -<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/TylerYang/leetcode/blob/master/214.ShortestPalindrome/Solution.java" target="_blank" rel="external">完整版本</a></p>
+<h3 id="总结">总结</h3><p>这题感觉综合性在leetcode 里面算是比较强的。至少让我复习了kmp 这个算法以及dfa 的相关概念。kmp 的prefix 的实现感觉上还是比较tricky，写出伪代码然后去一步步去走才能更深刻的理解。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="tyleryang.github.io/2015/10/06/Shortest-Palindrome-Leetcode/" data-id="ciff4cpyv000r7w4204xmq1m3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Finite-State-Automata/">Finite State Automata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/KMP-Algorithm/">KMP Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+    
       <article id="post-移动webapp工程思考" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -176,7 +245,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/09/30/移动webapp工程思考/" data-id="cif9u3m2v0002u6425aaa6it6" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/09/30/移动webapp工程思考/" data-id="ciff4cpyd00027w42etjjugpx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工程/">工程</a></li></ul>
@@ -239,7 +308,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/09/20/最近的生活/" data-id="cif9u3m37000bu642ifvkrikq" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/09/20/最近的生活/" data-id="ciff4cpyo000b7w421ma4s0bh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
@@ -309,7 +378,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/08/11/Candy-Leetcode/" data-id="cif9u3m3o001eu642o4w0zx7f" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/08/11/Candy-Leetcode/" data-id="ciff4cpz9001f7w42o0piv6as" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Greedy-Algorithm/">Greedy Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -376,7 +445,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/08/01/Dependency-Injection-in-JavaScript/" data-id="cif9u3m3k0015u642uozifpog" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/08/01/Dependency-Injection-in-JavaScript/" data-id="ciff4cpz500167w423birjrh8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/design-pattern/">design pattern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -442,76 +511,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/" data-id="cif9u3m3a000gu642wfq9gjuh" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/" data-id="ciff4cpyr000g7w425yfm61r7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Finite-State-Automata/">Finite State Automata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/State-Machine/">State Machine</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-    
-      <article id="post-Palindrome-PartionningII-Leetcode" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/01/Palindrome-PartionningII-Leetcode/">Palindrome PartitioningII - Leetcode</a>
-    </h1>
-  
-
-        <div class="article-meta">
-          
-  <div class="article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2015/08/01/Palindrome-PartionningII-Leetcode/">
-      <time datetime="2015-07-31T16:09:13.000Z" itemprop="datePublished">2015-08-01</time>
-    </a>
-  </div>
-
-
-          
-  <div class="article-category">
-  	<i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/Interview/">Interview</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Interview/Leetcode/">Leetcode</a>
-  </div>
-
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>This should be one of the most insteresting algorithm problem I try to solve within this month.</p>
-<p>Here is the question,</p>
-<h3 id="Palindrome_PartitioningII">Palindrome PartitioningII</h3><blockquote>
-<p>Given a string s, partition s such that every substring of the partition is a palindrome.<br>Return the minimum cuts needs for a palindrome partitioning of s.</p>
-<p>For example, given s = “aab”,<br>Return <code>1</code> since the palindrome partitioning <code>[&quot;aa&quot;, &quot;b&quot;]</code> could be produced using 1 cut.</p>
-</blockquote>
-<h3 id="Analysis">Analysis</h3><p>To get the minimum cut, of course backtracking can get an answer. To do it in a better way, <strong>Dynamic Programming</strong> will be suit for us.</p>
-<p>Let’s say, we want to know the minimum cut for string <code>s = &quot;aabaabcb&quot;</code>,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1 2 3 4 5 6 7&#10;a a b a a c b c</span><br></pre></td></tr></table></figure></p>
-<p>Apparently, we need to find out all the palindrome substring in it so that we can get the minimum cut. But we can reuse some part of the substring. For example, if we know <code>aba</code> is a palindrome, to valid <code>aabaa</code> we only need to make sure the first character equals to the last one.<br>So the first step is to find out all the substring which is palindrome.<br>We use 2 dimension array to store all the result. For String <code>s = &quot;aabaabcb&quot;</code>, substring s.substring(1, 3) is a palindrome, so we set <code>dp[1][3] = true</code>, here is the java code.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span>[][] dp = <span class="keyword">new</span> <span class="keyword">boolean</span>[s.length()][s.length()];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = s.length() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; s.length(); j++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(s.charAt(j) == s.charAt(i) &amp;&amp; (j - i &lt; <span class="number">2</span> || dp[i + <span class="number">1</span>][j - <span class="number">1</span>] == <span class="keyword">true</span>)) dp[i][j] = <span class="keyword">true</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>after run this code, we get a two dimension array below,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 1 0 0 1 0 0 0&#10;0 1 0 1 0 0 0 0&#10;0 0 1 0 0 0 0 0&#10;0 0 0 1 1 0 0 0&#10;0 0 0 0 1 0 0 0&#10;0 0 0 0 0 1 0 1&#10;0 0 0 0 0 0 1 0&#10;0 0 0 0 0 0 0 1</span><br></pre></td></tr></table></figure></p>
-<p>Actually it is easy to get this 2d array, the trick is in the next step.<br>To get the minimum cut from it, we need to compare different combinations, e.g for string <code>abaacbc</code> the minimun cut should be one of the combinations below,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subStr.length() - 1&#10;1 + minCut(&#34;baacbc&#34;) //a is palindrome&#10;1 + minCut(&#34;acbc&#34;)   //aba is palindrome</span><br></pre></td></tr></table></figure></p>
-<p>A navie idea is code it up with simply recursive call. Can we do it better? To get the min cut of <code>abaacbc</code>, we need to know the min cut of <code>baacbc</code> and <code>acbc</code>. Then we know this is another <strong>Dynamic Programming</strong> solution. In another word, to solve this problem, we need to use <strong>Dynamic Programming</strong> two times.</p>
-<p>Let’s create an one-dimension array, <code>minCut</code>, each element stands for min cut of s.substring(i)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] minCut = <span class="keyword">new</span> <span class="keyword">int</span>[s.length() + <span class="number">1</span>]; <span class="comment">//last should be ""</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; minCut.length; i++) &#123;</span><br><span class="line">    minCut[i] = minCut.length - i - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//[7 6 5 4 3 2 1 0 -1]</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = s.length() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; s.length(); j++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(dp[i][j] == <span class="keyword">true</span>) &#123;</span><br><span class="line">            minCut[i] = Math.min(minCut[i], <span class="number">1</span> + minCut[j + <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> minCut[<span class="number">0</span>];</span><br></pre></td></tr></table></figure></p>
-<h3 id="Conclusion">Conclusion</h3><p>The interesting part of this problem is we need to use DP two times. During our processes, we should know which part we can improve. <a href="https://github.com/TylerYang/leetcode/blob/master/132.PalindromePartitioningII/Solution.java" target="_blank" rel="external">Here is the java code.</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/08/01/Palindrome-PartionningII-Leetcode/" data-id="cif9u3m3h000zu6421haj8f46" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
 
     </footer>
   </div>
@@ -533,6 +536,23 @@
     <h3 class="widget-title">recents</h3>
     <div class="widget">
       <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/10/06/Shortest-Palindrome-Leetcode/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Interview/">Interview</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Interview/Leetcode/">Leetcode</a></p>
+              <p class="item-title"><a href="/2015/10/06/Shortest-Palindrome-Leetcode/" class="title">Shortest Palindrome - Leetcode</a></p>
+              <p class="item-date"><time datetime="2015-10-06T08:43:00.000Z" itemprop="datePublished">2015-10-06</time></p>
+            </div>
+          </li>
         
           <li>
             
@@ -603,24 +623,6 @@
             </div>
           </li>
         
-          <li>
-            
-            <div class="item-thumbnail">
-              <a href="/2015/08/01/Valid-Number-Leetcode/" class="thumbnail">
-  
-    <span style="background-image:url(https://raw.githubusercontent.com/TylerYang/leetcode/master/65.ValidNumber/validNumber.png
-)" alt="Valid Number - Leetcode" class="thumbnail-image"></span>
-  
-</a>
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/Interview/">Interview</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Interview/Leetcode/">Leetcode</a></p>
-              <p class="item-title"><a href="/2015/08/01/Valid-Number-Leetcode/" class="title">Valid Number - Leetcode</a></p>
-              <p class="item-date"><time datetime="2015-08-01T08:32:43.000Z" itemprop="datePublished">2015-08-01</time></p>
-            </div>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -630,7 +632,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Google-Chanllenge/">Google Chanllenge</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Leetcode/">Leetcode</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Javascript/">Javascript</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web/架构/">架构</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Google-Chanllenge/">Google Chanllenge</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Leetcode/">Leetcode</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Javascript/">Javascript</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web/架构/">架构</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -639,7 +641,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSAPP/">CSAPP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Finite-State-Automata/">Finite State Automata</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Challenge/">Google Challenge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Greedy-Algorithm/">Greedy Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/State-Machine/">State Machine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/design-pattern/">design pattern</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工程/">工程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSAPP/">CSAPP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Finite-State-Automata/">Finite State Automata</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Challenge/">Google Challenge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Greedy-Algorithm/">Greedy Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KMP-Algorithm/">KMP Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/State-Machine/">State Machine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/design-pattern/">design pattern</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工程/">工程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -648,7 +650,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">tag cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/CSAPP/" style="font-size: 10px;">CSAPP</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Finite-State-Automata/" style="font-size: 10px;">Finite State Automata</a> <a href="/tags/Google-Challenge/" style="font-size: 10px;">Google Challenge</a> <a href="/tags/Greedy-Algorithm/" style="font-size: 10px;">Greedy Algorithm</a> <a href="/tags/Leetcode/" style="font-size: 20px;">Leetcode</a> <a href="/tags/State-Machine/" style="font-size: 10px;">State Machine</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design pattern</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/工程/" style="font-size: 10px;">工程</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a>
+      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/CSAPP/" style="font-size: 10px;">CSAPP</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Finite-State-Automata/" style="font-size: 15px;">Finite State Automata</a> <a href="/tags/Google-Challenge/" style="font-size: 10px;">Google Challenge</a> <a href="/tags/Greedy-Algorithm/" style="font-size: 10px;">Greedy Algorithm</a> <a href="/tags/KMP-Algorithm/" style="font-size: 10px;">KMP Algorithm</a> <a href="/tags/Leetcode/" style="font-size: 20px;">Leetcode</a> <a href="/tags/State-Machine/" style="font-size: 10px;">State Machine</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design pattern</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/工程/" style="font-size: 10px;">工程</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a>
     </div>
   </div>
 
@@ -657,7 +659,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 

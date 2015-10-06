@@ -3,17 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: web | Promise Land</title>
+  <title>Shortest Palindrome - Leetcode | Promise Land</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Tyler&apos;s Zend Garden">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Promise Land">
-<meta property="og:url" content="tyleryang.github.io/tags/web/index.html">
+  <meta name="description" content="已经很久没刷题了，国庆期间重新刷了几题，复习了下 DFA, kmp algorithm, 有向图的环检测, 拓扑排序等。
+最近对算法一个感受就是，算法跟英文很像，学的时候总是不知道有什么用，偏偏就会有时候需要用上。 比如有向环的检测跟拓扑排序，学图数据结构跟算法的时候总是觉得这些东西可能在一些比较高大上的东西上才会用到。直到半自己想写一个依赖注入的js 版本实现的时候突然就懵了。 
+写个依赖注入在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Shortest Palindrome - Leetcode">
+<meta property="og:url" content="tyleryang.github.io/2015/10/06/Shortest-Palindrome-Leetcode/index.html">
 <meta property="og:site_name" content="Promise Land">
-<meta property="og:description" content="Tyler&apos;s Zend Garden">
+<meta property="og:description" content="已经很久没刷题了，国庆期间重新刷了几题，复习了下 DFA, kmp algorithm, 有向图的环检测, 拓扑排序等。
+最近对算法一个感受就是，算法跟英文很像，学的时候总是不知道有什么用，偏偏就会有时候需要用上。 比如有向环的检测跟拓扑排序，学图数据结构跟算法的时候总是觉得这些东西可能在一些比较高大上的东西上才会用到。直到半自己想写一个依赖注入的js 版本实现的时候突然就懵了。 
+写个依赖注入在">
+<meta property="og:updated_time" content="2015-10-06T09:34:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Promise Land">
-<meta name="twitter:description" content="Tyler&apos;s Zend Garden">
+<meta name="twitter:title" content="Shortest Palindrome - Leetcode">
+<meta name="twitter:description" content="已经很久没刷题了，国庆期间重新刷了几题，复习了下 DFA, kmp algorithm, 有向图的环检测, 拓扑排序等。
+最近对算法一个感受就是，算法跟英文很像，学的时候总是不知道有什么用，偏偏就会有时候需要用上。 比如有向环的检测跟拓扑排序，学图数据结构跟算法的时候总是觉得这些东西可能在一些比较高大上的东西上才会用到。直到半自己想写一个依赖注入的js 版本实现的时候突然就懵了。 
+写个依赖注入在">
   
   
     <link rel="icon" href="favicon.png">
@@ -120,50 +127,86 @@
 </aside>
 
       
-      <section id="main">
-    <section class="archives-wrap">
-    <div class="archive-tag-wrap">
-      <span class="archive-tag">#web</span>
-    </div>
-    <div class="archives">
+      <section id="main"><article id="post-Shortest-Palindrome-Leetcode" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
     
-    <div class="archive-article-thumbnail">
-      <a href="/2015/09/30/移动webapp工程思考/" class="thumbnail">
-  
-    <span style="background-image:url(https://raw.githubusercontent.com/TylerYang/images/master/blog/lx.png
-)" alt="移动webapp 优化思考 - web" class="thumbnail-image"></span>
-  
-</a>
-    </div>
     
-    <header class="archive-article-header">
-      
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/09/30/移动webapp工程思考/">移动webapp 优化思考 - web</a>
+    <h1 class="article-title" itemprop="name">
+      Shortest Palindrome - Leetcode
     </h1>
   
 
-      
-        
-  <div class="archive-article-date">
+        <div class="article-meta">
+          
+  <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2015/09/30/移动webapp工程思考/">
-      <time datetime="2015-09-30T13:57:48.000Z" itemprop="datePublished">2015 Sep 30</time>
+    <a href="/2015/10/06/Shortest-Palindrome-Leetcode/">
+      <time datetime="2015-10-06T08:43:00.000Z" itemprop="datePublished">2015-10-06</time>
     </a>
   </div>
 
 
-      
-    </header>
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/Interview/">Interview</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Interview/Leetcode/">Leetcode</a>
   </div>
-</article>
+
+        </div>
+      </header>
     
-    </div></section>
-    </section>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>已经很久没刷题了，国庆期间重新刷了几题，复习了下 DFA, kmp algorithm, 有向图的环检测, 拓扑排序等。</p>
+<p>最近对算法一个感受就是，算法跟英文很像，学的时候总是不知道有什么用，偏偏就会有时候需要用上。 比如有向环的检测跟拓扑排序，学图数据结构跟算法的时候总是觉得这些东西可能在一些比较高大上的东西上才会用到。直到半自己想写一个依赖注入的js 版本实现的时候突然就懵了。 </p>
+<p>写个依赖注入在简单的利用function to String 之后利用正则表达式获得各个变量时候的难度都还好，直到检测依赖是否成环的时候，需要用到的便是图里面的有向图的环检测，也就是dfs。</p>
+<p>这题<a href="https://leetcode.com/problems/shortest-palindrome/" target="_blank" rel="external">Shortest Palindrome</a> 在leetcode 的通过率为17%，难度为Hard. 个人认为还是比较有意思的题目.</p>
+<blockquote>
+<p>Given a string S, you are allowed to convert it to a palindrome by adding characters in front of it. Find and return the shortest palindrome you can find by performing this transformation.</p>
+<p>For example:<br>Given “aacecaaa”, return “aaacecaaa”.</p>
+<p>Given “abcd”, return “dcbabcd”.</p>
+</blockquote>
+<h3 id="分析">分析</h3><p>刚开始看到这题想法是很简单，以为跟找最长子串匹配应该是同一个解法，也就是动态规划的方法。后面发现跑起来在大数据集的时候还比暴力匹配更慢. </p>
+<p>仔细思考了一下后发现最短的回文其实是从头上开始找到后面能匹配的尽可能长的回文子串，举个例子<code>aabcbaaa</code> 能找到从头部开始尽可能长的回文子串为<code>aabcbaa</code>。思路上还是动态规划，却发现无论如何都有很多无用的操作。最后 google 了下，发现最佳的做法（时间复杂度为线性）是kmp 算法。</p>
+<p>具体做法为 <code>aabcbaaa</code> + <code>aaabcbaa</code>(前者的逆子串）之后用kmp 的prefix 处理生成next 跳转数组后，找到能match 的最长回文逆子串。比如 对于字符串s(<code>aabcbaaa</code>)先reverse 再concat 之后生成的字符串为str(<code>aabcbaaaaaabcbaa</code>)。 这时候的next 跳转数组应该为</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a  a   b  c  b  a  a  a  a  a  a  b  c  b  a  a&#10;-1  0  -1 -1 -1  0  1  0  1  0  1  2  3  4  5  6</span><br></pre></td></tr></table></figure>
+<p>这时候会发现能找到的最长逆子串长度应该为6 + 1 =&gt; 7. 这是只需要new StringBuffer(s.substring(7)).reverse() + s 便为最终解答。</p>
+<p>以下为具体的java 实现，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">shortestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s == <span class="keyword">null</span> || s.length() == <span class="number">0</span>) <span class="keyword">return</span> s;</span><br><span class="line">        StringBuffer sBuff = <span class="keyword">new</span> StringBuffer(s);</span><br><span class="line"></span><br><span class="line">        String str = s + sBuff.reverse().toString();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] next = genNext(str);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> l = next[next.length - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(l == str.length() - <span class="number">1</span> || l == s.length()) &#123;</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(l &gt; s.length()) &#123;</span><br><span class="line">            l++;</span><br><span class="line">        &#125;</span><br><span class="line">        l %= s.length();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> StringBuffer(s.substring(l)).reverse().toString() + s; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] genNext(String pattern) &#123;</span><br><span class="line">        <span class="keyword">int</span>[] next = <span class="keyword">new</span> <span class="keyword">int</span>[pattern.length()];</span><br><span class="line">        next[<span class="number">0</span>] = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; pattern.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> index = next[i - <span class="number">1</span>];</span><br><span class="line">            <span class="keyword">while</span>(index &gt;= <span class="number">0</span> &amp;&amp; pattern.charAt(index + <span class="number">1</span>) != pattern.charAt(i)) &#123;</span><br><span class="line">                index = next[index];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(pattern.charAt(index + <span class="number">1</span>) == pattern.charAt(i)) &#123;</span><br><span class="line">                next[i] = index + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                next[i] = -<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/TylerYang/leetcode/blob/master/214.ShortestPalindrome/Solution.java" target="_blank" rel="external">完整版本</a></p>
+<h3 id="总结">总结</h3><p>这题感觉综合性在leetcode 里面算是比较强的。至少让我复习了kmp 这个算法以及dfa 的相关概念。kmp 的prefix 的实现感觉上还是比较tricky，写出伪代码然后去一步步去走才能更深刻的理解。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="tyleryang.github.io/2015/10/06/Shortest-Palindrome-Leetcode/" data-id="ciff4cpyv000r7w4204xmq1m3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Finite-State-Automata/">Finite State Automata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/KMP-Algorithm/">KMP Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/09/30/移动webapp工程思考/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">移动webapp 优化思考 - web</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
       
         <aside id="sidebar">
   
