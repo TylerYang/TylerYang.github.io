@@ -3,17 +3,28 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/9 | Promise Land</title>
+  <title>移动webapp 优化思考 - web | Promise Land</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Tyler&apos;s Zend Garden">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Promise Land">
-<meta property="og:url" content="tyleryang.github.io/archives/2015/09/index.html">
+  <meta name="description" content="起因最近在帮助重写一个移动端h5 架构。说起来这是后话，主要起因是有个基于RequireJS 跟 AngularJS 开发的移动端HTML5 网站。 本身定义为Web Application。接到优化加载时间的需求，本着先解决主要问题的原则，做了下列事情。
+
+打开Chrome 查看打开url时候的加载时序图。
+尝试看加载分为哪几个步骤，并调整加载时候的网络状况（Chrome自带)观察在不同网络情况">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动webapp 优化思考 - web">
+<meta property="og:url" content="tyleryang.github.io/2015/09/30/移动webapp工程思考/index.html">
 <meta property="og:site_name" content="Promise Land">
-<meta property="og:description" content="Tyler&apos;s Zend Garden">
+<meta property="og:description" content="起因最近在帮助重写一个移动端h5 架构。说起来这是后话，主要起因是有个基于RequireJS 跟 AngularJS 开发的移动端HTML5 网站。 本身定义为Web Application。接到优化加载时间的需求，本着先解决主要问题的原则，做了下列事情。
+
+打开Chrome 查看打开url时候的加载时序图。
+尝试看加载分为哪几个步骤，并调整加载时候的网络状况（Chrome自带)观察在不同网络情况">
+<meta property="og:image" content="https://raw.githubusercontent.com/TylerYang/images/master/blog/lx.png">
+<meta property="og:updated_time" content="2015-10-07T14:20:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Promise Land">
-<meta name="twitter:description" content="Tyler&apos;s Zend Garden">
+<meta name="twitter:title" content="移动webapp 优化思考 - web">
+<meta name="twitter:description" content="起因最近在帮助重写一个移动端h5 架构。说起来这是后话，主要起因是有个基于RequireJS 跟 AngularJS 开发的移动端HTML5 网站。 本身定义为Web Application。接到优化加载时间的需求，本着先解决主要问题的原则，做了下列事情。
+
+打开Chrome 查看打开url时候的加载时序图。
+尝试看加载分为哪几个步骤，并调整加载时候的网络状况（Chrome自带)观察在不同网络情况">
   
   
     <link rel="icon" href="favicon.png">
@@ -133,84 +144,94 @@ var _hmt = _hmt || [];
 </aside>
 
       
-      <section id="main">
-      <div class="archive-year-wrap">
-        <a href="/archives/2015" class="archive-year">2015</a>
-      </div>
-      <section class="archives-wrap">
-        <div class="archives">
+      <section id="main"><article id="post-移动webapp工程思考" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
     
-    <div class="archive-article-thumbnail">
-      <a href="/2015/09/30/移动webapp工程思考/" class="thumbnail">
-  
-    <span style="background-image:url(https://raw.githubusercontent.com/TylerYang/images/master/blog/lx.png
-)" alt="移动webapp 优化思考 - web" class="thumbnail-image"></span>
-  
-</a>
-    </div>
     
-    <header class="archive-article-header">
-      
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/09/30/移动webapp工程思考/">移动webapp 优化思考 - web</a>
+    <h1 class="article-title" itemprop="name">
+      移动webapp 优化思考 - web
     </h1>
   
 
-      
-        
-  <div class="archive-article-date">
+        <div class="article-meta">
+          
+  <div class="article-date">
     <i class="fa fa-calendar"></i>
     <a href="/2015/09/30/移动webapp工程思考/">
-      <time datetime="2015-09-30T13:57:48.000Z" itemprop="datePublished">Sep 30</time>
+      <time datetime="2015-09-30T13:57:48.000Z" itemprop="datePublished">2015-09-30</time>
     </a>
   </div>
 
 
-      
-    </header>
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/web/">web</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/web/architecture/">architecture</a>
   </div>
-</article>
-  
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
+
+        </div>
+      </header>
     
-    <div class="archive-article-thumbnail">
-      <a href="/2015/09/20/最近的生活/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-</a>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="起因">起因</h2><p>最近在帮助重写一个移动端h5 架构。说起来这是后话，主要起因是有个基于RequireJS 跟 AngularJS 开发的移动端HTML5 网站。 本身定义为Web Application。接到优化加载时间的需求，本着先解决主要问题的原则，做了下列事情。</p>
+<ol>
+<li>打开Chrome 查看打开url时候的加载时序图。</li>
+<li>尝试看加载分为哪几个步骤，并调整加载时候的网络状况（Chrome自带)观察在不同网络情况下的加载速度，例如2G 与3G, 3G下又有(Good, Regular, Bad) 三个等级。</li>
+</ol>
+<p>发觉这个移动端站点在3G Bad 的情况下加载时间竟然约为10s。 到所有完成是12s。 也就是说，光加载资源就10s。时序图如下，</p>
+<p><img src="https://raw.githubusercontent.com/TylerYang/images/master/blog/lx.png" alt="State Diagram"></p>
+<h2 id="分析">分析</h2><p>从图中可以看出，整个过程大致分为三个阶段，<br>第一阶段, 加载RequireJS, 等RequireJS 加载完运行代码<br>第二阶段, 通过RequireJS 加载 main.js, main.js加载完 开始Angular 的Bootstrap, (初始化应用模块，初始化路由以及动态加载模块）<br>第三阶段, 根据当前url 动态加载对应模块的controller 以及 html，之后对页面进行渲染。</p>
+<p>很明显原来的架构意图在于通过RequireJS 管理模块之间的依赖关系，并且随着页面的跳转逐渐加载新的Controller 与模版。典型的渐进加载思路，应该说是一个很美好的想法，但并不适用于当前。主要原因我认为在于当前移动网络并没有想象中这么乐观，2g 3g(regular, bad)还是比比皆是。这种通过RequireJS 来管理模块依赖，让移动端项目强依赖于RequireJS<br>的方式无论从任何页面进入项目，总会有两段不必要的时间花费（无论以何种方式优化）。</p>
+<ol>
+<li>加载并运行RequireJS</li>
+<li>动态加载Controller 与 模版</li>
+</ol>
+<p>回去看项目代码，发现项目完全通过RequireJS 进行管理模块，甚至连动态加载controller 都通过RequireJS 来做，要去掉以上两点，我的看法是在开发过程中仅通过RequireJS 管理库之间的依赖，而在构建过程中把RequireJS 相关部分从项目中剥离出去。 </p>
+<p>换言之，在Development 环境中仍存在RequireJS, 与动态加载部分。在Production 环境中去除 RequireJS, 把所有的第三方库合成一个文件，把所有的app 合成一个文件，html<br>编译成js。在构建过程中去除动态加载部分。</p>
+<p>此时项目还不是很大，整个项目页面主要也就三十来个。我认为这时候应该优先对项目架构进行修正以减少技术债。随着时间增长，这种由于架构导致的加载性能问题只会越来越严重。并且修正起来难度会越来越大（耦合度会随着时间逐渐增加）</p>
+<p>分析完主要问题，开始着手从项目中去除RequireJS 的模块管理部分以及编写构建过程。计划时间花费应该在2天左右。明天国庆回老家，后天完成。到时候不上简单示意图。</p>
+
+      
     </div>
+    <footer class="article-footer">
+      <a data-url="tyleryang.github.io/2015/09/30/移动webapp工程思考/" data-id="cifowx3ln0000hp42i6ox6ckg" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+
+    </footer>
+  </div>
+  
     
-    <header class="archive-article-header">
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/09/20/最近的生活/">最近的生活 - 生活</a>
-    </h1>
-  
-
-      
+    <a href="/2015/10/06/Shortest-Palindrome-Leetcode/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
-  <div class="archive-article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2015/09/20/最近的生活/">
-      <time datetime="2015-09-20T15:23:45.000Z" itemprop="datePublished">Sep 20</time>
+          Shortest Palindrome - Leetcode
+        
+      </div>
     </a>
-  </div>
-
-
-      
-    </header>
-  </div>
-</article>
   
-    </div></section>
-  </section>
+  
+    <a href="/2015/09/20/最近的生活/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">最近的生活 - 生活</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
       
         <aside id="sidebar">
   
