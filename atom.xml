@@ -5,7 +5,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="tyleryang.github.io//"/>
-  <updated>2015-10-16T08:49:01.000Z</updated>
+  <updated>2015-10-16T09:05:33.000Z</updated>
   <id>tyleryang.github.io//</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[用树莓派架设个人博客 - Life]]></title>
+    <link href="tyleryang.github.io/2015/10/16/%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E6%9E%B6%E8%AE%BE%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-Life/"/>
+    <id>tyleryang.github.io/2015/10/16/用树莓派架设个人博客-Life/</id>
+    <published>2015-10-16T08:54:34.000Z</published>
+    <updated>2015-10-16T09:05:33.000Z</updated>
+    <content type="html"><![CDATA[<p>很久之前就把用hexo 生成的静态页面从github page 放到了自己宿舍的树莓派里，通过ddns 的方式解析之后进行请求的跳转。 而自己的树莓派又刷了 OSMC 这个基于debian 套了自己的gui的家庭影音. 为此在OSMC 上装了NodeJS 以及 corntab。 </p>
+<p>nodejs 只是简单的用express render static files。 </p>
+<p>corntab 则每一分钟运行一次shell 命令同步一次github repo。这样自己可以随时随地用mark down写博客，然后在写完后 <code>hexo generate &amp;&amp; hexo deploy</code> 一下，需要的只是等待一分钟，喝杯茶，自己的博客服务器就会更新。 相比起动态页面，这种利用hexo 生成的静态页面可以随时更新而无需重启server，在做个人博客的时候显得非常方便。 </p>
+<p>之后再加上树莓派开机启动运行几个shell 命令启动server 就不怕树莓派不小心断电了。 树莓派的好处还在于非常省电，作为个人博客这种访问量比较小的server 再适合不过。  </p>
+<p>现在在家里的树莓派还可以连到显示器跟音箱里，回到家的时候打开手机就可以通过airplay 无线播放音乐跟视频。 再往后就是自己写个server 连到家里的硬件上，变成智能家居中心服务器。 </p>
+<p>说来说去，需要的就是时间。要刷算法，要写server，要写博客，要看书，要健身，<strong>要变强</strong>。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>很久之前就把用hexo 生成的静态页面从github page 放到了自己宿舍的树莓派里，通过ddns 的方式解析之后进行请求的跳转。 而自己的树莓派又刷了 OSMC 这个基于debian 套了自己的gui的家庭影音. 为此在OSMC 上装了NodeJS 以及 cornta]]>
+    </summary>
+    
+      <category term="Life" scheme="tyleryang.github.io/tags/Life/"/>
+    
+      <category term="Life" scheme="tyleryang.github.io/categories/Life/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[饿了么网站优化研究 - web]]></title>

@@ -105,7 +105,7 @@ var _hmt = _hmt || [];
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        12
+        13
         <span>posts</span>
       </div>
       <div class="article-info-block">
@@ -134,6 +134,69 @@ var _hmt = _hmt || [];
 
       
       <section id="main">
+      <article id="post-最近的生活" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/20/最近的生活/">最近的生活 - 生活</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2015/09/20/最近的生活/">
+      <time datetime="2015-09-20T15:23:45.000Z" itemprop="datePublished">2015-09-20</time>
+    </a>
+  </div>
+
+
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/Life/">Life</a>
+  </div>
+
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前些日子把个人博客从github 上搬到了树莓派里，给树莓派装了nodejs， git等东东。同时把家里的两级路由变成了一个网络桥接以及一个以及路由。当时弄到了晚上三点，印象颇为深刻。 </p>
+<p>原先有个路由是电信那边租过来的，刚开始就被设好，后来自己买多了一个华为的荣耀路由。想着这样可以用ddns把自己的树莓派曝露到英特网下，从而可以自己setup 自己的server，将来还可以加蓝牙dangle把家里搞成小型物联网。 于是就注册了花生壳，却发现无论如何都无法从外网访问到自己的树莓派。后来发现是因为华为绑定花生壳账号的时候是把自己被电信光猫（一级路由）分配的ip<br>绑定给了花生壳，于是果断把一级路由刷掉取消拨号转为桥接，再把华为的拨号加上，搞定。</p>
+<p>再之后就是开发了一个小小的angular keyboard，花了几个小时吧，写着玩。具体见github。 </p>
+<p>leetcode 刷题的进度最近都下来了，工作确实很忙，晚上回来基本都是头疼，躺一会就起来健身，俯卧撑仰卧起坐啥的还是要做的。星期六日基本都会去咖啡厅刷题写代码。</p>
+<p>react native 果然会慢慢活起来，还记得四月刚出的时候马上跑过去写了几个页面，写着跟twitter一样的界面，写起来毫无压力。之后上youtube 上看了react conference里面fb 的一个家伙写的animation demo，被震惊了很久。 现在react native又可以编译成android，就像发布会时说的那样，“我们相信web 的未来非常美好，但现在还是有不足之处，至少在我们等到html5 完美之前，react native 会成为我们目前最好的解决方案。” </p>
+<p>前些日子上youtube 上看了不来梅大学的 suffix tree 的视频，实现起来确实蛮累的。trie tree 实现起来这么简单，但适用范围却很窄。尤记得当时面试的时候被北大哥问suffix tree跟优先队列的实现问的面红耳赤的自己,当时回来跟steven 聊了好久，steven 说了几个重要的数据结构一定要掌握，于是默默记在心中。感觉人生就是不断的遇到秒杀你的人，但人生的意义却是一次次被秒杀，一次次爬起来继续练。</p>
+<p>这两天早上练了一上午球，下午跑去写了知乎的小爬虫，准备封装好基本API。顺便尝试了下koa 的东东，ECMAScript 的yield 真是蛮有意思的，刚开始以为yield 是可以解决异步问题，后来发现是koa 利用generator 解决了异步回调，google 了一下，貌似很多人都有这个误会。 另外 generator 里面的peak 运行语句的方式会是一个蛮有意思的考点吧。 koa 封装的middleware 只能赞一个。具体代码见github。 </p>
+<p>好几个月没认真去stackoverflow 刷答案，昨天跑去看了一下，发现有个人提了一个问题，说是内嵌的document.write 跟用script src 引入的js脚本里面的document.write 运行结果不一致，一个只是append 文字进去，后者则是删除文档原有的markup，然后append text。 当时看到的时候也觉得很奇怪，后来第一反应是去mdn 查文档，看了一下发现是内嵌的document.write 是不会自动先调用 document.open，而document.open<br>的作用恰恰是清空整个文档。给问这个问题的人点了赞，答了题，拿了几十分。</p>
+<p>早上公交时间有点长，就在车上看《编程珠玑》，一本书看了这么久，也是怪不好意思的。有些地方觉得没必要太着重，比如空间的优化，举的例子还是很久之前的。但对于马戏团的跳法觉得蛮有意思的。</p>
+<p>接下来的日子，网上订了蓝牙灯泡跟蓝牙usb 接口，一方面要写知乎爬虫，之后setup 到树莓派下，然后再写一个react native 的ios app做一个知乎大百科。接着是弄好基本的物联网简易平台，从手机端用ios app 通过3g连接到树莓派，再由树莓派通过蓝牙连接到蓝牙灯泡。至少刚工作的时候做过类似的东西，做起来应该难度不大。</p>
+<p>国庆节就快到了，连续七天的假期简直是一种奢侈，好好安排下自己国庆时候要刷的题目，写的项目还有就是许久未见的朋友，估计会一块约打球。不要浪费时间在不必要的时候，秉承着这个原则，几乎去哪都是最快去。有时候也会想是否错过了很多，有时候你承担的多了，你就过的不会这么轻松吧。</p>
+<p>还记得那个草帽，我会去还给你的！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="tyleryang.github.io/2015/09/20/最近的生活/" data-id="ciftfk9nv000n5j4248132xb4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Life/">Life</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+    
       <article id="post-Candy-Leetcode" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -191,7 +254,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/08/11/Candy-Leetcode/" data-id="ciftfi4c0001w4c42qo8cnq1o" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/08/11/Candy-Leetcode/" data-id="ciftfk9ol001z5j42j8gzjhzs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Greedy-Algorithm/">Greedy Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -258,7 +321,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/08/01/Dependency-Injection-in-JavaScript/" data-id="ciftfi4bx001o4c428wqvd8vz" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/08/01/Dependency-Injection-in-JavaScript/" data-id="ciftfk9oh001r5j425ei2vfqz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/design-pattern/">design pattern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -324,7 +387,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/" data-id="ciftfi4bf000n4c42hifni3yt" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/" data-id="ciftfk9nz000q5j42yxbgt7u5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Finite-State-Automata/">Finite State Automata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/State-Machine/">State Machine</a></li></ul>
@@ -390,7 +453,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/08/01/Palindrome-PartionningII-Leetcode/" data-id="ciftfi4bu001i4c42dc1d93uu" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/08/01/Palindrome-PartionningII-Leetcode/" data-id="ciftfk9of001l5j42llg94ez6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -472,7 +535,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/07/25/Reverse-Hash-Function-Google-Challenge/" data-id="ciftfi4bs001d4c42jjuq0hrs" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/07/25/Reverse-Hash-Function-Google-Challenge/" data-id="ciftfk9oa001g5j4203xnmekw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google-Challenge/">Google Challenge</a></li></ul>
@@ -485,60 +548,8 @@ var _hmt = _hmt || [];
 
 
     
-      <article id="post-About-XOR-operator" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/25/About-XOR-operator/">About XOR operator</a>
-    </h1>
-  
-
-        <div class="article-meta">
-          
-  <div class="article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2015/07/25/About-XOR-operator/">
-      <time datetime="2015-07-25T06:15:16.000Z" itemprop="datePublished">2015-07-25</time>
-    </a>
-  </div>
-
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>I think the chrome web developer tool is very useful, I perfer to use it to validate some expression or some api instead of using java compiler or c compiler. Considering the expression below.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">129</span>;</span><br><span class="line"><span class="keyword">var</span> c = a ^ b;</span><br><span class="line">a ^ b;  <span class="comment">// 132</span></span><br><span class="line">b ^ c;  <span class="comment">// 5 equals to a</span></span><br></pre></td></tr></table></figure>
-<p>Let me prove this is right. The binary expression of integer 5 is, <code>101</code><br>for 129 is, <code>100000001</code></p>
-<p>XOR means with the same bit value you will get <code>0</code>, and vise versa.<br>So when we do <code>a ^ b</code> means we will get the bit which only exist in <code>a</code> or <code>b</code>.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">8</span> <span class="number">7</span> <span class="number">6</span> <span class="number">5</span> <span class="number">4</span> <span class="number">3</span> <span class="number">2</span> <span class="number">1</span> <span class="number">0</span></span><br><span class="line"><span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span>  <span class="comment">//a</span></span><br><span class="line">              XOR</span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span>  <span class="comment">//b</span></span><br><span class="line">-----------------</span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span>  <span class="comment">//c  bits only exist in a or b</span></span><br></pre></td></tr></table></figure></p>
-<p>So <code>b ^ c</code> means you will get the bit only exist in b or c.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">8</span> <span class="number">7</span> <span class="number">6</span> <span class="number">5</span> <span class="number">4</span> <span class="number">3</span> <span class="number">2</span> <span class="number">1</span> <span class="number">0</span></span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="comment">//b</span></span><br><span class="line">              XOR</span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="comment">//c</span></span><br><span class="line">-----------------</span><br></pre></td></tr></table></figure></p>
-<p>Appearently when we  <code>a ^ b</code>, their public bits are all set to <code>0</code>(The 0th) and the bits only exist in b or a is already save into the c(The 2th from a and the 8th from b). So At this moment <code>b ^ c</code> will equal to ‘bits only exist in a and bits exist in both <code>a</code> and <code>b</code> which is <code>a</code>‘(The 0th from <code>a</code> and the 2th from <code>b</code>). </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/07/25/About-XOR-operator/" data-id="ciftfi4c300224c42p940ke0v" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSAPP/">CSAPP</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-    
       <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+        <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
       </nav>
     </section>
       
@@ -549,6 +560,23 @@ var _hmt = _hmt || [];
     <h3 class="widget-title">recents</h3>
     <div class="widget">
       <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/10/16/用树莓派架设个人博客-Life/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Life/">Life</a></p>
+              <p class="item-title"><a href="/2015/10/16/用树莓派架设个人博客-Life/" class="title">用树莓派架设个人博客 - Life</a></p>
+              <p class="item-date"><time datetime="2015-10-16T08:54:34.000Z" itemprop="datePublished">2015-10-16</time></p>
+            </div>
+          </li>
         
           <li>
             
@@ -619,24 +647,6 @@ var _hmt = _hmt || [];
             </div>
           </li>
         
-          <li>
-            
-            <div class="item-thumbnail">
-              <a href="/2015/09/30/移动webapp工程思考/" class="thumbnail">
-  
-    <span style="background-image:url(https://raw.githubusercontent.com/TylerYang/images/master/blog/lx.png
-)" alt="移动webapp 优化思考 - web" class="thumbnail-image"></span>
-  
-</a>
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/web/">web</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/web/architecture/">architecture</a></p>
-              <p class="item-title"><a href="/2015/09/30/移动webapp工程思考/" class="title">移动webapp 优化思考 - web</a></p>
-              <p class="item-date"><time datetime="2015-09-30T13:57:48.000Z" itemprop="datePublished">2015-09-30</time></p>
-            </div>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -646,7 +656,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Google-Challenge/">Google Challenge</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Leetcode/">Leetcode</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Javascript/">Javascript</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web/architecture/">architecture</a><span class="category-list-count">2</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Google-Challenge/">Google Challenge</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Leetcode/">Leetcode</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Javascript/">Javascript</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web/architecture/">architecture</a><span class="category-list-count">2</span></li></ul></li></ul>
     </div>
   </div>
 
@@ -655,7 +665,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSAPP/">CSAPP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Finite-State-Automata/">Finite State Automata</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Challenge/">Google Challenge</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Greedy-Algorithm/">Greedy Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KMP-Algorithm/">KMP Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/State-Machine/">State Machine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/design-pattern/">design pattern</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSAPP/">CSAPP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Finite-State-Automata/">Finite State Automata</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Challenge/">Google Challenge</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Greedy-Algorithm/">Greedy Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KMP-Algorithm/">KMP Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/State-Machine/">State Machine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/design-pattern/">design pattern</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -664,7 +674,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">tag cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Algorithm/" style="font-size: 15px;">Algorithm</a> <a href="/tags/CSAPP/" style="font-size: 10px;">CSAPP</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Finite-State-Automata/" style="font-size: 15px;">Finite State Automata</a> <a href="/tags/Google-Challenge/" style="font-size: 15px;">Google Challenge</a> <a href="/tags/Greedy-Algorithm/" style="font-size: 10px;">Greedy Algorithm</a> <a href="/tags/KMP-Algorithm/" style="font-size: 10px;">KMP Algorithm</a> <a href="/tags/Leetcode/" style="font-size: 20px;">Leetcode</a> <a href="/tags/Life/" style="font-size: 15px;">Life</a> <a href="/tags/State-Machine/" style="font-size: 10px;">State Machine</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design pattern</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/web/" style="font-size: 15px;">web</a>
+      <a href="/tags/Algorithm/" style="font-size: 13.33px;">Algorithm</a> <a href="/tags/CSAPP/" style="font-size: 10px;">CSAPP</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Finite-State-Automata/" style="font-size: 13.33px;">Finite State Automata</a> <a href="/tags/Google-Challenge/" style="font-size: 13.33px;">Google Challenge</a> <a href="/tags/Greedy-Algorithm/" style="font-size: 10px;">Greedy Algorithm</a> <a href="/tags/KMP-Algorithm/" style="font-size: 10px;">KMP Algorithm</a> <a href="/tags/Leetcode/" style="font-size: 20px;">Leetcode</a> <a href="/tags/Life/" style="font-size: 16.67px;">Life</a> <a href="/tags/State-Machine/" style="font-size: 10px;">State Machine</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design pattern</a> <a href="/tags/javascript/" style="font-size: 13.33px;">javascript</a> <a href="/tags/web/" style="font-size: 13.33px;">web</a>
     </div>
   </div>
 
@@ -673,7 +683,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
