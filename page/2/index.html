@@ -105,7 +105,7 @@ var _hmt = _hmt || [];
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        11
+        12
         <span>posts</span>
       </div>
       <div class="article-info-block">
@@ -134,6 +134,76 @@ var _hmt = _hmt || [];
 
       
       <section id="main">
+      <article id="post-Candy-Leetcode" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/11/Candy-Leetcode/">Candy - Leetcode</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2015/08/11/Candy-Leetcode/">
+      <time datetime="2015-08-11T12:30:50.000Z" itemprop="datePublished">2015-08-11</time>
+    </a>
+  </div>
+
+
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/Interview/">Interview</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Interview/Leetcode/">Leetcode</a>
+  </div>
+
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This is a very interesting question and it have a bunch of corner cases that we need to consider. (It takes me more than 5 hours to solve it at the first time.)</p>
+<h3 id="Candy">Candy</h3><blockquote>
+<p>There are N children standing in a line. Each child is assigned a rating value.</p>
+<p>You are giving candies to these children subjected to the following requirements:</p>
+<p>Each child must have at least one candy.<br>Children with a higher rating get more candies than their neighbors.<br>What is the minimum candies you must give?</p>
+</blockquote>
+<h3 id="Analysis">Analysis</h3><p>In a word, the higher rating value you get than your neighbors, the more candies you should get.</p>
+<p>Considering the rating array below,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 3]</span><br></pre></td></tr></table></figure></p>
+<p>the output should be <code>6</code>. This is because the first child have 1 candy, and the next should have 2 candies according to his rating value. It’s easy to get the value.</p>
+<p>How about two child are getting same rating value? For example, for <code>[1, 2, 2, 2]</code> the right answer is <code>4</code>. <strong>Children with a higher rating get more candies than their neighbors.</strong></p>
+<p>One important thing in solving this problem is, we want to give the minimum candies. This means each time we get a peek rating value, the next child can only have 1 candy until we meet the third child whose rating value is lower than the 2nd one.</p>
+<p>Consider the array below,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ratings [1, 2, 6, 5, 4, 3, 2]&#10;   i     0  1  2  3  4  5  6</span><br></pre></td></tr></table></figure></p>
+<p>When we meet the first child(i: 0). We give only 1 candy to him. So now our <code>totalCandies</code> is <code>1</code>.<br>And then the second, the third child we can just simply repeat the same process. Then we update our <code>totalCandies</code> in this way.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> ratings     [1, 2, 6, 5, 4, 3, 2]&#10;    i         0  1  2  3  4  5  6&#10;totalCandies  1  3  6</span><br></pre></td></tr></table></figure></p>
+<p>Next we meet the 4th child(i: 3), because we know the previous child have the same rating value, so we can simply give only one candy to this child. And then we update our <code>totalCandies</code>.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> ratings     [1, 2, 6, 5, 4, 3, 2]&#10;    i         0  1  2  3  4  5  6&#10;totalCandies  1  3  6  7</span><br></pre></td></tr></table></figure></p>
+<p>We meet the 5th child now(i: 4), we can give only 1 candies to him, but we need to give the previous child one more candy for compensation. So update our <code>totalCandies</code>.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> ratings     [1, 2, 6, 5, 4, 3, 2]&#10;    i         0  1  2  3  4  5  6&#10;  candy       1  2  3  2  1&#10;totalCandies  1  3  6  7  9</span><br></pre></td></tr></table></figure></p>
+<p>As for compensation, another question to this is, when we should give one more candy to the peek child?(i: 2) Appearently when our candy gap is smaller than our position gap, we need to give one more candy for compensation. For example, when we meet the 6th child, our candy gap is <code>3 - 1 = 2</code>, the position gap is <code>5 - 2 = 3</code>. So at this moment, we need to <code>totalCandies++</code><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> ratings     [1, 2, 6, 5, 4, 3, 2]&#10;    i         0  1  2  3  4  5  6&#10;  candy       1  2  4  3  2  1&#10;totalCandies  1  3  6  7  9  13</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://leetcode.com/problems/candy/" target="_blank" rel="external">Here is the Candy in leetcode oj.</a><br>Here is implementation,<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">candy</span><span class="params">(<span class="keyword">int</span>[] ratings)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(ratings.length &lt;= <span class="number">1</span>) <span class="keyword">return</span> ratings.length;</span><br><span class="line">        <span class="keyword">int</span> totalCandies = <span class="number">1</span>, prevCandy = <span class="number">1</span>, peekPos = <span class="number">0</span>, peekCandy = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; ratings.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(ratings[i] &gt; ratings[i - <span class="number">1</span>]) &#123;</span><br><span class="line">                prevCandy++;</span><br><span class="line">                peekPos = i;</span><br><span class="line">                peekCandy = prevCandy;</span><br><span class="line">                totalCandies += prevCandy;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                prevCandy = <span class="number">1</span>;</span><br><span class="line">                totalCandies += prevCandy;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span>(ratings[i] == ratings[i - <span class="number">1</span>]) &#123;</span><br><span class="line">                    peekPos = i;</span><br><span class="line">                    peekCandy = <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                totalCandies += i - peekPos - <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span>(peekCandy - <span class="number">1</span> &lt;  i - peekPos) &#123;</span><br><span class="line">                    totalCandies++;   </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> totalCandies;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://github.com/TylerYang/leetcode/blob/master/135.Candy/Solution.java" target="_blank" rel="external">Full version code</a></p>
+<h3 id="Conclusion">Conclusion</h3><p>Nice problem, though there are some guys can solve it with linear space complexity, in this way we only use O(1) space complexity which I think it’s better than the other solution.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="tyleryang.github.io/2015/08/11/Candy-Leetcode/" data-id="cift9a0qr001wt342qwdx6x86" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Greedy-Algorithm/">Greedy Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+    
       <article id="post-Dependency-Injection-in-JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -188,7 +258,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/08/01/Dependency-Injection-in-JavaScript/" data-id="cifowhtwo001dev42v0asurux" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/08/01/Dependency-Injection-in-JavaScript/" data-id="cift9a0ql001ot342z1t6izh5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/design-pattern/">design pattern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -254,7 +324,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/" data-id="cifowhtw5000bev42eo5jjuy3" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/" data-id="cift9a0pj000nt3427z4fgrvq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Finite-State-Automata/">Finite State Automata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/State-Machine/">State Machine</a></li></ul>
@@ -320,7 +390,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/08/01/Palindrome-PartionningII-Leetcode/" data-id="cifowhtwj0017ev42s98y1ax7" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/08/01/Palindrome-PartionningII-Leetcode/" data-id="cift9a0qf001it342wsioc3el" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -402,7 +472,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/07/25/Reverse-Hash-Function-Google-Challenge/" data-id="cifowhtwg0011ev42p88bd1li" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/07/25/Reverse-Hash-Function-Google-Challenge/" data-id="cift9a0qb001dt342v5qnp7pw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google-Challenge/">Google Challenge</a></li></ul>
@@ -454,7 +524,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/07/25/About-XOR-operator/" data-id="cifowhtwu001sev42e4wz31mg" class="article-share-link">Share</a>
+      <a data-url="tyleryang.github.io/2015/07/25/About-XOR-operator/" data-id="cift9a0r10022t342m4ps07z5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSAPP/">CSAPP</a></li></ul>
@@ -479,6 +549,24 @@ var _hmt = _hmt || [];
     <h3 class="widget-title">recents</h3>
     <div class="widget">
       <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/10/16/饿了么网站优化研究-web/" class="thumbnail">
+  
+    <span style="background-image:url(https://raw.githubusercontent.com/TylerYang/images/master/blog/m.ele.me.png
+)" alt="饿了么网站优化研究 - web" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/web/">web</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/web/architecture/">architecture</a></p>
+              <p class="item-title"><a href="/2015/10/16/饿了么网站优化研究-web/" class="title">饿了么网站优化研究 - web</a></p>
+              <p class="item-date"><time datetime="2015-10-16T06:06:20.000Z" itemprop="datePublished">2015-10-16</time></p>
+            </div>
+          </li>
         
           <li>
             
@@ -549,23 +637,6 @@ var _hmt = _hmt || [];
             </div>
           </li>
         
-          <li>
-            
-            <div class="item-thumbnail">
-              <a href="/2015/09/20/最近的生活/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-</a>
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/Life/">Life</a></p>
-              <p class="item-title"><a href="/2015/09/20/最近的生活/" class="title">最近的生活 - 生活</a></p>
-              <p class="item-date"><time datetime="2015-09-20T15:23:45.000Z" itemprop="datePublished">2015-09-20</time></p>
-            </div>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -575,7 +646,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Google-Challenge/">Google Challenge</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Leetcode/">Leetcode</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Javascript/">Javascript</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web/architecture/">architecture</a><span class="category-list-count">1</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Google-Challenge/">Google Challenge</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Leetcode/">Leetcode</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Javascript/">Javascript</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web/architecture/">architecture</a><span class="category-list-count">2</span></li></ul></li></ul>
     </div>
   </div>
 
@@ -584,7 +655,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSAPP/">CSAPP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Finite-State-Automata/">Finite State Automata</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Challenge/">Google Challenge</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Greedy-Algorithm/">Greedy Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KMP-Algorithm/">KMP Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/State-Machine/">State Machine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/design-pattern/">design pattern</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSAPP/">CSAPP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Finite-State-Automata/">Finite State Automata</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Challenge/">Google Challenge</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Greedy-Algorithm/">Greedy Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KMP-Algorithm/">KMP Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/State-Machine/">State Machine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/design-pattern/">design pattern</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -593,7 +664,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">tag cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Algorithm/" style="font-size: 15px;">Algorithm</a> <a href="/tags/CSAPP/" style="font-size: 10px;">CSAPP</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Finite-State-Automata/" style="font-size: 15px;">Finite State Automata</a> <a href="/tags/Google-Challenge/" style="font-size: 15px;">Google Challenge</a> <a href="/tags/Greedy-Algorithm/" style="font-size: 10px;">Greedy Algorithm</a> <a href="/tags/KMP-Algorithm/" style="font-size: 10px;">KMP Algorithm</a> <a href="/tags/Leetcode/" style="font-size: 20px;">Leetcode</a> <a href="/tags/Life/" style="font-size: 15px;">Life</a> <a href="/tags/State-Machine/" style="font-size: 10px;">State Machine</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design pattern</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/web/" style="font-size: 10px;">web</a>
+      <a href="/tags/Algorithm/" style="font-size: 15px;">Algorithm</a> <a href="/tags/CSAPP/" style="font-size: 10px;">CSAPP</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Finite-State-Automata/" style="font-size: 15px;">Finite State Automata</a> <a href="/tags/Google-Challenge/" style="font-size: 15px;">Google Challenge</a> <a href="/tags/Greedy-Algorithm/" style="font-size: 10px;">Greedy Algorithm</a> <a href="/tags/KMP-Algorithm/" style="font-size: 10px;">KMP Algorithm</a> <a href="/tags/Leetcode/" style="font-size: 20px;">Leetcode</a> <a href="/tags/Life/" style="font-size: 15px;">Life</a> <a href="/tags/State-Machine/" style="font-size: 10px;">State Machine</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design pattern</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/web/" style="font-size: 15px;">web</a>
     </div>
   </div>
 
@@ -602,7 +673,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
