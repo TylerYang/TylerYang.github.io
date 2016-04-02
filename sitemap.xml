@@ -2,48 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>tyleryang.github.io/2015/09/20/%E6%9C%80%E8%BF%91%E7%9A%84%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2016-04-02T06:24:46.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>tyleryang.github.io/2015/07/25/About-XOR-operator/</loc>
-    <lastmod>2016-04-02T06:14:19.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>tyleryang.github.io/2015/10/16/%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E6%9E%B6%E8%AE%BE%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-Life/</loc>
-    <lastmod>2015-10-16T09:05:33.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>tyleryang.github.io/2015/07/25/Reverse-Hash-Function-Google-Challenge/</loc>
-    <lastmod>2015-10-13T05:03:38.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>tyleryang.github.io/2015/10/06/Shortest-Palindrome-Leetcode/</loc>
-    <lastmod>2015-10-06T16:15:46.000Z</lastmod>
+    <lastmod>2016-04-02T07:43:29.000Z</lastmod>
   </url>
   
   <url>
     <loc>tyleryang.github.io/2015/08/11/Candy-Leetcode/</loc>
-    <lastmod>2015-08-11T14:47:21.000Z</lastmod>
+    <lastmod>2016-04-02T07:43:22.000Z</lastmod>
   </url>
   
   <url>
     <loc>tyleryang.github.io/2015/08/01/Dependency-Injection-in-JavaScript/</loc>
-    <lastmod>2015-08-02T08:23:56.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/</loc>
-    <lastmod>2015-08-01T13:04:05.000Z</lastmod>
+    <lastmod>2016-04-02T07:43:19.000Z</lastmod>
   </url>
   
   <url>
     <loc>tyleryang.github.io/2015/08/01/Palindrome-PartionningII-Leetcode/</loc>
-    <lastmod>2015-08-01T08:22:57.000Z</lastmod>
+    <lastmod>2016-04-02T07:43:08.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>tyleryang.github.io/2015/07/25/Reverse-Hash-Function-Google-Challenge/</loc>
+    <lastmod>2016-04-02T07:43:05.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>tyleryang.github.io/2015/09/20/%E6%9C%80%E8%BF%91%E7%9A%84%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2016-04-02T07:42:57.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>tyleryang.github.io/2015/10/06/Shortest-Palindrome-Leetcode/</loc>
+    <lastmod>2016-04-02T07:42:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/</loc>
+    <lastmod>2016-04-02T07:42:55.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>tyleryang.github.io/2015/10/16/%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E6%9E%B6%E8%AE%BE%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-Life/</loc>
+    <lastmod>2016-04-02T07:33:13.000Z</lastmod>
   </url>
   
   <url>

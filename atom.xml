@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   
-  <title><![CDATA[Promise Land]]></title>
-  
+  <title><![CDATA[AbsTY]]></title>
+  <subtitle><![CDATA[A JavaScript Fan.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="tyleryang.github.io//"/>
-  <updated>2015-10-16T09:05:33.000Z</updated>
+  <updated>2016-04-02T07:33:13.000Z</updated>
   <id>tyleryang.github.io//</id>
   
   <author>
@@ -20,16 +20,19 @@
     <link href="tyleryang.github.io/2015/10/16/%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E6%9E%B6%E8%AE%BE%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-Life/"/>
     <id>tyleryang.github.io/2015/10/16/用树莓派架设个人博客-Life/</id>
     <published>2015-10-16T08:54:34.000Z</published>
-    <updated>2015-10-16T09:05:33.000Z</updated>
+    <updated>2016-04-02T07:33:13.000Z</updated>
     <content type="html"><![CDATA[<p>很久之前就把用hexo 生成的静态页面从github page 放到了自己宿舍的树莓派里，通过ddns 的方式解析之后进行请求的跳转。 而自己的树莓派又刷了 OSMC 这个基于debian 套了自己的gui的家庭影音. 为此在OSMC 上装了NodeJS 以及 corntab。 </p>
 <p>nodejs 只是简单的用express render static files。 </p>
-<p>corntab 则每一分钟运行一次shell 命令同步一次github repo。这样自己可以随时随地用mark down写博客，然后在写完后 <code>hexo generate &amp;&amp; hexo deploy</code> 一下，需要的只是等待一分钟，喝杯茶，自己的博客服务器就会更新。 相比起动态页面，这种利用hexo 生成的静态页面可以随时更新而无需重启server，在做个人博客的时候显得非常方便。 </p>
+<p>corntab 则每一分钟运行一次shell 命令同步一次github repo。这样自己可以随时随地用mark down写博客，然后在写完后 <code>hexo generate &amp;&amp; hexo deploy</code> 一下，需要的只是等待一分钟，喝杯茶，自己的博客服务器就会更新。 相比起动态页面，这种利用hexo 生成的静态页面可以随时更新而无需重启server，在做个人博客的时候显得非常方便。<br><a id="more"></a></p>
 <p>之后再加上树莓派开机启动运行几个shell 命令启动server 就不怕树莓派不小心断电了。 树莓派的好处还在于非常省电，作为个人博客这种访问量比较小的server 再适合不过。  </p>
 <p>现在在家里的树莓派还可以连到显示器跟音箱里，回到家的时候打开手机就可以通过airplay 无线播放音乐跟视频。 再往后就是自己写个server 连到家里的硬件上，变成智能家居中心服务器。 </p>
 <p>说来说去，需要的就是时间。要刷算法，要写server，要写博客，要看书，要健身，<strong>要变强</strong>。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>很久之前就把用hexo 生成的静态页面从github page 放到了自己宿舍的树莓派里，通过ddns 的方式解析之后进行请求的跳转。 而自己的树莓派又刷了 OSMC 这个基于debian 套了自己的gui的家庭影音. 为此在OSMC 上装了NodeJS 以及 cornta]]>
+    <![CDATA[<p>很久之前就把用hexo 生成的静态页面从github page 放到了自己宿舍的树莓派里，通过ddns 的方式解析之后进行请求的跳转。 而自己的树莓派又刷了 OSMC 这个基于debian 套了自己的gui的家庭影音. 为此在OSMC 上装了NodeJS 以及 corntab。 </p>
+<p>nodejs 只是简单的用express render static files。 </p>
+<p>corntab 则每一分钟运行一次shell 命令同步一次github repo。这样自己可以随时随地用mark down写博客，然后在写完后 <code>hexo generate &amp;&amp; hexo deploy</code> 一下，需要的只是等待一分钟，喝杯茶，自己的博客服务器就会更新。 相比起动态页面，这种利用hexo 生成的静态页面可以随时更新而无需重启server，在做个人博客的时候显得非常方便。<br>]]>
+    
     </summary>
     
       <category term="Life" scheme="tyleryang.github.io/tags/Life/"/>
@@ -43,7 +46,7 @@
     <link href="tyleryang.github.io/2015/10/06/Shortest-Palindrome-Leetcode/"/>
     <id>tyleryang.github.io/2015/10/06/Shortest-Palindrome-Leetcode/</id>
     <published>2015-10-06T08:43:00.000Z</published>
-    <updated>2015-10-06T16:15:46.000Z</updated>
+    <updated>2016-04-02T07:42:56.000Z</updated>
     <content type="html"><![CDATA[<p>已经很久没刷题了，国庆期间重新刷了几题，复习了下 DFA, kmp algorithm, 有向图的环检测, 拓扑排序等。</p>
 <p>最近对算法一个感受就是，算法跟英文很像，学的时候总是不知道有什么用，偏偏就会有时候需要用上。 比如有向环的检测跟拓扑排序，学图数据结构跟算法的时候总是觉得这些东西可能在一些比较高大上的东西上才会用到。直到半年前自己想写一个依赖注入的js 版本实现的时候突然就懵了。 </p>
 <p>写个依赖注入在简单的利用function.toString() 之后利用正则表达式获得各个依赖名称时候的难度都还好，直到检测依赖是否成环的时候，需要用到的便是图里面的有向图的环检测，也就是dfs。</p>
@@ -53,6 +56,7 @@
 <p>For example:<br>Given “aacecaaa”, return “aaacecaaa”.</p>
 <p>Given “abcd”, return “dcbabcd”.</p>
 </blockquote>
+<a id="more"></a>
 <h3 id="分析">分析</h3><p>刚开始看到这题想法是很简单，以为跟找最长子串匹配应该是同一个解法，也就是动态规划的方法。后面发现跑起来在大数据集的时候还比暴力匹配更慢. </p>
 <p>仔细思考了一下后发现最短的回文其实是从头上开始找到后面能匹配的尽可能长的回文子串，举个例子<code>aabcbaaa</code> 能找到从头部开始尽可能长的回文子串为<code>aabcbaa</code>。思路上还是动态规划，却发现无论如何都有很多无用的操作。最后 google 了下，发现最佳的做法（时间复杂度为线性）是kmp 算法。</p>
 <p>具体做法为 <code>aabcbaaa</code> + <code>aaabcbaa</code>(前者的逆子串）之后用kmp 的prefix 处理生成next 跳转数组后，找到能match 的最长回文逆子串。比如 对于字符串s(<code>aabcbaaa</code>)先reverse 再concat 之后生成的字符串为str(<code>aabcbaaaaaabcbaa</code>)。 这时候的next 跳转数组应该为</p>
@@ -65,7 +69,15 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p>已经很久没刷题了，国庆期间重新刷了几题，复习了下 DFA, kmp algorithm, 有向图的环检测, 拓扑排序等。</p>
-<p>最近对算法一个感受就是，算法跟英文很像，学的时候总是不知道有什么用，偏偏就会有时候需要用上。 比如有向环的检测跟拓扑排序，学图数据结构跟算]]>
+<p>最近对算法一个感受就是，算法跟英文很像，学的时候总是不知道有什么用，偏偏就会有时候需要用上。 比如有向环的检测跟拓扑排序，学图数据结构跟算法的时候总是觉得这些东西可能在一些比较高大上的东西上才会用到。直到半年前自己想写一个依赖注入的js 版本实现的时候突然就懵了。 </p>
+<p>写个依赖注入在简单的利用function.toString() 之后利用正则表达式获得各个依赖名称时候的难度都还好，直到检测依赖是否成环的时候，需要用到的便是图里面的有向图的环检测，也就是dfs。</p>
+<p>这题<a href="https://leetcode.com/problems/shortest-palindrome/">Shortest Palindrome</a> 在leetcode 的通过率为17%，难度为Hard. 个人认为还是比较有意思的题目.</p>
+<blockquote>
+<p>Given a string S, you are allowed to convert it to a palindrome by adding characters in front of it. Find and return the shortest palindrome you can find by performing this transformation.</p>
+<p>For example:<br>Given “aacecaaa”, return “aaacecaaa”.</p>
+<p>Given “abcd”, return “dcbabcd”.</p>
+</blockquote>]]>
+    
     </summary>
     
       <category term="Finite State Automata" scheme="tyleryang.github.io/tags/Finite-State-Automata/"/>
@@ -85,11 +97,12 @@
     <link href="tyleryang.github.io/2015/09/20/%E6%9C%80%E8%BF%91%E7%9A%84%E7%94%9F%E6%B4%BB/"/>
     <id>tyleryang.github.io/2015/09/20/最近的生活/</id>
     <published>2015-09-20T15:23:45.000Z</published>
-    <updated>2016-04-02T06:24:46.000Z</updated>
+    <updated>2016-04-02T07:42:57.000Z</updated>
     <content type="html"><![CDATA[<p>前些日子把个人博客从github 上搬到了树莓派里，给树莓派装了nodejs， git等东东。同时把家里的两级路由变成了一个网络桥接以及一个以及路由。当时弄到了晚上三点，印象颇为深刻。 </p>
 <p>原先有个路由是电信那边租过来的，刚开始就被设好，后来自己买多了一个华为的荣耀路由。想着这样可以用ddns把自己的树莓派曝露到英特网下，从而可以自己setup 自己的server，将来还可以加蓝牙dangle把家里搞成小型物联网。 于是就注册了花生壳，却发现无论如何都无法从外网访问到自己的树莓派。后来发现是因为华为绑定花生壳账号的时候是把自己被电信光猫（一级路由）分配的ip<br>绑定给了花生壳，于是果断把一级路由刷掉取消拨号转为桥接，再把华为的拨号加上，搞定。</p>
 <p>leetcode 刷题的进度最近都下来了，工作确实很忙，晚上回来基本都是头疼，躺一会就起来健身，俯卧撑仰卧起坐啥的还是要做的。星期六日基本都会去咖啡厅刷题写代码。</p>
 <p>react native 果然会慢慢活起来，还记得四月刚出的时候马上跑过去写了几个页面，写着跟twitter一样的界面，写起来毫无压力。之后上youtube 上看了react conference里面fb 的一个家伙写的animation demo，被震惊了很久。 现在react native又可以编译成android，就像发布会时说的那样，“我们相信web 的未来非常美好，但现在还是有不足之处，至少在我们等到html5 完美之前，react native 会成为我们目前最好的解决方案。” </p>
+<a id="more"></a>
 <p>前些日子上youtube 上看了不来梅大学的 suffix tree 的视频，实现起来确实蛮累的。trie tree 实现起来这么简单，但适用范围却很窄。尤记得当时面试的时候被北大哥问suffix tree跟优先队列的实现问的面红耳赤的自己,当时回来跟steven 聊了好久，steven 说了几个重要的数据结构一定要掌握，于是默默记在心中。感觉人生就是不断的遇到秒杀你的人，但人生的意义却是一次次被秒杀，一次次爬起来继续练。</p>
 <p>这两天早上练了一上午球，下午跑去写了知乎的小爬虫，准备封装好基本API。顺便尝试了下koa 的东东，ECMAScript 的yield 真是蛮有意思的，刚开始以为yield 是可以解决异步问题，后来发现是koa 利用generator 解决了异步回调，google 了一下，貌似很多人都有这个误会。 另外 generator 里面的peak 运行语句的方式会是一个蛮有意思的考点吧。 koa 封装的middleware 只能赞一个。具体代码见github。 </p>
 <p>好几个月没认真去stackoverflow 刷答案，昨天跑去看了一下，发现有个人提了一个问题，说是内嵌的document.write 跟用script src 引入的js脚本里面的document.write 运行结果不一致，一个只是append 文字进去，后者则是删除文档原有的markup，然后append text。 当时看到的时候也觉得很奇怪，后来第一反应是去mdn 查文档，看了一下发现是内嵌的document.write 是不会自动先调用 document.open，而document.open<br>的作用恰恰是清空整个文档。给问这个问题的人点了赞，答了题，拿了几十分。</p>
@@ -100,7 +113,10 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p>前些日子把个人博客从github 上搬到了树莓派里，给树莓派装了nodejs， git等东东。同时把家里的两级路由变成了一个网络桥接以及一个以及路由。当时弄到了晚上三点，印象颇为深刻。 </p>
-<p>原先有个路由是电信那边租过来的，刚开始就被设好，后来自己买多了一个华为的]]>
+<p>原先有个路由是电信那边租过来的，刚开始就被设好，后来自己买多了一个华为的荣耀路由。想着这样可以用ddns把自己的树莓派曝露到英特网下，从而可以自己setup 自己的server，将来还可以加蓝牙dangle把家里搞成小型物联网。 于是就注册了花生壳，却发现无论如何都无法从外网访问到自己的树莓派。后来发现是因为华为绑定花生壳账号的时候是把自己被电信光猫（一级路由）分配的ip<br>绑定给了花生壳，于是果断把一级路由刷掉取消拨号转为桥接，再把华为的拨号加上，搞定。</p>
+<p>leetcode 刷题的进度最近都下来了，工作确实很忙，晚上回来基本都是头疼，躺一会就起来健身，俯卧撑仰卧起坐啥的还是要做的。星期六日基本都会去咖啡厅刷题写代码。</p>
+<p>react native 果然会慢慢活起来，还记得四月刚出的时候马上跑过去写了几个页面，写着跟twitter一样的界面，写起来毫无压力。之后上youtube 上看了react conference里面fb 的一个家伙写的animation demo，被震惊了很久。 现在react native又可以编译成android，就像发布会时说的那样，“我们相信web 的未来非常美好，但现在还是有不足之处，至少在我们等到html5 完美之前，react native 会成为我们目前最好的解决方案。” </p>]]>
+    
     </summary>
     
       <category term="Life" scheme="tyleryang.github.io/tags/Life/"/>
@@ -114,13 +130,14 @@
     <link href="tyleryang.github.io/2015/08/11/Candy-Leetcode/"/>
     <id>tyleryang.github.io/2015/08/11/Candy-Leetcode/</id>
     <published>2015-08-11T12:30:50.000Z</published>
-    <updated>2015-08-11T14:47:21.000Z</updated>
+    <updated>2016-04-02T07:43:22.000Z</updated>
     <content type="html"><![CDATA[<p>This is a very interesting question and it have a bunch of corner cases that we need to consider. (It takes me more than 5 hours to solve it at the first time.)</p>
 <h3 id="Candy">Candy</h3><blockquote>
 <p>There are N children standing in a line. Each child is assigned a rating value.</p>
 <p>You are giving candies to these children subjected to the following requirements:</p>
 <p>Each child must have at least one candy.<br>Children with a higher rating get more candies than their neighbors.<br>What is the minimum candies you must give?</p>
 </blockquote>
+<a id="more"></a>
 <h3 id="Analysis">Analysis</h3><p>In a word, the higher rating value you get than your neighbors, the more candies you should get.</p>
 <p>Considering the rating array below,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 3]</span><br></pre></td></tr></table></figure></p>
 <p>the output should be <code>6</code>. This is because the first child have 1 candy, and the next should have 2 candies according to his rating value. It’s easy to get the value.</p>
@@ -136,7 +153,13 @@
 <h3 id="Conclusion">Conclusion</h3><p>Nice problem, though there are some guys can solve it with linear space complexity, in this way we only use O(1) space complexity which I think it’s better than the other solution.</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>This is a very interesting question and it have a bunch of corner cases that we need to consider. (It takes me more than 5 hours to solve]]>
+    <![CDATA[<p>This is a very interesting question and it have a bunch of corner cases that we need to consider. (It takes me more than 5 hours to solve it at the first time.)</p>
+<h3 id="Candy">Candy</h3><blockquote>
+<p>There are N children standing in a line. Each child is assigned a rating value.</p>
+<p>You are giving candies to these children subjected to the following requirements:</p>
+<p>Each child must have at least one candy.<br>Children with a higher rating get more candies than their neighbors.<br>What is the minimum candies you must give?</p>
+</blockquote>]]>
+    
     </summary>
     
       <category term="Greedy Algorithm" scheme="tyleryang.github.io/tags/Greedy-Algorithm/"/>
@@ -154,9 +177,10 @@
     <link href="tyleryang.github.io/2015/08/01/Dependency-Injection-in-JavaScript/"/>
     <id>tyleryang.github.io/2015/08/01/Dependency-Injection-in-JavaScript/</id>
     <published>2015-08-01T14:55:47.000Z</published>
-    <updated>2015-08-02T08:23:56.000Z</updated>
+    <updated>2016-04-02T07:43:19.000Z</updated>
     <content type="html"><![CDATA[<p>Dependency Injection is kind of design pattern. Well, although it is not in the GOF’s design pattern list, but I think it is getting more and more important.</p>
 <h3 id="Why_we_need_Dependency_Injection?">Why we need Dependency Injection?</h3><p>Firstly let us think about why we need dependency injection. Suppose we have a function below,<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CoffeeMaker</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> grinder = <span class="keyword">new</span> Grinder();</span><br><span class="line">    <span class="keyword">var</span> pump = Pump.getInstance();</span><br><span class="line">    <span class="keyword">var</span> heater = app.get(<span class="string">"Heater"</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">this</span>.brew = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        grinder.grind();</span><br><span class="line">        heater.on();</span><br><span class="line">        pump.pump();</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>This is not a good example, because the <code>CoffeeMaker</code> is tightly couple to this particular environment, which means to use <code>CoffeeMaker</code> we need to make sure we can get the <code>Grinder</code>, <code>Pump</code> and <code>Heater</code> in our environment.</p>
 <p>If we just write down our code in one function, it’s not that kind of bad thing. How about in our project? Let’s me give u one more function. </p>
 <p>Well, definitely we get a main function looks like the code below,<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> coffeeMaker = <span class="keyword">new</span> CoffeeMaker();</span><br><span class="line">    coffeeMaker.brew();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -173,7 +197,9 @@
 <p>For now we can easily pass our dependency into the CoffeeMaker.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Injector</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.cache = [];</span><br><span class="line">    <span class="keyword">this</span>.path = [];</span><br><span class="line">    <span class="keyword">this</span>.INSTANTIATING = &#123;&#125;; </span><br><span class="line">&#125;</span><br><span class="line">Injector.prototype.invoke = <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">var</span> args = [];</span><br><span class="line">    <span class="keyword">var</span> $inject = <span class="keyword">this</span>.annotate(fn);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; $inject.length; i++) &#123;</span><br><span class="line">        funcKey = $inject[i];</span><br><span class="line">        args.push(<span class="keyword">this</span>.get(funcKey));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> fn.apply(<span class="keyword">this</span>, args);</span><br><span class="line">&#125;;</span><br><span class="line">Injector.prototype.annotate = <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> FN_ARGS = <span class="regexp">/^function\s*[^\(]*\(\s*([^\(]*)\)/m</span>;</span><br><span class="line">	<span class="keyword">var</span> FN_TRIM = <span class="regexp">/^\s+|\s+$/</span>;</span><br><span class="line">    <span class="keyword">var</span> fnStr = fn.toString();</span><br><span class="line">    <span class="keyword">var</span> matchArr = fnStr.match(FN_ARGS);</span><br><span class="line">    <span class="keyword">var</span> $inject = [];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(matchArr.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">	    <span class="keyword">var</span> arr = matchArr[<span class="number">1</span>].split(<span class="string">","</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">			arr[i] = arr[i].replace(FN_TRIM, <span class="string">''</span>);</span><br><span class="line">			$inject.push(arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $inject;</span><br><span class="line">&#125;;</span><br><span class="line">Injector.prototype.get = <span class="function"><span class="keyword">function</span>(<span class="params">funcName</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.cache.hasOwnProperty(funcName)) &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.cache[funcName] == <span class="keyword">this</span>.INSTANTIATING) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"Circular dependency found: "</span> + funcName + <span class="string">" &lt;- "</span> + <span class="keyword">this</span>.path.join(<span class="string">" &lt;- "</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.cache[funcName];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.path.unshift(funcName);</span><br><span class="line">        <span class="keyword">this</span>.cache[funcName] = <span class="keyword">this</span>.INSTANTIATING;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.cache[funcName] = <span class="built_in">window</span>[funcName];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Dependency Injection is kind of design pattern. Well, although it is not in the GOF’s design pattern list, but I think it is getting more]]>
+    <![CDATA[<p>Dependency Injection is kind of design pattern. Well, although it is not in the GOF’s design pattern list, but I think it is getting more and more important.</p>
+<h3 id="Why_we_need_Dependency_Injection?">Why we need Dependency Injection?</h3><p>Firstly let us think about why we need dependency injection. Suppose we have a function below,<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CoffeeMaker</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> grinder = <span class="keyword">new</span> Grinder();</span><br><span class="line">    <span class="keyword">var</span> pump = Pump.getInstance();</span><br><span class="line">    <span class="keyword">var</span> heater = app.get(<span class="string">"Heater"</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">this</span>.brew = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        grinder.grind();</span><br><span class="line">        heater.on();</span><br><span class="line">        pump.pump();</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]>
+    
     </summary>
     
       <category term="design pattern" scheme="tyleryang.github.io/tags/design-pattern/"/>
@@ -191,11 +217,11 @@
     <link href="tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/"/>
     <id>tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/</id>
     <published>2015-08-01T08:32:43.000Z</published>
-    <updated>2015-08-01T13:04:05.000Z</updated>
+    <updated>2016-04-02T07:42:55.000Z</updated>
     <content type="html"><![CDATA[<p>The hardest problem in leetcode, and it force me to read something new, maybe this is why we solve the problem in the online judge system.</p>
 <h3 id="Valid_Number">Valid Number</h3><blockquote>
 <p>Valid if a given string is numeric.</p>
-<p>Some examples:<br><code>&quot;0&quot;</code> =&gt; <code>true</code><br><code>&quot; 0.1&quot;</code> =&gt; <code>true</code><br><code>&quot;abc&quot;</code> =&gt; <code>true</code><br><code>&quot;1 a&quot;</code> =&gt; <code>true</code><br><code>&quot;2e10&quot;</code> =&gt; <code>true</code></p>
+<p>Some examples:<br><code>&quot;0&quot;</code> =&gt; <code>true</code><br><code>&quot; 0.1&quot;</code> =&gt; <code>true</code><br><code>&quot;abc&quot;</code> =&gt; <code>true</code><br><code>&quot;1 a&quot;</code> =&gt; <code>true</code><br><code>&quot;2e10&quot;</code> =&gt; <code>true</code><br><a id="more"></a></p>
 </blockquote>
 <h3 id="Analysis">Analysis</h3><p>Well, regular expression must be a way to solve this problem. But I don’t think the recuiter would accept regex solution. </p>
 <p>This problem is all about state and the transition which is how regular expression worked. </p>
@@ -209,7 +235,11 @@
 <h3 id="Conclusion">Conclusion</h3><p>As for my understanding, this problem has a very similar concept with Knuth-Morris-Pratt algorithm which is known as KMP algorithm. They are all base on <strong>Finite State Automata</strong>, which is really worth a try. Here I recommend <a href="http://www.amazon.com/Algorithms-4th-Robert-Sedgewick/dp/032157351X/ref=sr_1_1?ie=UTF8&amp;qid=1438428554&amp;sr=8-1&amp;keywords=algorithm" target="_blank" rel="external"><strong>Algorithm (the 4th Edition)</strong></a>, in this book, the author give a very detail introduction of <strong>StateMachine</strong> in chapter 5.</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>The hardest problem in leetcode, and it force me to read something new, maybe this is why we solve the problem in the online judge system]]>
+    <![CDATA[<p>The hardest problem in leetcode, and it force me to read something new, maybe this is why we solve the problem in the online judge system.</p>
+<h3 id="Valid_Number">Valid Number</h3><blockquote>
+<p>Valid if a given string is numeric.</p>
+<p>Some examples:<br><code>&quot;0&quot;</code> =&gt; <code>true</code><br><code>&quot; 0.1&quot;</code> =&gt; <code>true</code><br><code>&quot;abc&quot;</code> =&gt; <code>true</code><br><code>&quot;1 a&quot;</code> =&gt; <code>true</code><br><code>&quot;2e10&quot;</code> =&gt; <code>true</code><br>]]>
+    
     </summary>
     
       <category term="Finite State Automata" scheme="tyleryang.github.io/tags/Finite-State-Automata/"/>
@@ -229,13 +259,14 @@
     <link href="tyleryang.github.io/2015/08/01/Palindrome-PartionningII-Leetcode/"/>
     <id>tyleryang.github.io/2015/08/01/Palindrome-PartionningII-Leetcode/</id>
     <published>2015-07-31T16:09:13.000Z</published>
-    <updated>2015-08-01T08:22:57.000Z</updated>
+    <updated>2016-04-02T07:43:08.000Z</updated>
     <content type="html"><![CDATA[<p>This should be one of the most insteresting algorithm problem I try to solve within this month.</p>
 <p>Here is the question,</p>
 <h3 id="Palindrome_PartitioningII">Palindrome PartitioningII</h3><blockquote>
 <p>Given a string s, partition s such that every substring of the partition is a palindrome.<br>Return the minimum cuts needs for a palindrome partitioning of s.</p>
 <p>For example, given s = “aab”,<br>Return <code>1</code> since the palindrome partitioning <code>[&quot;aa&quot;, &quot;b&quot;]</code> could be produced using 1 cut.</p>
 </blockquote>
+<a id="more"></a>
 <h3 id="Analysis">Analysis</h3><p>To get the minimum cut, of course backtracking can get an answer. To do it in a better way, <strong>Dynamic Programming</strong> will be suit for us.</p>
 <p>Let’s say, we want to know the minimum cut for string <code>s = &quot;aabaabcb&quot;</code>,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1 2 3 4 5 6 7&#10;a a b a a c b c</span><br></pre></td></tr></table></figure></p>
 <p>Apparently, we need to find out all the palindrome substring in it so that we can get the minimum cut. But we can reuse some part of the substring. For example, if we know <code>aba</code> is a palindrome, to valid <code>aabaa</code> we only need to make sure the first character equals to the last one.<br>So the first step is to find out all the substring which is palindrome.<br>We use 2 dimension array to store all the result. For String <code>s = &quot;aabaabcb&quot;</code>, substring s.substring(1, 3) is a palindrome, so we set <code>dp[1][3] = true</code>, here is the java code.</p>
@@ -249,7 +280,11 @@
     <summary type="html">
     <![CDATA[<p>This should be one of the most insteresting algorithm problem I try to solve within this month.</p>
 <p>Here is the question,</p>
-<h3 id="]]>
+<h3 id="Palindrome_PartitioningII">Palindrome PartitioningII</h3><blockquote>
+<p>Given a string s, partition s such that every substring of the partition is a palindrome.<br>Return the minimum cuts needs for a palindrome partitioning of s.</p>
+<p>For example, given s = “aab”,<br>Return <code>1</code> since the palindrome partitioning <code>[&quot;aa&quot;, &quot;b&quot;]</code> could be produced using 1 cut.</p>
+</blockquote>]]>
+    
     </summary>
     
       <category term="Dynamic Programming" scheme="tyleryang.github.io/tags/Dynamic-Programming/"/>
@@ -267,7 +302,7 @@
     <link href="tyleryang.github.io/2015/07/25/Reverse-Hash-Function-Google-Challenge/"/>
     <id>tyleryang.github.io/2015/07/25/Reverse-Hash-Function-Google-Challenge/</id>
     <published>2015-07-25T08:01:42.000Z</published>
-    <updated>2015-10-13T05:03:38.000Z</updated>
+    <updated>2016-04-02T07:43:05.000Z</updated>
     <content type="html"><![CDATA[<p>Recently I’ve been doing the Google Challenge, and I found a very interesting algorithm problem. Here is the problem.</p>
 <h3 id="Reverse_a_Hash_Function_(Level_3)">Reverse a Hash Function (Level 3)</h3><p>The function takes a 16 byte input and gives a 16 byte output. It uses multiplication (*), bit-wise exclusive OR (XOR) and modulo (%) to calculate an element of the digest based on elements of the input message: </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">digest [i] = ( (<span class="number">129</span> * message[i]) XOR message[i-<span class="number">1</span>]) % <span class="number">256</span></span><br></pre></td></tr></table></figure>
@@ -278,6 +313,7 @@
 <p>Output:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span> list) [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>]</span><br></pre></td></tr></table></figure></p>
 <p>Inputs:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span> list) digest = [<span class="number">0</span>, <span class="number">129</span>, <span class="number">5</span>, <span class="number">141</span>, <span class="number">25</span>, <span class="number">137</span>, <span class="number">61</span>, <span class="number">149</span>, <span class="number">113</span>, <span class="number">145</span>, <span class="number">53</span>, <span class="number">157</span>, <span class="number">233</span>, <span class="number">185</span>, <span class="number">109</span>, <span class="number">165</span>]</span><br></pre></td></tr></table></figure></p>
 <p>Output:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span> list) [<span class="number">0</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>, <span class="number">100</span>, <span class="number">121</span>, <span class="number">144</span>, <span class="number">169</span>, <span class="number">196</span>, <span class="number">225</span>]</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <h3 id="Analysis">Analysis</h3><p>Basically this problem is about how to reverse this expression,<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">digest [i] = ( (<span class="number">129</span> * message[i]) XOR message[i-<span class="number">1</span>]) % <span class="number">256</span></span><br></pre></td></tr></table></figure></p>
 <p>The first moment I saw this problem, I was wondering maybe I can just simply move the modulo operator(%) to the right side, and then the <code>XOR</code> operator. For <code>129 * message[i]</code>, maybe I can use the forloop to find out the right one.</p>
 <p>For <code>% 256</code> we know it is only set a upperbound to our hash result, XOR <code>message[i - 1]</code> will not affect the result of modulo(message[i - 1] is in the interleaving [0, 255]). which means<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">digest[i] = ((129 * message[i]) XOR message[i - 1]) % 256&#10;          = ((129 * message[i]) % 256) XOR message[i - 1]</span><br></pre></td></tr></table></figure></p>
@@ -302,7 +338,16 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Recently I’ve been doing the Google Challenge, and I found a very interesting algorithm problem. Here is the problem.</p>
-<h3 id="Reverse]]>
+<h3 id="Reverse_a_Hash_Function_(Level_3)">Reverse a Hash Function (Level 3)</h3><p>The function takes a 16 byte input and gives a 16 byte output. It uses multiplication (*), bit-wise exclusive OR (XOR) and modulo (%) to calculate an element of the digest based on elements of the input message: </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">digest [i] = ( (<span class="number">129</span> * message[i]) XOR message[i-<span class="number">1</span>]) % <span class="number">256</span></span><br></pre></td></tr></table></figure>
+<p>For the first element, the value of <code>message[-1]</code> is 0.<br>For example, if <code>message[0] = 1</code> and <code>message[1] = 129</code>, then:<br>For <code>digest[0]</code>:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">129</span> * message[<span class="number">0</span>] = <span class="number">129</span></span><br><span class="line"><span class="number">129</span> XOR message[-<span class="number">1</span>] = <span class="number">129</span></span><br><span class="line"><span class="number">129</span> % <span class="number">256</span> = <span class="number">129</span></span><br></pre></td></tr></table></figure></p>
+<p>Thus <code>digest[0] = 129</code>.<br>For digest[1]:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">129</span>*message[<span class="number">1</span>] = <span class="number">16641</span></span><br><span class="line"><span class="number">16641</span> XOR message[<span class="number">0</span>] = <span class="number">16640</span></span><br><span class="line"><span class="number">16640</span> % <span class="number">256</span> = <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
+<p>Thus <code>digest[1] = 0</code>.<br>Write a function answer(digest) that takes <strong>an array of 16 integers</strong> and returns another array of 16 that correspond to the unique message that created this digest. Since each value is a single byte, the values are <strong>0 to 255</strong> for both message and digest.</p>
+<h3 id="Test_cases">Test cases</h3><p>Inputs:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span> list) digest = [<span class="number">0</span>, <span class="number">129</span>, <span class="number">3</span>, <span class="number">129</span>, <span class="number">7</span>, <span class="number">129</span>, <span class="number">3</span>, <span class="number">129</span>, <span class="number">15</span>, <span class="number">129</span>, <span class="number">3</span>, <span class="number">129</span>, <span class="number">7</span>, <span class="number">129</span>, <span class="number">3</span>, <span class="number">129</span>]</span><br></pre></td></tr></table></figure></p>
+<p>Output:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span> list) [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>]</span><br></pre></td></tr></table></figure></p>
+<p>Inputs:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span> list) digest = [<span class="number">0</span>, <span class="number">129</span>, <span class="number">5</span>, <span class="number">141</span>, <span class="number">25</span>, <span class="number">137</span>, <span class="number">61</span>, <span class="number">149</span>, <span class="number">113</span>, <span class="number">145</span>, <span class="number">53</span>, <span class="number">157</span>, <span class="number">233</span>, <span class="number">185</span>, <span class="number">109</span>, <span class="number">165</span>]</span><br></pre></td></tr></table></figure></p>
+<p>Output:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span> list) [<span class="number">0</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>, <span class="number">100</span>, <span class="number">121</span>, <span class="number">144</span>, <span class="number">169</span>, <span class="number">196</span>, <span class="number">225</span>]</span><br></pre></td></tr></table></figure></p>]]>
+    
     </summary>
     
       <category term="Algorithm" scheme="tyleryang.github.io/tags/Algorithm/"/>
@@ -320,17 +365,22 @@
     <link href="tyleryang.github.io/2015/07/25/About-XOR-operator/"/>
     <id>tyleryang.github.io/2015/07/25/About-XOR-operator/</id>
     <published>2015-07-25T06:15:16.000Z</published>
-    <updated>2016-04-02T06:14:19.000Z</updated>
+    <updated>2016-04-02T07:43:29.000Z</updated>
     <content type="html"><![CDATA[<p>I think the chrome web developer tool is extremely useful, I perfer to use it to validate some expressions or some apis instead of using java or c. </p>
 <p>Considering the expression below,</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">129</span>;</span><br><span class="line"><span class="keyword">var</span> c = a ^ b;</span><br><span class="line">a ^ b;  <span class="comment">// 132</span></span><br><span class="line">b ^ c;  <span class="comment">// 5 equals to a</span></span><br></pre></td></tr></table></figure>
 <p>Let me prove this is right. The binary expression of integer 5 is, <code>101</code><br>for 129 is, <code>100000001</code></p>
-<p>XOR means with the same bit value you will get <code>0</code>, or vise versa.<br>So when we do <code>a ^ b</code> means we will get the bit which only exist in <code>a</code> or <code>b</code>.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">8</span> <span class="number">7</span> <span class="number">6</span> <span class="number">5</span> <span class="number">4</span> <span class="number">3</span> <span class="number">2</span> <span class="number">1</span> <span class="number">0</span></span><br><span class="line"><span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span>  <span class="comment">//a</span></span><br><span class="line">              XOR</span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span>  <span class="comment">//b</span></span><br><span class="line">-----------------</span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span>  <span class="comment">//c  bits only exist in a or b</span></span><br></pre></td></tr></table></figure></p>
+<p>XOR means with the same bit value you will get <code>0</code>, or vise versa.<br>So when we do <code>a ^ b</code> means we will get the bit which only exist in <code>a</code> or <code>b</code>.<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">8</span> <span class="number">7</span> <span class="number">6</span> <span class="number">5</span> <span class="number">4</span> <span class="number">3</span> <span class="number">2</span> <span class="number">1</span> <span class="number">0</span></span><br><span class="line"><span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span>  <span class="comment">//a</span></span><br><span class="line">              XOR</span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span>  <span class="comment">//b</span></span><br><span class="line">-----------------</span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span>  <span class="comment">//c  bits only exist in a or b</span></span><br></pre></td></tr></table></figure></p>
 <p>So <code>b ^ c</code> means you will get the bit only exist in b or c.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">8</span> <span class="number">7</span> <span class="number">6</span> <span class="number">5</span> <span class="number">4</span> <span class="number">3</span> <span class="number">2</span> <span class="number">1</span> <span class="number">0</span></span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="comment">//b</span></span><br><span class="line">              XOR</span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="comment">//c</span></span><br><span class="line">-----------------</span><br></pre></td></tr></table></figure></p>
 <p>Appearently when we  <code>a ^ b</code>, their public bits are all set to <code>0</code>(The 0th) and the bits only exist in b or a is already save into the c(The 2th from a and the 8th from b).<br>So At this moment <code>b ^ c</code> will equal to ‘bits only exist in a and bits exist in both <code>a</code> and <code>b</code> which is <code>a</code>‘(The 0th from <code>a</code> and the 2th from <code>b</code>). </p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>I think the chrome web developer tool is extremely useful, I perfer to use it to validate some expressions or some apis instead of using ]]>
+    <![CDATA[<p>I think the chrome web developer tool is extremely useful, I perfer to use it to validate some expressions or some apis instead of using java or c. </p>
+<p>Considering the expression below,</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">129</span>;</span><br><span class="line"><span class="keyword">var</span> c = a ^ b;</span><br><span class="line">a ^ b;  <span class="comment">// 132</span></span><br><span class="line">b ^ c;  <span class="comment">// 5 equals to a</span></span><br></pre></td></tr></table></figure>
+<p>Let me prove this is right. The binary expression of integer 5 is, <code>101</code><br>for 129 is, <code>100000001</code></p>
+<p>XOR means with the same bit value you will get <code>0</code>, or vise versa.<br>So when we do <code>a ^ b</code> means we will get the bit which only exist in <code>a</code> or <code>b</code>.<br>]]>
+    
     </summary>
     
       <category term="CSAPP" scheme="tyleryang.github.io/tags/CSAPP/"/>

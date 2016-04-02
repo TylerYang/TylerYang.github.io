@@ -1,358 +1,249 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Promise Land</title>
+  
+  <title>AbsTY</title>
+  <meta name="author" content="Tyler Yang">
+  
+  <meta name="description" content="Code it.">
+  
+  
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Tyler&apos;s Zend Garden">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Promise Land">
-<meta property="og:url" content="tyleryang.github.io/index.html">
-<meta property="og:site_name" content="Promise Land">
-<meta property="og:description" content="Tyler&apos;s Zend Garden">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Promise Land">
-<meta name="twitter:description" content="Tyler&apos;s Zend Garden">
-  
-  
-    <link rel="icon" href="favicon.png">
-  
-  <link href='//fonts.useso.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
-  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
-  
 
   
-<script type="text/javascript">
-var _hmt = _hmt || [];
-(function() {
-      var hm = document.createElement("script");
-        hm.src = "//hm.baidu.com/hm.js?136f9d0455315c9611ba56b53088b6f9";
-          var s = document.getElementsByTagName("script")[0]; 
-            s.parentNode.insertBefore(hm, s);
-})();
-</script>
+  <meta property="og:site_name" content="AbsTY"/>
 
+  
+    <meta property="og:image" content="undefined"/>
+  
 
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="AbsTY" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
   
 </head>
 
 <body>
-  <div id="container">
-    <header id="header">
-  <div id="header-main" class="header-inner">
-    <div class="outer">
-      <a href="/" id="logo"><i class="logo" style="background-image: url(/css/images/logo.png)"></i><span class="site-title">Promise Land</span></a>
-      <nav id="main-nav">
-        
-          <a class="main-nav-link" href="/.">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-          <a class="main-nav-link" href="/categories">Categories</a>
-        
-          <a class="main-nav-link" href="/tags">Tags</a>
-        
-        
-      </nav>
-      
-        <nav id="sub-nav">
-          <div class="profile" id="profile-nav">
-            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://avatars2.githubusercontent.com/u/5443053?%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20v=3&amp;u=be0550961d4346b67d803ea9902fd8beb4ca519f&amp;s=140"><i class="fa fa-caret-down"></i></a>
-          </div>
-        </nav>
-      
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="tyleryang.github.io"></form>
-      </div>
-    </div>
-  </div>
-  <div id="main-nav-mobile" class="header-sub header-inner">
-    <table class="menu outer">
-      <tr>
-        
-          <td><a class="main-nav-link" href="/.">Home</a></td>
-        
-          <td><a class="main-nav-link" href="/archives">Archives</a></td>
-        
-          <td><a class="main-nav-link" href="/categories">Categories</a></td>
-        
-          <td><a class="main-nav-link" href="/tags">Tags</a></td>
-        
-          <td><a class="main-nav-link" href="/about">About</a></td>
-        
-        <td>
-          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="hidden" name="sitesearch" value="tyleryang.github.io"></form>
-        </td>
-      </tr>
-    </table>
-  </div>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">AbsTY</a></h1>
+  <h2>
+      <a href="/">
+          A JavaScript Fan.
+          Code it.
+      </a>
+  </h2>
+</div>
+<nav id="main-nav">
+  <ul>
+    
+      <li><a href="/about">About</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+<div class="alignleft" style="margin-top: 15px">
+
+
+  <iframe src="http://ghbtns.com/github-btn.html?user=tyleryang&type=follow"
+  allowtransparency="true" frameborder="0" scrolling="0" width="132" height="20"></iframe>
+
+</div>
+<div class="clearfix"></div>
 </header>
-
-    <div class="outer">
-      
-        <aside id="profile">
-  <div class="inner profile-inner">
-    <div class="base-info profile-block">
-      <img id="avatar" src="https://avatars2.githubusercontent.com/u/5443053?%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20v=3&amp;u=be0550961d4346b67d803ea9902fd8beb4ca519f&amp;s=140">
-      <h2 id="name">Tyler Yang</h2>
-      <h3 id="title">Web Developer</h3>
-      <span id="location"><i class="fa fa-map-marker"></i>ShenZhen, GuangDong, China</span>
-      <a id="follow" href="https://github.com/TylerYang/">FOLLOW</a>
-    </div>
-    <div class="article-info profile-block">
-      <div class="article-info-block">
-        9
-        <span>posts</span>
-      </div>
-      <div class="article-info-block">
-        12
-        <span>tags</span>
-      </div>
-    </div>
+  <div id="content" class="inner">
+    <div id="wrapper">
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
     
-    <div class="contact-info profile-block">
-      <table class="contact-list">
-        <tr>
-          
-          <td><a href="http://github.com/TylerYang" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
-          
-          <td><a href="http://stackoverflow.com/users/3064056/tyler-z-yang" target="_blank" title="stack-overflow"><i class="fa fa-stack-overflow"></i></a></td>
-          
-          <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
-          
-        </tr>
-      </table>
-    </div>
-    
+      <img src="">
     
   </div>
-</aside>
-
-      
-      <section id="main">
-      <article id="post-用树莓派架设个人博客-Life" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-    
-      <header class="article-header">
-        
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/16/用树莓派架设个人博客-Life/">用树莓派架设个人博客 - Life</a>
-    </h1>
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title"><a href="/2015/10/16/用树莓派架设个人博客-Life/">用树莓派架设个人博客 - Life</a></h1>
   
 
-        <div class="article-meta">
-          
-  <div class="article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2015/10/16/用树莓派架设个人博客-Life/">
-      <time datetime="2015-10-16T08:54:34.000Z" itemprop="datePublished">2015-10-16</time>
-    </a>
-  </div>
-
-
-          
-  <div class="article-category">
-  	<i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/Life/">Life</a>
-  </div>
-
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="published">
+          Published: <time datetime="2015-10-16T08:54:34.000Z">2015-10-16</time>
+        </p>
+      
+    </header>
+    <div class="entry">
       
         <p>很久之前就把用hexo 生成的静态页面从github page 放到了自己宿舍的树莓派里，通过ddns 的方式解析之后进行请求的跳转。 而自己的树莓派又刷了 OSMC 这个基于debian 套了自己的gui的家庭影音. 为此在OSMC 上装了NodeJS 以及 corntab。 </p>
 <p>nodejs 只是简单的用express render static files。 </p>
-<p>corntab 则每一分钟运行一次shell 命令同步一次github repo。这样自己可以随时随地用mark down写博客，然后在写完后 <code>hexo generate &amp;&amp; hexo deploy</code> 一下，需要的只是等待一分钟，喝杯茶，自己的博客服务器就会更新。 相比起动态页面，这种利用hexo 生成的静态页面可以随时更新而无需重启server，在做个人博客的时候显得非常方便。 </p>
-<p>之后再加上树莓派开机启动运行几个shell 命令启动server 就不怕树莓派不小心断电了。 树莓派的好处还在于非常省电，作为个人博客这种访问量比较小的server 再适合不过。  </p>
-<p>现在在家里的树莓派还可以连到显示器跟音箱里，回到家的时候打开手机就可以通过airplay 无线播放音乐跟视频。 再往后就是自己写个server 连到家里的硬件上，变成智能家居中心服务器。 </p>
-<p>说来说去，需要的就是时间。要刷算法，要写server，要写博客，要看书，要健身，<strong>要变强</strong>。</p>
-
+<p>corntab 则每一分钟运行一次shell 命令同步一次github repo。这样自己可以随时随地用mark down写博客，然后在写完后 <code>hexo generate &amp;&amp; hexo deploy</code> 一下，需要的只是等待一分钟，喝杯茶，自己的博客服务器就会更新。 相比起动态页面，这种利用hexo 生成的静态页面可以随时更新而无需重启server，在做个人博客的时候显得非常方便。<br>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/10/16/用树莓派架设个人博客-Life/" data-id="cimir3dof0002rl42l0nyq4en" class="article-share-link">Share</a>
+    <footer>
       
+        
+          <div id="readmore" class="alignright">
+            <a href="/2015/10/16/用树莓派架设个人博客-Life/#more" class="more-link">READ MORE</a>
+          </div>
+        
+        
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Life/">Life</a></li></ul>
-
+      <div class="clearfix"></div>
     </footer>
   </div>
-  
 </article>
+<!-- hackish -->
 
 
 
-    
-      <article id="post-Shortest-Palindrome-Leetcode" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-    
-      <header class="article-header">
-        
+  <article class="post">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/06/Shortest-Palindrome-Leetcode/">Shortest Palindrome - Leetcode</a>
-    </h1>
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title"><a href="/2015/10/06/Shortest-Palindrome-Leetcode/">Shortest Palindrome - Leetcode</a></h1>
   
 
-        <div class="article-meta">
-          
-  <div class="article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2015/10/06/Shortest-Palindrome-Leetcode/">
-      <time datetime="2015-10-06T08:43:00.000Z" itemprop="datePublished">2015-10-06</time>
-    </a>
-  </div>
-
-
-          
-  <div class="article-category">
-  	<i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/Interview/">Interview</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Interview/Leetcode/">Leetcode</a>
-  </div>
-
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="published">
+          Published: <time datetime="2015-10-06T08:43:00.000Z">2015-10-06</time>
+        </p>
+      
+    </header>
+    <div class="entry">
       
         <p>已经很久没刷题了，国庆期间重新刷了几题，复习了下 DFA, kmp algorithm, 有向图的环检测, 拓扑排序等。</p>
 <p>最近对算法一个感受就是，算法跟英文很像，学的时候总是不知道有什么用，偏偏就会有时候需要用上。 比如有向环的检测跟拓扑排序，学图数据结构跟算法的时候总是觉得这些东西可能在一些比较高大上的东西上才会用到。直到半年前自己想写一个依赖注入的js 版本实现的时候突然就懵了。 </p>
 <p>写个依赖注入在简单的利用function.toString() 之后利用正则表达式获得各个依赖名称时候的难度都还好，直到检测依赖是否成环的时候，需要用到的便是图里面的有向图的环检测，也就是dfs。</p>
-<p>这题<a href="https://leetcode.com/problems/shortest-palindrome/" target="_blank" rel="external">Shortest Palindrome</a> 在leetcode 的通过率为17%，难度为Hard. 个人认为还是比较有意思的题目.</p>
+<p>这题<a href="https://leetcode.com/problems/shortest-palindrome/">Shortest Palindrome</a> 在leetcode 的通过率为17%，难度为Hard. 个人认为还是比较有意思的题目.</p>
 <blockquote>
 <p>Given a string S, you are allowed to convert it to a palindrome by adding characters in front of it. Find and return the shortest palindrome you can find by performing this transformation.</p>
 <p>For example:<br>Given “aacecaaa”, return “aaacecaaa”.</p>
 <p>Given “abcd”, return “dcbabcd”.</p>
 </blockquote>
-<h3 id="分析">分析</h3><p>刚开始看到这题想法是很简单，以为跟找最长子串匹配应该是同一个解法，也就是动态规划的方法。后面发现跑起来在大数据集的时候还比暴力匹配更慢. </p>
-<p>仔细思考了一下后发现最短的回文其实是从头上开始找到后面能匹配的尽可能长的回文子串，举个例子<code>aabcbaaa</code> 能找到从头部开始尽可能长的回文子串为<code>aabcbaa</code>。思路上还是动态规划，却发现无论如何都有很多无用的操作。最后 google 了下，发现最佳的做法（时间复杂度为线性）是kmp 算法。</p>
-<p>具体做法为 <code>aabcbaaa</code> + <code>aaabcbaa</code>(前者的逆子串）之后用kmp 的prefix 处理生成next 跳转数组后，找到能match 的最长回文逆子串。比如 对于字符串s(<code>aabcbaaa</code>)先reverse 再concat 之后生成的字符串为str(<code>aabcbaaaaaabcbaa</code>)。 这时候的next 跳转数组应该为</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a  a   b  c  b  a  a  a  a  a  a  b  c  b  a  a&#10;-1  0  -1 -1 -1  0  1  0  1  0  1  2  3  4  5  6</span><br></pre></td></tr></table></figure>
-<p>这时候会发现能找到的最长逆子串长度应该为6 + 1 =&gt; 7. 这是只需要new StringBuffer(s.substring(7)).reverse() + s 便为最终解答。</p>
-<p>以下为具体的java 实现，</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">shortestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s == <span class="keyword">null</span> || s.length() == <span class="number">0</span>) <span class="keyword">return</span> s;</span><br><span class="line">        StringBuffer sBuff = <span class="keyword">new</span> StringBuffer(s);</span><br><span class="line"></span><br><span class="line">        String str = s + sBuff.reverse().toString();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] next = genNext(str);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> l = next[next.length - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(l == str.length() - <span class="number">1</span> || l == s.length()) &#123;</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(l &gt; s.length()) &#123;</span><br><span class="line">            l++;</span><br><span class="line">        &#125;</span><br><span class="line">        l %= s.length();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> StringBuffer(s.substring(l)).reverse().toString() + s; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] genNext(String pattern) &#123;</span><br><span class="line">        <span class="keyword">int</span>[] next = <span class="keyword">new</span> <span class="keyword">int</span>[pattern.length()];</span><br><span class="line">        next[<span class="number">0</span>] = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; pattern.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> index = next[i - <span class="number">1</span>];</span><br><span class="line">            <span class="keyword">while</span>(index &gt;= <span class="number">0</span> &amp;&amp; pattern.charAt(index + <span class="number">1</span>) != pattern.charAt(i)) &#123;</span><br><span class="line">                index = next[index];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(pattern.charAt(index + <span class="number">1</span>) == pattern.charAt(i)) &#123;</span><br><span class="line">                next[i] = index + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                next[i] = -<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/TylerYang/leetcode/blob/master/214.ShortestPalindrome/Solution.java" target="_blank" rel="external">完整版本</a></p>
-<h3 id="总结">总结</h3><p>这题感觉综合性在leetcode 里面算是比较强的。至少让我复习了kmp 这个算法以及dfa 的相关概念。kmp 的prefix 的实现感觉上还是比较tricky，写出伪代码然后去一步步去走才能更深刻的理解。</p>
-
       
     </div>
-    <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/10/06/Shortest-Palindrome-Leetcode/" data-id="cimir3dov000lrl42dn4tpt3q" class="article-share-link">Share</a>
+    <footer>
       
+        
+          <div id="readmore" class="alignright">
+            <a href="/2015/10/06/Shortest-Palindrome-Leetcode/#more" class="more-link">READ MORE</a>
+          </div>
+        
+        
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Finite-State-Automata/">Finite State Automata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/KMP-Algorithm/">KMP Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-
+      <div class="clearfix"></div>
     </footer>
   </div>
-  
 </article>
+<!-- hackish -->
 
 
 
-    
-      <article id="post-最近的生活" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-    
-      <header class="article-header">
-        
+  <article class="post">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/20/最近的生活/">最近的生活 - 生活</a>
-    </h1>
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title"><a href="/2015/09/20/最近的生活/">最近的生活 - 生活</a></h1>
   
 
-        <div class="article-meta">
-          
-  <div class="article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2015/09/20/最近的生活/">
-      <time datetime="2015-09-20T15:23:45.000Z" itemprop="datePublished">2015-09-20</time>
-    </a>
-  </div>
-
-
-          
-  <div class="article-category">
-  	<i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/Life/">Life</a>
-  </div>
-
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="published">
+          Published: <time datetime="2015-09-20T15:23:45.000Z">2015-09-20</time>
+        </p>
+      
+    </header>
+    <div class="entry">
       
         <p>前些日子把个人博客从github 上搬到了树莓派里，给树莓派装了nodejs， git等东东。同时把家里的两级路由变成了一个网络桥接以及一个以及路由。当时弄到了晚上三点，印象颇为深刻。 </p>
 <p>原先有个路由是电信那边租过来的，刚开始就被设好，后来自己买多了一个华为的荣耀路由。想着这样可以用ddns把自己的树莓派曝露到英特网下，从而可以自己setup 自己的server，将来还可以加蓝牙dangle把家里搞成小型物联网。 于是就注册了花生壳，却发现无论如何都无法从外网访问到自己的树莓派。后来发现是因为华为绑定花生壳账号的时候是把自己被电信光猫（一级路由）分配的ip<br>绑定给了花生壳，于是果断把一级路由刷掉取消拨号转为桥接，再把华为的拨号加上，搞定。</p>
 <p>leetcode 刷题的进度最近都下来了，工作确实很忙，晚上回来基本都是头疼，躺一会就起来健身，俯卧撑仰卧起坐啥的还是要做的。星期六日基本都会去咖啡厅刷题写代码。</p>
 <p>react native 果然会慢慢活起来，还记得四月刚出的时候马上跑过去写了几个页面，写着跟twitter一样的界面，写起来毫无压力。之后上youtube 上看了react conference里面fb 的一个家伙写的animation demo，被震惊了很久。 现在react native又可以编译成android，就像发布会时说的那样，“我们相信web 的未来非常美好，但现在还是有不足之处，至少在我们等到html5 完美之前，react native 会成为我们目前最好的解决方案。” </p>
-<p>前些日子上youtube 上看了不来梅大学的 suffix tree 的视频，实现起来确实蛮累的。trie tree 实现起来这么简单，但适用范围却很窄。尤记得当时面试的时候被北大哥问suffix tree跟优先队列的实现问的面红耳赤的自己,当时回来跟steven 聊了好久，steven 说了几个重要的数据结构一定要掌握，于是默默记在心中。感觉人生就是不断的遇到秒杀你的人，但人生的意义却是一次次被秒杀，一次次爬起来继续练。</p>
-<p>这两天早上练了一上午球，下午跑去写了知乎的小爬虫，准备封装好基本API。顺便尝试了下koa 的东东，ECMAScript 的yield 真是蛮有意思的，刚开始以为yield 是可以解决异步问题，后来发现是koa 利用generator 解决了异步回调，google 了一下，貌似很多人都有这个误会。 另外 generator 里面的peak 运行语句的方式会是一个蛮有意思的考点吧。 koa 封装的middleware 只能赞一个。具体代码见github。 </p>
-<p>好几个月没认真去stackoverflow 刷答案，昨天跑去看了一下，发现有个人提了一个问题，说是内嵌的document.write 跟用script src 引入的js脚本里面的document.write 运行结果不一致，一个只是append 文字进去，后者则是删除文档原有的markup，然后append text。 当时看到的时候也觉得很奇怪，后来第一反应是去mdn 查文档，看了一下发现是内嵌的document.write 是不会自动先调用 document.open，而document.open<br>的作用恰恰是清空整个文档。给问这个问题的人点了赞，答了题，拿了几十分。</p>
-<p>早上公交时间有点长，就在车上看《编程珠玑》，一本书看了这么久，也是怪不好意思的。有些地方觉得没必要太着重，比如空间的优化，举的例子还是很久之前的。但对于马戏团的跳法觉得蛮有意思的。</p>
-<p>接下来的日子，网上订了蓝牙灯泡跟蓝牙usb 接口，一方面要写知乎爬虫，之后setup 到树莓派下，然后再写一个react native 的ios app做一个知乎大百科。接着是弄好基本的物联网简易平台，从手机端用ios app 通过3g连接到树莓派，再由树莓派通过蓝牙连接到蓝牙灯泡。至少刚工作的时候做过类似的东西，做起来应该难度不大。</p>
-<p>国庆节就快到了，连续七天的假期简直是一种奢侈，好好安排下自己国庆时候要刷的题目，写的项目还有就是许久未见的朋友，估计会一块约打球。不要浪费时间在不必要的时候，秉承着这个原则，几乎去哪都是最快去。有时候也会想是否错过了很多，有时候你承担的多了，你就过的不会这么轻松吧。</p>
-<p>还记得那个草帽，我会去还给你的！</p>
-
       
     </div>
-    <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/09/20/最近的生活/" data-id="cimir3don0007rl42tmfe6n06" class="article-share-link">Share</a>
+    <footer>
       
+        
+          <div id="readmore" class="alignright">
+            <a href="/2015/09/20/最近的生活/#more" class="more-link">READ MORE</a>
+          </div>
+        
+        
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Life/">Life</a></li></ul>
-
+      <div class="clearfix"></div>
     </footer>
   </div>
-  
 </article>
+<!-- hackish -->
 
 
 
-    
-      <article id="post-Candy-Leetcode" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-    
-      <header class="article-header">
-        
+  <article class="post">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/11/Candy-Leetcode/">Candy - Leetcode</a>
-    </h1>
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title"><a href="/2015/08/11/Candy-Leetcode/">Candy - Leetcode</a></h1>
   
 
-        <div class="article-meta">
-          
-  <div class="article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2015/08/11/Candy-Leetcode/">
-      <time datetime="2015-08-11T12:30:50.000Z" itemprop="datePublished">2015-08-11</time>
-    </a>
-  </div>
-
-
-          
-  <div class="article-category">
-  	<i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/Interview/">Interview</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Interview/Leetcode/">Leetcode</a>
-  </div>
-
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="published">
+          Published: <time datetime="2015-08-11T12:30:50.000Z">2015-08-11</time>
+        </p>
+      
+    </header>
+    <div class="entry">
       
         <p>This is a very interesting question and it have a bunch of corner cases that we need to consider. (It takes me more than 5 hours to solve it at the first time.)</p>
 <h3 id="Candy">Candy</h3><blockquote>
@@ -360,333 +251,156 @@ var _hmt = _hmt || [];
 <p>You are giving candies to these children subjected to the following requirements:</p>
 <p>Each child must have at least one candy.<br>Children with a higher rating get more candies than their neighbors.<br>What is the minimum candies you must give?</p>
 </blockquote>
-<h3 id="Analysis">Analysis</h3><p>In a word, the higher rating value you get than your neighbors, the more candies you should get.</p>
-<p>Considering the rating array below,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 3]</span><br></pre></td></tr></table></figure></p>
-<p>the output should be <code>6</code>. This is because the first child have 1 candy, and the next should have 2 candies according to his rating value. It’s easy to get the value.</p>
-<p>How about two child are getting same rating value? For example, for <code>[1, 2, 2, 2]</code> the right answer is <code>4</code>. <strong>Children with a higher rating get more candies than their neighbors.</strong></p>
-<p>One important thing in solving this problem is, we want to give the minimum candies. This means each time we get a peek rating value, the next child can only have 1 candy until we meet the third child whose rating value is lower than the 2nd one.</p>
-<p>Consider the array below,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ratings [1, 2, 6, 5, 4, 3, 2]&#10;   i     0  1  2  3  4  5  6</span><br></pre></td></tr></table></figure></p>
-<p>When we meet the first child(i: 0). We give only 1 candy to him. So now our <code>totalCandies</code> is <code>1</code>.<br>And then the second, the third child we can just simply repeat the same process. Then we update our <code>totalCandies</code> in this way.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> ratings     [1, 2, 6, 5, 4, 3, 2]&#10;    i         0  1  2  3  4  5  6&#10;totalCandies  1  3  6</span><br></pre></td></tr></table></figure></p>
-<p>Next we meet the 4th child(i: 3), because we know the previous child have the same rating value, so we can simply give only one candy to this child. And then we update our <code>totalCandies</code>.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> ratings     [1, 2, 6, 5, 4, 3, 2]&#10;    i         0  1  2  3  4  5  6&#10;totalCandies  1  3  6  7</span><br></pre></td></tr></table></figure></p>
-<p>We meet the 5th child now(i: 4), we can give only 1 candies to him, but we need to give the previous child one more candy for compensation. So update our <code>totalCandies</code>.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> ratings     [1, 2, 6, 5, 4, 3, 2]&#10;    i         0  1  2  3  4  5  6&#10;  candy       1  2  3  2  1&#10;totalCandies  1  3  6  7  9</span><br></pre></td></tr></table></figure></p>
-<p>As for compensation, another question to this is, when we should give one more candy to the peek child?(i: 2) Appearently when our candy gap is smaller than our position gap, we need to give one more candy for compensation. For example, when we meet the 6th child, our candy gap is <code>3 - 1 = 2</code>, the position gap is <code>5 - 2 = 3</code>. So at this moment, we need to <code>totalCandies++</code><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> ratings     [1, 2, 6, 5, 4, 3, 2]&#10;    i         0  1  2  3  4  5  6&#10;  candy       1  2  4  3  2  1&#10;totalCandies  1  3  6  7  9  13</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://leetcode.com/problems/candy/" target="_blank" rel="external">Here is the Candy in leetcode oj.</a><br>Here is implementation,<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">candy</span><span class="params">(<span class="keyword">int</span>[] ratings)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(ratings.length &lt;= <span class="number">1</span>) <span class="keyword">return</span> ratings.length;</span><br><span class="line">        <span class="keyword">int</span> totalCandies = <span class="number">1</span>, prevCandy = <span class="number">1</span>, peekPos = <span class="number">0</span>, peekCandy = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; ratings.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(ratings[i] &gt; ratings[i - <span class="number">1</span>]) &#123;</span><br><span class="line">                prevCandy++;</span><br><span class="line">                peekPos = i;</span><br><span class="line">                peekCandy = prevCandy;</span><br><span class="line">                totalCandies += prevCandy;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                prevCandy = <span class="number">1</span>;</span><br><span class="line">                totalCandies += prevCandy;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span>(ratings[i] == ratings[i - <span class="number">1</span>]) &#123;</span><br><span class="line">                    peekPos = i;</span><br><span class="line">                    peekCandy = <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                totalCandies += i - peekPos - <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span>(peekCandy - <span class="number">1</span> &lt;  i - peekPos) &#123;</span><br><span class="line">                    totalCandies++;   </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> totalCandies;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://github.com/TylerYang/leetcode/blob/master/135.Candy/Solution.java" target="_blank" rel="external">Full version code</a></p>
-<h3 id="Conclusion">Conclusion</h3><p>Nice problem, though there are some guys can solve it with linear space complexity, in this way we only use O(1) space complexity which I think it’s better than the other solution.</p>
-
       
     </div>
-    <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/08/11/Candy-Leetcode/" data-id="cimir3dp7001frl42dpvu0nja" class="article-share-link">Share</a>
+    <footer>
       
+        
+          <div id="readmore" class="alignright">
+            <a href="/2015/08/11/Candy-Leetcode/#more" class="more-link">READ MORE</a>
+          </div>
+        
+        
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Greedy-Algorithm/">Greedy Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-
+      <div class="clearfix"></div>
     </footer>
   </div>
-  
 </article>
+<!-- hackish -->
 
 
 
-    
-      <article id="post-Dependency-Injection-in-JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-    
-      <header class="article-header">
-        
+  <article class="post">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/01/Dependency-Injection-in-JavaScript/">Dependency Injection in JavaScript</a>
-    </h1>
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title"><a href="/2015/08/01/Dependency-Injection-in-JavaScript/">Dependency Injection in JavaScript</a></h1>
   
 
-        <div class="article-meta">
-          
-  <div class="article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2015/08/01/Dependency-Injection-in-JavaScript/">
-      <time datetime="2015-08-01T14:55:47.000Z" itemprop="datePublished">2015-08-01</time>
-    </a>
-  </div>
-
-
-          
-  <div class="article-category">
-  	<i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/Language/">Language</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Language/Javascript/">Javascript</a>
-  </div>
-
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="published">
+          Published: <time datetime="2015-08-01T14:55:47.000Z">2015-08-01</time>
+        </p>
+      
+    </header>
+    <div class="entry">
       
         <p>Dependency Injection is kind of design pattern. Well, although it is not in the GOF’s design pattern list, but I think it is getting more and more important.</p>
 <h3 id="Why_we_need_Dependency_Injection?">Why we need Dependency Injection?</h3><p>Firstly let us think about why we need dependency injection. Suppose we have a function below,<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CoffeeMaker</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> grinder = <span class="keyword">new</span> Grinder();</span><br><span class="line">    <span class="keyword">var</span> pump = Pump.getInstance();</span><br><span class="line">    <span class="keyword">var</span> heater = app.get(<span class="string">"Heater"</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">this</span>.brew = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        grinder.grind();</span><br><span class="line">        heater.on();</span><br><span class="line">        pump.pump();</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>This is not a good example, because the <code>CoffeeMaker</code> is tightly couple to this particular environment, which means to use <code>CoffeeMaker</code> we need to make sure we can get the <code>Grinder</code>, <code>Pump</code> and <code>Heater</code> in our environment.</p>
-<p>If we just write down our code in one function, it’s not that kind of bad thing. How about in our project? Let’s me give u one more function. </p>
-<p>Well, definitely we get a main function looks like the code below,<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> coffeeMaker = <span class="keyword">new</span> CoffeeMaker();</span><br><span class="line">    coffeeMaker.brew();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>For now, if we want to test <code>main</code> function, <strong>we need to make sure we have <code>CoffeeMaker</code> in our environment.</strong> Further more, we need to check <code>CoffeeMaker</code>‘s code and <strong>we need to make sure all the things <code>CoffeeMaker</code> depends on are exist.</strong> In our example, they are <code>Grinder</code>, <code>Pump</code> and <code>Heater</code>.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">main =&#62; CoffeeMaker =&#62; Grinder, Pump, Heater</span><br></pre></td></tr></table></figure></p>
-<p><strong>In a word, to test <code>main</code> function, we need to create <code>CoffeeMaker</code>, <code>Grinder</code>, <code>Pump</code> and <code>Heater</code> in our test environment.</strong></p>
-<p>Think about it, when our project getting bigger and bigger, we get a chance to have a controller or service which have more than 1000 lines. Are we still be able to maintain all these code?</p>
-<p>To do it in a better way, let’s change our code into this.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CoffeeMaker</span>(<span class="params">grinder, heater, pump</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.blew = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        grinder.grind();</span><br><span class="line">        heater.on();</span><br><span class="line">        pump.pump();</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params">coffeeMaker</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> injector = <span class="keyword">new</span> Injector();</span><br><span class="line">    <span class="keyword">var</span> coffeeMaker = injector.get(CoffeeMaker);</span><br><span class="line">    </span><br><span class="line">    coffeeMaker.blew();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Now, if we want to test main function, we just simply mock coffeMaker and make sure our <code>mockCoffeeMaker</code> have the function <code>blew</code>, that’s all!</p>
-<h3 id="Create_Our_Own_Dependency_Injection_Component">Create Our Own Dependency Injection Component</h3><p>Actually, this is how angular DI works in angular 1.x; For next generation, they are going to use annotation to do this.(TypeScript can support annotation)</p>
-<p>Unlike Java, we don’t have annotation in JavaScript, so we might need to use some magic trick to make one.<br>In our example, even though we know the formal parameters are correspond to our functions’ name. But our interpreter don’t know about this. When we write down the code below, there’s no differences between <code>CoffeeMaker1</code> and <code>CoffeeMaker2</code>.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//function1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CoffeeMaker1</span>(<span class="params">grinder, heater, pump</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.blew = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        grinder.grind();</span><br><span class="line">        heater.on();</span><br><span class="line">        pump.pump();</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//function2</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CoffeeMaker2</span>(<span class="params">a, b, c</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.blew = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        a.grind();</span><br><span class="line">        b.on();</span><br><span class="line">        c.pump();</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>So how can we make sure in our <code>CoffeeMaker</code> we will invoke the right function? This is where the trick happen, <code>toString</code>;</p>
-<p>Basically we just simply invoke <code>CoffeeMaker.toString()</code>, then we will get the function in a string format. And then we can use regex get the parameters list.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> FN_ARGS = <span class="regexp">/^function\s*[^\(]*\(\s*([^\(]*)\)/m</span>;</span><br><span class="line"><span class="keyword">var</span> str = CoffeeMaker.toString();</span><br><span class="line"><span class="keyword">var</span> injectArr =  str.match(FN_ARGS);</span><br><span class="line"><span class="built_in">console</span>.log(injectArr);</span><br><span class="line"><span class="comment">//["function CoffeeMaker(grinder, heater, pump)", "grinder, heater, pump"]</span></span><br></pre></td></tr></table></figure>
-<p>For now we can easily pass our dependency into the CoffeeMaker.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Injector</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.cache = [];</span><br><span class="line">    <span class="keyword">this</span>.path = [];</span><br><span class="line">    <span class="keyword">this</span>.INSTANTIATING = &#123;&#125;; </span><br><span class="line">&#125;</span><br><span class="line">Injector.prototype.invoke = <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">var</span> args = [];</span><br><span class="line">    <span class="keyword">var</span> $inject = <span class="keyword">this</span>.annotate(fn);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; $inject.length; i++) &#123;</span><br><span class="line">        funcKey = $inject[i];</span><br><span class="line">        args.push(<span class="keyword">this</span>.get(funcKey));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> fn.apply(<span class="keyword">this</span>, args);</span><br><span class="line">&#125;;</span><br><span class="line">Injector.prototype.annotate = <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> FN_ARGS = <span class="regexp">/^function\s*[^\(]*\(\s*([^\(]*)\)/m</span>;</span><br><span class="line">	<span class="keyword">var</span> FN_TRIM = <span class="regexp">/^\s+|\s+$/</span>;</span><br><span class="line">    <span class="keyword">var</span> fnStr = fn.toString();</span><br><span class="line">    <span class="keyword">var</span> matchArr = fnStr.match(FN_ARGS);</span><br><span class="line">    <span class="keyword">var</span> $inject = [];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(matchArr.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">	    <span class="keyword">var</span> arr = matchArr[<span class="number">1</span>].split(<span class="string">","</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">			arr[i] = arr[i].replace(FN_TRIM, <span class="string">''</span>);</span><br><span class="line">			$inject.push(arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $inject;</span><br><span class="line">&#125;;</span><br><span class="line">Injector.prototype.get = <span class="function"><span class="keyword">function</span>(<span class="params">funcName</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.cache.hasOwnProperty(funcName)) &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.cache[funcName] == <span class="keyword">this</span>.INSTANTIATING) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"Circular dependency found: "</span> + funcName + <span class="string">" &lt;- "</span> + <span class="keyword">this</span>.path.join(<span class="string">" &lt;- "</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.cache[funcName];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.path.unshift(funcName);</span><br><span class="line">        <span class="keyword">this</span>.cache[funcName] = <span class="keyword">this</span>.INSTANTIATING;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.cache[funcName] = <span class="built_in">window</span>[funcName];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
       
     </div>
-    <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/08/01/Dependency-Injection-in-JavaScript/" data-id="cimir3dp30016rl42zcy4dscy" class="article-share-link">Share</a>
+    <footer>
       
+        
+          <div id="readmore" class="alignright">
+            <a href="/2015/08/01/Dependency-Injection-in-JavaScript/#more" class="more-link">READ MORE</a>
+          </div>
+        
+        
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/design-pattern/">design pattern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
+      <div class="clearfix"></div>
     </footer>
   </div>
-  
 </article>
+<!-- hackish -->
 
 
 
-    
-      <article id="post-Valid-Number-Leetcode" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-    
-      <header class="article-header">
-        
+  <article class="post">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/01/Valid-Number-Leetcode/">Valid Number - Leetcode</a>
-    </h1>
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title"><a href="/2015/08/01/Valid-Number-Leetcode/">Valid Number - Leetcode</a></h1>
   
 
-        <div class="article-meta">
-          
-  <div class="article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2015/08/01/Valid-Number-Leetcode/">
-      <time datetime="2015-08-01T08:32:43.000Z" itemprop="datePublished">2015-08-01</time>
-    </a>
-  </div>
-
-
-          
-  <div class="article-category">
-  	<i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/Interview/">Interview</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Interview/Leetcode/">Leetcode</a>
-  </div>
-
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="published">
+          Published: <time datetime="2015-08-01T08:32:43.000Z">2015-08-01</time>
+        </p>
+      
+    </header>
+    <div class="entry">
       
         <p>The hardest problem in leetcode, and it force me to read something new, maybe this is why we solve the problem in the online judge system.</p>
 <h3 id="Valid_Number">Valid Number</h3><blockquote>
 <p>Valid if a given string is numeric.</p>
-<p>Some examples:<br><code>&quot;0&quot;</code> =&gt; <code>true</code><br><code>&quot; 0.1&quot;</code> =&gt; <code>true</code><br><code>&quot;abc&quot;</code> =&gt; <code>true</code><br><code>&quot;1 a&quot;</code> =&gt; <code>true</code><br><code>&quot;2e10&quot;</code> =&gt; <code>true</code></p>
-</blockquote>
-<h3 id="Analysis">Analysis</h3><p>Well, regular expression must be a way to solve this problem. But I don’t think the recuiter would accept regex solution. </p>
-<p>This problem is all about state and the transition which is how regular expression worked. </p>
-<blockquote>
-<p>Finite State Automata<br>A finite-state machine or finite-state automatata, or simply a state machine, is a mathematial model of computation used to design both computer programs and sequential logic circuits. It is conceived as an abstract machine that can be in one of a finite number of states. <strong>The machine is in only one state at a time;</strong>  — from Wikipedia <a href="https://en.wikipedia.org/wiki/Finite-state_machine" target="_blank" rel="external">Finite-state machine</a>.</p>
-</blockquote>
-<p>In a word, to know whether a string is numeric we need to know all the states and the possible transition. And after spend some time we can get the list below,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1   + or -&#10;2   number (0 - 9)&#10;3   . (dot)&#10;4   e or E (exponent)&#10;5   others (includ space)</span><br></pre></td></tr></table></figure></p>
-<p>With all this possible inputs, we can use the <a href="https://en.wikipedia.org/wiki/State_diagram" target="_blank" rel="external">State Diagram</a> to describe all the valid and the transitions.<br>For example, from <code>state1</code> it can be only transformed into <code>state2</code> or <code>state3</code>, which means <code>+3</code>, <code>-.4</code> are all valid numeric but <code>+e10</code>, <code>+ 4</code> are not.<br>To give a most complicated valid numeric expression should contains all states, <code>+0.42e-10</code> should be the one.<br>So we can draw down the State Diagram below,<br><img src="https://raw.githubusercontent.com/TylerYang/leetcode/master/65.ValidNumber/validNumber.png" alt="State Diagram"></p>
-<p>From this diagram, we can write down the pseudo code blow,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int state = 0;&#10;boolean hasNumber = false;&#10;for(each char in String s)&#123;&#10;    if(char is plus or minus) &#123;&#10;        if(state == 0 or 5) &#123;&#10;            state++;&#10;        &#125; else &#123;&#10;            return false;&#10;        &#125;&#10;    &#125; else if(char is number) &#123;&#10;        if(state == 0 or 1 or 2) &#123;&#10;            state = 2; &#10;            hasNumber = true;&#10;        &#125; else if(state == 3 or 4) &#123;&#10;            state = 4; &#10;            hasNumber = true;&#10;        &#125; else if(state == 5 or 6 or 7) &#123;&#10;            state = 7;&#10;        &#125;&#10;    &#125; else if(char is dot) &#123;&#10;        if(state == 0 or 1 or 2) &#123;&#10;            state = 3&#10;        &#125; else &#123;&#10;            return false;&#10;        &#125;&#10;    &#125; else if(char is exponent) &#123;&#10;        if(state == 2 or 3 or 4) &#123;&#10;            state = 5;&#10;        &#125; else &#123;&#10;            return false;&#10;        &#125;&#10;    &#125; else &#123;&#10;        return false;&#10;    &#125;&#10;&#125;&#10;return hashNumber &#38;&#38; (state == 2 or 3 or 4 or 7);</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://leetcode.com/problems/valid-number/" target="_blank" rel="external">Here is the Valid Number in leetcode oj.</a><br><a href="https://github.com/TylerYang/leetcode/blob/master/65.ValidNumber/Solution.java" target="_blank" rel="external">Here is the full version of java implementation.</a></p>
-<h3 id="Conclusion">Conclusion</h3><p>As for my understanding, this problem has a very similar concept with Knuth-Morris-Pratt algorithm which is known as KMP algorithm. They are all base on <strong>Finite State Automata</strong>, which is really worth a try. Here I recommend <a href="http://www.amazon.com/Algorithms-4th-Robert-Sedgewick/dp/032157351X/ref=sr_1_1?ie=UTF8&amp;qid=1438428554&amp;sr=8-1&amp;keywords=algorithm" target="_blank" rel="external"><strong>Algorithm (the 4th Edition)</strong></a>, in this book, the author give a very detail introduction of <strong>StateMachine</strong> in chapter 5.</p>
-
+<p>Some examples:<br><code>&quot;0&quot;</code> =&gt; <code>true</code><br><code>&quot; 0.1&quot;</code> =&gt; <code>true</code><br><code>&quot;abc&quot;</code> =&gt; <code>true</code><br><code>&quot;1 a&quot;</code> =&gt; <code>true</code><br><code>&quot;2e10&quot;</code> =&gt; <code>true</code><br>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="tyleryang.github.io/2015/08/01/Valid-Number-Leetcode/" data-id="cimir3doq000arl42h7dpqn34" class="article-share-link">Share</a>
+    <footer>
       
+        
+          <div id="readmore" class="alignright">
+            <a href="/2015/08/01/Valid-Number-Leetcode/#more" class="more-link">READ MORE</a>
+          </div>
+        
+        
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Finite-State-Automata/">Finite State Automata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/State-Machine/">State Machine</a></li></ul>
-
+      <div class="clearfix"></div>
     </footer>
   </div>
-  
 </article>
+<!-- hackish -->
 
 
 
-    
-      <nav id="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-      </nav>
-    </section>
-      
-        <aside id="sidebar">
+
+<nav id="pagination">
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">recents</h3>
-    <div class="widget">
-      <ul id="recent-post" class="">
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              <a href="/2015/10/16/用树莓派架设个人博客-Life/" class="thumbnail">
   
-    <span class="thumbnail-image thumbnail-none"></span>
+    <a href="/page/2/" class="alignright next">Next</a>
   
-</a>
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/Life/">Life</a></p>
-              <p class="item-title"><a href="/2015/10/16/用树莓派架设个人博客-Life/" class="title">用树莓派架设个人博客 - Life</a></p>
-              <p class="item-date"><time datetime="2015-10-16T08:54:34.000Z" itemprop="datePublished">2015-10-16</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              <a href="/2015/10/06/Shortest-Palindrome-Leetcode/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-</a>
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/Interview/">Interview</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Interview/Leetcode/">Leetcode</a></p>
-              <p class="item-title"><a href="/2015/10/06/Shortest-Palindrome-Leetcode/" class="title">Shortest Palindrome - Leetcode</a></p>
-              <p class="item-date"><time datetime="2015-10-06T08:43:00.000Z" itemprop="datePublished">2015-10-06</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              <a href="/2015/09/20/最近的生活/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-</a>
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/Life/">Life</a></p>
-              <p class="item-title"><a href="/2015/09/20/最近的生活/" class="title">最近的生活 - 生活</a></p>
-              <p class="item-date"><time datetime="2015-09-20T15:23:45.000Z" itemprop="datePublished">2015-09-20</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              <a href="/2015/08/11/Candy-Leetcode/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-</a>
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/Interview/">Interview</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Interview/Leetcode/">Leetcode</a></p>
-              <p class="item-title"><a href="/2015/08/11/Candy-Leetcode/" class="title">Candy - Leetcode</a></p>
-              <p class="item-date"><time datetime="2015-08-11T12:30:50.000Z" itemprop="datePublished">2015-08-11</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              <a href="/2015/08/01/Dependency-Injection-in-JavaScript/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-</a>
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/Language/">Language</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Language/Javascript/">Javascript</a></p>
-              <p class="item-title"><a href="/2015/08/01/Dependency-Injection-in-JavaScript/" class="title">Dependency Injection in JavaScript</a></p>
-              <p class="item-date"><time datetime="2015-08-01T14:55:47.000Z" itemprop="datePublished">2015-08-01</time></p>
-            </div>
-          </li>
-        
-      </ul>
-    </div>
+  <div class="clearfix"></div>
+</nav></div>
+    <div class="clearfix"></div>
   </div>
-
+  <footer id="footer" class="inner"><div class="alignleft">
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Google-Challenge/">Google Challenge</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Leetcode/">Leetcode</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Javascript/">Javascript</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">2</span></li></ul>
-    </div>
-  </div>
-
+  &copy; 2016 Tyler Yang
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSAPP/">CSAPP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Finite-State-Automata/">Finite State Automata</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Challenge/">Google Challenge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Greedy-Algorithm/">Greedy Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KMP-Algorithm/">KMP Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/State-Machine/">State Machine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/design-pattern/">design pattern</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">tag cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/CSAPP/" style="font-size: 10px;">CSAPP</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Finite-State-Automata/" style="font-size: 15px;">Finite State Automata</a> <a href="/tags/Google-Challenge/" style="font-size: 10px;">Google Challenge</a> <a href="/tags/Greedy-Algorithm/" style="font-size: 10px;">Greedy Algorithm</a> <a href="/tags/KMP-Algorithm/" style="font-size: 10px;">KMP Algorithm</a> <a href="/tags/Leetcode/" style="font-size: 20px;">Leetcode</a> <a href="/tags/Life/" style="font-size: 15px;">Life</a> <a href="/tags/State-Machine/" style="font-size: 10px;">State Machine</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design pattern</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">2</span></li></ul>
-    </div>
-  </div>
-
-  
-  <div id="toTop" class="fa fa-chevron-up"></div>
-</aside>
-      
-    </div>
-    <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2015 - 2016 Tyler Yang<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
-    </div>
-  </div>
-</footer>
-    
+</div>
+<div class="clearfix"></div></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
 
 
-<script src="//ajax.useso.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
 
-
-<script src="/js/script.js" type="text/javascript"></script>
-
-  </div>
 </body>
 </html>
