@@ -3,7 +3,7 @@ var tyleryang = {
     age: 26,
     contacts: {
         email: 'tyler.z.yang@gmail.com',
-        skype: 'tyleryang.24'
+        skype: 'tyler.yang24'
     },
     educations: [
         {
