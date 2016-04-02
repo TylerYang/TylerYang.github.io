@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   
   <title><![CDATA[TY]]></title>
-  <subtitle><![CDATA[A JavaScript Fan.]]></subtitle>
+  <subtitle><![CDATA[Life is short, just code it up!]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="tyleryang.github.io//"/>
   <updated>2016-04-02T07:43:22.000Z</updated>

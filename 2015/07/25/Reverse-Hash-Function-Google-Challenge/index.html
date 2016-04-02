@@ -6,7 +6,16 @@
   <title>Reverse Hash Function - Google Challenge | TY</title>
   <meta name="author" content="Tyler Yang">
   
-  <meta name="description" content="Code it up!">
+  <meta name="description" content="Recently I’ve been doing the Google Challenge, and I found a very interesting algorithm problem. Here is the problem.
+Reverse a Hash Function (Level 3)The function takes a 16 byte input and gives a 16 byte output. It uses multiplication (*), bit-wise exclusive OR (XOR) and modulo (%) to calculate an element of the digest based on elements of the input message: 
+1digest [i] = ( (129 * message[i]) XOR message[i-1]) % 256
+For the first element, the value of message[-1] is 0.For example, if message[0] = 1 and message[1] = 129, then:For digest[0]:123129 * message[0] = 129129 XOR message[-1] = 129129 % 256 = 129
+Thus digest[0] = 129.For digest[1]:123129*message[1] = 1664116641 XOR message[0] = 1664016640 % 256 = 0
+Thus digest[1] = 0.Write a function answer(digest) that takes an array of 16 integers and returns another array of 16 that correspond to the unique message that created this digest. Since each value is a single byte, the values are 0 to 255 for both message and digest.
+Test casesInputs:1(int list) digest = [0, 129, 3, 129, 7, 129, 3, 129, 15, 129, 3, 129, 7, 129, 3, 129]
+Output:1(int list) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+Inputs:1(int list) digest = [0, 129, 5, 141, 25, 137, 61, 149, 113, 145, 53, 157, 233, 185, 109, 165]
+Output:1(int list) [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225]">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -31,8 +40,8 @@
   <h1><a href="/">TY</a></h1>
   <h2>
       <a href="/">
-          A JavaScript Fan.
-          Code it up!
+          Life is short, just code it up!
+          
       </a>
   </h2>
 </div>
