@@ -202,7 +202,7 @@ article.link .icon:before {
 }
 article.link .title a:after {
   content: '\f08e';
-  color: #999;
+  color: #fff;
   font: 12px FontAwesome;
   padding-left: 10px;
   vertical-align: super;
@@ -445,7 +445,7 @@ article .entry iframe {
 article .entry .caption {
   display: block;
   margin-top: 5px;
-  color: #999;
+  color: #fff;
   position: relative;
   font-size: 0.9em;
   padding-left: 25px;
@@ -487,7 +487,7 @@ article .entry .pullquote {
 article footer {
   margin-top: 0px;
   padding-top: 0px;
-  color: #999;
+  color: #fff;
   font-size: 0.9em;
   line-height: 16px;
   position: relative;
@@ -511,7 +511,7 @@ rgba(245,240,220,0)
   margin-top: -90px;
 }
 article footer a {
-  color: #999;
+  color: #fff;
 }
 article footer a:hover {
   color: #258fb8;
@@ -578,7 +578,7 @@ article footer .addthis iframe {
   display: block;
   padding: 5px 10px;
   background: #ddd;
-  color: #999;
+  color: #fff;
   font-family: "Monaco", Helvetica Neue, Helvetica, Arial, sans-serif;
   text-shadow: 0 0 1px #fff;
   margin-bottom: 50px;
@@ -600,7 +600,7 @@ article footer .addthis iframe {
   font-family: FontAwesome;
 }
 .archive-title {
-  color: #999;
+  color: #fff;
   font-weight: normal;
   margin-bottom: 30px;
   text-shadow: 0 0 1px #fff;
@@ -687,14 +687,14 @@ article footer .addthis iframe {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  color: #999;
+  color: #fff;
 }
 #sidebar .search input:focus {
   color: #444;
 }
 #sidebar .tag small {
   margin-left: 15px;
-  color: #999;
+  color: #fff;
 }
 #sidebar .tag small:before {
   content: '(';
@@ -713,7 +713,7 @@ article footer .addthis iframe {
 #sidebar .twitter small {
   display: block;
   margin-top: 10px;
-  color: #999;
+  color: #fff;
   line-height: 1;
 }
 #sidebar .tagcloud .entry {
@@ -724,13 +724,13 @@ article footer .addthis iframe {
   display: inline-block;
 }
 #footer {
-  width: 900px;
-  color: #999;
+  width: 830px;
+  color: #fff;
   margin-top: 15px;
   margin-bottom: 50px;
   margin-left: auto;
   margin-right: auto;
-  font: 0.9em/1.6 "Monaco", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font: 0.9em/1.6 "electrolize", Helvetica Neue, Helvetica, Arial, sans-serif;
   text-shadow: 0 0 1px #fff;
 }
 .entry .gist {
@@ -761,7 +761,7 @@ article footer .addthis iframe {
 }
 .entry .gist .gist-file .gist-meta {
   background: none;
-  color: #999;
+  color: #fff;
   margin-top: 5px;
   padding: 0;
   text-shadow: 0 0 1px #fff;
@@ -787,7 +787,7 @@ figure.highlight {
   font-size: 0.9em;
 }
 figure.highlight figcaption {
-  color: #999;
+  color: #fff;
   margin-bottom: 5px;
   text-shadow: 0 0 1px #fff;
 }
@@ -805,7 +805,7 @@ figure.highlight table {
   border-spacing: 0;
 }
 figure.highlight .gutter {
-  color: #999;
+  color: #fff;
   padding-right: 15px;
   border-right: 1px solid #ddd;
   text-align: right;
