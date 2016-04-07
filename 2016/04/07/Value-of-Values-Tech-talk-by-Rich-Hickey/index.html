@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Value of Values - Tech talk by Rich Hickey | TY</title>
+  <meta name="author" content="Tyler Yang">
+  
+  <meta name="description" content="The transcript of Value of Values by Rich Hickey.
+Video
+So the value of values, who here works in IT.What is that mean? What is it stand for IT?Inform">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Value of Values - Tech talk by Rich Hickey"/>
+  <meta property="og:site_name" content="TY"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="TY" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  
+  
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+      var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?136f9d0455315c9611ba56b53088b6f9";
+          var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">TY</a></h1>
+  <h2>
+      <a href="/">
+          Life is short, just code it up!
+          
+      </a>
+  </h2>
+</div>
+<nav id="main-nav">
+  <ul>
+    
+      <li><a href="/about">About</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+<div class="alignleft" style="margin-top: 15px">
+
+
+</div>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title">Value of Values - Tech talk by Rich Hickey</h1>
+  
+
+      
+        <p class="published">
+          Published: <time datetime="2016-04-07T04:32:37.000Z">2016-04-07</time>
+        </p>
+      
+    </header>
+    <div class="entry">
+      
+        <p>The transcript of Value of Values by Rich Hickey.</p>
+<p><a href="https://www.youtube.com/watch?v=-6BsiVyC1kM&amp;list=PLRZ9CBXkZGmPtdCa8veT_fa5auxuI-BKi" target="_blank" rel="external">Video</a></p>
+<p>So the value of values, who here works in IT.<br>What is that mean? What is it stand for IT?<br>Information technology. SO what do we mean when we say information? As you may know for my other keynoted, all I want to make my<br>kwynotes my dictionary, is my dictionary has all the answers. My dictionary says information is base on the word inform, which means<br>to convey knowledge via facts and the purpose of that is to give shape to the mind. And information is just those facts.That is what<br>information is. Information is fact. </p>
+<p>So what is a fact? A fact is the place where information store. And what is great about that is there is a place for every piece of information.<br>And facts are operations, like get and set and you may have other operations. And those operation control how facts can change.<br>The other great things about fact is it’s easy to convey them.To convey a fact is just convey its location.</p>
+<p>How many people are uncomfortable right now? I am, this is not true right? This is wrong. Everything I just said is wrong.Dead wrong,<br>and you should be uncomfortable.This is not the facts are.</p>
+<p>So our facts are places,well, what’s the place? Again back to the dictionary, a place is a particular portion of space. And the space is a more<br>important word, we gonna dig into later.And in particular the part of the place that matters are the fact it’s sort of delimited. right? There is<br>the specificity to location, name via place or vice versa. And we know about places, we have good examples of places of everyday work in progarming.<br>Memory address are places, disk sector are places. Addresses, we can go to them, substitude their contents with other contents.And we are very familiar with<br>this notion of place. And i think it’s quite  important to think about whether or not with this memory address in this location we are actually building<br>the information systems that earn about information we just find it. ??<br>In particluar, we use memory and we use objects, typically, specially at this contents. And mutable objects are nothing more than abstraction over places.<br>their little abstraction over places. Specially, well in partically the mutable objects.and they have methods just like the thing I talk before about fact.<br>having methods object have methods. And this is the core thing we are building systems on it. On the other side, on the durably side, we have same kind of notion.</p>
+<p>we have tables documents, records, all of them have the places. all of them have update inotaion, the notion of going into the place and set it into a value .<br>These are undependings from which we build systems. but we are sort of making abstraction on top of them.But don’t hide what they are about.</p>
+<p>And I have word for this or term for this, I call it PLOP, Plaec oriented programming.Which is what this is. And you can tell what’s going on.Because everytime the new<br>information replace old information.You are doing the place oriented programming.There are reasons we are doing the place-oriented programming. Because way back the<br>early days of computers, we have to do place oriented programming. I saw a guy stills gave a great talk is talking about working you konw, building the great system<br>on computer that have 4 kilo words of memory.And every piece of memory, you knew the address, she know the even number of memory started at 2000 or use for jump table.<br>The number of the address here are use for data And other part of the memory here are use for code.Sometimes it used for more than one thing, for example, right now,<br>no one use this for code we can use it for data, vise versa. You have to do it. right, there isn’t enough compacity to do anything else. Computer memory is really small.<br>dist is very small.everything is very expensive, so we adopt it an approach to programming that was base around the manipulation of palces, totally make sense. And the keyword,<br>they are in the key aspect it make sense, it used to make sense, those limitations are gone. In the time I’ve been doing the programming, the capacity of these two have<br>increase a million faults. A MILLION FAULTS.What other thing in life, you know, have the same fact about it?Remain true when the sidzes of something change by a million fault.</p>
+<p>Magic trick call was million times bigger than this. What rules would still be applyed?What characters would still be true?<br>But yet, we are retaining decision that make thing much much smaller. And moving forward with them.</p>
+<p>So why is PLOP still rules? The key question here.Right? we are talking about the Place-oriented programming, we often talk about the two things, memory and records.<br>these have meanning before we have computer, and we are taking them over. We said, memory means addresses in RAM chips, records mean you konw slots in database’s tables. And worse<br>than just taken over these words, coz obviously there is limitions to these words in the analogies roughly whole,right? </p>
+<p>The problems is we’ve now been doing this for so long. We believe that our own myths about what this is mean. But we should go back to the fact of memory of method right?The fact<br>of memory is that it’s open system.If your friend gets a new email address, right? that doesn’t go into your brain.And find your friend’s email address cell and replace the email<br>address in that part you konw that’s no runs??? in your brain. that’s not how brains work.that’s not how memory works. Memory essentially and open system, and associated system.<br>it is not an addressed base system. Same thing, record keeping. 7:27</p>
+
+      
+    </div>
+    <footer>
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+<!-- hackish -->
+
+  
+
+</div>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2016 Tyler Yang
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script src="/js/tyleryang.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

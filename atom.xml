@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="tyleryang.github.io/"/>
-  <updated>2016-04-02T13:18:42.000Z</updated>
+  <updated>2016-04-07T05:53:08.000Z</updated>
   <id>tyleryang.github.io/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Value of Values - Tech talk by Rich Hickey</title>
+    <link href="tyleryang.github.io/2016/04/07/Value-of-Values-Tech-talk-by-Rich-Hickey/"/>
+    <id>tyleryang.github.io/2016/04/07/Value-of-Values-Tech-talk-by-Rich-Hickey/</id>
+    <published>2016-04-07T04:32:37.000Z</published>
+    <updated>2016-04-07T05:53:08.000Z</updated>
+    
+    <content type="html">&lt;p&gt;The transcript of Value of Values by Rich Hickey.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=-6BsiVyC1kM&amp;amp;list=PLRZ9CBXkZGmPtdCa8veT_fa5auxuI-BKi&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Video&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;So the value of values, who here works in IT.&lt;br&gt;What is that mean? What is it stand for IT?&lt;br&gt;Information technology. SO what do we mean when we say information? As you may know for my other keynoted, all I want to make my&lt;br&gt;kwynotes my dictionary, is my dictionary has all the answers. My dictionary says information is base on the word inform, which means&lt;br&gt;to convey knowledge via facts and the purpose of that is to give shape to the mind. And information is just those facts.That is what&lt;br&gt;information is. Information is fact. &lt;/p&gt;
+&lt;p&gt;So what is a fact? A fact is the place where information store. And what is great about that is there is a place for every piece of information.&lt;br&gt;And facts are operations, like get and set and you may have other operations. And those operation control how facts can change.&lt;br&gt;The other great things about fact is it’s easy to convey them.To convey a fact is just convey its location.&lt;/p&gt;
+&lt;p&gt;How many people are uncomfortable right now? I am, this is not true right? This is wrong. Everything I just said is wrong.Dead wrong,&lt;br&gt;and you should be uncomfortable.This is not the facts are.&lt;/p&gt;
+&lt;p&gt;So our facts are places,well, what’s the place? Again back to the dictionary, a place is a particular portion of space. And the space is a more&lt;br&gt;important word, we gonna dig into later.And in particular the part of the place that matters are the fact it’s sort of delimited. right? There is&lt;br&gt;the specificity to location, name via place or vice versa. And we know about places, we have good examples of places of everyday work in progarming.&lt;br&gt;Memory address are places, disk sector are places. Addresses, we can go to them, substitude their contents with other contents.And we are very familiar with&lt;br&gt;this notion of place. And i think it’s quite  important to think about whether or not with this memory address in this location we are actually building&lt;br&gt;the information systems that earn about information we just find it. ??&lt;br&gt;In particluar, we use memory and we use objects, typically, specially at this contents. And mutable objects are nothing more than abstraction over places.&lt;br&gt;their little abstraction over places. Specially, well in partically the mutable objects.and they have methods just like the thing I talk before about fact.&lt;br&gt;having methods object have methods. And this is the core thing we are building systems on it. On the other side, on the durably side, we have same kind of notion.&lt;/p&gt;
+&lt;p&gt;we have tables documents, records, all of them have the places. all of them have update inotaion, the notion of going into the place and set it into a value .&lt;br&gt;These are undependings from which we build systems. but we are sort of making abstraction on top of them.But don’t hide what they are about.&lt;/p&gt;
+&lt;p&gt;And I have word for this or term for this, I call it PLOP, Plaec oriented programming.Which is what this is. And you can tell what’s going on.Because everytime the new&lt;br&gt;information replace old information.You are doing the place oriented programming.There are reasons we are doing the place-oriented programming. Because way back the&lt;br&gt;early days of computers, we have to do place oriented programming. I saw a guy stills gave a great talk is talking about working you konw, building the great system&lt;br&gt;on computer that have 4 kilo words of memory.And every piece of memory, you knew the address, she know the even number of memory started at 2000 or use for jump table.&lt;br&gt;The number of the address here are use for data And other part of the memory here are use for code.Sometimes it used for more than one thing, for example, right now,&lt;br&gt;no one use this for code we can use it for data, vise versa. You have to do it. right, there isn’t enough compacity to do anything else. Computer memory is really small.&lt;br&gt;dist is very small.everything is very expensive, so we adopt it an approach to programming that was base around the manipulation of palces, totally make sense. And the keyword,&lt;br&gt;they are in the key aspect it make sense, it used to make sense, those limitations are gone. In the time I’ve been doing the programming, the capacity of these two have&lt;br&gt;increase a million faults. A MILLION FAULTS.What other thing in life, you know, have the same fact about it?Remain true when the sidzes of something change by a million fault.&lt;/p&gt;
+&lt;p&gt;Magic trick call was million times bigger than this. What rules would still be applyed?What characters would still be true?&lt;br&gt;But yet, we are retaining decision that make thing much much smaller. And moving forward with them.&lt;/p&gt;
+&lt;p&gt;So why is PLOP still rules? The key question here.Right? we are talking about the Place-oriented programming, we often talk about the two things, memory and records.&lt;br&gt;these have meanning before we have computer, and we are taking them over. We said, memory means addresses in RAM chips, records mean you konw slots in database’s tables. And worse&lt;br&gt;than just taken over these words, coz obviously there is limitions to these words in the analogies roughly whole,right? &lt;/p&gt;
+&lt;p&gt;The problems is we’ve now been doing this for so long. We believe that our own myths about what this is mean. But we should go back to the fact of memory of method right?The fact&lt;br&gt;of memory is that it’s open system.If your friend gets a new email address, right? that doesn’t go into your brain.And find your friend’s email address cell and replace the email&lt;br&gt;address in that part you konw that’s no runs??? in your brain. that’s not how brains work.that’s not how memory works. Memory essentially and open system, and associated system.&lt;br&gt;it is not an addressed base system. Same thing, record keeping. 7:27&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;The transcript of Value of Values by Rich Hickey.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=-6BsiVyC1kM&amp;amp;list=PLRZ9CBXkZGmPtdCa8
+    
+    </summary>
+    
+      <category term="Tech talk" scheme="tyleryang.github.io/categories/Tech-talk/"/>
+    
+      <category term="Functional Programming" scheme="tyleryang.github.io/categories/Tech-talk/Functional-Programming/"/>
+    
+    
+      <category term="Tech talk" scheme="tyleryang.github.io/tags/Tech-talk/"/>
+    
+      <category term="Functional Programming" scheme="tyleryang.github.io/tags/Functional-Programming/"/>
+    
+      <category term="Rich Hickey" scheme="tyleryang.github.io/tags/Rich-Hickey/"/>
+    
+  </entry>
   
   <entry>
     <title>Edit Distance - Leetcode</title>
