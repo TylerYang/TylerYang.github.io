@@ -571,6 +571,18 @@ table td {
   padding: 6px 13px;
   border: 1px solid #ddd;
 }
+figure > table tr {
+  background: none;
+  border: none;
+}
+figure > table th {
+  font-weight: normal;
+}
+figure > table th,
+figure > table td {
+  padding: 0px;
+  border: none;
+}
 #comment {
   background: #fff;
   margin-bottom: 50px;
