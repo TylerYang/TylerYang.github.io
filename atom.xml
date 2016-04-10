@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="tyleryang.github.io/"/>
-  <updated>2016-04-08T05:55:15.000Z</updated>
+  <updated>2016-04-10T06:00:52.000Z</updated>
   <id>tyleryang.github.io/</id>
   
   <author>
@@ -14,6 +14,88 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>A.Counting Sheep - Google Code Jam 2016 </title>
+    <link href="tyleryang.github.io/2016/04/10/Counting-Sheep-Google-Code-Jam-2016/"/>
+    <id>tyleryang.github.io/2016/04/10/Counting-Sheep-Google-Code-Jam-2016/</id>
+    <published>2016-04-10T05:34:31.000Z</published>
+    <updated>2016-04-10T06:00:52.000Z</updated>
+    
+    <content type="html">&lt;p&gt;The first question in Google Qualification Round.&lt;/p&gt;
+&lt;h3 id=&quot;Counting-Sheep&quot;&gt;&lt;a href=&quot;#Counting-Sheep&quot; class=&quot;headerlink&quot; title=&quot;Counting Sheep&quot;&gt;&lt;/a&gt;Counting Sheep&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Bleatrix Trotter the sheep has devised a strategy that helps her fall asleep faster. First, she picks a number N. Then she starts naming N, 2 × N, 3 × N, and so on. Whenever she names a number, she thinks about all of the digits in that number. She keeps track of which digits (0, 1, 2, 3, 4, 5, 6, 7, 8, and 9) she has seen at least once so far as part of any number she has named. Once she has seen each of the ten digits at least once, she will fall asleep.&lt;/p&gt;
+&lt;p&gt;Bleatrix must start with N and must always name (i + 1) × N directly after i × N. For example, suppose that Bleatrix picks N = 1692. She would count as follows:&lt;/p&gt;
+&lt;p&gt;N = 1692. Now she has seen the digits 1, 2, 6, and 9.&lt;br&gt;2N = 3384. Now she has seen the digits 1, 2, 3, 4, 6, 8, and 9.&lt;br&gt;3N = 5076. Now she has seen all ten digits, and falls asleep.&lt;br&gt;What is the last number that she will name before falling asleep? If she will count forever, print INSOMNIA instead.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Input&lt;br&gt;The first line of the input gives the number of test cases, T. T test cases follow. Each consists of one line with a single integer N, the number Bleatrix has chosen.&lt;/p&gt;
+&lt;p&gt;Output&lt;br&gt;For each test case, output one line containing Case #x: y, where x is the test case number (starting from 1) and y is the last number that Bleatrix will name before falling asleep, according to the rules described in the statement.&lt;br&gt;Limits&lt;/p&gt;
+&lt;p&gt;1 ≤ T ≤ 100.&lt;br&gt;Small dataset&lt;/p&gt;
+&lt;p&gt;0 ≤ N ≤ 200.&lt;br&gt;Large dataset&lt;/p&gt;
+&lt;p&gt;0 ≤ N ≤ 106.&lt;br&gt;Sample&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Input&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;Output&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Case #1: INSOMNIA&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Case #2: 10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Case #3: 90&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Case #4: 110&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1692&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Case #5: 5076&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;In Case #1, since 2 × 0 = 0, 3 × 0 = 0, and so on, Bleatrix will never see any digit other than 0, and so she will count forever and never fall asleep. Poor sheep!&lt;/p&gt;
+&lt;p&gt;In Case #2, Bleatrix will name 1, 2, 3, 4, 5, 6, 7, 8, 9, 10. The 0 will be the last digit needed, and so she will fall asleep after 10.&lt;/p&gt;
+&lt;p&gt;In Case #3, Bleatrix will name 2, 4, 6… and so on. She will not see the digit 9 in any number until 90, at which point she will fall asleep. By that point, she will have already seen the digits 0, 1, 2, 3, 4, 5, 6, 7, and 8, which will have appeared for the first time in the numbers 10, 10, 2, 30, 4, 50, 6, 70, and 8, respectively.&lt;/p&gt;
+&lt;p&gt;In Case #4, Bleatrix will name 11, 22, 33, 44, 55, 66, 77, 88, 99, 110 and then fall asleep.&lt;/p&gt;
+&lt;p&gt;Case #5 is the one described in the problem statement. Note that it would only show up in the Large dataset, and not in the Small dataset.&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;The first question in Google Qualification Round.&lt;/p&gt;
+&lt;h3 id=&quot;Counting-Sheep&quot;&gt;&lt;a href=&quot;#Counting-Sheep&quot; class=&quot;headerlink&quot; title=&quot;Counting Sheep&quot;&gt;&lt;/a&gt;Counting Sheep&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Bleatrix Trotter the sheep has devised a strategy that helps her fall asleep faster. First, she picks a number N. Then she starts naming N, 2 × N, 3 × N, and so on. Whenever she names a number, she thinks about all of the digits in that number. She keeps track of which digits (0, 1, 2, 3, 4, 5, 6, 7, 8, and 9) she has seen at least once so far as part of any number she has named. Once she has seen each of the ten digits at least once, she will fall asleep.&lt;/p&gt;
+&lt;p&gt;Bleatrix must start with N and must always name (i + 1) × N directly after i × N. For example, suppose that Bleatrix picks N = 1692. She would count as follows:&lt;/p&gt;
+&lt;p&gt;N = 1692. Now she has seen the digits 1, 2, 6, and 9.&lt;br&gt;2N = 3384. Now she has seen the digits 1, 2, 3, 4, 6, 8, and 9.&lt;br&gt;3N = 5076. Now she has seen all ten digits, and falls asleep.&lt;br&gt;What is the last number that she will name before falling asleep? If she will count forever, print INSOMNIA instead.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Interview" scheme="tyleryang.github.io/categories/Interview/"/>
+    
+      <category term="Google Code Jam" scheme="tyleryang.github.io/categories/Interview/Google-Code-Jam/"/>
+    
+    
+      <category term="Algorithm" scheme="tyleryang.github.io/tags/Algorithm/"/>
+    
+      <category term="Google Code Jam" scheme="tyleryang.github.io/tags/Google-Code-Jam/"/>
+    
+      <category term="Google Code Jam 2016" scheme="tyleryang.github.io/tags/Google-Code-Jam-2016/"/>
+    
+  </entry>
   
   <entry>
     <title>Value of Values - Tech talk by Rich Hickey</title>
@@ -313,7 +395,7 @@
     <link href="tyleryang.github.io/2015/07/25/Reverse-Hash-Function-Google-Challenge/"/>
     <id>tyleryang.github.io/2015/07/25/Reverse-Hash-Function-Google-Challenge/</id>
     <published>2015-07-25T08:01:42.000Z</published>
-    <updated>2016-04-02T12:16:40.000Z</updated>
+    <updated>2016-04-10T06:01:27.000Z</updated>
     
     <content type="html">&lt;p&gt;Recently I’ve been doing the Google Challenge, and I found a very interesting algorithm problem. Here is the problem.&lt;/p&gt;
 &lt;h3 id=&quot;Reverse-a-Hash-Function-Level-3&quot;&gt;&lt;a href=&quot;#Reverse-a-Hash-Function-Level-3&quot; class=&quot;headerlink&quot; title=&quot;Reverse a Hash Function (Level 3)&quot;&gt;&lt;/a&gt;Reverse a Hash Function (Level 3)&lt;/h3&gt;&lt;p&gt;The function takes a 16 byte input and gives a 16 byte output. It uses multiplication (*), bit-wise exclusive OR (XOR) and modulo (%) to calculate an element of the digest based on elements of the input message: &lt;/p&gt;

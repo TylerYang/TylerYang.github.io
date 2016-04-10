@@ -559,6 +559,18 @@ article footer .addthis {
 article footer .addthis iframe {
   margin-top: 0;
 }
+table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+table th {
+  font-weight: bold;
+}
+table th,
+table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
 #comment {
   background: #fff;
   margin-bottom: 50px;
