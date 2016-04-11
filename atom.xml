@@ -102,11 +102,12 @@
     <link href="tyleryang.github.io/2016/04/07/Value-of-Values-Tech-talk-by-Rich-Hickey/"/>
     <id>tyleryang.github.io/2016/04/07/Value-of-Values-Tech-talk-by-Rich-Hickey/</id>
     <published>2016-04-07T04:32:37.000Z</published>
-    <updated>2016-04-11T10:38:21.000Z</updated>
+    <updated>2016-04-11T10:38:51.000Z</updated>
     
     <content type="html">&lt;p&gt;The transcript of &lt;strong&gt;Value of Values&lt;/strong&gt; – Rich Hickey.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=-6BsiVyC1kM&amp;amp;list=PLRZ9CBXkZGmPtdCa8veT_fa5auxuI-BKi&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Video&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;So the value of values, who here works in IT.&lt;br&gt;What is that mean? What is it stand for IT?&lt;br&gt;Information technology. So what do we mean when we say information? As you may know for my other keynote, all I want to make my&lt;br&gt;keynotes is like, use my dictionary, is my dictionary has all the answers. My dictionary says information is base on the word inform, which means&lt;br&gt;to convey knowledge via facts and the purpose of that is to give shape to the mind. And information is just those facts.That is what&lt;br&gt;information is. Information is fact.&lt;/p&gt;
+&lt;p&gt;So the value of values, who here works in IT.&lt;br&gt;What is that mean? What is it stand for IT?&lt;/p&gt;
+&lt;p&gt;Information technology. So what do we mean when we say information? As you may know for my other keynote, all I want to make my&lt;br&gt;keynotes is like, use my dictionary, is my dictionary has all the answers. My dictionary says information is base on the word inform, which means&lt;br&gt;to convey knowledge via facts and the purpose of that is to give shape to the mind. And information is just those facts.That is what&lt;br&gt;information is. Information is fact.&lt;/p&gt;
 &lt;p&gt;So what is a fact? A fact is the place where information store. And what is great about that is there is a place for every piece of information.&lt;br&gt;And facts are operation, like get and set and they may have other operations. And those operation control how facts can change.&lt;br&gt;The other great things about fact is it’s easy to convey them.To convey a fact we just convey its location.&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;How many people are uncomfortable right now? I am, this is not true, right? This is wrong. Everything I just said is wrong.Dead wrong,&lt;br&gt;and you should be uncomfortable.This is not the facts are.&lt;/p&gt;
@@ -141,7 +142,8 @@
     
       &lt;p&gt;The transcript of &lt;strong&gt;Value of Values&lt;/strong&gt; – Rich Hickey.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=-6BsiVyC1kM&amp;amp;list=PLRZ9CBXkZGmPtdCa8veT_fa5auxuI-BKi&quot;&gt;Video&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;So the value of values, who here works in IT.&lt;br&gt;What is that mean? What is it stand for IT?&lt;br&gt;Information technology. So what do we mean when we say information? As you may know for my other keynote, all I want to make my&lt;br&gt;keynotes is like, use my dictionary, is my dictionary has all the answers. My dictionary says information is base on the word inform, which means&lt;br&gt;to convey knowledge via facts and the purpose of that is to give shape to the mind. And information is just those facts.That is what&lt;br&gt;information is. Information is fact.&lt;/p&gt;
+&lt;p&gt;So the value of values, who here works in IT.&lt;br&gt;What is that mean? What is it stand for IT?&lt;/p&gt;
+&lt;p&gt;Information technology. So what do we mean when we say information? As you may know for my other keynote, all I want to make my&lt;br&gt;keynotes is like, use my dictionary, is my dictionary has all the answers. My dictionary says information is base on the word inform, which means&lt;br&gt;to convey knowledge via facts and the purpose of that is to give shape to the mind. And information is just those facts.That is what&lt;br&gt;information is. Information is fact.&lt;/p&gt;
 &lt;p&gt;So what is a fact? A fact is the place where information store. And what is great about that is there is a place for every piece of information.&lt;br&gt;And facts are operation, like get and set and they may have other operations. And those operation control how facts can change.&lt;br&gt;The other great things about fact is it’s easy to convey them.To convey a fact we just convey its location.&lt;/p&gt;
     
     </summary>
