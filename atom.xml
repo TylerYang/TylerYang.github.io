@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="tyleryang.github.io/"/>
-  <updated>2016-04-10T06:00:52.000Z</updated>
+  <updated>2016-04-13T13:07:04.000Z</updated>
   <id>tyleryang.github.io/</id>
   
   <author>
@@ -14,6 +14,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Scramble String - Leetcode</title>
+    <link href="tyleryang.github.io/2016/04/13/Scramble-String-Leetcode/"/>
+    <id>tyleryang.github.io/2016/04/13/Scramble-String-Leetcode/</id>
+    <published>2016-04-13T13:02:26.000Z</published>
+    <updated>2016-04-13T13:07:04.000Z</updated>
+    
+    <content type="html">&lt;p&gt;An interestring Dynamic Programming problem, really need to more carefully to tacle the corner case.&lt;/p&gt;
+&lt;p&gt;Here is the question,&lt;/p&gt;
+&lt;h3 id=&quot;Scramble-String&quot;&gt;&lt;a href=&quot;#Scramble-String&quot; class=&quot;headerlink&quot; title=&quot;Scramble String&quot;&gt;&lt;/a&gt;Scramble String&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Given a string s1, we may represent it as a binary tree by partitioning it to two non-empty substrings recursively.&lt;/p&gt;
+&lt;p&gt;Below is one possible representation of s1 = “great”:&lt;/p&gt;
+&lt;p&gt;  great&lt;br&gt;  /&amp;nbsp;&amp;nbsp;&amp;nbsp;\&lt;br&gt;gr    eat&lt;br&gt;/ \    /  \&lt;br&gt;g   r  e   at&lt;br&gt;          / \&lt;br&gt;         a   t&lt;br&gt;To scramble the string, we may choose any non-leaf node and swap its two children.&lt;/p&gt;
+&lt;p&gt;For example, if we choose the node “gr” and swap its two children, it produces a scrambled string “rgeat”.&lt;/p&gt;
+&lt;p&gt;   rgeat&lt;br&gt;  /    \&lt;br&gt; rg    eat&lt;br&gt;/ \    /  \&lt;br&gt;r   g  e   at&lt;br&gt;          / \&lt;br&gt;         a   t&lt;br&gt;We say that “rgeat” is a scrambled string of “great”.&lt;/p&gt;
+&lt;p&gt;Similarly, if we continue to swap the children of nodes “eat” and “at”, it produces a scrambled string “rgtae”.&lt;/p&gt;
+&lt;p&gt;   rgtae&lt;br&gt;  /      \&lt;br&gt; rg    tae&lt;br&gt;/ \    /  \&lt;br&gt;r   g  ta  e&lt;br&gt;      / \&lt;br&gt;     t   a&lt;br&gt;We say that “rgtae” is a scrambled string of “great”.&lt;/p&gt;
+&lt;p&gt;Given two strings s1 and s2 of the same length, determine if s2 is a scrambled string of s1.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;Analysis&quot;&gt;&lt;a href=&quot;#Analysis&quot; class=&quot;headerlink&quot; title=&quot;Analysis&quot;&gt;&lt;/a&gt;Analysis&lt;/h3&gt;&lt;h3 id=&quot;Conclusion&quot;&gt;&lt;a href=&quot;#Conclusion&quot; class=&quot;headerlink&quot; title=&quot;Conclusion&quot;&gt;&lt;/a&gt;Conclusion&lt;/h3&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;An interestring Dynamic Programming problem, really need to more carefully to tacle the corner case.&lt;/p&gt;
+&lt;p&gt;Here is the question,&lt;/p&gt;
+&lt;h3 id=&quot;Scramble-String&quot;&gt;&lt;a href=&quot;#Scramble-String&quot; class=&quot;headerlink&quot; title=&quot;Scramble String&quot;&gt;&lt;/a&gt;Scramble String&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Given a string s1, we may represent it as a binary tree by partitioning it to two non-empty substrings recursively.&lt;/p&gt;
+&lt;p&gt;Below is one possible representation of s1 = “great”:&lt;/p&gt;
+&lt;p&gt;  great&lt;br&gt;  /&amp;nbsp;&amp;nbsp;&amp;nbsp;\&lt;br&gt;gr    eat&lt;br&gt;/ \    /  \&lt;br&gt;g   r  e   at&lt;br&gt;          / \&lt;br&gt;         a   t&lt;br&gt;To scramble the string, we may choose any non-leaf node and swap its two children.&lt;/p&gt;
+&lt;p&gt;For example, if we choose the node “gr” and swap its two children, it produces a scrambled string “rgeat”.&lt;/p&gt;
+&lt;p&gt;   rgeat&lt;br&gt;  /    \&lt;br&gt; rg    eat&lt;br&gt;/ \    /  \&lt;br&gt;r   g  e   at&lt;br&gt;          / \&lt;br&gt;         a   t&lt;br&gt;We say that “rgeat” is a scrambled string of “great”.&lt;/p&gt;
+&lt;p&gt;Similarly, if we continue to swap the children of nodes “eat” and “at”, it produces a scrambled string “rgtae”.&lt;/p&gt;
+&lt;p&gt;   rgtae&lt;br&gt;  /      \&lt;br&gt; rg    tae&lt;br&gt;/ \    /  \&lt;br&gt;r   g  ta  e&lt;br&gt;      / \&lt;br&gt;     t   a&lt;br&gt;We say that “rgtae” is a scrambled string of “great”.&lt;/p&gt;
+&lt;p&gt;Given two strings s1 and s2 of the same length, determine if s2 is a scrambled string of s1.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Interview" scheme="tyleryang.github.io/categories/Interview/"/>
+    
+      <category term="Leetcode" scheme="tyleryang.github.io/categories/Interview/Leetcode/"/>
+    
+    
+      <category term="Leetcode" scheme="tyleryang.github.io/tags/Leetcode/"/>
+    
+      <category term="Dynamic Programming" scheme="tyleryang.github.io/tags/Dynamic-Programming/"/>
+    
+  </entry>
   
   <entry>
     <title>A.Counting Sheep - Google Code Jam 2016 </title>
