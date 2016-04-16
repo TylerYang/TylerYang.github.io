@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Gray Code - Leetcode | TY</title>
+  <meta name="author" content="Tyler Yang">
+  
+  <meta name="description" content="Easy but this should be one of the most subtle problem in leetcode.
+Gray Code
+The gray code is a binary numeral system where two successive values differ in only one bit.
+Given a non-negative integer n representing the total number of bits in the code, print the sequence of gray code. A gray code sequence must begin with 0.
+For example, given n = 2, return [0,1,3,2]. Its gray code sequence is:
+00 - 001 - 111 - 310 - 2Note:For a given n, a gray code sequence is not uniquely defined.
+For example, [0,2,3,1] is also a valid gray code sequence according to the above definition.
+For now, the judge is able to judge based on one instance of gray code sequence. Sorry about that.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Gray Code - Leetcode"/>
+  <meta property="og:site_name" content="TY"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="TY" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+      var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?136f9d0455315c9611ba56b53088b6f9";
+          var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">TY</a></h1>
+  <h2>
+      <a href="/">
+          Life is short, just code it up!
+          
+      </a>
+  </h2>
+</div>
+<nav id="main-nav">
+  <ul>
+    
+      <li><a href="/about">About</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+<div class="alignleft" style="margin-top: 15px">
+
+
+</div>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title">Gray Code - Leetcode</h1>
+  
+
+      
+        <p class="published">
+          Published: <time datetime="2016-04-16T13:00:52.000Z">2016-04-16</time>
+        </p>
+      
+    </header>
+    <div class="entry">
+      
+        <p>Easy but this should be one of the most subtle problem in leetcode.</p>
+<h3 id="Gray-Code"><a href="#Gray-Code" class="headerlink" title="Gray Code"></a>Gray Code</h3><blockquote>
+<p>The gray code is a binary numeral system where two successive values differ in only one bit.</p>
+<p>Given a non-negative integer n representing the total number of bits in the code, print the sequence of gray code. A gray code sequence must begin with 0.</p>
+<p>For example, given n = 2, return [0,1,3,2]. Its gray code sequence is:</p>
+<p>00 - 0<br>01 - 1<br>11 - 3<br>10 - 2<br>Note:<br>For a given n, a gray code sequence is not uniquely defined.</p>
+<p>For example, [0,2,3,1] is also a valid gray code sequence according to the above definition.</p>
+<p>For now, the judge is able to judge based on one instance of gray code sequence. Sorry about that.<br><a id="more"></a></p>
+</blockquote>
+<h3 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h3><p>Let’s start from the simple case, assuming we are generating the Gray Code with only one bit.<br>Obviously, the result should be <code>[0, 1]</code> which the binary representation would be, <code>0</code> and <code>1</code>.</p>
+<p>So let’s consider about one more complicated scenario, how about Gray Code with 2 bits? Well, we can reuse the result from case1.</p>
+<p>For case 1, we already know that the bit representation are <code>0</code> and <code>1</code>.<br>Now we are able to write the first two numbers for case 2,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">00</span><br><span class="line">01</span><br></pre></td></tr></table></figure></p>
+<p>Apparently, the left most bit in next number should be <code>1</code>, which we can write down the final result.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">00</span><br><span class="line">01</span><br><span class="line">11</span><br><span class="line">10</span><br></pre></td></tr></table></figure></p>
+<p>Actually in the 3rd and the 4th number, I just simply revese the result in case1, and set the left most bit to 1.<br>The interesting part is, why I need to reverse them? Well, the result generated by previous case, should also meet the Gray Code Standard.<br>And also we can copy all of them, and set the left most bit to 1. Then we will get the bit representations below,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">00</span><br><span class="line">01</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td></tr></table></figure></p>
+<p>But the result is wrong.</p>
+<p>From the 2nd case to 3rd number, there is a transformation. We flip the left most bit. So how can we make sure that won’t break the Gray Code standard?<br>Yes, reverse them.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">grayCode</span><span class="params">(<span class="keyword">int</span> n )</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">    list.add(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> size = list.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = size - <span class="number">1</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">            list.add(list.get(j) | <span class="number">1</span> &lt;&lt; i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>The tricky part of this problem is how to reuse the result which generate by previouse scenario. Once you get the idea of reversion, you get the key.</p>
+<p><a href="https://github.com/TylerYang/leetcode/blob/master/89.GrayCode/Solution2.java" target="_blank" rel="external">Implementation In Java</a></p>
+
+      
+    </div>
+    <footer>
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+<!-- hackish -->
+
+  
+
+</div>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2016 Tyler Yang
+  
+</div>
+<div class="clearfix"></div></footer>
+  <!--[if lt IE 9]><script src="/js/html5.js"></script><![endif]-->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script src="/js/tyleryang.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>
