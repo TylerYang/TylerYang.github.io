@@ -71,9 +71,9 @@
     <link href="tyleryang.github.io/2016/04/13/Scramble-String-Leetcode/"/>
     <id>tyleryang.github.io/2016/04/13/Scramble-String-Leetcode/</id>
     <published>2016-04-13T13:02:26.000Z</published>
-    <updated>2016-04-13T13:07:04.000Z</updated>
+    <updated>2016-04-16T14:54:55.000Z</updated>
     
-    <content type="html">&lt;p&gt;An interestring Dynamic Programming problem, really need to more carefully to tacle the corner case.&lt;/p&gt;
+    <content type="html">&lt;p&gt;An interestring Dynamic Programming problem.&lt;/p&gt;
 &lt;p&gt;Here is the question,&lt;/p&gt;
 &lt;h3 id=&quot;Scramble-String&quot;&gt;&lt;a href=&quot;#Scramble-String&quot; class=&quot;headerlink&quot; title=&quot;Scramble String&quot;&gt;&lt;/a&gt;Scramble String&lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;Given a string s1, we may represent it as a binary tree by partitioning it to two non-empty substrings recursively.&lt;/p&gt;
@@ -90,7 +90,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;An interestring Dynamic Programming problem, really need to more carefully to tacle the corner case.&lt;/p&gt;
+      &lt;p&gt;An interestring Dynamic Programming problem.&lt;/p&gt;
 &lt;p&gt;Here is the question,&lt;/p&gt;
 &lt;h3 id=&quot;Scramble-String&quot;&gt;&lt;a href=&quot;#Scramble-String&quot; class=&quot;headerlink&quot; title=&quot;Scramble String&quot;&gt;&lt;/a&gt;Scramble String&lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;Given a string s1, we may represent it as a binary tree by partitioning it to two non-empty substrings recursively.&lt;/p&gt;
