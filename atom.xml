@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="tyleryang.github.io/"/>
-  <updated>2016-04-17T06:58:51.000Z</updated>
+  <updated>2016-04-23T04:05:16.000Z</updated>
   <id>tyleryang.github.io/</id>
   
   <author>
@@ -16,11 +16,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Design, Composition, and Performance by Rich Hickey</title>
+    <link href="tyleryang.github.io/2016/04/23/Design-Composition-and-Performance-by-Rich-Hickey/"/>
+    <id>tyleryang.github.io/2016/04/23/Design-Composition-and-Performance-by-Rich-Hickey/</id>
+    <published>2016-04-23T04:03:43.000Z</published>
+    <updated>2016-04-23T04:05:16.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.infoq.com/presentations/design-composition-performance-keynote&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Video&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://www.infoq.com/presentations/design-composition-performance-keynote&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Video&lt;/a&gt;&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="Tech Talk" scheme="tyleryang.github.io/categories/Tech-Talk/"/>
+    
+      <category term="Design" scheme="tyleryang.github.io/categories/Tech-Talk/Design/"/>
+    
+    
+      <category term="Tech Talk" scheme="tyleryang.github.io/tags/Tech-Talk/"/>
+    
+      <category term="Design" scheme="tyleryang.github.io/tags/Design/"/>
+    
+      <category term="Rich Hickey" scheme="tyleryang.github.io/tags/Rich-Hickey/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Morris Traversal - Algorithm</title>
     <link href="tyleryang.github.io/2016/04/17/Morris-Traversal-Algorithm/"/>
     <id>tyleryang.github.io/2016/04/17/Morris-Traversal-Algorithm/</id>
     <published>2016-04-17T06:20:54.000Z</published>
-    <updated>2016-04-17T06:58:51.000Z</updated>
+    <updated>2016-04-17T06:59:04.000Z</updated>
     
     <content type="html">&lt;p&gt;Morris Traversal is a way to traverse the tree without using any extra space.&lt;/p&gt;
 &lt;p&gt;It is inspired by the &lt;a href=&quot;https://en.wikipedia.org/wiki/Threaded_binary_tree&quot; title=&quot;Threaded Binary Tree from wiki&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Threaded Binary Tree&lt;/a&gt;. In threaded binary tree, with setting some extra pointers, it’s possible to cheaply find its successor.&lt;br&gt;The Morris Traversal leverage the rightmost node, so the space complexity is O(1).&lt;br&gt;Let’s see how it works.&lt;/p&gt;
@@ -279,7 +309,7 @@
     <link href="tyleryang.github.io/2016/04/07/Value-of-Values-Tech-talk-by-Rich-Hickey/"/>
     <id>tyleryang.github.io/2016/04/07/Value-of-Values-Tech-talk-by-Rich-Hickey/</id>
     <published>2016-04-07T04:32:37.000Z</published>
-    <updated>2016-04-12T01:34:34.000Z</updated>
+    <updated>2016-04-23T04:04:43.000Z</updated>
     
     <content type="html">&lt;p&gt;The transcript of &lt;strong&gt;Value of Values&lt;/strong&gt; – Rich Hickey.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=-6BsiVyC1kM&amp;amp;list=PLRZ9CBXkZGmPtdCa8veT_fa5auxuI-BKi&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Video&lt;/a&gt;&lt;/p&gt;
@@ -324,16 +354,16 @@
     
     </summary>
     
-      <category term="Tech talk" scheme="tyleryang.github.io/categories/Tech-talk/"/>
+      <category term="Tech Talk" scheme="tyleryang.github.io/categories/Tech-Talk/"/>
     
-      <category term="Functional Programming" scheme="tyleryang.github.io/categories/Tech-talk/Functional-Programming/"/>
+      <category term="Functional Programming" scheme="tyleryang.github.io/categories/Tech-Talk/Functional-Programming/"/>
     
     
-      <category term="Tech talk" scheme="tyleryang.github.io/tags/Tech-talk/"/>
-    
-      <category term="Functional Programming" scheme="tyleryang.github.io/tags/Functional-Programming/"/>
+      <category term="Tech Talk" scheme="tyleryang.github.io/tags/Tech-Talk/"/>
     
       <category term="Rich Hickey" scheme="tyleryang.github.io/tags/Rich-Hickey/"/>
+    
+      <category term="Functional Programming" scheme="tyleryang.github.io/tags/Functional-Programming/"/>
     
   </entry>
   
