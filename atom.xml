@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>TY</title>
-  <subtitle>Life is short, just code it up!</subtitle>
+  <subtitle>Expressions + Transformations</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="tyleryang.github.io/"/>
