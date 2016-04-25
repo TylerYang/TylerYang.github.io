@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>TY</title>
-  <subtitle>Expressions + Transformations</subtitle>
+  <subtitle>Learning requires inefficiency</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="tyleryang.github.io/"/>
-  <updated>2016-04-23T04:05:16.000Z</updated>
+  <updated>2016-04-25T05:09:55.000Z</updated>
   <id>tyleryang.github.io/</id>
   
   <author>
@@ -20,15 +20,23 @@
     <link href="tyleryang.github.io/2016/04/23/Design-Composition-and-Performance-by-Rich-Hickey/"/>
     <id>tyleryang.github.io/2016/04/23/Design-Composition-and-Performance-by-Rich-Hickey/</id>
     <published>2016-04-23T04:03:43.000Z</published>
-    <updated>2016-04-23T04:05:16.000Z</updated>
+    <updated>2016-04-25T05:09:55.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.infoq.com/presentations/design-composition-performance-keynote&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Video&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Design is about taking thing apart in such way that they can be put back together.&lt;/p&gt;
+&lt;p&gt;Design is imagining&lt;br&gt;It’s not solving the problems that you ever meet before.&lt;br&gt;You are facing some sort of problems that you have to imagine potential solutions.&lt;/p&gt;
+&lt;p&gt;Embrace the constraints.&lt;br&gt;Only we have enough constrains, we can make up some thing that will work.&lt;/p&gt;
+&lt;p&gt;Design + Constraints =&amp;gt; Outcome&lt;/p&gt;
+&lt;p&gt;You want to think for 10 things and then say, this one is what we want to do.&lt;/p&gt;
+&lt;p&gt;We want to admit very little, we want to be able to say no.&lt;/p&gt;
+&lt;p&gt;Design is about making decisions&lt;br&gt;The value that you conveyed in your design is strictly about the decision you make.&lt;br&gt;Leaving all options open is avoiding design. Everything are configurable, that’s not design. That’s like do your own thing.&lt;/p&gt;
+&lt;p&gt;Take things apart(Over and over agian)&lt;br&gt;Design (Communicate very well, be able to work in multiple levels)&lt;br&gt;Code (take prepare and experiences.  Real experiences with doing thing, not experience by doing the same thing over and over agian)&lt;br&gt;Pick up Langs and libs like instruments (Oriented around that people know how to use them)&lt;br&gt;Pursue harmony (What makes thing work well together and apply them)&lt;/p&gt;
 </content>
     
     <summary type="html">
     
       &lt;p&gt;&lt;a href=&quot;http://www.infoq.com/presentations/design-composition-performance-keynote&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Video&lt;/a&gt;&lt;/p&gt;
-
+&lt;p&gt;Desig
     
     </summary>
     
