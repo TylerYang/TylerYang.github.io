@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="tyleryang.github.io/"/>
-  <updated>2016-04-25T10:56:09.000Z</updated>
+  <updated>2016-04-26T05:57:52.000Z</updated>
   <id>tyleryang.github.io/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Understanding the many formulations of FRP by Evan Czaplicki</title>
+    <link href="tyleryang.github.io/2016/04/26/Understanding-the-many-formulations-of-FRP-by-Evan-Czaplicki/"/>
+    <id>tyleryang.github.io/2016/04/26/Understanding-the-many-formulations-of-FRP-by-Evan-Czaplicki/</id>
+    <published>2016-04-26T05:17:28.000Z</published>
+    <updated>2016-04-26T05:57:52.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=Agu6jipKfYw&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;video&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Controlling Time and Space&lt;/p&gt;
+&lt;p&gt;what is FRP&lt;br&gt;how do we categorize&lt;br&gt;evalue&lt;/p&gt;
+&lt;p&gt;First order FRP&lt;/p&gt;
+&lt;p&gt;Core Design (Everything is event driven)&lt;br&gt;    Signals are connected to the world&lt;br&gt;    Signals are infinite&lt;br&gt;    Signal graphs are static&lt;br&gt;    Synchronous by default&lt;/p&gt;
+&lt;p&gt;Efficiency&lt;br&gt;Architecture&lt;br&gt;Hot-swapping&lt;br&gt;Time-travel debugging&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=Agu6jipKfYw&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;video&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Controlling Time and Space&lt;/p&gt;
+&lt;p&gt;w
+    
+    </summary>
+    
+      <category term="Tech Talk" scheme="tyleryang.github.io/categories/Tech-Talk/"/>
+    
+      <category term="Functional Reactive Programming" scheme="tyleryang.github.io/categories/Tech-Talk/Functional-Reactive-Programming/"/>
+    
+    
+      <category term="Tech Talk" scheme="tyleryang.github.io/tags/Tech-Talk/"/>
+    
+      <category term="Functional Reactive Programming" scheme="tyleryang.github.io/tags/Functional-Reactive-Programming/"/>
+    
+      <category term="Elm" scheme="tyleryang.github.io/tags/Elm/"/>
+    
+  </entry>
   
   <entry>
     <title>Design, Composition, and Performance by Rich Hickey</title>
@@ -317,7 +353,7 @@
     <link href="tyleryang.github.io/2016/04/07/Value-of-Values-Tech-talk-by-Rich-Hickey/"/>
     <id>tyleryang.github.io/2016/04/07/Value-of-Values-Tech-talk-by-Rich-Hickey/</id>
     <published>2016-04-07T04:32:37.000Z</published>
-    <updated>2016-04-23T04:04:43.000Z</updated>
+    <updated>2016-04-26T05:57:54.000Z</updated>
     
     <content type="html">&lt;p&gt;The transcript of &lt;strong&gt;Value of Values&lt;/strong&gt; – Rich Hickey.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=-6BsiVyC1kM&amp;amp;list=PLRZ9CBXkZGmPtdCa8veT_fa5auxuI-BKi&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Video&lt;/a&gt;&lt;/p&gt;

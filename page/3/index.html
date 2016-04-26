@@ -78,6 +78,64 @@ var _hmt = _hmt || [];
     <header>
       
   
+    <h1 class="title"><a href="/2015/07/25/Reverse-Hash-Function-Google-Challenge/">Reverse Hash Function - Google Challenge</a></h1>
+  
+
+      
+        <p class="published">
+          Published: <time datetime="2015-07-25T08:01:42.000Z">2015-07-25</time>
+        </p>
+      
+    </header>
+    <div class="entry">
+      
+        <p>Recently I’ve been doing the Google Challenge, and I found a very interesting algorithm problem. Here is the problem.</p>
+<h3 id="Reverse-a-Hash-Function-Level-3"><a href="#Reverse-a-Hash-Function-Level-3" class="headerlink" title="Reverse a Hash Function (Level 3)"></a>Reverse a Hash Function (Level 3)</h3><p>The function takes a 16 byte input and gives a 16 byte output. It uses multiplication (*), bit-wise exclusive OR (XOR) and modulo (%) to calculate an element of the digest based on elements of the input message: </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">digest [i] = ( (<span class="number">129</span> * message[i]) XOR message[i-<span class="number">1</span>]) % <span class="number">256</span></span><br></pre></td></tr></table></figure>
+<p>For the first element, the value of <code>message[-1]</code> is 0.<br>For example, if <code>message[0] = 1</code> and <code>message[1] = 129</code>, then:<br>For <code>digest[0]</code>:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">129</span> * message[<span class="number">0</span>] = <span class="number">129</span></span><br><span class="line"><span class="number">129</span> XOR message[-<span class="number">1</span>] = <span class="number">129</span></span><br><span class="line"><span class="number">129</span> % <span class="number">256</span> = <span class="number">129</span></span><br></pre></td></tr></table></figure></p>
+<p>Thus <code>digest[0] = 129</code>.<br>For digest[1]:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">129</span>*message[<span class="number">1</span>] = <span class="number">16641</span></span><br><span class="line"><span class="number">16641</span> XOR message[<span class="number">0</span>] = <span class="number">16640</span></span><br><span class="line"><span class="number">16640</span> % <span class="number">256</span> = <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
+<p>Thus <code>digest[1] = 0</code>.<br>Write a function answer(digest) that takes <strong>an array of 16 integers</strong> and returns another array of 16 that correspond to the unique message that created this digest. Since each value is a single byte, the values are <strong>0 to 255</strong> for both message and digest.</p>
+<h3 id="Test-cases"><a href="#Test-cases" class="headerlink" title="Test cases"></a>Test cases</h3><p>Inputs:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span> list) digest = [<span class="number">0</span>, <span class="number">129</span>, <span class="number">3</span>, <span class="number">129</span>, <span class="number">7</span>, <span class="number">129</span>, <span class="number">3</span>, <span class="number">129</span>, <span class="number">15</span>, <span class="number">129</span>, <span class="number">3</span>, <span class="number">129</span>, <span class="number">7</span>, <span class="number">129</span>, <span class="number">3</span>, <span class="number">129</span>]</span><br></pre></td></tr></table></figure></p>
+<p>Output:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span> list) [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>]</span><br></pre></td></tr></table></figure></p>
+<p>Inputs:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span> list) digest = [<span class="number">0</span>, <span class="number">129</span>, <span class="number">5</span>, <span class="number">141</span>, <span class="number">25</span>, <span class="number">137</span>, <span class="number">61</span>, <span class="number">149</span>, <span class="number">113</span>, <span class="number">145</span>, <span class="number">53</span>, <span class="number">157</span>, <span class="number">233</span>, <span class="number">185</span>, <span class="number">109</span>, <span class="number">165</span>]</span><br></pre></td></tr></table></figure></p>
+<p>Output:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span> list) [<span class="number">0</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>, <span class="number">100</span>, <span class="number">121</span>, <span class="number">144</span>, <span class="number">169</span>, <span class="number">196</span>, <span class="number">225</span>]</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    <footer>
+      
+        
+          <div id="readmore" class="alignright">
+            <a href="/2015/07/25/Reverse-Hash-Function-Google-Challenge/#more" class="more-link">READ MORE</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+<!-- hackish -->
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+  
     <h1 class="title"><a href="/2015/07/25/About-XOR-operator/">About XOR operator</a></h1>
   
 
