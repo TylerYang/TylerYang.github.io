@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>tyleryang.github.io/2016/04/27/Streaming-and-event-based-programming-using-FRP-and-RxJS-by-Matthew-Podwysocki/</loc>
+    <loc>tyleryang.github.io/2016/04/27/What-does-it-mean-to-be-Reactive-by-Erik-Meijer/</loc>
     
-    <lastmod>2016-04-27T05:20:32.000Z</lastmod>
+    <lastmod>2016-04-27T05:44:09.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>tyleryang.github.io/2016/04/26/Understanding-the-many-formulations-of-FRP-by-Evan-Czaplicki/</loc>
     
-    <lastmod>2016-04-26T05:59:42.000Z</lastmod>
+    <lastmod>2016-04-27T05:31:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>tyleryang.github.io/2016/04/27/Streaming-and-event-based-programming-using-FRP-and-RxJS-by-Matthew-Podwysocki/</loc>
+    
+    <lastmod>2016-04-27T05:20:32.000Z</lastmod>
     
   </url>
   
