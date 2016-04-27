@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="tyleryang.github.io/"/>
-  <updated>2016-04-26T05:59:42.000Z</updated>
+  <updated>2016-04-27T05:20:32.000Z</updated>
   <id>tyleryang.github.io/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Streaming and event-based programming using FRP and RxJS by Matthew Podwysocki</title>
+    <link href="tyleryang.github.io/2016/04/27/Streaming-and-event-based-programming-using-FRP-and-RxJS-by-Matthew-Podwysocki/"/>
+    <id>tyleryang.github.io/2016/04/27/Streaming-and-event-based-programming-using-FRP-and-RxJS-by-Matthew-Podwysocki/</id>
+    <published>2016-04-27T05:06:33.000Z</published>
+    <updated>2016-04-27T05:20:32.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=zlERo_JMGCw&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Video&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.reactive-streams.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Reactive Streams&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/Reactive-Extensions/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Reactive Extensions&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/Reactive-Extensions/RxJS&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RxJS&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We are dealing notion of time, because obversable are really a notion of value over time.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=zlERo_JMGCw&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Video&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.reactive-streams.or
+    
+    </summary>
+    
+      <category term="Tech Talk" scheme="tyleryang.github.io/categories/Tech-Talk/"/>
+    
+      <category term="Functional Reactive Programming" scheme="tyleryang.github.io/categories/Tech-Talk/Functional-Reactive-Programming/"/>
+    
+      <category term="Reactive Extensions" scheme="tyleryang.github.io/categories/Tech-Talk/Functional-Reactive-Programming/Reactive-Extensions/"/>
+    
+    
+      <category term="Tech Talk" scheme="tyleryang.github.io/tags/Tech-Talk/"/>
+    
+      <category term="Functional Reactive Programming" scheme="tyleryang.github.io/tags/Functional-Reactive-Programming/"/>
+    
+      <category term="Reactive Extensions" scheme="tyleryang.github.io/tags/Reactive-Extensions/"/>
+    
+  </entry>
   
   <entry>
     <title>Understanding the many formulations of FRP by Evan Czaplicki</title>
