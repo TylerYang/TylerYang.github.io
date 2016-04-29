@@ -56,10 +56,34 @@
     <link href="tyleryang.github.io/2016/04/27/Streaming-and-event-based-programming-using-FRP-and-RxJS-by-Matthew-Podwysocki/"/>
     <id>tyleryang.github.io/2016/04/27/Streaming-and-event-based-programming-using-FRP-and-RxJS-by-Matthew-Podwysocki/</id>
     <published>2016-04-27T05:06:33.000Z</published>
-    <updated>2016-04-27T05:20:32.000Z</updated>
+    <updated>2016-04-29T05:42:16.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=zlERo_JMGCw&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Video&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.reactive-streams.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Reactive Streams&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/Reactive-Extensions/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Reactive Extensions&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/Reactive-Extensions/RxJS&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RxJS&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;We are dealing notion of time, because obversable are really a notion of value over time.&lt;/p&gt;
+&lt;h3 id=&quot;Obversable-the-idea-of-future-values&quot;&gt;&lt;a href=&quot;#Obversable-the-idea-of-future-values&quot; class=&quot;headerlink&quot; title=&quot;Obversable, the idea of future values.&quot;&gt;&lt;/a&gt;Obversable, the idea of future values.&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// future value example&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; randomNumbers = Obverable.create((s) =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = setTimeout(() =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        s.next(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.random());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        s.complete();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;, &lt;span class=&quot;number&quot;&gt;1000&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; () =&amp;gt; clearTimeout(i);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;randomNumbers.subscribe(x =&amp;gt; &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;1: &#39;&lt;/span&gt; + x)); &lt;span class=&quot;comment&quot;&gt;//1: 0.1231231&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;randomNumbers.subscribe(x =&amp;gt; &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;2: &#39;&lt;/span&gt; + x)); &lt;span class=&quot;comment&quot;&gt;//2: 0.5612323&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;The-other-“ideas”-of-values&quot;&gt;&lt;a href=&quot;#The-other-“ideas”-of-values&quot; class=&quot;headerlink&quot; title=&quot;The other “ideas” of values&quot;&gt;&lt;/a&gt;The other “ideas” of values&lt;/h3&gt;&lt;blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;SINGLE&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;MULTIPLE&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;SYNCHRONOUS&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Function&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Enumerable&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ASYNCHRONOUS&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Promise&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Obversable&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/blockquote&gt;
 </content>
     
     <summary type="html">

@@ -142,6 +142,30 @@ var _hmt = _hmt || [];
       
         <p><a href="https://www.youtube.com/watch?v=zlERo_JMGCw" target="_blank" rel="external">Video</a><br><a href="http://www.reactive-streams.org/" target="_blank" rel="external">Reactive Streams</a><br><a href="https://github.com/Reactive-Extensions/" target="_blank" rel="external">Reactive Extensions</a><br><a href="https://github.com/Reactive-Extensions/RxJS" target="_blank" rel="external">RxJS</a></p>
 <p>We are dealing notion of time, because obversable are really a notion of value over time.</p>
+<h3 id="Obversable-the-idea-of-future-values"><a href="#Obversable-the-idea-of-future-values" class="headerlink" title="Obversable, the idea of future values."></a>Obversable, the idea of future values.</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// future value example</span></span><br><span class="line"><span class="keyword">var</span> randomNumbers = Obverable.create((s) =&gt; &#123;</span><br><span class="line">    <span class="keyword">var</span> i = setTimeout(() =&gt; &#123;</span><br><span class="line">        s.next(<span class="built_in">Math</span>.random());</span><br><span class="line">        s.complete();</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">    <span class="keyword">return</span> () =&gt; clearTimeout(i);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">randomNumbers.subscribe(x =&gt; <span class="built_in">console</span>.log(<span class="string">'1: '</span> + x)); <span class="comment">//1: 0.1231231</span></span><br><span class="line">randomNumbers.subscribe(x =&gt; <span class="built_in">console</span>.log(<span class="string">'2: '</span> + x)); <span class="comment">//2: 0.5612323</span></span><br></pre></td></tr></table></figure>
+<h3 id="The-other-“ideas”-of-values"><a href="#The-other-“ideas”-of-values" class="headerlink" title="The other “ideas” of values"></a>The other “ideas” of values</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">SINGLE</th>
+<th style="text-align:center">MULTIPLE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SYNCHRONOUS</td>
+<td style="text-align:center">Function</td>
+<td style="text-align:center">Enumerable</td>
+</tr>
+<tr>
+<td>ASYNCHRONOUS</td>
+<td style="text-align:center">Promise</td>
+<td style="text-align:center">Obversable</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 
       
     </div>
