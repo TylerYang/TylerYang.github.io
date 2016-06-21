@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="tyleryang.github.io/"/>
-  <updated>2016-04-28T05:53:50.000Z</updated>
+  <updated>2016-06-21T11:32:16.000Z</updated>
   <id>tyleryang.github.io/</id>
   
   <author>
@@ -16,11 +16,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Deep-Dive-Into-Git-by-Edward-Thomson</title>
+    <link href="tyleryang.github.io/2016/06/21/Deep-Dive-Into-Git-by-Edward-Thomson/"/>
+    <id>tyleryang.github.io/2016/06/21/Deep-Dive-Into-Git-by-Edward-Thomson/</id>
+    <published>2016-06-21T05:50:23.000Z</published>
+    <updated>2016-06-21T11:32:16.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;The Git commands are just a leaky abstraction over the data storage.&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;The Git commands are just a leaky abstraction over the data storage.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>What does it mean to be Reactive by Erik Meijer</title>
     <link href="tyleryang.github.io/2016/04/27/What-does-it-mean-to-be-Reactive-by-Erik-Meijer/"/>
     <id>tyleryang.github.io/2016/04/27/What-does-it-mean-to-be-Reactive-by-Erik-Meijer/</id>
     <published>2016-04-27T05:30:05.000Z</published>
-    <updated>2016-04-28T05:53:50.000Z</updated>
+    <updated>2016-04-28T05:53:59.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=sTSQlYX5DU0&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Video&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.technologyreview.com/s/525621/three-questions-for-leslie-lamport-winner-of-computings-top-prize/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Rethink about what we build&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.quora.com/What-is-Functional-Reactive-Programming&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;What is Functional Reactive Programming&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
