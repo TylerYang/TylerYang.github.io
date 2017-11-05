@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+    Tyler
+    
+        | Learning requires inefficiency
+    
+</title>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="browsermode" content="application">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Tyler">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name= "format-detection" content="telephone=no" />
+<meta name="keywords" content="nlvi, Nlvi" />
+
+
+    <meta name="subtitle" content="Learning requires inefficiency">
+
+
+
+
+<link rel="stylesheet" href="/style/style.css">
+<script src="/script/jquery.min.js"></script>
+<script>
+    var CONFIG = {
+        title: "Tyler",
+        author: "Tyler Yang",
+        lightbox: true,
+        animate: true
+    }
+</script>
+
+
+
+    <link rel="stylesheet" href="/lightbox/css/lightbox.min.css">
+
+
+
+
+    <link rel="stylesheet" href="/syuanpi/syuanpi.min.css">
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    <div class="progress">
+    <div class="progress-inner"></div>
+</div>
+    <div class="body">
+    <div class="tagcloud-mask"></div>  
+<div class="tagcloud" id="tagcloud">
+    <div class="tagcloud-inner">
+        <a href="/tags/Algorithm/" style="font-size: 14px;">Algorithm</a> <a href="/tags/Big-Data/" style="font-size: 14px;">Big Data</a> <a href="/tags/CSAPP/" style="font-size: 14px;">CSAPP</a> <a href="/tags/Design/" style="font-size: 14px;">Design</a> <a href="/tags/Dynamic-Programming/" style="font-size: 14px;">Dynamic Programming</a> <a href="/tags/ETL/" style="font-size: 14px;">ETL</a> <a href="/tags/Elm/" style="font-size: 14px;">Elm</a> <a href="/tags/Finite-State-Automata/" style="font-size: 14px;">Finite State Automata</a> <a href="/tags/Functional-Programming/" style="font-size: 14px;">Functional Programming</a> <a href="/tags/Functional-Reactive-Programming/" style="font-size: 14px;">Functional Reactive Programming</a> <a href="/tags/Golang/" style="font-size: 14px;">Golang</a> <a href="/tags/Google-Challenge/" style="font-size: 14px;">Google Challenge</a> <a href="/tags/Google-Code-Jam/" style="font-size: 14px;">Google Code Jam</a> <a href="/tags/Google-Code-Jam-2016/" style="font-size: 14px;">Google Code Jam 2016</a> <a href="/tags/Greedy-Algorithm/" style="font-size: 14px;">Greedy Algorithm</a> <a href="/tags/Kafka/" style="font-size: 14px;">Kafka</a> <a href="/tags/Language/" style="font-size: 14px;">Language</a> <a href="/tags/Leetcode/" style="font-size: 14px;">Leetcode</a> <a href="/tags/Reactive/" style="font-size: 14px;">Reactive</a> <a href="/tags/Reactive-Extensions/" style="font-size: 14px;">Reactive Extensions</a> <a href="/tags/Rich-Hickey/" style="font-size: 14px;">Rich Hickey</a> <a href="/tags/State-Machine/" style="font-size: 14px;">State Machine</a> <a href="/tags/Statistics/" style="font-size: 14px;">Statistics</a> <a href="/tags/Tech-Talk/" style="font-size: 14px;">Tech Talk</a> <a href="/tags/Tree/" style="font-size: 14px;">Tree</a> <a href="/tags/design-pattern/" style="font-size: 14px;">design pattern</a> <a href="/tags/javascript/" style="font-size: 14px;">javascript</a>
+    </div>
+</div>
+    <header class="header" id="header">
+    <div class="title syuanpi tvIn">
+    <div class="table">
+        <div class="connect">
+            <div class="connect-inner">
+                <span><a href="/">Tyler</a></span>
+                
+                    <span id="subtitle">Learning requires inefficiency</span>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <nav class="main-nav syuanpi tvIn">
+<div class="table">
+
+    <ul class="menu">
+        
+        <li class="menu-item">
+            <a href="javascript:;" id="search">
+                <span>Search</span>
+                
+                
+            </a>
+        </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="/">
+                    <span>Article</span>
+                    
+                    
+                </a>
+            </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="/archives">
+                    <span>Archives</span>
+                    
+                    
+                </a>
+            </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="javascript:;" id="tags">
+                    <span>Tags</span>
+                    
+                    
+                </a>
+            </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="/about">
+                    <span>About</span>
+                    
+                    
+                </a>
+            </li>
+        
+        
+    </ul>
+
+</div>
+</nav>
+</header>
+<div class="mobile-header">
+    <div class="mobile-header-body">
+        <div class="mobile-header-list">
+            
+            
+                <div class="mobile-nav-item">
+                    <a href="/">
+                        <span>Article</span>
+                        
+                        
+                    </a>
+                </div>
+            
+            
+            
+                <div class="mobile-nav-item">
+                    <a href="/archives">
+                        <span>Archives</span>
+                        
+                        
+                    </a>
+                </div>
+            
+            
+            
+                <div class="mobile-nav-item inner-cloud">
+                    <div class="mobile-nav-tag">
+                        <a href="javascript:;" id="mobile-tags">
+                            <span>Tags</span>
+                            
+                            
+                        </a>
+                    </div>
+                    <div class="mobile-nav-tagcloud">
+                        <div class="mobile-tagcloud-inner">
+                            <a href="/tags/Algorithm/" style="font-size: 14px;">Algorithm</a> <a href="/tags/Big-Data/" style="font-size: 14px;">Big Data</a> <a href="/tags/CSAPP/" style="font-size: 14px;">CSAPP</a> <a href="/tags/Design/" style="font-size: 14px;">Design</a> <a href="/tags/Dynamic-Programming/" style="font-size: 14px;">Dynamic Programming</a> <a href="/tags/ETL/" style="font-size: 14px;">ETL</a> <a href="/tags/Elm/" style="font-size: 14px;">Elm</a> <a href="/tags/Finite-State-Automata/" style="font-size: 14px;">Finite State Automata</a> <a href="/tags/Functional-Programming/" style="font-size: 14px;">Functional Programming</a> <a href="/tags/Functional-Reactive-Programming/" style="font-size: 14px;">Functional Reactive Programming</a> <a href="/tags/Golang/" style="font-size: 14px;">Golang</a> <a href="/tags/Google-Challenge/" style="font-size: 14px;">Google Challenge</a> <a href="/tags/Google-Code-Jam/" style="font-size: 14px;">Google Code Jam</a> <a href="/tags/Google-Code-Jam-2016/" style="font-size: 14px;">Google Code Jam 2016</a> <a href="/tags/Greedy-Algorithm/" style="font-size: 14px;">Greedy Algorithm</a> <a href="/tags/Kafka/" style="font-size: 14px;">Kafka</a> <a href="/tags/Language/" style="font-size: 14px;">Language</a> <a href="/tags/Leetcode/" style="font-size: 14px;">Leetcode</a> <a href="/tags/Reactive/" style="font-size: 14px;">Reactive</a> <a href="/tags/Reactive-Extensions/" style="font-size: 14px;">Reactive Extensions</a> <a href="/tags/Rich-Hickey/" style="font-size: 14px;">Rich Hickey</a> <a href="/tags/State-Machine/" style="font-size: 14px;">State Machine</a> <a href="/tags/Statistics/" style="font-size: 14px;">Statistics</a> <a href="/tags/Tech-Talk/" style="font-size: 14px;">Tech Talk</a> <a href="/tags/Tree/" style="font-size: 14px;">Tree</a> <a href="/tags/design-pattern/" style="font-size: 14px;">design pattern</a> <a href="/tags/javascript/" style="font-size: 14px;">javascript</a>
+                        </div>
+                    </div>
+                </div>
+            
+            
+            
+                <div class="mobile-nav-item">
+                    <a href="/about">
+                        <span>About</span>
+                        
+                        
+                    </a>
+                </div>
+            
+            
+        </div>
+    </div>
+    <div class="mobile-header-nav">
+        <div class="mobile-header-item" id="mobile-left">
+            <div class="header-menu-item">
+                <span class="header-menu-line"></span>
+            </div>
+        </div>
+        <h1 class="mobile-header-title">
+            <a href="/">Tyler</a>
+        </h1>
+        <div class="mobile-header-item"></div>
+    </div>
+</div>
+
+    <div class="container">
+        <main class="main" id="main">
+            
+    
+
+<section class="posts">
+    
+        
+    <article class="post">
+        <header class="post-header">
+            <div class="post-time syuanpi riseIn-light back-1">
+                <span>April 26, 2016</span>
+                
+                
+                    <span class="post-category"><a href="/categories/Tech-Talk/">Tech Talk</a></span>
+                
+                    <span class="post-category"><a href="/categories/Tech-Talk/Functional-Reactive-Programming/">Functional Reactive Programming</a></span>
+                
+                
+            </div>
+            <h1 class="post-title syuanpi riseIn-light back-2">
+            
+                <a href="/2016/04/26/Understanding-the-many-formulations-of-FRP-by-Evan-Czaplicki/">Understanding the many formulations of FRP by Evan Czaplicki</a>
+            
+            </h1>
+            
+        </header>
+        <div class="post-content syuanpi riseIn-light back-3">
+            
+                
+                    <p><a href="https://www.youtube.com/watch?v=Agu6jipKfYw" target="_blank" rel="external">video</a><br><a href="https://www.mpi-sws.org/~neelk/popl074-krishnaswami.pdf" target="_blank" rel="external">Higher-Order Functional Reactive Programming in Bounded Space</a><br><a href="http://elm-lang.org/papers/concurrent-frp.pdf" target="_blank" rel="external">Concurrent FRP for Functional GUIs</a></p>
+<p>Controlling Time and Space</p>
+<p>what is FRP<br>how do we categorize<br>evalue</p>
+<p>First order FRP</p>
+<p>Core Design (Everything is event driven)<br>    Signals are connected to the world<br>    Signals are infinite<br>    Signal graphs are static<br>    Synchronous by default</p>
+<p>Efficiency<br>Architecture<br>Hot-swapping<br>Time-travel debugging</p>
+
+                
+            
+        
+        </div>
+        
+    </article>
+    
+
+    
+        
+    <article class="post">
+        <header class="post-header">
+            <div class="post-time syuanpi riseIn-light back-1">
+                <span>April 23, 2016</span>
+                
+                
+                    <span class="post-category"><a href="/categories/Tech-Talk/">Tech Talk</a></span>
+                
+                    <span class="post-category"><a href="/categories/Tech-Talk/Design/">Design</a></span>
+                
+                
+            </div>
+            <h1 class="post-title syuanpi riseIn-light back-2">
+            
+                <a href="/2016/04/23/Design-Composition-and-Performance-by-Rich-Hickey/">Design, Composition, and Performance by Rich Hickey</a>
+            
+            </h1>
+            
+        </header>
+        <div class="post-content syuanpi riseIn-light back-3">
+            
+                
+                    <p><a href="http://www.infoq.com/presentations/design-composition-performance-keynote" target="_blank" rel="external">Video</a></p>
+<p>Good Design<br>Separating into things that can be composed.<br>Design is about taking thing apart in such way that they can be put back together.</p>
+<p>Design is imagining<br>It’s not solving the problems that you ever meet before.<br>You are facing some sort of problems that you have to imagine potential solutions.</p>
+<p>Embrace the constraints.<br>Only we have enough constrains, we can make up some thing that will work.</p>
+<p>var outcome = design(constraints)</p>
+<p>You want to think for 10 things and then say, this one is what we want to do.</p>
+<p>We want to admit very little, we want to be able to say no.</p>
+<p>Design is about making decisions<br>The value that you conveyed in your design is strictly about the decision you make.<br>Leaving all options open is avoiding design. Everything are configurable, that’s not design. That’s like do your own thing.</p>
+<p>Take things apart(Over and over agian)<br>Design (Communicate very well, be able to work in multiple levels)<br>Code (take prepare and experiences.  Real experiences with doing thing, not experience by doing the same thing over and over agian)<br>Pick up Langs and libs like instruments (Oriented around that people know how to use them)<br>Pursue harmony (What makes thing work well together and apply them)</p>
+
+                
+            
+        
+        </div>
+        
+    </article>
+    
+
+    
+        
+    <article class="post">
+        <header class="post-header">
+            <div class="post-time syuanpi riseIn-light back-1">
+                <span>April 17, 2016</span>
+                
+                
+                    <span class="post-category"><a href="/categories/Data-Structure-and-Algorithm/">Data Structure and Algorithm</a></span>
+                
+                
+            </div>
+            <h1 class="post-title syuanpi riseIn-light back-2">
+            
+                <a href="/2016/04/17/Morris-Traversal-Algorithm/">Morris Traversal - Algorithm</a>
+            
+            </h1>
+            
+        </header>
+        <div class="post-content syuanpi riseIn-light back-3">
+            
+                
+                    <p>Morris Traversal is a way to traverse the tree without using any extra space.</p>
+<p>It is inspired by the <a href="https://en.wikipedia.org/wiki/Threaded_binary_tree" title="Threaded Binary Tree from wiki" target="_blank" rel="external">Threaded Binary Tree</a>. In threaded binary tree, with setting some extra pointers, it’s possible to cheaply find its successor.<br>The Morris Traversal leverage the rightmost node, so the space complexity is O(1).<br>Let’s see how it works.</p>
+<p>The pseudo code of inorder Morris Traversal is listed below,</p>
+<ul>
+<li>Initialize current as root</li>
+<li>while current is not Null<br>  <strong>If</strong> current doesn’t have left child<ul>
+<li>Print current’s data</li>
+<li>Go to the right, i.e., <code>current = current -&gt; right</code><br><strong>Else</strong></li>
+<li>Make current as right child of the rightmost node in current’s left sub tree</li>
+<li>Go to this left child, i.e., <code>current = current -&gt; left</code>
+                    
+            
+        
+            <p class="content-link">
+                <a href="/2016/04/17/Morris-Traversal-Algorithm/#more">
+                    <span class="iconfont icon-right">Read More...</span>
+                </a>
+            </p>
+        
+        </div>
+        
+    </article>
+    
+
+    
+        
+    <article class="post">
+        <header class="post-header">
+            <div class="post-time syuanpi riseIn-light back-1">
+                <span>April 16, 2016</span>
+                
+                
+                    <span class="post-category"><a href="/categories/Interview/">Interview</a></span>
+                
+                    <span class="post-category"><a href="/categories/Interview/Leetcode/">Leetcode</a></span>
+                
+                
+            </div>
+            <h1 class="post-title syuanpi riseIn-light back-2">
+            
+                <a href="/2016/04/16/Gray-Code-Leetcode/">Gray Code - Leetcode</a>
+            
+            </h1>
+            
+        </header>
+        <div class="post-content syuanpi riseIn-light back-3">
+            
+                
+                    <p>Easy but this should be one of the most subtle problem in leetcode.</p>
+<h3 id="Gray-Code"><a href="#Gray-Code" class="headerlink" title="Gray Code"></a>Gray Code</h3><blockquote>
+<p>The gray code is a binary numeral system where two successive values differ in only one bit.</p>
+<p>Given a non-negative integer n representing the total number of bits in the code, print the sequence of gray code. A gray code sequence must begin with 0.</p>
+<p>For example, given n = 2, return [0,1,3,2]. Its gray code sequence is:</p>
+<p>00 - 0<br>01 - 1<br>11 - 3<br>10 - 2<br>Note:<br>For a given n, a gray code sequence is not uniquely defined.</p>
+<p>For example, [0,2,3,1] is also a valid gray code sequence according to the above definition.</p>
+<p>For now, the judge is able to judge based on one instance of gray code sequence. Sorry about that.<br>
+                    
+            
+        
+            <p class="content-link">
+                <a href="/2016/04/16/Gray-Code-Leetcode/#more">
+                    <span class="iconfont icon-right">Read More...</span>
+                </a>
+            </p>
+        
+        </div>
+        
+    </article>
+    
+
+    
+        
+    <article class="post">
+        <header class="post-header">
+            <div class="post-time syuanpi riseIn-light back-1">
+                <span>April 13, 2016</span>
+                
+                
+                    <span class="post-category"><a href="/categories/Interview/">Interview</a></span>
+                
+                    <span class="post-category"><a href="/categories/Interview/Leetcode/">Leetcode</a></span>
+                
+                
+            </div>
+            <h1 class="post-title syuanpi riseIn-light back-2">
+            
+                <a href="/2016/04/13/Scramble-String-Leetcode/">Scramble String - Leetcode</a>
+            
+            </h1>
+            
+        </header>
+        <div class="post-content syuanpi riseIn-light back-3">
+            
+                
+                    <p>An interestring Dynamic Programming problem.</p>
+<p>Here is the question,</p>
+<h3 id="Scramble-String"><a href="#Scramble-String" class="headerlink" title="Scramble String"></a>Scramble String</h3><blockquote>
+<p>Given a string s1, we may represent it as a binary tree by partitioning it to two non-empty substrings recursively.</p>
+<p>Below is one possible representation of s1 = “great”:</p>
+<p>  great<br>  /&nbsp;&nbsp;&nbsp;\<br>gr    eat<br>/ \    /  \<br>g   r  e   at<br>          / \<br>         a   t<br>To scramble the string, we may choose any non-leaf node and swap its two children.</p>
+<p>For example, if we choose the node “gr” and swap its two children, it produces a scrambled string “rgeat”.</p>
+<p>   rgeat<br>  /    \<br> rg    eat<br>/ \    /  \<br>r   g  e   at<br>          / \<br>         a   t<br>We say that “rgeat” is a scrambled string of “great”.</p>
+<p>Similarly, if we continue to swap the children of nodes “eat” and “at”, it produces a scrambled string “rgtae”.</p>
+<p>   rgtae<br>  /      \<br> rg    tae<br>/ \    /  \<br>r   g  ta  e<br>      / \<br>     t   a<br>We say that “rgtae” is a scrambled string of “great”.</p>
+<p>Given two strings s1 and s2 of the same length, determine if s2 is a scrambled string of s1.</p>
+</blockquote>
+                    
+            
+        
+            <p class="content-link">
+                <a href="/2016/04/13/Scramble-String-Leetcode/#more">
+                    <span class="iconfont icon-right">Read More...</span>
+                </a>
+            </p>
+        
+        </div>
+        
+    </article>
+    
+
+    
+        
+    <article class="post">
+        <header class="post-header">
+            <div class="post-time syuanpi riseIn-light back-1">
+                <span>April 10, 2016</span>
+                
+                
+                    <span class="post-category"><a href="/categories/Interview/">Interview</a></span>
+                
+                    <span class="post-category"><a href="/categories/Interview/Google-Code-Jam/">Google Code Jam</a></span>
+                
+                
+            </div>
+            <h1 class="post-title syuanpi riseIn-light back-2">
+            
+                <a href="/2016/04/10/Counting-Sheep-Google-Code-Jam-2016/">A.Counting Sheep - Google Code Jam 2016 </a>
+            
+            </h1>
+            
+        </header>
+        <div class="post-content syuanpi riseIn-light back-3">
+            
+                
+                    <p>The first question in Google Qualification Round.</p>
+<h3 id="Counting-Sheep"><a href="#Counting-Sheep" class="headerlink" title="Counting Sheep"></a>Counting Sheep</h3><blockquote>
+<p>Bleatrix Trotter the sheep has devised a strategy that helps her fall asleep faster. First, she picks a number N. Then she starts naming N, 2 × N, 3 × N, and so on. Whenever she names a number, she thinks about all of the digits in that number. She keeps track of which digits (0, 1, 2, 3, 4, 5, 6, 7, 8, and 9) she has seen at least once so far as part of any number she has named. Once she has seen each of the ten digits at least once, she will fall asleep.</p>
+<p>Bleatrix must start with N and must always name (i + 1) × N directly after i × N. For example, suppose that Bleatrix picks N = 1692. She would count as follows:</p>
+<p>N = 1692. Now she has seen the digits 1, 2, 6, and 9.<br>2N = 3384. Now she has seen the digits 1, 2, 3, 4, 6, 8, and 9.<br>3N = 5076. Now she has seen all ten digits, and falls asleep.<br>What is the last number that she will name before falling asleep? If she will count forever, print INSOMNIA instead.<br>
+                    
+            
+        
+            <p class="content-link">
+                <a href="/2016/04/10/Counting-Sheep-Google-Code-Jam-2016/#more">
+                    <span class="iconfont icon-right">Read More...</span>
+                </a>
+            </p>
+        
+        </div>
+        
+    </article>
+    
+
+    
+</section>
+    
+    <nav class="pagination">
+        <a class="extend prev" rel="prev" href="/">< Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next ></a>
+    </nav>
+
+
+        </main>
+        <footer class="footer syuanpi fadeIn" id="footer">
+    <hr>
+    <div class="footer-wrapper">
+        <div class="left">
+            <div class="contact-icon">
+    
+    
+    
+    
+    
+    
+    
+    
+</div>
+        </div>
+        <div class="right">
+            <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>1970 ~ 2017</span>
+        <span>❤</span>
+        <span>Tyler Yang</span>
+    </div>
+    <div class="theme">
+        <span>
+            Powered by
+            <a href="http://hexo.io/" target="_blank">Hexo </a>
+        </span>
+        <span>
+            Theme
+            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+</div>
+        </div>
+    </div>
+</footer>
+    </div>
+    <script src="/script/nlvi.js"></script>
+<script src="/script/search.js"></script>
+
+    <script src="/lightbox/js/lightbox.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    document.body.addEventListener('touchstart', function () {});
+    $('.progress').hide();
+    $('.body').show();
+    Nlvi.tagcloud();
+    Nlvi.mobileHeader();
+    Nlvi.back2top();
+    Nlvi.smoothScroll();
+    Nlvi.onView();
+    Nlvi.showToc();
+    Nlvi.showComments();
+    Nlvi.showReward();
+    Nlvi.picPos();
+
+    !CONFIG.animate && Nlvi.offAnimate();
+    CONFIG.lightbox && Nlvi.onPicBox();
+})
+</script>
+    </div>
+    
+    <div class="backtop syuanpi dead toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+    
+    <div class="search" id="search">
+        <div class="mask" id="mask"></div>
+        <div class="search-wrapper syuanpi">
+            <h1 id="search-header" class="syuanpi">搜索一下？</h1>
+            <div class="input">
+                <input type="text" id="local-search-input" results="0" name="">
+            </div>
+            <div id="local-search-result"></div>
+        </div>
+    </div>
+    <script>
+    var GREETING = {
+        morning: "当我们探索时，就要发现到真理",
+        noon: "人的天职在于勇于探索真理。",
+        after: "一件事实是一条没有性别的真理",
+        night: "真理有时可能变得黯淡，但它永远不会熄灭",
+        midnight: "真理在人那里获得生命力，并且展现出来"
+    }
+    $(document).ready(function(){
+        Nlvi.search();
+    });
+    </script>
+
+</body>
+</html>

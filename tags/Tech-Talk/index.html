@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title> Golang Learning NotesI · Tyler </title>
+    <title>
+  
+    Tech Talk · Tyler
+  
+</title>
     <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -18,8 +22,6 @@
 
 
 
-
-    <meta name="keywords" content="Language, Golang, Nlvi" />
 
 <link rel="stylesheet" href="/style/style.css">
 <script src="/script/jquery.min.js"></script>
@@ -204,92 +206,92 @@
         <main class="main" id="main">
             
     
-    <article class="post">
-        <header class="post-header">
-            <div class="post-time syuanpi riseIn-light back-1">
-                <span>November 5, 2017</span>
+    <div class="archive syuanpi riseIn-light" id="archive">
+        
+            <h2 class="archive-title"> now in </h2>
+            <span class="archive-name"> — Tech Talk</span>
+        
+        <div class="archive-list">
+            <ul>
+        
+            
+            
+            <li class="archive-post">
+                <span class="archive-post-time">
                 
-            </div>
-            <h1 class="post-title syuanpi riseIn-light back-2">
-            
-                Golang Learning NotesI
-            
-            </h1>
-            
+                    2016-04-27
                 
-                    <div class="post-tags syuanpi riseIn-light back-3">
-                    
-                        <a href="/tags/Language/">Language</a>
-                    
-                        <a href="/tags/Golang/">Golang</a>
-                    
-                    </div>
-                
-            
-        </header>
-        <div class="post-content syuanpi riseIn-light back-3">
-            
-                <p>Recently, i’ve been reading <a href="https://www.amazon.cn/s/ref=nb_sb_noss_2?__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&amp;url=search-alias%3Daps&amp;field-keywords=go" target="_blank" rel="external">this golang book</a>, and think it would be more efficient to output some questions.</p>
-<p>Question List,</p>
-<ol>
-<li>Coroutine vs Thread<br><em>Corouitine</em> are a form of sequential processing: <em>only one is executing at any given time.</em>(just like subroutines AKA procedures AKA functions – they just  pass the baton amount each other more fluidly).</li>
-</ol>
-<p><em>Threads</em> are (at least conceptually) a form of concurrent processing: <em>multiple threads may be executing at any given time.</em>(Traditionally, on single-CPU, single-core machines, that concurrency are simulated with some help from OS – nowadaays, since so many machines are multi-CPU and/or multi-core, threads will de facto be executing simultaneously, not just “conceptually”.</p>
-<ol>
-<li>What is CSP?<br>From Wikipedia, <a href="https://en.wikipedia.org/wiki/Communicating_sequential_processes" target="_blank" rel="external">Communicating sequential processes</a></li>
-</ol>
-<blockquote>
-<p>In computer science, communicating sequential processes (CSP) is a formal language for describing patterns of interaction in concurrent systems.[1] It is a member of the family of mathematical theories of concurrency known as process algebras, or process calculi, based on message passing via channels. CSP was highly influential in the design of the occam programming language,[1][2] and also influenced the design of programming languages such as Limbo,[3] RaftLib, Go[4], Crystal, and Clojure’s core.async.</p>
-<p>CSP was first described in a 1977 paper by Tony Hoare,[5] but has since evolved substantially.[6] CSP has been practically applied in industry as a tool for specifying and verifying the concurrent aspects of a variety of different systems, such as the T9000 Transputer,[7] as well as a secure ecommerce system.[8] The theory of CSP itself is also still the subject of active research, including work to increase its range of practical applicability (e.g., increasing the scale of the systems that can be tractably analyzed).[9]</p>
-</blockquote>
-<ol>
-<li><p>Memory Allocation Model in Golang<br>Placeholder</p>
-</li>
-<li><p>What is the three main components during runtime?<br>Placeholder</p>
-</li>
-<li><p>Golang is not allow pointer arithmetic, why?<br>From <a href="https://golang.org/doc/faq#no_pointer_arithmetic" target="_blank" rel="external">Golang FAQ</a></p>
-<blockquote>
-<p>Safety. Without pointer arithmetic it’s possible to create a language that can never derive an illegal address that succeeds incorrectly. Compiler and hardware technology have advanced to the point where a loop using array indices can be as efficient as a loop using pointer arithmetic. Also, the lack of pointer arithmetic can simplify the implementation of the garbage collector.</p>
-</blockquote>
-</li>
-<li><p>How to debug golang?<br>Looks like golang don’t have a efficient debugging architecture.<br>From Golang.org, <a href="https://golang.org/doc/gdb" target="_blank" rel="external">Debugging Go Code with GDB</a></p>
-<blockquote>
-<p>This applies to the standard toolchain (the gc Go compiler and tools). Gccgo has native gdb support. Besides this overview you might want to consult the GDB manual.</p>
-</blockquote>
-</li>
-</ol>
-<blockquote>
-<p>GDB does not understand Go programs well. The stack management, threading, and runtime contain aspects that differ enough from the execution model GDB expects that they can confuse the debugger, even when the program is compiled with gccgo. As a consequence, although GDB can be useful in some situations, it is not a reliable debugger for Go programs, particularly heavily concurrent ones. Moreover, it is not a priority for the Go project to address these issues, which are difficult. In short, the instructions below should be taken only as a guide to how to use GDB when it works, not as a guarantee of success.</p>
-<p>In time, a more Go-centric debugging architecture may be required.</p>
-</blockquote>
-<ol>
-<li>What’s the Duck Type Definition?<br>From Wikipedia, <a href="https://en.wikipedia.org/wiki/Duck_typing" target="_blank" rel="external">Duck typing</a><br>Duck typing is a style of dynamic typing in which an object’s current set of methods and properties determines the valid semantics, rather than its inheritance from a particular class or implementation of a specific interface.</li>
-</ol>
-<p><a href="https://www.youtube.com/watch?v=NfngrdLv9ZQ#t=1716" target="_blank" rel="external">If it looks like a duck and quacks like a duck, it’s a duck</a></p>
-
-            
-        
-        </div>
-        
-            
-            
-        
-    </article>
-    
-        
-    <nav class="article-page">
-        
-        
-            <a href="/2017/09/23/Beta-Distribution/" id="art-right" class="art-left">
-                <span class="prev-title"> 
-                    <i class="iconfont icon-left"></i>What is Beta Distribution
                 </span>
-            </a>
+                <span class="archive-post-link">
+                    <a href="/2016/04/27/What-does-it-mean-to-be-Reactive-by-Erik-Meijer/">What does it mean to be Reactive by Erik Meijer</a>
+                </span>
+            </li>
+
         
+            
+            
+            <li class="archive-post">
+                <span class="archive-post-time">
+                
+                    2016-04-27
+                
+                </span>
+                <span class="archive-post-link">
+                    <a href="/2016/04/27/Streaming-and-event-based-programming-using-FRP-and-RxJS-by-Matthew-Podwysocki/">Streaming and event-based programming using FRP and RxJS by Matthew Podwysocki</a>
+                </span>
+            </li>
+
+        
+            
+            
+            <li class="archive-post">
+                <span class="archive-post-time">
+                
+                    2016-04-26
+                
+                </span>
+                <span class="archive-post-link">
+                    <a href="/2016/04/26/Understanding-the-many-formulations-of-FRP-by-Evan-Czaplicki/">Understanding the many formulations of FRP by Evan Czaplicki</a>
+                </span>
+            </li>
+
+        
+            
+            
+            <li class="archive-post">
+                <span class="archive-post-time">
+                
+                    2016-04-23
+                
+                </span>
+                <span class="archive-post-link">
+                    <a href="/2016/04/23/Design-Composition-and-Performance-by-Rich-Hickey/">Design, Composition, and Performance by Rich Hickey</a>
+                </span>
+            </li>
+
+        
+            
+            
+            <li class="archive-post">
+                <span class="archive-post-time">
+                
+                    2016-04-07
+                
+                </span>
+                <span class="archive-post-link">
+                    <a href="/2016/04/07/Value-of-Values-Tech-talk-by-Rich-Hickey/">Value of Values - Tech talk by Rich Hickey</a>
+                </span>
+            </li>
+
+        
+            </ul>
+        </div>
+    </div>
+    
+    <nav class="pagination">
+        <span class="page-number current">1</span>
     </nav>
 
-        
-    
 
 
         </main>
@@ -357,8 +359,6 @@ $(document).ready(function(){
 })
 </script>
     </div>
-    
-        
     
     <div class="backtop syuanpi dead toTop" id="backtop">
     <i class="iconfont icon-up"></i>
