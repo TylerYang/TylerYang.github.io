@@ -1,11 +1,383 @@
-<%- partial('_partial/head') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Palindrome PartitioningII - Leetcode · Tyler </title>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="browsermode" content="application">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Tyler">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name= "format-detection" content="telephone=no" />
+<meta name="keywords" content="nlvi, Nlvi" />
+
+
+    <meta name="subtitle" content="Learning requires inefficiency">
+
+
+
+
+    <meta name="keywords" content="Leetcode, Dynamic Programming, Nlvi" />
+
+<link rel="stylesheet" href="/style/style.css">
+<script src="/script/jquery.min.js"></script>
+<script>
+    var CONFIG = {
+        title: "Tyler",
+        author: "Tyler Yang",
+        lightbox: true,
+        animate: true
+    }
+</script>
+
+
+
+    <link rel="stylesheet" href="/lightbox/css/lightbox.min.css">
+
+
+
+
+    <link rel="stylesheet" href="/syuanpi/syuanpi.min.css">
+
+
+
+
+
+
+
+
+
+
+</head>
 <body>
-  <header id="header" class="inner"><%- partial('_partial/header') %></header>
-  <div id="content" class="inner">
-    <div id="wrapper"><%- body %></div>
-    <div class="clearfix"></div>
-  </div>
-  <footer id="footer" class="inner"><%- partial('_partial/footer') %></footer>
-  <%- partial('_partial/after_footer') %>
+    <div class="progress">
+    <div class="progress-inner"></div>
+</div>
+    <div class="body">
+    <div class="tagcloud-mask"></div>  
+<div class="tagcloud" id="tagcloud">
+    <div class="tagcloud-inner">
+        <a href="/tags/Algorithm/" style="font-size: 14px;">Algorithm</a> <a href="/tags/Big-Data/" style="font-size: 14px;">Big Data</a> <a href="/tags/CSAPP/" style="font-size: 14px;">CSAPP</a> <a href="/tags/Computational-Advertising/" style="font-size: 14px;">Computational Advertising</a> <a href="/tags/Design/" style="font-size: 14px;">Design</a> <a href="/tags/Dynamic-Programming/" style="font-size: 14px;">Dynamic Programming</a> <a href="/tags/ETL/" style="font-size: 14px;">ETL</a> <a href="/tags/Elm/" style="font-size: 14px;">Elm</a> <a href="/tags/Finite-State-Automata/" style="font-size: 14px;">Finite State Automata</a> <a href="/tags/Functional-Programming/" style="font-size: 14px;">Functional Programming</a> <a href="/tags/Functional-Reactive-Programming/" style="font-size: 14px;">Functional Reactive Programming</a> <a href="/tags/Golang/" style="font-size: 14px;">Golang</a> <a href="/tags/Google-Challenge/" style="font-size: 14px;">Google Challenge</a> <a href="/tags/Google-Code-Jam/" style="font-size: 14px;">Google Code Jam</a> <a href="/tags/Google-Code-Jam-2016/" style="font-size: 14px;">Google Code Jam 2016</a> <a href="/tags/Greedy-Algorithm/" style="font-size: 14px;">Greedy Algorithm</a> <a href="/tags/Kafka/" style="font-size: 14px;">Kafka</a> <a href="/tags/Language/" style="font-size: 14px;">Language</a> <a href="/tags/Leetcode/" style="font-size: 14px;">Leetcode</a> <a href="/tags/Reactive/" style="font-size: 14px;">Reactive</a> <a href="/tags/Reactive-Extensions/" style="font-size: 14px;">Reactive Extensions</a> <a href="/tags/Rich-Hickey/" style="font-size: 14px;">Rich Hickey</a> <a href="/tags/State-Machine/" style="font-size: 14px;">State Machine</a> <a href="/tags/Statistics/" style="font-size: 14px;">Statistics</a> <a href="/tags/Tech-Talk/" style="font-size: 14px;">Tech Talk</a> <a href="/tags/Tree/" style="font-size: 14px;">Tree</a> <a href="/tags/design-pattern/" style="font-size: 14px;">design pattern</a> <a href="/tags/javascript/" style="font-size: 14px;">javascript</a>
+    </div>
+</div>
+    <header class="header" id="header">
+    <div class="title syuanpi tvIn">
+    <div class="table">
+        <div class="connect">
+            <div class="connect-inner">
+                <span><a href="/">Tyler</a></span>
+                
+                    <span id="subtitle">Learning requires inefficiency</span>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <nav class="main-nav syuanpi tvIn">
+<div class="table">
+
+    <ul class="menu">
+        
+        <li class="menu-item">
+            <a href="javascript:;" id="search">
+                <span>Search</span>
+                
+                
+            </a>
+        </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="/">
+                    <span>Article</span>
+                    
+                    
+                </a>
+            </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="/archives">
+                    <span>Archives</span>
+                    
+                    
+                </a>
+            </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="javascript:;" id="tags">
+                    <span>Tags</span>
+                    
+                    
+                </a>
+            </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="/about">
+                    <span>About</span>
+                    
+                    
+                </a>
+            </li>
+        
+        
+    </ul>
+
+</div>
+</nav>
+</header>
+<div class="mobile-header">
+    <div class="mobile-header-body">
+        <div class="mobile-header-list">
+            
+            
+                <div class="mobile-nav-item">
+                    <a href="/">
+                        <span>Article</span>
+                        
+                        
+                    </a>
+                </div>
+            
+            
+            
+                <div class="mobile-nav-item">
+                    <a href="/archives">
+                        <span>Archives</span>
+                        
+                        
+                    </a>
+                </div>
+            
+            
+            
+                <div class="mobile-nav-item inner-cloud">
+                    <div class="mobile-nav-tag">
+                        <a href="javascript:;" id="mobile-tags">
+                            <span>Tags</span>
+                            
+                            
+                        </a>
+                    </div>
+                    <div class="mobile-nav-tagcloud">
+                        <div class="mobile-tagcloud-inner">
+                            <a href="/tags/Algorithm/" style="font-size: 14px;">Algorithm</a> <a href="/tags/Big-Data/" style="font-size: 14px;">Big Data</a> <a href="/tags/CSAPP/" style="font-size: 14px;">CSAPP</a> <a href="/tags/Computational-Advertising/" style="font-size: 14px;">Computational Advertising</a> <a href="/tags/Design/" style="font-size: 14px;">Design</a> <a href="/tags/Dynamic-Programming/" style="font-size: 14px;">Dynamic Programming</a> <a href="/tags/ETL/" style="font-size: 14px;">ETL</a> <a href="/tags/Elm/" style="font-size: 14px;">Elm</a> <a href="/tags/Finite-State-Automata/" style="font-size: 14px;">Finite State Automata</a> <a href="/tags/Functional-Programming/" style="font-size: 14px;">Functional Programming</a> <a href="/tags/Functional-Reactive-Programming/" style="font-size: 14px;">Functional Reactive Programming</a> <a href="/tags/Golang/" style="font-size: 14px;">Golang</a> <a href="/tags/Google-Challenge/" style="font-size: 14px;">Google Challenge</a> <a href="/tags/Google-Code-Jam/" style="font-size: 14px;">Google Code Jam</a> <a href="/tags/Google-Code-Jam-2016/" style="font-size: 14px;">Google Code Jam 2016</a> <a href="/tags/Greedy-Algorithm/" style="font-size: 14px;">Greedy Algorithm</a> <a href="/tags/Kafka/" style="font-size: 14px;">Kafka</a> <a href="/tags/Language/" style="font-size: 14px;">Language</a> <a href="/tags/Leetcode/" style="font-size: 14px;">Leetcode</a> <a href="/tags/Reactive/" style="font-size: 14px;">Reactive</a> <a href="/tags/Reactive-Extensions/" style="font-size: 14px;">Reactive Extensions</a> <a href="/tags/Rich-Hickey/" style="font-size: 14px;">Rich Hickey</a> <a href="/tags/State-Machine/" style="font-size: 14px;">State Machine</a> <a href="/tags/Statistics/" style="font-size: 14px;">Statistics</a> <a href="/tags/Tech-Talk/" style="font-size: 14px;">Tech Talk</a> <a href="/tags/Tree/" style="font-size: 14px;">Tree</a> <a href="/tags/design-pattern/" style="font-size: 14px;">design pattern</a> <a href="/tags/javascript/" style="font-size: 14px;">javascript</a>
+                        </div>
+                    </div>
+                </div>
+            
+            
+            
+                <div class="mobile-nav-item">
+                    <a href="/about">
+                        <span>About</span>
+                        
+                        
+                    </a>
+                </div>
+            
+            
+        </div>
+    </div>
+    <div class="mobile-header-nav">
+        <div class="mobile-header-item" id="mobile-left">
+            <div class="header-menu-item">
+                <span class="header-menu-line"></span>
+            </div>
+        </div>
+        <h1 class="mobile-header-title">
+            <a href="/">Tyler</a>
+        </h1>
+        <div class="mobile-header-item"></div>
+    </div>
+</div>
+
+    <div class="container">
+        <main class="main" id="main">
+            
+    
+    <article class="post">
+        <header class="post-header">
+            <div class="post-time syuanpi riseIn-light back-1">
+                <span>August 1, 2015</span>
+                
+                
+                    <span class="post-category"><a href="/categories/Interview/">Interview</a></span>
+                
+                    <span class="post-category"><a href="/categories/Interview/Leetcode/">Leetcode</a></span>
+                
+                
+            </div>
+            <h1 class="post-title syuanpi riseIn-light back-2">
+            
+                Palindrome PartitioningII - Leetcode
+            
+            </h1>
+            
+                
+                    <div class="post-tags syuanpi riseIn-light back-3">
+                    
+                        <a href="/tags/Leetcode/">Leetcode</a>
+                    
+                        <a href="/tags/Dynamic-Programming/">Dynamic Programming</a>
+                    
+                    </div>
+                
+            
+        </header>
+        <div class="post-content syuanpi riseIn-light back-3">
+            
+                <p>This should be one of the most insteresting algorithm problem I try to solve within this month.</p>
+<p>Here is the question,</p>
+<h3 id="Palindrome-PartitioningII"><a href="#Palindrome-PartitioningII" class="headerlink" title="Palindrome PartitioningII"></a>Palindrome PartitioningII</h3><blockquote>
+<p>Given a string s, partition s such that every substring of the partition is a palindrome.<br>Return the minimum cuts needs for a palindrome partitioning of s.</p>
+<p>For example, given s = “aab”,<br>Return <code>1</code> since the palindrome partitioning <code>[&quot;aa&quot;, &quot;b&quot;]</code> could be produced using 1 cut.</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h3><p>To get the minimum cut, of course backtracking can get an answer. To do it in a better way, <strong>Dynamic Programming</strong> will be suit for us.</p>
+<p>Let’s say, we want to know the minimum cut for string <code>s = &quot;aabaabcb&quot;</code>,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">0 1 2 3 4 5 6 7</div><div class="line">a a b a a c b c</div></pre></td></tr></table></figure></p>
+<p>Apparently, we need to find out all the palindrome substring in it so that we can get the minimum cut. But we can reuse some part of the substring. For example, if we know <code>aba</code> is a palindrome, to valid <code>aabaa</code> we only need to make sure the first character equals to the last one.<br>So the first step is to find out all the substring which is palindrome.<br>We use 2 dimension array to store all the result. For String <code>s = &quot;aabaabcb&quot;</code>, substring s.substring(1, 3) is a palindrome, so we set <code>dp[1][3] = true</code>, here is the java code.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">boolean</span>[][] dp = <span class="keyword">new</span> <span class="keyword">boolean</span>[s.length()][s.length()];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = s.length() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; s.length(); j++) &#123;</div><div class="line">        <span class="keyword">if</span>(s.charAt(j) == s.charAt(i) &amp;&amp; (j - i &lt; <span class="number">2</span> || dp[i + <span class="number">1</span>][j - <span class="number">1</span>] == <span class="keyword">true</span>)) dp[i][j] = <span class="keyword">true</span>; </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>after run this code, we get a two dimension array below,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">1 1 0 0 1 0 0 0</div><div class="line">0 1 0 1 0 0 0 0</div><div class="line">0 0 1 0 0 0 0 0</div><div class="line">0 0 0 1 1 0 0 0</div><div class="line">0 0 0 0 1 0 0 0</div><div class="line">0 0 0 0 0 1 0 1</div><div class="line">0 0 0 0 0 0 1 0</div><div class="line">0 0 0 0 0 0 0 1</div></pre></td></tr></table></figure></p>
+<p>Actually it is easy to get this 2d array, the trick is in the next step.<br>To get the minimum cut from it, we need to compare different combinations, e.g for string <code>abaacbc</code> the minimun cut should be one of the combinations below,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">subStr.length() - 1</div><div class="line">1 + minCut(&quot;baacbc&quot;) //a is palindrome</div><div class="line">1 + minCut(&quot;acbc&quot;)   //aba is palindrome</div></pre></td></tr></table></figure></p>
+<p>A navie idea is code it up with simply recursive call. Can we do it better? To get the min cut of <code>abaacbc</code>, we need to know the min cut of <code>baacbc</code> and <code>acbc</code>. Then we know this is another <strong>Dynamic Programming</strong> solution. In another word, to solve this problem, we need to use <strong>Dynamic Programming</strong> two times.</p>
+<p>Let’s create an one-dimension array, <code>minCut</code>, each element stands for min cut of s.substring(i)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[] minCut = <span class="keyword">new</span> <span class="keyword">int</span>[s.length() + <span class="number">1</span>]; <span class="comment">//last should be ""</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; minCut.length; i++) &#123;</div><div class="line">    minCut[i] = minCut.length - i - <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//[7 6 5 4 3 2 1 0 -1]</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = s.length() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; s.length(); j++) &#123;</div><div class="line">        <span class="keyword">if</span>(dp[i][j] == <span class="keyword">true</span>) &#123;</div><div class="line">            minCut[i] = Math.min(minCut[i], <span class="number">1</span> + minCut[j + <span class="number">1</span>]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">return</span> minCut[<span class="number">0</span>];</div></pre></td></tr></table></figure></p>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>The interesting part of this problem is we need to use DP two times. During our processes, we should know which part we can improve. <a href="https://github.com/TylerYang/leetcode/blob/master/132.PalindromePartitioningII/Solution.java" target="_blank" rel="external">Here is the java code.</a></p>
+
+            
+        
+        </div>
+        
+            
+            
+        
+    </article>
+    
+        
+    <nav class="article-page">
+        
+            <a href="/2015/08/01/Valid-Number-Leetcode/" id="art-left" class="art-right">
+                <span class="next-title">
+                    Valid Number - Leetcode<i class="iconfont icon-right"></i> 
+                </span>
+            </a>
+        
+        
+            <a href="/2015/07/25/Reverse-Hash-Function-Google-Challenge/" id="art-right" class="art-left">
+                <span class="prev-title"> 
+                    <i class="iconfont icon-left"></i>Reverse Hash Function - Google Challenge
+                </span>
+            </a>
+        
+    </nav>
+
+        
+    
+
+
+        </main>
+        <footer class="footer syuanpi fadeIn" id="footer">
+    <hr>
+    <div class="footer-wrapper">
+        <div class="left">
+            <div class="contact-icon">
+    
+    
+    
+    
+    
+    
+    
+    
+</div>
+        </div>
+        <div class="right">
+            <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>1970 ~ 2017</span>
+        <span>❤</span>
+        <span>Tyler Yang</span>
+    </div>
+    <div class="theme">
+        <span>
+            Powered by
+            <a href="http://hexo.io/" target="_blank">Hexo </a>
+        </span>
+        <span>
+            Theme
+            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+</div>
+        </div>
+    </div>
+</footer>
+    </div>
+    <script src="/script/nlvi.js"></script>
+<script src="/script/search.js"></script>
+
+    <script src="/lightbox/js/lightbox.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    document.body.addEventListener('touchstart', function () {});
+    $('.progress').hide();
+    $('.body').show();
+    Nlvi.tagcloud();
+    Nlvi.mobileHeader();
+    Nlvi.back2top();
+    Nlvi.smoothScroll();
+    Nlvi.onView();
+    Nlvi.showToc();
+    Nlvi.showComments();
+    Nlvi.showReward();
+    Nlvi.picPos();
+
+    !CONFIG.animate && Nlvi.offAnimate();
+    CONFIG.lightbox && Nlvi.onPicBox();
+})
+</script>
+    </div>
+    
+        
+    
+    <div class="backtop syuanpi dead toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+    
+    <div class="search" id="search">
+        <div class="mask" id="mask"></div>
+        <div class="search-wrapper syuanpi">
+            <h1 id="search-header" class="syuanpi">搜索一下？</h1>
+            <div class="input">
+                <input type="text" id="local-search-input" results="0" name="">
+            </div>
+            <div id="local-search-result"></div>
+        </div>
+    </div>
+    <script>
+    var GREETING = {
+        morning: "当我们探索时，就要发现到真理",
+        noon: "人的天职在于勇于探索真理。",
+        after: "一件事实是一条没有性别的真理",
+        night: "真理有时可能变得黯淡，但它永远不会熄灭",
+        midnight: "真理在人那里获得生命力，并且展现出来"
+    }
+    $(document).ready(function(){
+        Nlvi.search();
+    });
+    </script>
+
 </body>
 </html>

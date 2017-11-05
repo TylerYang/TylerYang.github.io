@@ -1,11 +1,384 @@
-<%- partial('_partial/head') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Dependency Injection in JavaScript · Tyler </title>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="browsermode" content="application">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Tyler">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name= "format-detection" content="telephone=no" />
+<meta name="keywords" content="nlvi, Nlvi" />
+
+
+    <meta name="subtitle" content="Learning requires inefficiency">
+
+
+
+
+    <meta name="keywords" content="javascript, design pattern, Nlvi" />
+
+<link rel="stylesheet" href="/style/style.css">
+<script src="/script/jquery.min.js"></script>
+<script>
+    var CONFIG = {
+        title: "Tyler",
+        author: "Tyler Yang",
+        lightbox: true,
+        animate: true
+    }
+</script>
+
+
+
+    <link rel="stylesheet" href="/lightbox/css/lightbox.min.css">
+
+
+
+
+    <link rel="stylesheet" href="/syuanpi/syuanpi.min.css">
+
+
+
+
+
+
+
+
+
+
+</head>
 <body>
-  <header id="header" class="inner"><%- partial('_partial/header') %></header>
-  <div id="content" class="inner">
-    <div id="wrapper"><%- body %></div>
-    <div class="clearfix"></div>
-  </div>
-  <footer id="footer" class="inner"><%- partial('_partial/footer') %></footer>
-  <%- partial('_partial/after_footer') %>
+    <div class="progress">
+    <div class="progress-inner"></div>
+</div>
+    <div class="body">
+    <div class="tagcloud-mask"></div>  
+<div class="tagcloud" id="tagcloud">
+    <div class="tagcloud-inner">
+        <a href="/tags/Algorithm/" style="font-size: 14px;">Algorithm</a> <a href="/tags/Big-Data/" style="font-size: 14px;">Big Data</a> <a href="/tags/CSAPP/" style="font-size: 14px;">CSAPP</a> <a href="/tags/Computational-Advertising/" style="font-size: 14px;">Computational Advertising</a> <a href="/tags/Design/" style="font-size: 14px;">Design</a> <a href="/tags/Dynamic-Programming/" style="font-size: 14px;">Dynamic Programming</a> <a href="/tags/ETL/" style="font-size: 14px;">ETL</a> <a href="/tags/Elm/" style="font-size: 14px;">Elm</a> <a href="/tags/Finite-State-Automata/" style="font-size: 14px;">Finite State Automata</a> <a href="/tags/Functional-Programming/" style="font-size: 14px;">Functional Programming</a> <a href="/tags/Functional-Reactive-Programming/" style="font-size: 14px;">Functional Reactive Programming</a> <a href="/tags/Golang/" style="font-size: 14px;">Golang</a> <a href="/tags/Google-Challenge/" style="font-size: 14px;">Google Challenge</a> <a href="/tags/Google-Code-Jam/" style="font-size: 14px;">Google Code Jam</a> <a href="/tags/Google-Code-Jam-2016/" style="font-size: 14px;">Google Code Jam 2016</a> <a href="/tags/Greedy-Algorithm/" style="font-size: 14px;">Greedy Algorithm</a> <a href="/tags/Kafka/" style="font-size: 14px;">Kafka</a> <a href="/tags/Language/" style="font-size: 14px;">Language</a> <a href="/tags/Leetcode/" style="font-size: 14px;">Leetcode</a> <a href="/tags/Reactive/" style="font-size: 14px;">Reactive</a> <a href="/tags/Reactive-Extensions/" style="font-size: 14px;">Reactive Extensions</a> <a href="/tags/Rich-Hickey/" style="font-size: 14px;">Rich Hickey</a> <a href="/tags/State-Machine/" style="font-size: 14px;">State Machine</a> <a href="/tags/Statistics/" style="font-size: 14px;">Statistics</a> <a href="/tags/Tech-Talk/" style="font-size: 14px;">Tech Talk</a> <a href="/tags/Tree/" style="font-size: 14px;">Tree</a> <a href="/tags/design-pattern/" style="font-size: 14px;">design pattern</a> <a href="/tags/javascript/" style="font-size: 14px;">javascript</a>
+    </div>
+</div>
+    <header class="header" id="header">
+    <div class="title syuanpi tvIn">
+    <div class="table">
+        <div class="connect">
+            <div class="connect-inner">
+                <span><a href="/">Tyler</a></span>
+                
+                    <span id="subtitle">Learning requires inefficiency</span>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <nav class="main-nav syuanpi tvIn">
+<div class="table">
+
+    <ul class="menu">
+        
+        <li class="menu-item">
+            <a href="javascript:;" id="search">
+                <span>Search</span>
+                
+                
+            </a>
+        </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="/">
+                    <span>Article</span>
+                    
+                    
+                </a>
+            </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="/archives">
+                    <span>Archives</span>
+                    
+                    
+                </a>
+            </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="javascript:;" id="tags">
+                    <span>Tags</span>
+                    
+                    
+                </a>
+            </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="/about">
+                    <span>About</span>
+                    
+                    
+                </a>
+            </li>
+        
+        
+    </ul>
+
+</div>
+</nav>
+</header>
+<div class="mobile-header">
+    <div class="mobile-header-body">
+        <div class="mobile-header-list">
+            
+            
+                <div class="mobile-nav-item">
+                    <a href="/">
+                        <span>Article</span>
+                        
+                        
+                    </a>
+                </div>
+            
+            
+            
+                <div class="mobile-nav-item">
+                    <a href="/archives">
+                        <span>Archives</span>
+                        
+                        
+                    </a>
+                </div>
+            
+            
+            
+                <div class="mobile-nav-item inner-cloud">
+                    <div class="mobile-nav-tag">
+                        <a href="javascript:;" id="mobile-tags">
+                            <span>Tags</span>
+                            
+                            
+                        </a>
+                    </div>
+                    <div class="mobile-nav-tagcloud">
+                        <div class="mobile-tagcloud-inner">
+                            <a href="/tags/Algorithm/" style="font-size: 14px;">Algorithm</a> <a href="/tags/Big-Data/" style="font-size: 14px;">Big Data</a> <a href="/tags/CSAPP/" style="font-size: 14px;">CSAPP</a> <a href="/tags/Computational-Advertising/" style="font-size: 14px;">Computational Advertising</a> <a href="/tags/Design/" style="font-size: 14px;">Design</a> <a href="/tags/Dynamic-Programming/" style="font-size: 14px;">Dynamic Programming</a> <a href="/tags/ETL/" style="font-size: 14px;">ETL</a> <a href="/tags/Elm/" style="font-size: 14px;">Elm</a> <a href="/tags/Finite-State-Automata/" style="font-size: 14px;">Finite State Automata</a> <a href="/tags/Functional-Programming/" style="font-size: 14px;">Functional Programming</a> <a href="/tags/Functional-Reactive-Programming/" style="font-size: 14px;">Functional Reactive Programming</a> <a href="/tags/Golang/" style="font-size: 14px;">Golang</a> <a href="/tags/Google-Challenge/" style="font-size: 14px;">Google Challenge</a> <a href="/tags/Google-Code-Jam/" style="font-size: 14px;">Google Code Jam</a> <a href="/tags/Google-Code-Jam-2016/" style="font-size: 14px;">Google Code Jam 2016</a> <a href="/tags/Greedy-Algorithm/" style="font-size: 14px;">Greedy Algorithm</a> <a href="/tags/Kafka/" style="font-size: 14px;">Kafka</a> <a href="/tags/Language/" style="font-size: 14px;">Language</a> <a href="/tags/Leetcode/" style="font-size: 14px;">Leetcode</a> <a href="/tags/Reactive/" style="font-size: 14px;">Reactive</a> <a href="/tags/Reactive-Extensions/" style="font-size: 14px;">Reactive Extensions</a> <a href="/tags/Rich-Hickey/" style="font-size: 14px;">Rich Hickey</a> <a href="/tags/State-Machine/" style="font-size: 14px;">State Machine</a> <a href="/tags/Statistics/" style="font-size: 14px;">Statistics</a> <a href="/tags/Tech-Talk/" style="font-size: 14px;">Tech Talk</a> <a href="/tags/Tree/" style="font-size: 14px;">Tree</a> <a href="/tags/design-pattern/" style="font-size: 14px;">design pattern</a> <a href="/tags/javascript/" style="font-size: 14px;">javascript</a>
+                        </div>
+                    </div>
+                </div>
+            
+            
+            
+                <div class="mobile-nav-item">
+                    <a href="/about">
+                        <span>About</span>
+                        
+                        
+                    </a>
+                </div>
+            
+            
+        </div>
+    </div>
+    <div class="mobile-header-nav">
+        <div class="mobile-header-item" id="mobile-left">
+            <div class="header-menu-item">
+                <span class="header-menu-line"></span>
+            </div>
+        </div>
+        <h1 class="mobile-header-title">
+            <a href="/">Tyler</a>
+        </h1>
+        <div class="mobile-header-item"></div>
+    </div>
+</div>
+
+    <div class="container">
+        <main class="main" id="main">
+            
+    
+    <article class="post">
+        <header class="post-header">
+            <div class="post-time syuanpi riseIn-light back-1">
+                <span>August 1, 2015</span>
+                
+                
+                    <span class="post-category"><a href="/categories/Language/">Language</a></span>
+                
+                    <span class="post-category"><a href="/categories/Language/Javascript/">Javascript</a></span>
+                
+                
+            </div>
+            <h1 class="post-title syuanpi riseIn-light back-2">
+            
+                Dependency Injection in JavaScript
+            
+            </h1>
+            
+                
+                    <div class="post-tags syuanpi riseIn-light back-3">
+                    
+                        <a href="/tags/javascript/">javascript</a>
+                    
+                        <a href="/tags/design-pattern/">design pattern</a>
+                    
+                    </div>
+                
+            
+        </header>
+        <div class="post-content syuanpi riseIn-light back-3">
+            
+                <p>Dependency Injection is kind of design pattern. Well, although it is not in the GOF’s design pattern list, but I think it is getting more and more important.</p>
+<h3 id="Why-we-need-Dependency-Injection"><a href="#Why-we-need-Dependency-Injection" class="headerlink" title="Why we need Dependency Injection?"></a>Why we need Dependency Injection?</h3><p>Firstly let us think about why we need dependency injection. Suppose we have a function below,<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CoffeeMaker</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> grinder = <span class="keyword">new</span> Grinder();</div><div class="line">    <span class="keyword">var</span> pump = Pump.getInstance();</div><div class="line">    <span class="keyword">var</span> heater = app.get(<span class="string">"Heater"</span>);</div><div class="line">    </div><div class="line">    <span class="keyword">this</span>.brew = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        grinder.grind();</div><div class="line">        heater.on();</div><div class="line">        pump.pump();</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>This is not a good example, because the <code>CoffeeMaker</code> is tightly couple to this particular environment, which means to use <code>CoffeeMaker</code> we need to make sure we can get the <code>Grinder</code>, <code>Pump</code> and <code>Heater</code> in our environment.</p>
+<p>If we just write down our code in one function, it’s not that kind of bad thing. How about in our project? Let’s me give u one more function. </p>
+<p>Well, definitely we get a main function looks like the code below,<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> coffeeMaker = <span class="keyword">new</span> CoffeeMaker();</div><div class="line">    coffeeMaker.brew();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>For now, if we want to test <code>main</code> function, <strong>we need to make sure we have <code>CoffeeMaker</code> in our environment.</strong> Further more, we need to check <code>CoffeeMaker</code>‘s code and <strong>we need to make sure all the things <code>CoffeeMaker</code> depends on are exist.</strong> In our example, they are <code>Grinder</code>, <code>Pump</code> and <code>Heater</code>.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">main =&gt; CoffeeMaker =&gt; Grinder, Pump, Heater</div></pre></td></tr></table></figure></p>
+<p><strong>In a word, to test <code>main</code> function, we need to create <code>CoffeeMaker</code>, <code>Grinder</code>, <code>Pump</code> and <code>Heater</code> in our test environment.</strong></p>
+<p>Think about it, when our project getting bigger and bigger, we get a chance to have a controller or service which have more than 1000 lines. Are we still be able to maintain all these code?</p>
+<p>To do it in a better way, let’s change our code into this.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CoffeeMaker</span>(<span class="params">grinder, heater, pump</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.blew = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        grinder.grind();</div><div class="line">        heater.on();</div><div class="line">        pump.pump();</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params">coffeeMaker</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> injector = <span class="keyword">new</span> Injector();</div><div class="line">    <span class="keyword">var</span> coffeeMaker = injector.get(CoffeeMaker);</div><div class="line">    </div><div class="line">    coffeeMaker.blew();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Now, if we want to test main function, we just simply mock coffeMaker and make sure our <code>mockCoffeeMaker</code> have the function <code>blew</code>, that’s all!</p>
+<h3 id="Create-Our-Own-Dependency-Injection-Component"><a href="#Create-Our-Own-Dependency-Injection-Component" class="headerlink" title="Create Our Own Dependency Injection Component"></a>Create Our Own Dependency Injection Component</h3><p>Actually, this is how angular DI works in angular 1.x; For next generation, they are going to use annotation to do this.(TypeScript can support annotation)</p>
+<p>Unlike Java, we don’t have annotation in JavaScript, so we might need to use some magic trick to make one.<br>In our example, even though we know the formal parameters are correspond to our functions’ name. But our interpreter don’t know about this. When we write down the code below, there’s no differences between <code>CoffeeMaker1</code> and <code>CoffeeMaker2</code>.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//function1</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CoffeeMaker1</span>(<span class="params">grinder, heater, pump</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.blew = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        grinder.grind();</div><div class="line">        heater.on();</div><div class="line">        pump.pump();</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//function2</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CoffeeMaker2</span>(<span class="params">a, b, c</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.blew = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        a.grind();</div><div class="line">        b.on();</div><div class="line">        c.pump();</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>So how can we make sure in our <code>CoffeeMaker</code> we will invoke the right function? This is where the trick happen, <code>toString</code>;</p>
+<p>Basically we just simply invoke <code>CoffeeMaker.toString()</code>, then we will get the function in a string format. And then we can use regex get the parameters list.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> FN_ARGS = <span class="regexp">/^function\s*[^\(]*\(\s*([^\(]*)\)/m</span>;</div><div class="line"><span class="keyword">var</span> str = CoffeeMaker.toString();</div><div class="line"><span class="keyword">var</span> injectArr =  str.match(FN_ARGS);</div><div class="line"><span class="built_in">console</span>.log(injectArr);</div><div class="line"><span class="comment">//["function CoffeeMaker(grinder, heater, pump)", "grinder, heater, pump"]</span></div></pre></td></tr></table></figure>
+<p>For now we can easily pass our dependency into the CoffeeMaker.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Injector</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.cache = [];</div><div class="line">    <span class="keyword">this</span>.path = [];</div><div class="line">    <span class="keyword">this</span>.INSTANTIATING = &#123;&#125;; </div><div class="line">&#125;</div><div class="line">Injector.prototype.invoke = <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>) </span>&#123; </div><div class="line">    <span class="keyword">var</span> args = [];</div><div class="line">    <span class="keyword">var</span> $inject = <span class="keyword">this</span>.annotate(fn);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; $inject.length; i++) &#123;</div><div class="line">        funcKey = $inject[i];</div><div class="line">        args.push(<span class="keyword">this</span>.get(funcKey));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> fn.apply(<span class="keyword">this</span>, args);</div><div class="line">&#125;;</div><div class="line">Injector.prototype.annotate = <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> FN_ARGS = <span class="regexp">/^function\s*[^\(]*\(\s*([^\(]*)\)/m</span>;</div><div class="line">	<span class="keyword">var</span> FN_TRIM = <span class="regexp">/^\s+|\s+$/</span>;</div><div class="line">    <span class="keyword">var</span> fnStr = fn.toString();</div><div class="line">    <span class="keyword">var</span> matchArr = fnStr.match(FN_ARGS);</div><div class="line">    <span class="keyword">var</span> $inject = [];</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(matchArr.length &gt; <span class="number">0</span>) &#123;</div><div class="line">	    <span class="keyword">var</span> arr = matchArr[<span class="number">1</span>].split(<span class="string">","</span>);</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">			arr[i] = arr[i].replace(FN_TRIM, <span class="string">''</span>);</div><div class="line">			$inject.push(arr[i]);</div><div class="line">		&#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> $inject;</div><div class="line">&#125;;</div><div class="line">Injector.prototype.get = <span class="function"><span class="keyword">function</span>(<span class="params">funcName</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.cache.hasOwnProperty(funcName)) &#123;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.cache[funcName] == <span class="keyword">this</span>.INSTANTIATING) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"Circular dependency found: "</span> + funcName + <span class="string">" &lt;- "</span> + <span class="keyword">this</span>.path.join(<span class="string">" &lt;- "</span>));</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.cache[funcName];</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">this</span>.path.unshift(funcName);</div><div class="line">        <span class="keyword">this</span>.cache[funcName] = <span class="keyword">this</span>.INSTANTIATING;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.cache[funcName] = <span class="built_in">window</span>[funcName];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+            
+        
+        </div>
+        
+            
+            
+        
+    </article>
+    
+        
+    <nav class="article-page">
+        
+            <a href="/2015/08/11/Candy-Leetcode/" id="art-left" class="art-right">
+                <span class="next-title">
+                    Candy - Leetcode<i class="iconfont icon-right"></i> 
+                </span>
+            </a>
+        
+        
+            <a href="/2015/08/01/Valid-Number-Leetcode/" id="art-right" class="art-left">
+                <span class="prev-title"> 
+                    <i class="iconfont icon-left"></i>Valid Number - Leetcode
+                </span>
+            </a>
+        
+    </nav>
+
+        
+    
+
+
+        </main>
+        <footer class="footer syuanpi fadeIn" id="footer">
+    <hr>
+    <div class="footer-wrapper">
+        <div class="left">
+            <div class="contact-icon">
+    
+    
+    
+    
+    
+    
+    
+    
+</div>
+        </div>
+        <div class="right">
+            <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>1970 ~ 2017</span>
+        <span>❤</span>
+        <span>Tyler Yang</span>
+    </div>
+    <div class="theme">
+        <span>
+            Powered by
+            <a href="http://hexo.io/" target="_blank">Hexo </a>
+        </span>
+        <span>
+            Theme
+            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+</div>
+        </div>
+    </div>
+</footer>
+    </div>
+    <script src="/script/nlvi.js"></script>
+<script src="/script/search.js"></script>
+
+    <script src="/lightbox/js/lightbox.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    document.body.addEventListener('touchstart', function () {});
+    $('.progress').hide();
+    $('.body').show();
+    Nlvi.tagcloud();
+    Nlvi.mobileHeader();
+    Nlvi.back2top();
+    Nlvi.smoothScroll();
+    Nlvi.onView();
+    Nlvi.showToc();
+    Nlvi.showComments();
+    Nlvi.showReward();
+    Nlvi.picPos();
+
+    !CONFIG.animate && Nlvi.offAnimate();
+    CONFIG.lightbox && Nlvi.onPicBox();
+})
+</script>
+    </div>
+    
+        
+    
+    <div class="backtop syuanpi dead toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+    
+    <div class="search" id="search">
+        <div class="mask" id="mask"></div>
+        <div class="search-wrapper syuanpi">
+            <h1 id="search-header" class="syuanpi">搜索一下？</h1>
+            <div class="input">
+                <input type="text" id="local-search-input" results="0" name="">
+            </div>
+            <div id="local-search-result"></div>
+        </div>
+    </div>
+    <script>
+    var GREETING = {
+        morning: "当我们探索时，就要发现到真理",
+        noon: "人的天职在于勇于探索真理。",
+        after: "一件事实是一条没有性别的真理",
+        night: "真理有时可能变得黯淡，但它永远不会熄灭",
+        midnight: "真理在人那里获得生命力，并且展现出来"
+    }
+    $(document).ready(function(){
+        Nlvi.search();
+    });
+    </script>
+
 </body>
 </html>
