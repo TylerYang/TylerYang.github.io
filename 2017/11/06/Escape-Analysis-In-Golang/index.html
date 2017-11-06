@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>  · Tyler </title>
+    <title> Escape Analysis in Golang · Tyler </title>
     <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -18,6 +18,8 @@
 
 
 
+
+    <meta name="keywords" content="Language, Golang, Nlvi" />
 
 <link rel="stylesheet" href="/style/style.css">
 <script src="/script/jquery.min.js"></script>
@@ -210,17 +212,24 @@
             </div>
             <h1 class="post-title syuanpi riseIn-light back-2">
             
-                
+                Escape Analysis in Golang
             
             </h1>
             
+                
+                    <div class="post-tags syuanpi riseIn-light back-3">
+                    
+                        <a href="/tags/Language/">Language</a>
+                    
+                        <a href="/tags/Golang/">Golang</a>
+                    
+                    </div>
                 
             
         </header>
         <div class="post-content syuanpi riseIn-light back-3">
             
-                <p>title: Escape Analysis in Golang<br>date: 2017-11-06 12:10:00</p>
-<h2 id="tags-Language-Golang"><a href="#tags-Language-Golang" class="headerlink" title="tags: [Language, Golang]"></a>tags: [Language, Golang]</h2><h3 id="What-is-Escape-Analysis"><a href="#What-is-Escape-Analysis" class="headerlink" title="What is Escape Analysis?"></a>What is Escape Analysis?</h3><p><em>Escape Analysis</em> is the process by which the compiler decides if a variable is to be allocated on the stack or on the heap.</p>
+                <h3 id="What-is-Escape-Analysis"><a href="#What-is-Escape-Analysis" class="headerlink" title="What is Escape Analysis?"></a>What is Escape Analysis?</h3><p><em>Escape Analysis</em> is the process by which the compiler decides if a variable is to be allocated on the stack or on the heap.</p>
 <p>In Go (unlike in C) the fact that a variable is locally declared does not mean that it will be stack-allocated.</p>
 <h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">package main</div><div class="line"></div><div class="line">import &quot;fmt&quot;</div><div class="line"></div><div class="line">var VP *int // a global pointer</div><div class="line"></div><div class="line">func f(vp *int) &#123;</div><div class="line">    VP = vp</div><div class="line">&#125;</div><div class="line"></div><div class="line">func g() &#123;</div><div class="line">    var v int // a local variable</div><div class="line">    v = 40</div><div class="line">    f(&amp;v)</div><div class="line">    *VP = 42</div><div class="line">    fmt.Println(v) // prints 42</div><div class="line">&#125;</div><div class="line"></div><div class="line">func main() &#123;</div><div class="line">    g()</div><div class="line">    fmt.Println(*VP) //prints 42</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>Obviously, the variable v declared in function g() cannot be stack allocated, since a pointer to it is stored to global VP by f(). Or as we say: Variable v escapes it’s local scope; hence <em>escape analysis</em>.</p>
