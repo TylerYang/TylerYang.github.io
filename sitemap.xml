@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>tyleryang.github.io/about/index.html</loc>
+    
+    <lastmod>2017-11-06T03:13:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>tyleryang.github.io/2017/11/05/Golang-Notes/</loc>
     
-    <lastmod>2017-11-05T17:07:28.000Z</lastmod>
+    <lastmod>2017-11-06T02:56:38.000Z</lastmod>
     
   </url>
   
@@ -33,13 +40,6 @@
     <loc>tyleryang.github.io/2016/04/27/Streaming-and-event-based-programming-using-FRP-and-RxJS-by-Matthew-Podwysocki/</loc>
     
     <lastmod>2016-04-29T05:52:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>tyleryang.github.io/about/index.html</loc>
-    
-    <lastmod>2016-04-29T05:52:14.000Z</lastmod>
     
   </url>
   
