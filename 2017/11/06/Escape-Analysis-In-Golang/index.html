@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>
-  
-    Archives · Tyler
-  
-</title>
+    <title>  · Tyler </title>
     <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -206,63 +202,56 @@
         <main class="main" id="main">
             
     
-    <div class="archive syuanpi riseIn-light" id="archive">
-        
-            <h1 class="archive-title">Total</h1>
-            <span class="archive-num">21 Posts In Total</span>
-        
-        <div class="archive-list">
-            <ul>
-        
+    <article class="post">
+        <header class="post-header">
+            <div class="post-time syuanpi riseIn-light back-1">
+                <span>November 6, 2017</span>
+                
+            </div>
+            <h1 class="post-title syuanpi riseIn-light back-2">
             
                 
-                
-                
-                    
-                     
-                        <h2 class="archive-year"> 2015 </h2>
-                    
+            
+            </h1>
+            
                 
             
+        </header>
+        <div class="post-content syuanpi riseIn-light back-3">
             
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    07-25
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2015/07/25/Reverse-Hash-Function-Google-Challenge/">Reverse Hash Function - Google Challenge</a>
-                </span>
-            </li>
+                <p>title: Escape Analysis in Golang<br>date: 2017-11-06 12:10:00</p>
+<h2 id="tags-Language-Golang"><a href="#tags-Language-Golang" class="headerlink" title="tags: [Language, Golang]"></a>tags: [Language, Golang]</h2><h3 id="What-is-Escape-Analysis"><a href="#What-is-Escape-Analysis" class="headerlink" title="What is Escape Analysis?"></a>What is Escape Analysis?</h3><p><em>Escape Analysis</em> is the process by which the compiler decides if a variable is to be allocated on the stack or on the heap.</p>
+<p>In Go (unlike in C) the fact that a variable is locally declared does not mean that it will be stack-allocated.</p>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">package main</div><div class="line"></div><div class="line">import &quot;fmt&quot;</div><div class="line"></div><div class="line">var VP *int // a global pointer</div><div class="line"></div><div class="line">func f(vp *int) &#123;</div><div class="line">    VP = vp</div><div class="line">&#125;</div><div class="line"></div><div class="line">func g() &#123;</div><div class="line">    var v int // a local variable</div><div class="line">    v = 40</div><div class="line">    f(&amp;v)</div><div class="line">    *VP = 42</div><div class="line">    fmt.Println(v) // prints 42</div><div class="line">&#125;</div><div class="line"></div><div class="line">func main() &#123;</div><div class="line">    g()</div><div class="line">    fmt.Println(*VP) //prints 42</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Obviously, the variable v declared in function g() cannot be stack allocated, since a pointer to it is stored to global VP by f(). Or as we say: Variable v escapes it’s local scope; hence <em>escape analysis</em>.</p>
+<p>Check the following code,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">func Ok(f os.File) []byte &#123;</div><div class="line">        var x [128]byte</div><div class="line">        b := x[:]</div><div class="line">        n, _ := f.Read(b)</div><div class="line">        r := make([]byte, n)</div><div class="line">        copy(r, b[:n])</div><div class="line">        return r</div><div class="line">&#125;</div><div class="line"></div><div class="line">func NotOk(c net.Conn) []byte &#123;</div><div class="line">        var x [128]byte</div><div class="line">        b := x[:]</div><div class="line">        n, _ := c.Read(b)</div><div class="line">        r := make([]byte, n)</div><div class="line">        copy(r, b[:n])</div><div class="line">        return r</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>They look almost the same except the <a href="https://tour.golang.org/methods/4" target="_blank" rel="external">pointer receiver</a>. As a result, in Ok() the array x is allocated on the stack, while in NotOk(), x is allocated on the heap. That is: NotOk() generates 128 bytes of garbage every time it’s called; Ok() does not. You can verify it by running command: <code>go build -gcflags=&#39;-m&#39;</code>.</p>
+<p>WHY?</p>
+<p>The reason is, <code>net.Conn</code> is an interafce while <code>os.File</code> is a concrete type. When the compiler sees a call to a method of net.Conn, it doesn’t know if the method’s implementation somehow retains a copy of it’s reference argument. So it has to be conservative.</p>
 
+            
         
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    07-25
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2015/07/25/About-XOR-operator/">About XOR operator</a>
-                </span>
-            </li>
-
-        
-            </ul>
         </div>
-    </div>
+        
+            
+            
+        
+    </article>
     
-    <nav class="pagination">
-        <span class="page-number current">1</span>
+        
+    <nav class="article-page">
+        
+        
+            <a href="/2017/11/05/Golang-Notes/" id="art-right" class="art-left">
+                <span class="prev-title"> 
+                    <i class="iconfont icon-left"></i>Golang Learning NotesI
+                </span>
+            </a>
+        
     </nav>
 
+        
+    
 
 
         </main>
@@ -330,6 +319,8 @@ $(document).ready(function(){
 })
 </script>
     </div>
+    
+        
     
     <div class="backtop syuanpi dead toTop" id="backtop">
     <i class="iconfont icon-up"></i>
