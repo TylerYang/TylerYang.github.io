@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>
-  
-    Archives · Tyler
-  
-</title>
+    <title> Golang Learning NotesII · Tyler </title>
     <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -22,6 +18,8 @@
 
 
 
+
+    <meta name="keywords" content="Language, Golang, Nlvi" />
 
 <link rel="stylesheet" href="/style/style.css">
 <script src="/script/jquery.min.js"></script>
@@ -206,45 +204,63 @@
         <main class="main" id="main">
             
     
-    <div class="archive syuanpi riseIn-light" id="archive">
-        
-            <h1 class="archive-title">Total</h1>
-            <span class="archive-num">22 Posts In Total</span>
-        
-        <div class="archive-list">
-            <ul>
-        
+    <article class="post">
+        <header class="post-header">
+            <div class="post-time syuanpi riseIn-light back-1">
+                <span>November 11, 2017</span>
+                
+            </div>
+            <h1 class="post-title syuanpi riseIn-light back-2">
+            
+                Golang Learning NotesII
+            
+            </h1>
             
                 
-                
-                
+                    <div class="post-tags syuanpi riseIn-light back-3">
                     
-                     
-                        <h2 class="archive-year"> 2017 </h2>
+                        <a href="/tags/Language/">Language</a>
                     
+                        <a href="/tags/Golang/">Golang</a>
+                    
+                    </div>
                 
             
+        </header>
+        <div class="post-content syuanpi riseIn-light back-3">
             
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    08-25
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2017/08/25/ETL-is-dead-Long-live-streams/">ETL is Dead, Long Live Streams</a>
-                </span>
-            </li>
+                <h3 id="Reflect-in-Golang"><a href="#Reflect-in-Golang" class="headerlink" title="Reflect in Golang"></a>Reflect in Golang</h3><p>Reflection is general idea of programming, it gives us the ability to detect the detail information of specific object. Reflection is also a form of meta-programming. About meta programming, check <a href="https://en.wikipedia.org/wiki/Metaprogramming" target="_blank" rel="external">this post</a> for more details.</p>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">// main.go</div><div class="line">package main</div><div class="line"></div><div class="line">import (</div><div class="line">	&quot;fmt&quot;</div><div class="line">	&quot;reflect&quot;</div><div class="line">)</div><div class="line"></div><div class="line">type Foo struct &#123;</div><div class="line">	FirstName string `tag_name:&quot;tag 1&quot;`</div><div class="line">	LastName  string `tag_name:&quot;tag 2&quot;`</div><div class="line">	Age       int    `tag_name:&quot;tag 3&quot;`</div><div class="line">&#125;</div><div class="line"></div><div class="line">func (f *Foo) reflect() &#123;</div><div class="line">	val := reflect.ValueOf(f).Elem()</div><div class="line"></div><div class="line">	for i := 0; i &lt; val.NumField(); i++ &#123;</div><div class="line">		valueField := val.Field(i)</div><div class="line">		typeField := val.Type().Field(i)</div><div class="line">		tag := typeField.Tag</div><div class="line"></div><div class="line">		fmt.Printf(&quot;Field Name: %s,\t Field Value: %v,\t Tag Value: %s\n&quot;, typeField.Name, valueField.Interface(), tag.Get(&quot;tag_name&quot;))</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">func main() &#123;</div><div class="line">	f := &amp;Foo&#123;</div><div class="line">		FirstName: &quot;Drew&quot;,</div><div class="line">		LastName:  &quot;Olson&quot;,</div><div class="line">		Age:       30,</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	f.reflect()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h3><p>Things are always come with a cost, same as reflection. Reflection makes us able to manipulate objects with arbitrary types with safaricing preformance. But how worse could it be? Let’s run a simple benchmark.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">// main.go</div><div class="line">package main</div><div class="line"></div><div class="line">import (</div><div class="line">	&quot;reflect&quot;</div><div class="line">)</div><div class="line"></div><div class="line">type Data struct &#123;</div><div class="line">	X int</div><div class="line">&#125;</div><div class="line"></div><div class="line">var d = new(Data)</div><div class="line"></div><div class="line">func set(x int) &#123;</div><div class="line">	d.X = x</div><div class="line">&#125;</div><div class="line"></div><div class="line">func rset(x int) &#123;</div><div class="line">	v := reflect.ValueOf(d).Elem()</div><div class="line">	f := v.FieldByName(&quot;X&quot;)</div><div class="line">	f.Set(reflect.ValueOf(x))</div><div class="line">&#125;</div><div class="line"></div><div class="line">func main() &#123;&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">// main_test.go</div><div class="line">package main</div><div class="line"></div><div class="line">import &quot;testing&quot;</div><div class="line"></div><div class="line">func BenchmarkSet(b *testing.B) &#123;</div><div class="line">	for i := 0; i &lt; b.N; i++ &#123;</div><div class="line">		set(100)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">func BenchmarkRset(b *testing.B) &#123;</div><div class="line">	for i := 0; i &lt; b.N; i++ &#123;</div><div class="line">		rset(100)</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Run benchmark with following command,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">go test -run=None -bench=. -benchmem</div></pre></td></tr></table></figure></p>
+<p>Output:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">goos: darwin</div><div class="line">goarch: amd64</div><div class="line">pkg: implus.co/pg</div><div class="line">BenchmarkSet-4    	2000000000	         0.49 ns/op	       0 B/op	       0 allocs/op</div><div class="line">BenchmarkRset-4   	10000000	           152 ns/op	       16 B/op	     2 allocs/op</div><div class="line">PASS</div><div class="line">ok  	playground/test 2.729s</div></pre></td></tr></table></figure></p>
+<p>From the result, we can know that with reflection, the simple <code>set</code> command is ~300X slower than the normal one.</p>
 
+            
         
-            </ul>
         </div>
-    </div>
+        
+            
+            
+        
+    </article>
     
-    <nav class="pagination">
-        <span class="page-number current">1</span>
+        
+    <nav class="article-page">
+        
+        
+            <a href="/2017/11/06/Escape-Analysis-In-Golang/" id="art-right" class="art-left">
+                <span class="prev-title"> 
+                    <i class="iconfont icon-left"></i>Escape Analysis in Golang
+                </span>
+            </a>
+        
     </nav>
 
+        
+    
 
 
         </main>
@@ -312,6 +328,8 @@ $(document).ready(function(){
 })
 </script>
     </div>
+    
+        
     
     <div class="backtop syuanpi dead toTop" id="backtop">
     <i class="iconfont icon-up"></i>

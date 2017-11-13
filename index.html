@@ -214,6 +214,41 @@
     <article class="post">
         <header class="post-header">
             <div class="post-time syuanpi riseIn-light back-1">
+                <span>November 11, 2017</span>
+                
+            </div>
+            <h1 class="post-title syuanpi riseIn-light back-2">
+            
+                <a href="/2017/11/11/golang-notes-ii/">Golang Learning NotesII</a>
+            
+            </h1>
+            
+        </header>
+        <div class="post-content syuanpi riseIn-light back-3">
+            
+                
+                    <h3 id="Reflect-in-Golang"><a href="#Reflect-in-Golang" class="headerlink" title="Reflect in Golang"></a>Reflect in Golang</h3><p>Reflection is general idea of programming, it gives us the ability to detect the detail information of specific object. Reflection is also a form of meta-programming. About meta programming, check <a href="https://en.wikipedia.org/wiki/Metaprogramming" target="_blank" rel="external">this post</a> for more details.</p>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">// main.go</div><div class="line">package main</div><div class="line"></div><div class="line">import (</div><div class="line">	&quot;fmt&quot;</div><div class="line">	&quot;reflect&quot;</div><div class="line">)</div><div class="line"></div><div class="line">type Foo struct &#123;</div><div class="line">	FirstName string `tag_name:&quot;tag 1&quot;`</div><div class="line">	LastName  string `tag_name:&quot;tag 2&quot;`</div><div class="line">	Age       int    `tag_name:&quot;tag 3&quot;`</div><div class="line">&#125;</div><div class="line"></div><div class="line">func (f *Foo) reflect() &#123;</div><div class="line">	val := reflect.ValueOf(f).Elem()</div><div class="line"></div><div class="line">	for i := 0; i &lt; val.NumField(); i++ &#123;</div><div class="line">		valueField := val.Field(i)</div><div class="line">		typeField := val.Type().Field(i)</div><div class="line">		tag := typeField.Tag</div><div class="line"></div><div class="line">		fmt.Printf(&quot;Field Name: %s,\t Field Value: %v,\t Tag Value: %s\n&quot;, typeField.Name, valueField.Interface(), tag.Get(&quot;tag_name&quot;))</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">func main() &#123;</div><div class="line">	f := &amp;Foo&#123;</div><div class="line">		FirstName: &quot;Drew&quot;,</div><div class="line">		LastName:  &quot;Olson&quot;,</div><div class="line">		Age:       30,</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	f.reflect()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h3><p>Things are always come with a cost, same as reflection. Reflection makes us able to manipulate objects with arbitrary types with safaricing preformance. But how worse could it be? Let’s run a simple benchmark.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">// main.go</div><div class="line">package main</div><div class="line"></div><div class="line">import (</div><div class="line">	&quot;reflect&quot;</div><div class="line">)</div><div class="line"></div><div class="line">type Data struct &#123;</div><div class="line">	X int</div><div class="line">&#125;</div><div class="line"></div><div class="line">var d = new(Data)</div><div class="line"></div><div class="line">func set(x int) &#123;</div><div class="line">	d.X = x</div><div class="line">&#125;</div><div class="line"></div><div class="line">func rset(x int) &#123;</div><div class="line">	v := reflect.ValueOf(d).Elem()</div><div class="line">	f := v.FieldByName(&quot;X&quot;)</div><div class="line">	f.Set(reflect.ValueOf(x))</div><div class="line">&#125;</div><div class="line"></div><div class="line">func main() &#123;&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">// main_test.go</div><div class="line">package main</div><div class="line"></div><div class="line">import &quot;testing&quot;</div><div class="line"></div><div class="line">func BenchmarkSet(b *testing.B) &#123;</div><div class="line">	for i := 0; i &lt; b.N; i++ &#123;</div><div class="line">		set(100)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">func BenchmarkRset(b *testing.B) &#123;</div><div class="line">	for i := 0; i &lt; b.N; i++ &#123;</div><div class="line">		rset(100)</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Run benchmark with following command,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">go test -run=None -bench=. -benchmem</div></pre></td></tr></table></figure></p>
+<p>Output:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">goos: darwin</div><div class="line">goarch: amd64</div><div class="line">pkg: implus.co/pg</div><div class="line">BenchmarkSet-4    	2000000000	         0.49 ns/op	       0 B/op	       0 allocs/op</div><div class="line">BenchmarkRset-4   	10000000	           152 ns/op	       16 B/op	     2 allocs/op</div><div class="line">PASS</div><div class="line">ok  	playground/test 2.729s</div></pre></td></tr></table></figure></p>
+<p>From the result, we can know that with reflection, the simple <code>set</code> command is ~300X slower than the normal one.</p>
+
+                
+            
+        
+        </div>
+        
+    </article>
+    
+
+    
+        
+    <article class="post">
+        <header class="post-header">
+            <div class="post-time syuanpi riseIn-light back-1">
                 <span>November 6, 2017</span>
                 
             </div>
@@ -384,47 +419,6 @@
                     <blockquote>
 <p>The Git commands are just a leaky abstraction over the data storage.</p>
 </blockquote>
-
-                
-            
-        
-        </div>
-        
-    </article>
-    
-
-    
-        
-    <article class="post">
-        <header class="post-header">
-            <div class="post-time syuanpi riseIn-light back-1">
-                <span>April 27, 2016</span>
-                
-                
-                    <span class="post-category"><a href="/categories/Tech-Talk/">Tech Talk</a></span>
-                
-                    <span class="post-category"><a href="/categories/Tech-Talk/Functional-Reactive-Programming/">Functional Reactive Programming</a></span>
-                
-                    <span class="post-category"><a href="/categories/Tech-Talk/Functional-Reactive-Programming/Reactive/">Reactive</a></span>
-                
-                
-            </div>
-            <h1 class="post-title syuanpi riseIn-light back-2">
-            
-                <a href="/2016/04/27/What-does-it-mean-to-be-Reactive-by-Erik-Meijer/">What does it mean to be Reactive by Erik Meijer</a>
-            
-            </h1>
-            
-        </header>
-        <div class="post-content syuanpi riseIn-light back-3">
-            
-                
-                    <p><a href="https://www.youtube.com/watch?v=sTSQlYX5DU0" target="_blank" rel="external">Video</a><br><a href="https://www.technologyreview.com/s/525621/three-questions-for-leslie-lamport-winner-of-computings-top-prize/" target="_blank" rel="external">Rethink about what we build</a><br><a href="https://www.quora.com/What-is-Functional-Reactive-Programming" target="_blank" rel="external">What is Functional Reactive Programming</a></p>
-<blockquote>
-<p>There’s something about the culture of software that has impeded the use of specification. We have a wonderful way of describing things precisely that’s been developed over the last couple of millennia, called mathematics. I think that’s what we should be using as a way of thinking about what we build.<br>By <a href="https://en.wikipedia.org/wiki/Leslie_Lamport" target="_blank" rel="external">Leslie Lamport</a></p>
-</blockquote>
-<p><a href="https://en.wikipedia.org/wiki/Denotational_semantics" target="_blank" rel="external">Denotational Semantics</a><br><a href="https://en.wikipedia.org/wiki/Axiomatic_semantics" target="_blank" rel="external">Axiomatic Semantics</a><br><a href="https://en.wikipedia.org/wiki/Operational_semantics" target="_blank" rel="external">Operational Semantics</a></p>
-<p>Every program you write has some combination of side effects. And some part of your program are reactive, some part of your program are iteractive. Some part of your program are functional. Some part of your program are imperative. So, just singly out of one thing, in my opinion, not a good thing. We should just do what’s right. And what’s right is just picking the effect that matters. : )</p>
 
                 
             
