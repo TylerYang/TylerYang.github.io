@@ -120,24 +120,6 @@
   </entry>
   
   <entry>
-    <title>Generic in golang</title>
-    <link href="tyleryang.github.io/2017/11/13/generic-in-golang/"/>
-    <id>tyleryang.github.io/2017/11/13/generic-in-golang/</id>
-    <published>2017-11-13T04:41:20.000Z</published>
-    <updated>2017-11-14T04:15:38.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="Language" scheme="tyleryang.github.io/tags/Language/"/>
-    
-      <category term="Golang" scheme="tyleryang.github.io/tags/Golang/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Golang Reflection</title>
     <link href="tyleryang.github.io/2017/11/11/golang-notes-ii/"/>
     <id>tyleryang.github.io/2017/11/11/golang-notes-ii/</id>
@@ -584,6 +566,38 @@
       <category term="Rich Hickey" scheme="tyleryang.github.io/tags/Rich-Hickey/"/>
     
       <category term="Functional Programming" scheme="tyleryang.github.io/tags/Functional-Programming/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Edit Distance - Leetcode</title>
+    <link href="tyleryang.github.io/2016/04/02/Edit-Distance-Leetcode/"/>
+    <id>tyleryang.github.io/2016/04/02/Edit-Distance-Leetcode/</id>
+    <published>2016-04-02T12:11:00.000Z</published>
+    <updated>2016-04-16T13:06:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Pretty classical DP problem. I didn’t figure it out last year.</p><p>This time did!</p><h3 id="Edit-Distance"><a href="#Edit-Distance" class="headerlink" title="Edit Distance"></a>Edit Distance</h3><blockquote><p>Given two words word1 and word2, find the minimum number of steps required to convert word1 to word2. (each operation is counted as 1 step.)</p><p>You have the following 3 operations permitted on a word:</p><p>a) Insert a character<br>b) Delete a character<br>c) Replace a character</p></blockquote><a id="more"></a><h3 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h3><p>For the problem that conform to the characteristics of <strong>Dynamic Programming</strong>, we need to figure out how to split a big problem into several smaller ones.</p><p>The <strong>state</strong> and the <strong>transition</strong> are the keys to solve the DP problem.</p><p>Assuming we want to convert the word1 <code>&quot;a&quot;</code> to word2 <code>&quot;&quot;</code>. Obviously, it will take one step.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;a&quot; =&gt; &quot;&quot;</div></pre></td></tr></table></figure></p><p>From the word1 <code>&quot;a&quot;</code> to word2 <code>&quot;c&quot;</code>, it will also take only one step.</p><p>How about convert <code>ab</code> to <code>b</code>? Well, from prev conversion we know the minimum step is <strong>one</strong>. And the last character of word1 equals to word2’s last character. So that means we don’t need to do anything. The answer is still one.<br>What if the word1 is <code>ab</code> and word2 is <code>c</code>? The available substeps would be,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;ab&quot; = &quot;a&quot; =&gt; &quot;&quot; + &quot;b&quot; =&gt; &quot;c&quot;</div></pre></td></tr></table></figure></p><p>or<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;ab&quot; = &quot;a&quot; =&gt; &quot;c&quot; + &quot;b&quot; =&gt; &quot;&quot;</div></pre></td></tr></table></figure></p><p>For each substep we can get the answer base on the previous sub-answers.(The transition from <code>&quot;a&quot;</code> to <code>&quot;c&quot;</code> or from <code>&quot;a&quot;</code> to the empty character.)</p><p>So for longer string word1 <code>abc</code> to word2 <code>bc</code>, we can write down the 2D matrix blew,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//the - stands for empty character</div><div class="line">  - a b c</div><div class="line">- 0 1 2 3</div><div class="line">b 1</div><div class="line">c 2</div></pre></td></tr></table></figure></p><p>Then we know, from w1 to w2, it can be form in these sub-steps,</p><ul><li>w1.substring(0, w1.length - 1) and w2.substring(0, w2.length - 1) =&gt; w1 and w2</li><li>w1 and w2.substring(0, w2.length - 1) =&gt; w1 and w2</li><li>w1.substring(0, w1.length - 1) and w2 =&gt; w1 and w2</li></ul><p>And we choose the minimum sub-steps everytime then we will be able to write down the pseudo code below,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">if (w1.charAt(i) == w2.charAt(j)) &#123;</div><div class="line">    dp[i][j] = dp[i - 1][j - 1];</div><div class="line">&#125; else &#123;</div><div class="line">    dp[i][j] = min(dp[i - 1][j], dp[i - 1][j - 1], dp[i][j - 1]) + 1;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p><a href="https://github.com/TylerYang/leetcode/blob/master/72.EditDistance/Solution.java" target="_blank" rel="external">Here is the full version java implementation.</a></p><h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>The states and the transtion between them are the keys to solve the DP problem. Though it will be diffcult to figure out the transition part.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Pretty classical DP problem. I didn’t figure it out last year.&lt;/p&gt;
+&lt;p&gt;This time did!&lt;/p&gt;
+&lt;h3 id=&quot;Edit-Distance&quot;&gt;&lt;a href=&quot;#Edit-Distance&quot; class=&quot;headerlink&quot; title=&quot;Edit Distance&quot;&gt;&lt;/a&gt;Edit Distance&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Given two words word1 and word2, find the minimum number of steps required to convert word1 to word2. (each operation is counted as 1 step.)&lt;/p&gt;
+&lt;p&gt;You have the following 3 operations permitted on a word:&lt;/p&gt;
+&lt;p&gt;a) Insert a character&lt;br&gt;b) Delete a character&lt;br&gt;c) Replace a character&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Interview" scheme="tyleryang.github.io/categories/Interview/"/>
+    
+      <category term="Leetcode" scheme="tyleryang.github.io/categories/Interview/Leetcode/"/>
+    
+    
+      <category term="Leetcode" scheme="tyleryang.github.io/tags/Leetcode/"/>
+    
+      <category term="Dynamic Programming" scheme="tyleryang.github.io/tags/Dynamic-Programming/"/>
     
   </entry>
   

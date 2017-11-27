@@ -335,33 +335,6 @@
     <article class="post">
         <header class="post-header">
             <div class="post-time syuanpi riseIn-light back-1">
-                <span>November 13, 2017</span>
-                
-            </div>
-            <h1 class="post-title syuanpi riseIn-light back-2">
-            
-                <a href="/2017/11/13/generic-in-golang/">Generic in golang</a>
-            
-            </h1>
-            
-        </header>
-        <div class="post-content syuanpi riseIn-light back-3">
-            
-                
-                    
-                
-            
-        
-        </div>
-        
-    </article>
-    
-
-    
-        
-    <article class="post">
-        <header class="post-header">
-            <div class="post-time syuanpi riseIn-light back-1">
                 <span>November 11, 2017</span>
                 
             </div>
@@ -383,6 +356,41 @@
 <p>Run benchmark with following command,<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">go test -run=None -bench=. -benchmem</div></pre></td></tr></table></figure></p>
 <p>Output:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">goos: darwin</div><div class="line">goarch: amd64</div><div class="line">pkg: implus.co/pg</div><div class="line">BenchmarkSet-4    	2000000000	         0.49 ns/op	       0 B/op	       0 allocs/op</div><div class="line">BenchmarkRset-4   	10000000	           152 ns/op	       16 B/op	     2 allocs/op</div><div class="line">PASS</div><div class="line">ok  	playground/test 2.729s</div></pre></td></tr></table></figure></p>
 <p>From the result, we can know that with reflection, the simple <code>set</code> command is ~300X slower than the normal one.</p>
+
+                
+            
+        
+        </div>
+        
+    </article>
+    
+
+    
+        
+    <article class="post">
+        <header class="post-header">
+            <div class="post-time syuanpi riseIn-light back-1">
+                <span>November 6, 2017</span>
+                
+            </div>
+            <h1 class="post-title syuanpi riseIn-light back-2">
+            
+                <a href="/2017/11/06/Escape-Analysis-In-Golang/">Escape Analysis in Golang</a>
+            
+            </h1>
+            
+        </header>
+        <div class="post-content syuanpi riseIn-light back-3">
+            
+                
+                    <h3 id="What-is-Escape-Analysis"><a href="#What-is-Escape-Analysis" class="headerlink" title="What is Escape Analysis?"></a>What is Escape Analysis?</h3><p><em>Escape Analysis</em> is the process by which the compiler decides if a variable is to be allocated on the stack or on the heap.</p>
+<p>In Go (unlike in C) the fact that a variable is locally declared does not mean that it will be stack-allocated.</p>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">package main</div><div class="line"></div><div class="line">import &quot;fmt&quot;</div><div class="line"></div><div class="line">var VP *int // a global pointer</div><div class="line"></div><div class="line">func f(vp *int) &#123;</div><div class="line">    VP = vp</div><div class="line">&#125;</div><div class="line"></div><div class="line">func g() &#123;</div><div class="line">    var v int // a local variable</div><div class="line">    v = 40</div><div class="line">    f(&amp;v)</div><div class="line">    *VP = 42</div><div class="line">    fmt.Println(v) // prints 42</div><div class="line">&#125;</div><div class="line"></div><div class="line">func main() &#123;</div><div class="line">    g()</div><div class="line">    fmt.Println(*VP) //prints 42</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Obviously, the variable v declared in function g() cannot be stack allocated, since a pointer to it is stored to global VP by f(). Or as we say: Variable v escapes it’s local scope; hence <em>escape analysis</em>.</p>
+<p>Check the following code,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">func Ok(f os.File) []byte &#123;</div><div class="line">        var x [128]byte</div><div class="line">        b := x[:]</div><div class="line">        n, _ := f.Read(b)</div><div class="line">        r := make([]byte, n)</div><div class="line">        copy(r, b[:n])</div><div class="line">        return r</div><div class="line">&#125;</div><div class="line"></div><div class="line">func NotOk(c net.Conn) []byte &#123;</div><div class="line">        var x [128]byte</div><div class="line">        b := x[:]</div><div class="line">        n, _ := c.Read(b)</div><div class="line">        r := make([]byte, n)</div><div class="line">        copy(r, b[:n])</div><div class="line">        return r</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>They look almost the same except the <a href="https://tour.golang.org/methods/4" target="_blank" rel="external">pointer receiver</a>. As a result, in Ok() the array x is allocated on the stack, while in NotOk(), x is allocated on the heap. That is: NotOk() generates 128 bytes of garbage every time it’s called; Ok() does not. You can verify it by running command: <code>go build -gcflags=&#39;-m&#39;</code>.</p>
+<p>WHY?</p>
+<p>The reason is, <code>net.Conn</code> is an interafce while <code>os.File</code> is a concrete type. When the compiler sees a call to a method of net.Conn, it doesn’t know if the method’s implementation somehow retains a copy of it’s reference argument. So it has to be conservative.</p>
 
                 
             
