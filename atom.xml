@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="tyleryang.github.io/"/>
-  <updated>2017-11-26T15:58:47.000Z</updated>
+  <updated>2017-11-27T06:00:59.000Z</updated>
   <id>tyleryang.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Simplicity Is Complicated - Rob Pike</title>
+    <link href="tyleryang.github.io/2017/11/27/go-simplicity-is-complicated/"/>
+    <id>tyleryang.github.io/2017/11/27/go-simplicity-is-complicated/</id>
+    <published>2017-11-27T01:50:00.000Z</published>
+    <updated>2017-11-27T06:00:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.youtube.com/watch?v=rFejpH_tAHM" target="_blank" rel="external">https://www.youtube.com/watch?v=rFejpH_tAHM</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=rFejpH_tAHM&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.youtube.com/watch?v=rFejpH_tAHM&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="Language" scheme="tyleryang.github.io/tags/Language/"/>
+    
+      <category term="Golang" scheme="tyleryang.github.io/tags/Golang/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Golang scheduler demo</title>
     <link href="tyleryang.github.io/2017/11/26/golang-scheduler-demo/"/>
     <id>tyleryang.github.io/2017/11/26/golang-scheduler-demo/</id>
     <published>2017-11-26T15:56:20.000Z</published>
-    <updated>2017-11-26T15:58:47.000Z</updated>
+    <updated>2017-11-27T06:00:54.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近在认真的学习golang，读源码并了解一些底层的实现来加深自己对于golang 的理解.</p><p>如果说golang 里面有什么最让我觉得有趣，相信很多人会觉得是goroutine. </p>]]></content>
     
@@ -44,13 +70,13 @@
   </entry>
   
   <entry>
-    <title>Memory Allocator in Golang</title>
-    <link href="tyleryang.github.io/2017/11/15/problem-solver-find-one-and-update-mongo/"/>
-    <id>tyleryang.github.io/2017/11/15/problem-solver-find-one-and-update-mongo/</id>
+    <title>GC in Golang</title>
+    <link href="tyleryang.github.io/2017/11/15/golang-gc/"/>
+    <id>tyleryang.github.io/2017/11/15/golang-gc/</id>
     <published>2017-11-15T04:41:20.000Z</published>
-    <updated>2017-11-15T08:16:53.000Z</updated>
+    <updated>2017-11-22T04:14:12.000Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="http://goog-perftools.sourceforge.net/doc/tcmalloc.html" target="_blank" rel="external">http://goog-perftools.sourceforge.net/doc/tcmalloc.html</a></p><p>基本策略,</p><ol><li>每次从操作系统申请一大块内存（比如1MB），以减少系统调用。</li><li>将申请到的大块内存按照特定大啊小预先切分成小块，构成链表。</li><li>为对象分配内存时，只需从大小合适的链表提取一小块即可。</li><li>回收对象内存时，将改小块内存重新归还到原链表，以便复用。</li><li>如闲置内存过多，则尝试归还部分内存给操作系统，降低整体开销。</li></ol>]]></content>
+    <content type="html"><![CDATA[<p><a href="http://goog-perftools.sourceforge.net/doc/tcmalloc.html" target="_blank" rel="external">http://goog-perftools.sourceforge.net/doc/tcmalloc.html</a></p>]]></content>
     
     <summary type="html">
     
@@ -69,13 +95,13 @@
   </entry>
   
   <entry>
-    <title>GC in Golang</title>
-    <link href="tyleryang.github.io/2017/11/15/golang-gc/"/>
-    <id>tyleryang.github.io/2017/11/15/golang-gc/</id>
+    <title>Memory Allocator in Golang</title>
+    <link href="tyleryang.github.io/2017/11/15/problem-solver-find-one-and-update-mongo/"/>
+    <id>tyleryang.github.io/2017/11/15/problem-solver-find-one-and-update-mongo/</id>
     <published>2017-11-15T04:41:20.000Z</published>
-    <updated>2017-11-22T04:14:12.000Z</updated>
+    <updated>2017-11-15T08:16:53.000Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="http://goog-perftools.sourceforge.net/doc/tcmalloc.html" target="_blank" rel="external">http://goog-perftools.sourceforge.net/doc/tcmalloc.html</a></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="http://goog-perftools.sourceforge.net/doc/tcmalloc.html" target="_blank" rel="external">http://goog-perftools.sourceforge.net/doc/tcmalloc.html</a></p><p>基本策略,</p><ol><li>每次从操作系统申请一大块内存（比如1MB），以减少系统调用。</li><li>将申请到的大块内存按照特定大啊小预先切分成小块，构成链表。</li><li>为对象分配内存时，只需从大小合适的链表提取一小块即可。</li><li>回收对象内存时，将改小块内存重新归还到原链表，以便复用。</li><li>如闲置内存过多，则尝试归还部分内存给操作系统，降低整体开销。</li></ol>]]></content>
     
     <summary type="html">
     
@@ -125,32 +151,6 @@
       
       
         &lt;h3 id=&quot;Reflect-in-Golang&quot;&gt;&lt;a href=&quot;#Reflect-in-Golang&quot; class=&quot;headerlink&quot; title=&quot;Reflect in Golang&quot;&gt;&lt;/a&gt;Reflect in Golang&lt;/h3&gt;&lt;p&gt;Reflection
-      
-    
-    </summary>
-    
-    
-      <category term="Language" scheme="tyleryang.github.io/tags/Language/"/>
-    
-      <category term="Golang" scheme="tyleryang.github.io/tags/Golang/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Simplicity Is Complicated - Rob Pike</title>
-    <link href="tyleryang.github.io/2017/11/11/go-simplicity-is-complicated/"/>
-    <id>tyleryang.github.io/2017/11/11/go-simplicity-is-complicated/</id>
-    <published>2017-11-11T01:50:00.000Z</published>
-    <updated>2017-11-27T05:59:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://www.youtube.com/watch?v=rFejpH_tAHM" target="_blank" rel="external">https://www.youtube.com/watch?v=rFejpH_tAHM</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=rFejpH_tAHM&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.youtube.com/watch?v=rFejpH_tAHM&lt;/a&gt;&lt;/p&gt;
-
       
     
     </summary>
