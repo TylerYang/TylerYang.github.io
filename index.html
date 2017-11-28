@@ -227,7 +227,7 @@
         <div class="post-content syuanpi riseIn-light back-3">
             
                 
-                    <p><a href="https://www.youtube.com/watch?v=rFejpH_tAHM" target="_blank" rel="external">https://www.youtube.com/watch?v=rFejpH_tAHM</a></p>
+                    <p><a href="https://talks.golang.org/2015/simplicity-is-complicated.slide#1" target="_blank" rel="external">https://talks.golang.org/2015/simplicity-is-complicated.slide#1</a><br><a href="https://www.youtube.com/watch?v=rFejpH_tAHM" target="_blank" rel="external">https://www.youtube.com/watch?v=rFejpH_tAHM</a></p>
 
                 
             
@@ -285,7 +285,7 @@
             </div>
             <h1 class="post-title syuanpi riseIn-light back-2">
             
-                <a href="/2017/11/15/golang-gc/">GC in Golang</a>
+                <a href="/2017/11/15/problem-solver-find-one-and-update-mongo/">Memory Allocator in Golang</a>
             
             </h1>
             
@@ -294,6 +294,14 @@
             
                 
                     <p><a href="http://goog-perftools.sourceforge.net/doc/tcmalloc.html" target="_blank" rel="external">http://goog-perftools.sourceforge.net/doc/tcmalloc.html</a></p>
+<p>基本策略,</p>
+<ol>
+<li>每次从操作系统申请一大块内存（比如1MB），以减少系统调用。</li>
+<li>将申请到的大块内存按照特定大啊小预先切分成小块，构成链表。</li>
+<li>为对象分配内存时，只需从大小合适的链表提取一小块即可。</li>
+<li>回收对象内存时，将改小块内存重新归还到原链表，以便复用。</li>
+<li>如闲置内存过多，则尝试归还部分内存给操作系统，降低整体开销。</li>
+</ol>
 
                 
             
@@ -313,7 +321,7 @@
             </div>
             <h1 class="post-title syuanpi riseIn-light back-2">
             
-                <a href="/2017/11/15/problem-solver-find-one-and-update-mongo/">Memory Allocator in Golang</a>
+                <a href="/2017/11/15/golang-gc/">GC in Golang</a>
             
             </h1>
             
@@ -322,14 +330,6 @@
             
                 
                     <p><a href="http://goog-perftools.sourceforge.net/doc/tcmalloc.html" target="_blank" rel="external">http://goog-perftools.sourceforge.net/doc/tcmalloc.html</a></p>
-<p>基本策略,</p>
-<ol>
-<li>每次从操作系统申请一大块内存（比如1MB），以减少系统调用。</li>
-<li>将申请到的大块内存按照特定大啊小预先切分成小块，构成链表。</li>
-<li>为对象分配内存时，只需从大小合适的链表提取一小块即可。</li>
-<li>回收对象内存时，将改小块内存重新归还到原链表，以便复用。</li>
-<li>如闲置内存过多，则尝试归还部分内存给操作系统，降低整体开销。</li>
-</ol>
 
                 
             
